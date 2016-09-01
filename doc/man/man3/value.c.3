@@ -1,0 +1,97 @@
+.TH "value.c" 3 "Thu Sep 1 2016" "Version 3.0" "Imel" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+value.c \- This file contains functions to convert values\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'header\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBimel_value_percentage_to_generic\fP (double value, double opt_value)"
+.br
+.ti -1c
+.RI "double \fBimel_value_pixel_to_percentage\fP (double value, double opt_value)"
+.br
+.ti -1c
+.RI "double \fBimel_value_convert\fP (\fBImelValue\fP from_value, double value, \fBImelValue\fP to_value,\&.\&.\&.)"
+.br
+.RI "\fIConvert a value in another one\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file contains functions to convert values\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Davide Francesco Merico 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "double imel_value_convert (\fBImelValue\fP from_value, double value, \fBImelValue\fP to_value,  \&.\&.\&.)"
+
+.PP
+Convert a value in another one\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfrom_value\fP Type of value you to convert in \fCto_value\fP 
+.br
+\fIvalue\fP Value to convert in \fCto_value\fP 
+.br
+\fIto_value\fP Type of value to convert from \fCfrom_value\fP 
+.br
+\fI\&.\&.\&.\fP Value to convert from \fCfrom_value\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Value converted 
+.RE
+.PP
+
+.SS "double imel_value_percentage_to_generic (double value, double opt_value)"
+Convert a percentage in a generic value
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP Percentage value 
+.br
+\fIopt_value\fP Generic value equal to 100% 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Percentage value converted 
+.RE
+.PP
+
+.SS "double imel_value_pixel_to_percentage (double value, double opt_value)"
+Convert a pixel value to percentage
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP Value to convert 
+.br
+\fIopt_value\fP Generic value equal to 100% 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Value converted 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Imel from the source code\&.

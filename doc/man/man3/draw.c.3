@@ -1,0 +1,859 @@
+.TH "draw.c" 3 "Thu Sep 1 2016" "Version 3.0" "Imel" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+draw.c \- This file contains functions to draw\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include 'header\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBimel_draw_circle\fP (\fBImelImage\fP *image, \fBImelSize\fP x, \fBImelSize\fP y, \fBImelSize\fP radius, \fBImelPixel\fP pxl)"
+.br
+.RI "\fIDraw a circle\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_draw_partial_reg_shape\fP (\fBImelImage\fP *image, \fBImelSize\fP x, \fBImelSize\fP y, \fBImelSize\fP r, long v, short p, double start_angle, \fBImelPixel\fP pxl)"
+.br
+.RI "\fIDraw a partial regular shape\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_draw_arch\fP (\fBImelImage\fP *image, \fBImelSize\fP x, \fBImelSize\fP y, \fBImelSize\fP radius, double start_angle, double end_angle, \fBImelPixel\fP pxl)"
+.br
+.RI "\fIDraw an arch\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_draw_filled_arch\fP (\fBImelImage\fP *image, \fBImelSize\fP x, \fBImelSize\fP y, \fBImelSize\fP radius, double start_angle, double end_angle, \fBImelPixel\fP pxl)"
+.br
+.RI "\fIDraw a filled arch\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_draw_line\fP (\fBImelImage\fP *image, \fBImelSize\fP _sx, \fBImelSize\fP _sy, \fBImelSize\fP _ex, \fBImelSize\fP _ey, \fBImelPixel\fP pixel)"
+.br
+.RI "\fIDraw a line\&. \fP"
+.ti -1c
+.RI "void \fBimel_draw_point\fP (\fBImelImage\fP *image, \fBImelSize\fP x, \fBImelSize\fP y, \fBImelPixel\fP pixel)"
+.br
+.RI "\fIDraw a single point in an image\&. \fP"
+.ti -1c
+.RI "void \fBimel_draw_filled_circle\fP (\fBImelImage\fP *image, \fBImelSize\fP x, \fBImelSize\fP y, \fBImelSize\fP radius, \fBImelPixel\fP pxl)"
+.br
+.RI "\fIDraw a filled circle\&. \fP"
+.ti -1c
+.RI "void \fBimel_draw_rect\fP (\fBImelImage\fP *image, \fBImelSize\fP x1, \fBImelSize\fP y1, \fBImelSize\fP x2, \fBImelSize\fP y2, \fBImelPixel\fP pixel, \fBbool\fP fill)"
+.br
+.RI "\fIDraw a rectangle ( filled or not ) \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_draw_rect_with_rounded_angles\fP (\fBImelImage\fP *image, \fBImelSize\fP x1, \fBImelSize\fP y1, \fBImelSize\fP x2, \fBImelSize\fP y2, \fBImelSize\fP radius, \fBImelPixel\fP pixel, \fBbool\fP fill)"
+.br
+.RI "\fIDraw a rectangle with rounded angles ( filled or not ) \fP"
+.ti -1c
+.RI "void \fBimel_draw_point_from_array\fP (\fBImelImage\fP *image, \fBImelSize\fP n_points, \fBImelPoint\fP **points)"
+.br
+.RI "\fIDraw more point at the same time\&. \fP"
+.ti -1c
+.RI "void \fBimel_draw_ellipse\fP (\fBImelImage\fP *image, \fBImelSize\fP x, \fBImelSize\fP y, double a, double b, \fBImelPixel\fP pxl)"
+.br
+.RI "\fIDraw an ellipse\&. \fP"
+.ti -1c
+.RI "void \fBimel_draw_filled_ellipse\fP (\fBImelImage\fP *image, \fBImelSize\fP x, \fBImelSize\fP y, double a, double b, \fBImelPixel\fP pxl)"
+.br
+.RI "\fIDraw a filled ellipse\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_draw_gradient_line\fP (\fBImelImage\fP *image, \fBImelSize\fP _x1, \fBImelSize\fP _y1, \fBImelSize\fP _x2, \fBImelSize\fP _y2, \fBImelPixel\fP start, \fBImelPixel\fP end)"
+.br
+.RI "\fIDraw a line with gradient\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_draw_filled_line\fP (\fBImelImage\fP *image, \fBImelSize\fP _x1, \fBImelSize\fP _y1, \fBImelSize\fP _x2, \fBImelSize\fP _y2, \fBImelSize\fP ox, \fBImelSize\fP oy, \fBImelPixel\fP pixel)"
+.br
+.RI "\fIDraw a filled line\&. \fP"
+.ti -1c
+.RI "void \fBimel_draw_figure\fP (\fBImelImage\fP *image, \fBImelSize\fP n_points, \fBImelPoint\fP **starts, \fBImelPoint\fP **ends, \fBImelPixel\fP pixel)"
+.br
+.RI "\fIDraw a non contiguous figure\&. \fP"
+.ti -1c
+.RI "void \fBimel_draw_contiguous_figure\fP (\fBImelImage\fP *image, \fBImelSize\fP n_points, \fBImelPoint\fP **points, \fBImelPixel\fP pixel)"
+.br
+.RI "\fIDraw a contiguous figure\&. \fP"
+.ti -1c
+.RI "void \fBimel_draw_curve\fP (\fBImelImage\fP *image, \fBImelSize\fP x1, \fBImelSize\fP y1, \fBImelSize\fP x2, \fBImelSize\fP y2, \fBImelSize\fP x3, \fBImelSize\fP y3, \fBImelSize\fP x4, \fBImelSize\fP y4, int _p, \fBImelPixel\fP pixel)"
+.br
+.RI "\fIDraw a Bèzier's curve\&. \fP"
+.ti -1c
+.RI "void \fBimel_draw_line_connecting_all_points\fP (\fBImelImage\fP *image, \fBImelPoint\fP **points, \fBImelPixel\fP pxl)"
+.br
+.RI "\fIDraw lines between all points passed\&. \fP"
+.ti -1c
+.RI "void \fBimel_draw_gradient_curve\fP (\fBImelImage\fP *image, \fBImelSize\fP x1, \fBImelSize\fP y1, \fBImelSize\fP x2, \fBImelSize\fP y2, \fBImelSize\fP x3, \fBImelSize\fP y3, \fBImelSize\fP x4, \fBImelSize\fP y4, int _p, \fBImelPixel\fP start, \fBImelPixel\fP end)"
+.br
+.RI "\fIDraw a Bèzier's curve with gradient\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_draw_dashed_line\fP (\fBImelImage\fP *image, \fBImelSize\fP _x1, \fBImelSize\fP _y1, \fBImelSize\fP _x2, \fBImelSize\fP _y2, \fBImelSize\fP size_line, \fBImelSize\fP space_line, \fBImelPixel\fP pixel)"
+.br
+.RI "\fIDraw a dashed line\&. \fP"
+.ti -1c
+.RI "void \fBimel_draw_dashed_grid\fP (\fBImelImage\fP *image, \fBImelSize\fP sx, \fBImelSize\fP sy, \fBImelSize\fP ex, \fBImelSize\fP ey, \fBImelSize\fP col_space, \fBImelSize\fP row_space, \fBImelSize\fP size_line, \fBImelSize\fP space_line, \fBbool\fP init_from_start, \fBImelPixel\fP pixel)"
+.br
+.RI "\fIDraw a dashed grid\&. \fP"
+.ti -1c
+.RI "void \fBimel_draw_grid\fP (\fBImelImage\fP *image, \fBImelSize\fP sx, \fBImelSize\fP sy, \fBImelSize\fP ex, \fBImelSize\fP ey, \fBImelSize\fP col_space, \fBImelSize\fP row_space, \fBbool\fP init_from_start, \fBImelPixel\fP pixel)"
+.br
+.RI "\fIDraw a grid\&. \fP"
+.ti -1c
+.RI "void \fBimel_draw_gradient\fP (\fBImelImage\fP *image, \fBImelOrientation\fP orientation, \fBImelSize\fP start, \fBImelSize\fP end, \fBImelPixel\fP start_color, \fBImelPixel\fP end_color)"
+.br
+.RI "\fIDraw a gradient\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_draw_reg_shape\fP (\fBImelImage\fP *image, \fBImelSize\fP x, \fBImelSize\fP y, \fBImelSize\fP r, long v, double start_angle, \fBImelPixel\fP pxl)"
+.br
+.RI "\fIDraw a regular shape\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_draw_spiral\fP (\fBImelImage\fP *image, \fBImelSize\fP x, \fBImelSize\fP y, \fBImelSize\fP radius, \fBImelSize\fP distance, \fBImelPixel\fP pxl)"
+.br
+.RI "\fIDraw a spiral\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file contains functions to draw\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Davide Francesco Merico These functions allow you to draw lines, curves, circles and much more inside an image\&. 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+Most of the draw actions is made by imel_pixel_copy () 
+.PP
+Angle can be set from 0 to 360 degrees 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_pixel_copy\fP 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBbool\fP imel_draw_arch (\fBImelImage\fP * image, \fBImelSize\fP x, \fBImelSize\fP y, \fBImelSize\fP radius, double start_angle, double end_angle, \fBImelPixel\fP pxl)"
+
+.PP
+Draw an arch\&. This function draw an arch in \fCimage\fP with center in coordinate $(x,y)$ and radius of \fCradius\fP pixels\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the arch 
+.br
+\fIx\fP Center coordinate x 
+.br
+\fIy\fP Center coordinate y 
+.br
+\fIradius\fP Radius of the arch 
+.br
+\fIstart_angle\fP Start angle of the arch in radians 
+.br
+\fIend_angle\fP End angle of the arch in radians 
+.br
+\fIpxl\fP Color and level of the arch 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE if all values are valid, else FALSE 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_draw_filled_arch\fP 
+.RE
+.PP
+
+.SS "void imel_draw_circle (\fBImelImage\fP * image, \fBImelSize\fP x, \fBImelSize\fP y, \fBImelSize\fP radius, \fBImelPixel\fP pxl)"
+
+.PP
+Draw a circle\&. This function draw a circle in \fCimage\fP with center in coordinate $(x,y)$ and radius \fCradius\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the circle 
+.br
+\fIx\fP Center coordinate x 
+.br
+\fIy\fP Center coordinate y 
+.br
+\fIradius\fP Radius size 
+.br
+\fIpxl\fP Color and level of the circle 
+.RE
+.PP
+
+.SS "void imel_draw_contiguous_figure (\fBImelImage\fP * image, \fBImelSize\fP n_points, \fBImelPoint\fP ** points, \fBImelPixel\fP pixel)"
+
+.PP
+Draw a contiguous figure\&. This function draw a contiguous figure in \fCimage\fP from a list of \fCpoints\fP where each point is linked to the next one\&.
+.PP
+.PP
+.nf
+1 ImelImage *image = imel_image_new (100, 100);
+2 ImelPixel white = imel_pixel_new (0xff, 0xff, 0xff, 0);
+3 ImelPoint *points[5] = {
+4          imel_point_new (image, 10, 10, white),
+5          imel_point_new (image, 90, 10, white),
+6          imel_point_new (image, 90, 90, white),
+7          imel_point_new (image, 10, 90, white),
+8          NULL };
+9 
+10 points[4] = *points;
+11 imel_draw_contiguous_figure (image, 5, points, white);
+12 points[4] = NULL;
+13 imel_point_array_free (points);
+.fi
+.PP
+ 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the figure 
+.br
+\fIn_points\fP Number of points in \fCpoints\fP or 0 if it's a NULL-terminated array\&. 
+.br
+\fIpoints\fP Points to link togheter 
+.br
+\fIpixel\fP Color and level of the figure 
+.RE
+.PP
+
+.SS "void imel_draw_curve (\fBImelImage\fP * image, \fBImelSize\fP x1, \fBImelSize\fP y1, \fBImelSize\fP x2, \fBImelSize\fP y2, \fBImelSize\fP x3, \fBImelSize\fP y3, \fBImelSize\fP x4, \fBImelSize\fP y4, int _p, \fBImelPixel\fP pixel)"
+
+.PP
+Draw a Bèzier's curve\&. This function draw a Bèzier's curve in \fCimage\fP with color and level passed in \fCpixel\fP\&.
+.PP
+.PP
+.nf
+1 ImelPixel px_p = { 255, 0, 0, 0 }, px_c = { 0, 0, 0, 1 };
+2 ImelImage *image;
+3 
+4 image = imel_image_new (200, 200);
+5 imel_draw_circle (image, 10, 190, 5, px_p);
+6 imel_font_write_string (image, 17, 183, "x1, y1", 7, px_p);
+7 imel_draw_circle (image, 10, 60, 5, px_p);
+8 imel_font_write_string (image, 17, 53, "x2, y2", 7, px_p);
+9 imel_draw_circle (image, 190, 190, 5, px_p);
+10 imel_font_write_string (image, 140, 183, "x3, y3", 7, px_p);
+11 imel_draw_circle (image, 130, 10, 5, px_p);
+12 imel_font_write_string (image, 137, 3, "x4, y4", 7, px_p);
+13 
+14 imel_draw_curve (image, 10, 190, 10, 60, 190, 190, 130, 10, 200, px_c);
+.fi
+.PP
+ Example outputExample output
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the curve 
+.br
+\fIx1\fP Start coordinate x of the curve 
+.br
+\fIy1\fP Start coordinate y of the curve 
+.br
+\fIx2\fP First reference coordinate x 
+.br
+\fIy2\fP First reference coordinate y 
+.br
+\fIx3\fP End coordinate x of the curve 
+.br
+\fIy3\fP End coordinate y of the curve 
+.br
+\fIx4\fP Second reference coordinate x 
+.br
+\fIy4\fP Second reference coordinate y 
+.br
+\fI_p\fP Number of steps to draw the curve, -1 to set default steps ( 1024 ) 
+.br
+\fIpixel\fP Color and level of the curve 
+.RE
+.PP
+
+.SS "void imel_draw_dashed_grid (\fBImelImage\fP * image, \fBImelSize\fP sx, \fBImelSize\fP sy, \fBImelSize\fP ex, \fBImelSize\fP ey, \fBImelSize\fP col_space, \fBImelSize\fP row_space, \fBImelSize\fP size_line, \fBImelSize\fP space_line, \fBbool\fP init_from_start, \fBImelPixel\fP pixel)"
+
+.PP
+Draw a dashed grid\&. This function draw a dashed grid in \fCimage\fP from coordinate $(sx,sy)$ to coordinate $(ex,ey)$ with columns length \fCcol_space\fP and rows length \fCrow_space\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the grid 
+.br
+\fIsx\fP Start coordinate x of the grid 
+.br
+\fIsy\fP Start coordinate y of the grid 
+.br
+\fIex\fP End coordinate x of the grid 
+.br
+\fIey\fP End coordinate y of the grid 
+.br
+\fIcol_space\fP Space between columns 
+.br
+\fIrow_space\fP Space between rows 
+.br
+\fIsize_line\fP Length of the small lines 
+.br
+\fIspace_line\fP Space between the small lines 
+.br
+\fIinit_from_start\fP TRUE if the first column and row init from coordinate $(sx,sy)$, else FALSE 
+.br
+\fIpixel\fP Color and level of the line 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_draw_dashed_line\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_draw_dashed_line (\fBImelImage\fP * image, \fBImelSize\fP _x1, \fBImelSize\fP _y1, \fBImelSize\fP _x2, \fBImelSize\fP _y2, \fBImelSize\fP size_line, \fBImelSize\fP space_line, \fBImelPixel\fP pixel)"
+
+.PP
+Draw a dashed line\&. This function draw a dashed line in \fCimage\fP from coordinate $(\_x_1,\_y_1)$ to coordinate $(\_x_2,\_y_2)$ with small lines length \fCsize_line\fP pixels and space between them of \fCspace_line\fP pixels\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the line 
+.br
+\fI_x1\fP Start coordinate x of the line 
+.br
+\fI_y1\fP Start coordinate y of the line 
+.br
+\fI_x2\fP End coordinate x of the line 
+.br
+\fI_y2\fP End coordinate y of the line 
+.br
+\fIsize_line\fP Length of the small lines 
+.br
+\fIspace_line\fP Space between the small lines 
+.br
+\fIpixel\fP Color and level of the line 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+FALSE if image or size_line values aren't valid, else TRUE 
+.RE
+.PP
+
+.SS "void imel_draw_ellipse (\fBImelImage\fP * image, \fBImelSize\fP x, \fBImelSize\fP y, double a, double b, \fBImelPixel\fP pxl)"
+
+.PP
+Draw an ellipse\&. This function draw an ellipse in \fCimage\fP with center in coordinate $(x,y)$ with \fCa\fP width and \fCb\fP height\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the ellipse 
+.br
+\fIx\fP Coordinate x of the ellipse center 
+.br
+\fIy\fP Coordinate y of the ellipse center 
+.br
+\fIa\fP Length of the horizontal axis 
+.br
+\fIb\fP Length of the vertical axis 
+.br
+\fIpxl\fP Color and level of the ellipse 
+.RE
+.PP
+
+.SS "void imel_draw_figure (\fBImelImage\fP * image, \fBImelSize\fP n_points, \fBImelPoint\fP ** starts, \fBImelPoint\fP ** ends, \fBImelPixel\fP pixel)"
+
+.PP
+Draw a non contiguous figure\&. This function draw a non contiguous figure in \fCimage\fP where each start and end point is knowed\&. Each point have color and level passed \fCpixel\fP 
+.PP
+.PP
+.nf
+1 ImelPoint *starts[4] = { NULL }, *ends[3];
+2 ImelPixel pixel = { 255, 0, 0, 0 };
+3 
+4 image = imel_image_new (64, 64);
+5 
+6 starts[0] = imel_point_new (image, 8, 8, pixel);
+7 starts[1] = imel_point_new (image, 56, 8, pixel);
+8 starts[2] = imel_point_new (image, 32, 58, pixel);
+9 
+10 ends[0] = imel_point_new (image, 32, 32, pixel);
+11 ends[1] = ends[2] = ends[0];
+12 
+13 imel_draw_figure (image, 3, starts, ends, pixel);
+14 imel_point_free (ends[0]);
+15 imel_point_array_free (starts);
+.fi
+.PP
+ Example outputExample output
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the figure 
+.br
+\fIn_points\fP Number of points in \fCstarts\fP and \fCends\fP 
+.br
+\fIstarts\fP Start points 
+.br
+\fIends\fP End points 
+.br
+\fIpixel\fP Color and level of the figure 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_draw_filled_arch (\fBImelImage\fP * image, \fBImelSize\fP x, \fBImelSize\fP y, \fBImelSize\fP radius, double start_angle, double end_angle, \fBImelPixel\fP pxl)"
+
+.PP
+Draw a filled arch\&. This function draw a filled arch in \fCimage\fP with center in coordinate $(x,y)$ and radius of \fCradius\fP pixels\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the arch 
+.br
+\fIx\fP Center coordinate x 
+.br
+\fIy\fP Center coordinate y 
+.br
+\fIradius\fP Radius of the arch 
+.br
+\fIstart_angle\fP Start angle of the arch in radians 
+.br
+\fIend_angle\fP End angle of the arch in radians 
+.br
+\fIpxl\fP Color and level of the arch 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE if all values are valid, else FALSE 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_draw_arch\fP 
+.RE
+.PP
+
+.SS "void imel_draw_filled_circle (\fBImelImage\fP * image, \fBImelSize\fP x, \fBImelSize\fP y, \fBImelSize\fP radius, \fBImelPixel\fP pxl)"
+
+.PP
+Draw a filled circle\&. This function draw a circle filled with color and level passed in \fCpxl\fP at coordinate $(x,y)$ with a radius of \fCradius\fP pixels\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the circle 
+.br
+\fIx\fP Coordinate x of the circle center 
+.br
+\fIy\fP Coordinate y of the circle center 
+.br
+\fIradius\fP Radius of the circle in pixels 
+.br
+\fIpxl\fP Color and level of the circle 
+.RE
+.PP
+
+.SS "void imel_draw_filled_ellipse (\fBImelImage\fP * image, \fBImelSize\fP x, \fBImelSize\fP y, double a, double b, \fBImelPixel\fP pxl)"
+
+.PP
+Draw a filled ellipse\&. This function draw a filled ellipse in \fCimage\fP with center in coordinate $(x,y)$ with \fCa\fP width and \fCb\fP height\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the ellipse 
+.br
+\fIx\fP Coordinate x of the ellipse center 
+.br
+\fIy\fP Coordinate y of the ellipse center 
+.br
+\fIa\fP Length of the horizontal axis 
+.br
+\fIb\fP Length of the vertical axis 
+.br
+\fIpxl\fP Color and level of the ellipse 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_draw_filled_line (\fBImelImage\fP * image, \fBImelSize\fP _x1, \fBImelSize\fP _y1, \fBImelSize\fP _x2, \fBImelSize\fP _y2, \fBImelSize\fP ox, \fBImelSize\fP oy, \fBImelPixel\fP pixel)"
+
+.PP
+Draw a filled line\&. This function draw a line in \fCimage\fP from coordinate $(\_x_1,\_y_1)$ to coordinate $(\_x_2,\_y_2)$ with a color and level passed in \fCpixel\fP, where each point of the line is linked to a coordinate $(ox,oy)$\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the line 
+.br
+\fI_x1\fP Start x coordinate 
+.br
+\fI_y1\fP Start y coordinate 
+.br
+\fI_x2\fP End x coordinate 
+.br
+\fI_y2\fP End y coordinate 
+.br
+\fIox\fP Coordinate x of the common point 
+.br
+\fIoy\fP Coordinate y of the common point 
+.br
+\fIpixel\fP Color and level of the line 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+FALSE if \fCimage\fP isn't a valid image, else TRUE 
+.RE
+.PP
+
+.SS "void imel_draw_gradient (\fBImelImage\fP * image, \fBImelOrientation\fP orientation, \fBImelSize\fP start, \fBImelSize\fP end, \fBImelPixel\fP start_color, \fBImelPixel\fP end_color)"
+
+.PP
+Draw a gradient\&. This function draw a gradient in \fCimage\fP, with an \fCorientation\fP chosen, from color and level passed in \fCstart_color\fP to \fCend_color\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the gradient 
+.br
+\fIorientation\fP Gradient orientation 
+.br
+\fIstart\fP Start row or column ( depends from orientation ) 
+.br
+\fIend\fP End row or column ( depends from orientation ) 
+.br
+\fIstart_color\fP Start color and level 
+.br
+\fIend_color\fP End color and level 
+.RE
+.PP
+
+.SS "void imel_draw_gradient_curve (\fBImelImage\fP * image, \fBImelSize\fP x1, \fBImelSize\fP y1, \fBImelSize\fP x2, \fBImelSize\fP y2, \fBImelSize\fP x3, \fBImelSize\fP y3, \fBImelSize\fP x4, \fBImelSize\fP y4, int _p, \fBImelPixel\fP start, \fBImelPixel\fP end)"
+
+.PP
+Draw a Bèzier's curve with gradient\&. This function draw a Bèzier's curve in \fCimage\fP with gradient from color and level passed in \fCstart\fP to color and level passed in \fCend\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the curve 
+.br
+\fIx1\fP Start coordinate x of the curve 
+.br
+\fIy1\fP Start coordinate y of the curve 
+.br
+\fIx2\fP First reference coordinate x 
+.br
+\fIy2\fP First reference coordinate y 
+.br
+\fIx3\fP End coordinate x of the curve 
+.br
+\fIy3\fP End coordinate y of the curve 
+.br
+\fIx4\fP Second reference coordinate x 
+.br
+\fIy4\fP Second reference coordinate y 
+.br
+\fI_p\fP Number of steps to draw the curve, -1 to set default steps ( 1024 ) 
+.br
+\fIstart\fP Start color and level of the curve 
+.br
+\fIend\fP End color and level of the curve 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_draw_curve\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_draw_gradient_line (\fBImelImage\fP * image, \fBImelSize\fP _x1, \fBImelSize\fP _y1, \fBImelSize\fP _x2, \fBImelSize\fP _y2, \fBImelPixel\fP start, \fBImelPixel\fP end)"
+
+.PP
+Draw a line with gradient\&. This function draw a line in \fCimage\fP from coordinate $(\_x_1,\_y_1)$ to coordinate $(\_x_2,\_y_2)$ with a color and level gradient from \fCstart\fP to \fCend\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the line 
+.br
+\fI_x1\fP Start x coordinate 
+.br
+\fI_y1\fP Start y coordinate 
+.br
+\fI_x2\fP End x coordinate 
+.br
+\fI_y2\fP End y coordinate 
+.br
+\fIstart\fP Start color and level of the line 
+.br
+\fIend\fP End color and level of the line 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+FALSE if \fCimage\fP isn't a valid image, else TRUE 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_draw_line\fP 
+.RE
+.PP
+
+.SS "void imel_draw_grid (\fBImelImage\fP * image, \fBImelSize\fP sx, \fBImelSize\fP sy, \fBImelSize\fP ex, \fBImelSize\fP ey, \fBImelSize\fP col_space, \fBImelSize\fP row_space, \fBbool\fP init_from_start, \fBImelPixel\fP pixel)"
+
+.PP
+Draw a grid\&. This function draw a grid in \fCimage\fP from coordinate $(sx,sy)$ to coordinate $(ex,ey)$ witch columns length \fCcol_space\fP and rows length \fCrow_space\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the grid 
+.br
+\fIsx\fP Start coordinate x of the grid 
+.br
+\fIsy\fP Start coordinate y of the grid 
+.br
+\fIex\fP End coordinate x of the grid 
+.br
+\fIey\fP End coordinate y of the grid 
+.br
+\fIcol_space\fP Space between columns 
+.br
+\fIrow_space\fP Space between rows 
+.br
+\fIinit_from_start\fP TRUE if the first column and row init from coordinate $(sx,sy)$, else FALSE 
+.br
+\fIpixel\fP Color and level of the line 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_draw_line (\fBImelImage\fP * image, \fBImelSize\fP _sx, \fBImelSize\fP _sy, \fBImelSize\fP _ex, \fBImelSize\fP _ey, \fBImelPixel\fP pixel)"
+
+.PP
+Draw a line\&. This function draw a line in \fCimage\fP from coordinate $(\_sx,\_sy)$ to coordinate $(\_ex,\_ey)$ with a color and level passed in \fCpixel\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the line 
+.br
+\fI_sx\fP Start x coordinate 
+.br
+\fI_sy\fP Start y coordinate 
+.br
+\fI_ex\fP End x coordinate 
+.br
+\fI_ey\fP End y coordinate 
+.br
+\fIpixel\fP Color and level of the line 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+FALSE if \fCimage\fP isn't a valid image, else TRUE 
+.RE
+.PP
+
+.SS "void imel_draw_line_connecting_all_points (\fBImelImage\fP * image, \fBImelPoint\fP ** points, \fBImelPixel\fP pxl)"
+
+.PP
+Draw lines between all points passed\&. This function draw lines from each point to all different points linking each one to all others\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw these lines 
+.br
+\fIpoints\fP A NULL-terminated array with the points to link 
+.br
+\fIpxl\fP Color and level of the lines 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_draw_partial_reg_shape (\fBImelImage\fP * image, \fBImelSize\fP x, \fBImelSize\fP y, \fBImelSize\fP r, long v, short p, double start_angle, \fBImelPixel\fP pxl)"
+
+.PP
+Draw a partial regular shape\&. This function draw a partial regular shape in \fCimage\fP with center in coordinate $(x,y)$, radius \fCr\fP, vertices \fCv\fP and rotation \fCstart_angle\fP in radians\&. The shape will be draw for only the \fCp\fP percent\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the shape 
+.br
+\fIx\fP Center coordinate x 
+.br
+\fIy\fP Center coordinate y 
+.br
+\fIr\fP Radius of the shape 
+.br
+\fIv\fP Number of vertices 
+.br
+\fIp\fP Percentage of the shape ( Values from 0 to 100 ) 
+.br
+\fIstart_angle\fP Rotation angle in radians 
+.br
+\fIpxl\fP Color and level of the shape 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE if all values are valid, else FALSE 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_draw_reg_shape\fP 
+.RE
+.PP
+
+.SS "void imel_draw_point (\fBImelImage\fP * image, \fBImelSize\fP x, \fBImelSize\fP y, \fBImelPixel\fP pixel)"
+
+.PP
+Draw a single point in an image\&. This function draw a point in \fCimage\fP at coordinate $(x,y)$ with color and level specified in \fCpixel\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the point 
+.br
+\fIx\fP Coordinate x of the point 
+.br
+\fIy\fP Coordinate y of the point 
+.br
+\fIpixel\fP Color and level of the point 
+.RE
+.PP
+
+.SS "void imel_draw_point_from_array (\fBImelImage\fP * image, \fBImelSize\fP n_points, \fBImelPoint\fP ** points)"
+
+.PP
+Draw more point at the same time\&. This function draw a list of \fCpoints\fP in the \fCimage\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the points 
+.br
+\fIn_points\fP Number of points to draw or 0 if \fCpoints\fP is a NULL-terminated array and you want to draw its all\&. 
+.br
+\fIpoints\fP Points to draw 
+.RE
+.PP
+
+.SS "void imel_draw_rect (\fBImelImage\fP * image, \fBImelSize\fP x1, \fBImelSize\fP y1, \fBImelSize\fP x2, \fBImelSize\fP y2, \fBImelPixel\fP pixel, \fBbool\fP fill)"
+
+.PP
+Draw a rectangle ( filled or not ) This function draw a rectangle that can be filled inside an \fCimage\fP from coordinate $(x_1,y_1)$ to coordinate $(x_2,y_2)$ with color and level passed in \fCpixel\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the rectangle 
+.br
+\fIx1\fP Start x coordinate of the rectangle 
+.br
+\fIy1\fP Start y coordinate of the rectangle 
+.br
+\fIx2\fP End x coordinate of the rectangle 
+.br
+\fIy2\fP End y coordinate of the rectangle 
+.br
+\fIpixel\fP Color and level of the rectangle 
+.br
+\fIfill\fP TRUE for filled rectangle, else FALSE 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_draw_rect_with_rounded_angles (\fBImelImage\fP * image, \fBImelSize\fP x1, \fBImelSize\fP y1, \fBImelSize\fP x2, \fBImelSize\fP y2, \fBImelSize\fP radius, \fBImelPixel\fP pixel, \fBbool\fP fill)"
+
+.PP
+Draw a rectangle with rounded angles ( filled or not ) This function draw a rectangle that can be filled inside an \fCimage\fP from coordinate $(x_1,y_1)$ to coordinate $(x_2,y_2)$ with color and level passed in \fCpixel\fP and rounded angles\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the rectangle 
+.br
+\fIx1\fP Start x coordinate of the rectangle 
+.br
+\fIy1\fP Start y coordinate of the rectangle 
+.br
+\fIx2\fP End x coordinate of the rectangle 
+.br
+\fIy2\fP End y coordinate of the rectangle 
+.br
+\fIradius\fP Angles radius in pixels\&. 
+.br
+\fIpixel\fP Color and level of the rectangle 
+.br
+\fIfill\fP TRUE for filled rectangle, else FALSE 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+FALSE if \fCimage\fP or \fCradius\fP values aren't valid, else TRUE 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_draw_reg_shape (\fBImelImage\fP * image, \fBImelSize\fP x, \fBImelSize\fP y, \fBImelSize\fP r, long v, double start_angle, \fBImelPixel\fP pxl)"
+
+.PP
+Draw a regular shape\&. This function draw a regular shape in \fCimage\fP with center in coordinate $(x,y)$, chosen \fCradius\fP and \fCv\fP vertices with a rotation of \fCstart_angle\fP radians\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the shape 
+.br
+\fIx\fP Center coordinate x 
+.br
+\fIy\fP Center coordinate y 
+.br
+\fIr\fP Radius of the shape 
+.br
+\fIv\fP Vertices of the shape 
+.br
+\fIstart_angle\fP Rotation of the shape in radians 
+.br
+\fIpxl\fP Color and level of the shape 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE if all values are valid, else FALSE 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_draw_partial_reg_shape\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_draw_spiral (\fBImelImage\fP * image, \fBImelSize\fP x, \fBImelSize\fP y, \fBImelSize\fP radius, \fBImelSize\fP distance, \fBImelPixel\fP pxl)"
+
+.PP
+Draw a spiral\&. This function draw an Archimedean spiral in \fCimage\fP with center in coordinate $(x,y)$ with a radius of \fCradius\fP pixels and \fCdistance\fP pixels between each spiral's arm\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where draw the spiral 
+.br
+\fIx\fP Center coordinate x 
+.br
+\fIy\fP Center coordinate y 
+.br
+\fIradius\fP Radius of the spiral 
+.br
+\fIdistance\fP Distance between each spiral's arm 
+.br
+\fIpxl\fP Color and level of the spiral 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+FALSE if image isn't valid, else TRUE 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Imel from the source code\&.

@@ -1,0 +1,185 @@
+\hypertarget{color_8c}{}\section{color.\+c File Reference}
+\label{color_8c}\index{color.\+c@{color.\+c}}
+
+
+This file contains functions to operate with colors.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}header.\+h\char`\"{}}\\*
+Include dependency graph for color.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{color_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{color_8c_a683618c6373e0b3408b62eb2ad66bed0}{imel\+\_\+color\+\_\+set\+\_\+background} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pixel)
+\begin{DoxyCompactList}\small\item\em Sets a background color to a chosen image. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} $\ast$$\ast$ \hyperlink{color_8c_aed504db1eeedb03f0042a8983de1881c}{imel\+\_\+color\+\_\+get\+\_\+number} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} $\ast$number)
+\begin{DoxyCompactList}\small\item\em Gets a list of unique colors in an image. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} $\ast$ \hyperlink{color_8c_a4cbbac29a4bacd39beaaf01eee111b0e}{imel\+\_\+color\+\_\+get\+\_\+from\+\_\+pixel} (\hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pixel)
+\begin{DoxyCompactList}\small\item\em Gets an array with the colors in a pixel. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} \hyperlink{color_8c_a27a789b40d98e5ea558eb6b37d752e01}{imel\+\_\+color\+\_\+sum} (\hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} a, \hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} b)
+\begin{DoxyCompactList}\small\item\em Sum two colors. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} \hyperlink{color_8c_a94e41b5ec4f9170933fc108cea098c35}{imel\+\_\+color\+\_\+subtract} (\hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} a, \hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} b)
+\begin{DoxyCompactList}\small\item\em Subtract two colors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains functions to operate with colors. 
+
+\begin{DoxyAuthor}{Author}
+Davide Francesco Merico These functions allow you to add, subtract or extract information relative to the colors inside Imel types. 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\index{color.\+c@{color.\+c}!imel\+\_\+color\+\_\+get\+\_\+from\+\_\+pixel@{imel\+\_\+color\+\_\+get\+\_\+from\+\_\+pixel}}
+\index{imel\+\_\+color\+\_\+get\+\_\+from\+\_\+pixel@{imel\+\_\+color\+\_\+get\+\_\+from\+\_\+pixel}!color.\+c@{color.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+color\+\_\+get\+\_\+from\+\_\+pixel(\+Imel\+Pixel pixel)}{imel_color_get_from_pixel(ImelPixel pixel)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Color}$\ast$ imel\+\_\+color\+\_\+get\+\_\+from\+\_\+pixel (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Pixel}}]{pixel}
+\end{DoxyParamCaption}
+)}\hypertarget{color_8c_a4cbbac29a4bacd39beaaf01eee111b0e}{}\label{color_8c_a4cbbac29a4bacd39beaaf01eee111b0e}
+
+
+Gets an array with the colors in a pixel. 
+
+This function make a color array with rgb value in {\ttfamily pixel}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pixel} & Pixel from which get the colors. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An array with R\+GB channels of {\ttfamily pixel}. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Each channel can be setted to 0 if {\ttfamily pixel} level is less then -\/255. 
+\end{DoxyNote}
+\index{color.\+c@{color.\+c}!imel\+\_\+color\+\_\+get\+\_\+number@{imel\+\_\+color\+\_\+get\+\_\+number}}
+\index{imel\+\_\+color\+\_\+get\+\_\+number@{imel\+\_\+color\+\_\+get\+\_\+number}!color.\+c@{color.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+color\+\_\+get\+\_\+number(\+Imel\+Image $\ast$image, Imel\+Size $\ast$number)}{imel_color_get_number(ImelImage *image, ImelSize *number)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Pixel}$\ast$$\ast$ imel\+\_\+color\+\_\+get\+\_\+number (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size} $\ast$}]{number}
+\end{DoxyParamCaption}
+)}\hypertarget{color_8c_aed504db1eeedb03f0042a8983de1881c}{}\label{color_8c_aed504db1eeedb03f0042a8983de1881c}
+
+
+Gets a list of unique colors in an image. 
+
+This function get the unique colors number in {\ttfamily image} and return a list of this colors.
+
+
+\begin{DoxyCode}
+1 ImelImage *image = imel\_image\_new\_from ("image.png", 0, NULL);
+2 ImelSize n\_colors;
+3 ImelPixel *list;
+4 
+5 list = imel\_color\_get\_number (image, &n\_colors);
+6 ...
+7 free (list);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image from which exract the colors \\
+\hline
+{\em number} & In this variabile can be saved the colors number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\+U\+LL if {\ttfamily image} isn\textquotesingle{}t valid, else a N\+U\+L\+L-\/terminated list with the found colors. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Each pixel of the returned list is linked to an {\ttfamily image} pixel, to free memory call free only on list as in example above. 
+\end{DoxyWarning}
+\index{color.\+c@{color.\+c}!imel\+\_\+color\+\_\+set\+\_\+background@{imel\+\_\+color\+\_\+set\+\_\+background}}
+\index{imel\+\_\+color\+\_\+set\+\_\+background@{imel\+\_\+color\+\_\+set\+\_\+background}!color.\+c@{color.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+color\+\_\+set\+\_\+background(\+Imel\+Image $\ast$image, Imel\+Pixel pixel)}{imel_color_set_background(ImelImage *image, ImelPixel pixel)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+color\+\_\+set\+\_\+background (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Pixel}}]{pixel}
+\end{DoxyParamCaption}
+)}\hypertarget{color_8c_a683618c6373e0b3408b62eb2ad66bed0}{}\label{color_8c_a683618c6373e0b3408b62eb2ad66bed0}
+
+
+Sets a background color to a chosen image. 
+
+This function copy through \hyperlink{pixel_8c_a9bc6aa8b3ec663f1635827b0ebbdf46a}{imel\+\_\+pixel\+\_\+copy} {\ttfamily pixel} in each pixel of {\ttfamily image}.
+
+
+\begin{DoxyCode}
+1 ImelImage *image = imel\_image\_new\_from ("image.gif", 0, NULL);
+2 ImelPixel bg\_pixel = \{ 255, 255, 255, 0 \};
+3 
+4 imel\_color\_set\_background (image, bg\_pixel);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to set a new background \\
+\hline
+{\em pixel} & Background color\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{pixel_8c_a9bc6aa8b3ec663f1635827b0ebbdf46a}{imel\+\_\+pixel\+\_\+copy} 
+\end{DoxySeeAlso}
+\index{color.\+c@{color.\+c}!imel\+\_\+color\+\_\+subtract@{imel\+\_\+color\+\_\+subtract}}
+\index{imel\+\_\+color\+\_\+subtract@{imel\+\_\+color\+\_\+subtract}!color.\+c@{color.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+color\+\_\+subtract(\+Imel\+Color a, Imel\+Color b)}{imel_color_subtract(ImelColor a, ImelColor b)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Color} imel\+\_\+color\+\_\+subtract (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Color}}]{a, }
+\item[{{\bf Imel\+Color}}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{color_8c_a94e41b5ec4f9170933fc108cea098c35}{}\label{color_8c_a94e41b5ec4f9170933fc108cea098c35}
+
+
+Subtract two colors. 
+
+This function subtract {\ttfamily b} from {\ttfamily a}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First color \\
+\hline
+{\em b} & Second color \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A color with the result of {\ttfamily b} -\/ {\ttfamily a}, if the result is less then 0 return 0. 
+\end{DoxyReturn}
+\index{color.\+c@{color.\+c}!imel\+\_\+color\+\_\+sum@{imel\+\_\+color\+\_\+sum}}
+\index{imel\+\_\+color\+\_\+sum@{imel\+\_\+color\+\_\+sum}!color.\+c@{color.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+color\+\_\+sum(\+Imel\+Color a, Imel\+Color b)}{imel_color_sum(ImelColor a, ImelColor b)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Color} imel\+\_\+color\+\_\+sum (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Color}}]{a, }
+\item[{{\bf Imel\+Color}}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{color_8c_a27a789b40d98e5ea558eb6b37d752e01}{}\label{color_8c_a27a789b40d98e5ea558eb6b37d752e01}
+
+
+Sum two colors. 
+
+This function sum colors {\ttfamily a} and {\ttfamily b}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First color \\
+\hline
+{\em b} & Second color \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A color with the sum of {\ttfamily a} and {\ttfamily b}, if the sum result is greater then 255 return 255. 
+\end{DoxyReturn}

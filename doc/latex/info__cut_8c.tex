@@ -1,0 +1,427 @@
+\hypertarget{info__cut_8c}{}\section{info\+\_\+cut.\+c File Reference}
+\label{info__cut_8c}\index{info\+\_\+cut.\+c@{info\+\_\+cut.\+c}}
+
+
+This file contains functions to operate with guide lines.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}header.\+h\char`\"{}}\\*
+Include dependency graph for info\+\_\+cut.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{info__cut_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$ \hyperlink{info__cut_8c_ad06ec44d23c494c1f501d03de880007e}{imel\+\_\+info\+\_\+cut\+\_\+new} (\hyperlink{header_8h_aef27fcac7a96d118b3c3194c2577049f}{Imel\+Orientation} orientation, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} position)
+\begin{DoxyCompactList}\small\item\em Make a new guide. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$ \hyperlink{info__cut_8c_aa8e34152e2f5716e6a195ee1b8107f85}{imel\+\_\+info\+\_\+cut\+\_\+add} (\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$cut\+\_\+info, \hyperlink{header_8h_aef27fcac7a96d118b3c3194c2577049f}{Imel\+Orientation} orientation, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} position)
+\begin{DoxyCompactList}\small\item\em Add a guide line to existed list. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$ \hyperlink{info__cut_8c_a7d91db7c5670991c5480d2d642b2c05e}{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+index} (\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$info\+\_\+cut, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} index)
+\begin{DoxyCompactList}\small\item\em Get the element to a chosen index. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$ \hyperlink{info__cut_8c_a7de81c5bb96188056da6a3f623cc051a}{imel\+\_\+info\+\_\+cut\+\_\+copy\+\_\+index} (\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$info\+\_\+cut, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} index)
+\begin{DoxyCompactList}\small\item\em Copy the element to a chosen index. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$ \hyperlink{info__cut_8c_a7f6e806fc4c44dcec585faa0f98fd568}{imel\+\_\+info\+\_\+cut\+\_\+copy} (\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$info\+\_\+cut)
+\begin{DoxyCompactList}\small\item\em Duplicate a guide lines list. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$ \hyperlink{info__cut_8c_a8242b3f5a1f69a298d509dfab9940fa4}{imel\+\_\+info\+\_\+cut\+\_\+remove\+\_\+element} (\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$cut\+\_\+info, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} index)
+\begin{DoxyCompactList}\small\item\em Remove a guide line from a list. \end{DoxyCompactList}\item 
+void \hyperlink{info__cut_8c_a73ba0a29544436cf4248c71a935560cd}{imel\+\_\+info\+\_\+cut\+\_\+free} (\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$cut\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Free the memory of a guide lines list. \end{DoxyCompactList}\item 
+void \hyperlink{info__cut_8c_a8ab936dfd037dbc4bf7fdeb3e746ae78}{imel\+\_\+info\+\_\+cut\+\_\+swap\+\_\+index} (\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$cut\+\_\+info, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} index\+\_\+a, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} index\+\_\+b)
+\begin{DoxyCompactList}\small\item\em Swap two element of a guide lines list. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \hyperlink{info__cut_8c_a1a500fbdf3ddde14224fbf307f0162dc}{imel\+\_\+info\+\_\+cut\+\_\+count} (\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$cut\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Count the element in a guide lines list. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$ \hyperlink{info__cut_8c_afcc7e864b9efccf6f68d5c17c4ac15f4}{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+next} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$cut\+\_\+info, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} index)
+\begin{DoxyCompactList}\small\item\em Get the next guide line on the same axis. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$ \hyperlink{info__cut_8c_a0701899b2a5d8bfddfb3b8f1c630cc46}{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+prev} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$cut\+\_\+info, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} index)
+\begin{DoxyCompactList}\small\item\em Get the previous guide line on the same axis. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$ \hyperlink{info__cut_8c_a9acfc735dbe2584b7baf13152e49e4a7}{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+min} (\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$cut\+\_\+info, \hyperlink{header_8h_aef27fcac7a96d118b3c3194c2577049f}{Imel\+Orientation} orientation)
+\begin{DoxyCompactList}\small\item\em Get the first guide line on the chosen axis. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$ \hyperlink{info__cut_8c_a9b8fef15e9ff4c43a111476fba37a338}{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+max} (\hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$cut\+\_\+info, \hyperlink{header_8h_aef27fcac7a96d118b3c3194c2577049f}{Imel\+Orientation} orientation)
+\begin{DoxyCompactList}\small\item\em Get the last guide line on the chosen axis. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \hyperlink{info__cut_8c_a796c4e05878ccbea05ed360906b05aab}{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+split} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$cut\+\_\+info, \hyperlink{header_8h_aef27fcac7a96d118b3c3194c2577049f}{Imel\+Orientation} orientation)
+\begin{DoxyCompactList}\small\item\em Get the split number of an image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains functions to operate with guide lines. 
+
+\begin{DoxyAuthor}{Author}
+Davide Francesco Merico 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\index{info\+\_\+cut.\+c@{info\+\_\+cut.\+c}!imel\+\_\+info\+\_\+cut\+\_\+add@{imel\+\_\+info\+\_\+cut\+\_\+add}}
+\index{imel\+\_\+info\+\_\+cut\+\_\+add@{imel\+\_\+info\+\_\+cut\+\_\+add}!info\+\_\+cut.\+c@{info\+\_\+cut.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+info\+\_\+cut\+\_\+add(\+Imel\+Info\+Cut $\ast$cut\+\_\+info, Imel\+Orientation orientation, Imel\+Size position)}{imel_info_cut_add(ImelInfoCut *cut_info, ImelOrientation orientation, ImelSize position)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Info\+Cut}$\ast$ imel\+\_\+info\+\_\+cut\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Info\+Cut} $\ast$}]{cut\+\_\+info, }
+\item[{{\bf Imel\+Orientation}}]{orientation, }
+\item[{{\bf Imel\+Size}}]{position}
+\end{DoxyParamCaption}
+)}\hypertarget{info__cut_8c_aa8e34152e2f5716e6a195ee1b8107f85}{}\label{info__cut_8c_aa8e34152e2f5716e6a195ee1b8107f85}
+
+
+Add a guide line to existed list. 
+
+This function add a new guide line to an existed list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cut\+\_\+info} & Guide lines list \\
+\hline
+{\em orientation} & Guide line orientation \\
+\hline
+{\em position} & Guide line position on chosen axis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to new start of {\ttfamily cut\+\_\+info} list or N\+U\+LL on error
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_aef27fcac7a96d118b3c3194c2577049f}{Imel\+Orientation} 
+
+\hyperlink{info__cut_8c_ad06ec44d23c494c1f501d03de880007e}{imel\+\_\+info\+\_\+cut\+\_\+new} 
+
+\hyperlink{info__cut_8c_a8242b3f5a1f69a298d509dfab9940fa4}{imel\+\_\+info\+\_\+cut\+\_\+remove\+\_\+element} 
+\end{DoxySeeAlso}
+\index{info\+\_\+cut.\+c@{info\+\_\+cut.\+c}!imel\+\_\+info\+\_\+cut\+\_\+copy@{imel\+\_\+info\+\_\+cut\+\_\+copy}}
+\index{imel\+\_\+info\+\_\+cut\+\_\+copy@{imel\+\_\+info\+\_\+cut\+\_\+copy}!info\+\_\+cut.\+c@{info\+\_\+cut.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+info\+\_\+cut\+\_\+copy(\+Imel\+Info\+Cut $\ast$info\+\_\+cut)}{imel_info_cut_copy(ImelInfoCut *info_cut)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Info\+Cut}$\ast$ imel\+\_\+info\+\_\+cut\+\_\+copy (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Info\+Cut} $\ast$}]{info\+\_\+cut}
+\end{DoxyParamCaption}
+)}\hypertarget{info__cut_8c_a7f6e806fc4c44dcec585faa0f98fd568}{}\label{info__cut_8c_a7f6e806fc4c44dcec585faa0f98fd568}
+
+
+Duplicate a guide lines list. 
+
+This function duplicate the {\ttfamily info\+\_\+cut} list passed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em info\+\_\+cut} & Guide lines list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A copy of {\ttfamily info\+\_\+cut} 
+\end{DoxyReturn}
+\index{info\+\_\+cut.\+c@{info\+\_\+cut.\+c}!imel\+\_\+info\+\_\+cut\+\_\+copy\+\_\+index@{imel\+\_\+info\+\_\+cut\+\_\+copy\+\_\+index}}
+\index{imel\+\_\+info\+\_\+cut\+\_\+copy\+\_\+index@{imel\+\_\+info\+\_\+cut\+\_\+copy\+\_\+index}!info\+\_\+cut.\+c@{info\+\_\+cut.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+info\+\_\+cut\+\_\+copy\+\_\+index(\+Imel\+Info\+Cut $\ast$info\+\_\+cut, Imel\+Size index)}{imel_info_cut_copy_index(ImelInfoCut *info_cut, ImelSize index)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Info\+Cut}$\ast$ imel\+\_\+info\+\_\+cut\+\_\+copy\+\_\+index (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Info\+Cut} $\ast$}]{info\+\_\+cut, }
+\item[{{\bf Imel\+Size}}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{info__cut_8c_a7de81c5bb96188056da6a3f623cc051a}{}\label{info__cut_8c_a7de81c5bb96188056da6a3f623cc051a}
+
+
+Copy the element to a chosen index. 
+
+This function copy the element in {\ttfamily info\+\_\+cut} which its index is equal to {\ttfamily index}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em info\+\_\+cut} & Guide lines list \\
+\hline
+{\em index} & Chosen element index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new Imel\+Info\+Cut element or N\+U\+LL on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{info__cut_8c_a7d91db7c5670991c5480d2d642b2c05e}{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+index} 
+
+\hyperlink{info__cut_8c_a73ba0a29544436cf4248c71a935560cd}{imel\+\_\+info\+\_\+cut\+\_\+free} 
+\end{DoxySeeAlso}
+\index{info\+\_\+cut.\+c@{info\+\_\+cut.\+c}!imel\+\_\+info\+\_\+cut\+\_\+count@{imel\+\_\+info\+\_\+cut\+\_\+count}}
+\index{imel\+\_\+info\+\_\+cut\+\_\+count@{imel\+\_\+info\+\_\+cut\+\_\+count}!info\+\_\+cut.\+c@{info\+\_\+cut.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+info\+\_\+cut\+\_\+count(\+Imel\+Info\+Cut $\ast$cut\+\_\+info)}{imel_info_cut_count(ImelInfoCut *cut_info)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Size} imel\+\_\+info\+\_\+cut\+\_\+count (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Info\+Cut} $\ast$}]{cut\+\_\+info}
+\end{DoxyParamCaption}
+)}\hypertarget{info__cut_8c_a1a500fbdf3ddde14224fbf307f0162dc}{}\label{info__cut_8c_a1a500fbdf3ddde14224fbf307f0162dc}
+
+
+Count the element in a guide lines list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cut\+\_\+info} & Guide lines list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Elements number or 0 on error.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Same as {\ttfamily cut\+\_\+info-\/$>$index + 1} 
+\end{DoxyNote}
+\index{info\+\_\+cut.\+c@{info\+\_\+cut.\+c}!imel\+\_\+info\+\_\+cut\+\_\+free@{imel\+\_\+info\+\_\+cut\+\_\+free}}
+\index{imel\+\_\+info\+\_\+cut\+\_\+free@{imel\+\_\+info\+\_\+cut\+\_\+free}!info\+\_\+cut.\+c@{info\+\_\+cut.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+info\+\_\+cut\+\_\+free(\+Imel\+Info\+Cut $\ast$cut\+\_\+info)}{imel_info_cut_free(ImelInfoCut *cut_info)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+info\+\_\+cut\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Info\+Cut} $\ast$}]{cut\+\_\+info}
+\end{DoxyParamCaption}
+)}\hypertarget{info__cut_8c_a73ba0a29544436cf4248c71a935560cd}{}\label{info__cut_8c_a73ba0a29544436cf4248c71a935560cd}
+
+
+Free the memory of a guide lines list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cut\+\_\+info} & Guide lines list to free\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{info__cut_8c_ad06ec44d23c494c1f501d03de880007e}{imel\+\_\+info\+\_\+cut\+\_\+new} 
+\end{DoxySeeAlso}
+\index{info\+\_\+cut.\+c@{info\+\_\+cut.\+c}!imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+index@{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+index}}
+\index{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+index@{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+index}!info\+\_\+cut.\+c@{info\+\_\+cut.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+index(\+Imel\+Info\+Cut $\ast$info\+\_\+cut, Imel\+Size index)}{imel_info_cut_get_index(ImelInfoCut *info_cut, ImelSize index)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Info\+Cut}$\ast$ imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+index (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Info\+Cut} $\ast$}]{info\+\_\+cut, }
+\item[{{\bf Imel\+Size}}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{info__cut_8c_a7d91db7c5670991c5480d2d642b2c05e}{}\label{info__cut_8c_a7d91db7c5670991c5480d2d642b2c05e}
+
+
+Get the element to a chosen index. 
+
+This function get the element in {\ttfamily info\+\_\+cut} which its index is equal to {\ttfamily index}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em info\+\_\+cut} & Guide lines list \\
+\hline
+{\em index} & Chosen element index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the element if found it or N\+U\+LL on error 
+\end{DoxyReturn}
+\index{info\+\_\+cut.\+c@{info\+\_\+cut.\+c}!imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+max@{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+max}}
+\index{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+max@{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+max}!info\+\_\+cut.\+c@{info\+\_\+cut.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+max(\+Imel\+Info\+Cut $\ast$cut\+\_\+info, Imel\+Orientation orientation)}{imel_info_cut_get_max(ImelInfoCut *cut_info, ImelOrientation orientation)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Info\+Cut}$\ast$ imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+max (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Info\+Cut} $\ast$}]{cut\+\_\+info, }
+\item[{{\bf Imel\+Orientation}}]{orientation}
+\end{DoxyParamCaption}
+)}\hypertarget{info__cut_8c_a9b8fef15e9ff4c43a111476fba37a338}{}\label{info__cut_8c_a9b8fef15e9ff4c43a111476fba37a338}
+
+
+Get the last guide line on the chosen axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cut\+\_\+info} & Guide lines list \\
+\hline
+{\em orientation} & Reference axis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the last guide line, based on it position or N\+U\+LL on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{info__cut_8c_a9acfc735dbe2584b7baf13152e49e4a7}{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+min} 
+
+\hyperlink{info__cut_8c_a0701899b2a5d8bfddfb3b8f1c630cc46}{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+prev} 
+\end{DoxySeeAlso}
+\index{info\+\_\+cut.\+c@{info\+\_\+cut.\+c}!imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+min@{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+min}}
+\index{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+min@{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+min}!info\+\_\+cut.\+c@{info\+\_\+cut.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+min(\+Imel\+Info\+Cut $\ast$cut\+\_\+info, Imel\+Orientation orientation)}{imel_info_cut_get_min(ImelInfoCut *cut_info, ImelOrientation orientation)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Info\+Cut}$\ast$ imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+min (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Info\+Cut} $\ast$}]{cut\+\_\+info, }
+\item[{{\bf Imel\+Orientation}}]{orientation}
+\end{DoxyParamCaption}
+)}\hypertarget{info__cut_8c_a9acfc735dbe2584b7baf13152e49e4a7}{}\label{info__cut_8c_a9acfc735dbe2584b7baf13152e49e4a7}
+
+
+Get the first guide line on the chosen axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cut\+\_\+info} & Guide lines list \\
+\hline
+{\em orientation} & Reference axis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the first guide line, based on it position or N\+U\+LL on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{info__cut_8c_a9b8fef15e9ff4c43a111476fba37a338}{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+max} 
+
+\hyperlink{info__cut_8c_afcc7e864b9efccf6f68d5c17c4ac15f4}{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+next} 
+\end{DoxySeeAlso}
+\index{info\+\_\+cut.\+c@{info\+\_\+cut.\+c}!imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+next@{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+next}}
+\index{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+next@{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+next}!info\+\_\+cut.\+c@{info\+\_\+cut.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+next(\+Imel\+Image $\ast$image, Imel\+Info\+Cut $\ast$cut\+\_\+info, Imel\+Size index)}{imel_info_cut_get_next(ImelImage *image, ImelInfoCut *cut_info, ImelSize index)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Info\+Cut}$\ast$ imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+next (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Info\+Cut} $\ast$}]{cut\+\_\+info, }
+\item[{{\bf Imel\+Size}}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{info__cut_8c_afcc7e864b9efccf6f68d5c17c4ac15f4}{}\label{info__cut_8c_afcc7e864b9efccf6f68d5c17c4ac15f4}
+
+
+Get the next guide line on the same axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image reference for the guide lines \\
+\hline
+{\em cut\+\_\+info} & Guide lines list \\
+\hline
+{\em index} & Index of the current guide line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the next guide line, based on their position, or N\+U\+LL on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{info__cut_8c_a0701899b2a5d8bfddfb3b8f1c630cc46}{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+prev} 
+\end{DoxySeeAlso}
+\index{info\+\_\+cut.\+c@{info\+\_\+cut.\+c}!imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+prev@{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+prev}}
+\index{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+prev@{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+prev}!info\+\_\+cut.\+c@{info\+\_\+cut.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+prev(\+Imel\+Image $\ast$image, Imel\+Info\+Cut $\ast$cut\+\_\+info, Imel\+Size index)}{imel_info_cut_get_prev(ImelImage *image, ImelInfoCut *cut_info, ImelSize index)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Info\+Cut}$\ast$ imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+prev (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Info\+Cut} $\ast$}]{cut\+\_\+info, }
+\item[{{\bf Imel\+Size}}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{info__cut_8c_a0701899b2a5d8bfddfb3b8f1c630cc46}{}\label{info__cut_8c_a0701899b2a5d8bfddfb3b8f1c630cc46}
+
+
+Get the previous guide line on the same axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image reference for the guide lines \\
+\hline
+{\em cut\+\_\+info} & Guide lines list \\
+\hline
+{\em index} & Index of the current guide line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the previous guide line, based on their position, or N\+U\+LL on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{info__cut_8c_afcc7e864b9efccf6f68d5c17c4ac15f4}{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+next} 
+\end{DoxySeeAlso}
+\index{info\+\_\+cut.\+c@{info\+\_\+cut.\+c}!imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+split@{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+split}}
+\index{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+split@{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+split}!info\+\_\+cut.\+c@{info\+\_\+cut.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+split(\+Imel\+Image $\ast$image, Imel\+Info\+Cut $\ast$cut\+\_\+info, Imel\+Orientation orientation)}{imel_info_cut_get_split(ImelImage *image, ImelInfoCut *cut_info, ImelOrientation orientation)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Size} imel\+\_\+info\+\_\+cut\+\_\+get\+\_\+split (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Info\+Cut} $\ast$}]{cut\+\_\+info, }
+\item[{{\bf Imel\+Orientation}}]{orientation}
+\end{DoxyParamCaption}
+)}\hypertarget{info__cut_8c_a796c4e05878ccbea05ed360906b05aab}{}\label{info__cut_8c_a796c4e05878ccbea05ed360906b05aab}
+
+
+Get the split number of an image. 
+
+This function get the number of the areas which the {\ttfamily image} will be splitted if cutted with the guide lines in {\ttfamily cut\+\_\+info} list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image reference \\
+\hline
+{\em cut\+\_\+info} & Guide lines list \\
+\hline
+{\em orientation} & Reference axis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of areas resulted by hypotetical cuts 
+\end{DoxyReturn}
+\index{info\+\_\+cut.\+c@{info\+\_\+cut.\+c}!imel\+\_\+info\+\_\+cut\+\_\+new@{imel\+\_\+info\+\_\+cut\+\_\+new}}
+\index{imel\+\_\+info\+\_\+cut\+\_\+new@{imel\+\_\+info\+\_\+cut\+\_\+new}!info\+\_\+cut.\+c@{info\+\_\+cut.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+info\+\_\+cut\+\_\+new(\+Imel\+Orientation orientation, Imel\+Size position)}{imel_info_cut_new(ImelOrientation orientation, ImelSize position)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Info\+Cut}$\ast$ imel\+\_\+info\+\_\+cut\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Orientation}}]{orientation, }
+\item[{{\bf Imel\+Size}}]{position}
+\end{DoxyParamCaption}
+)}\hypertarget{info__cut_8c_ad06ec44d23c494c1f501d03de880007e}{}\label{info__cut_8c_ad06ec44d23c494c1f501d03de880007e}
+
+
+Make a new guide. 
+
+This function make a new guide line with a chosen {\ttfamily orientation} and {\ttfamily position}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em orientation} & Guide line orientation \\
+\hline
+{\em position} & Guide line position on chosen axis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new guide line or N\+U\+LL on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_aef27fcac7a96d118b3c3194c2577049f}{Imel\+Orientation} 
+
+\hyperlink{info__cut_8c_aa8e34152e2f5716e6a195ee1b8107f85}{imel\+\_\+info\+\_\+cut\+\_\+add} 
+
+\hyperlink{info__cut_8c_a73ba0a29544436cf4248c71a935560cd}{imel\+\_\+info\+\_\+cut\+\_\+free} 
+\end{DoxySeeAlso}
+\index{info\+\_\+cut.\+c@{info\+\_\+cut.\+c}!imel\+\_\+info\+\_\+cut\+\_\+remove\+\_\+element@{imel\+\_\+info\+\_\+cut\+\_\+remove\+\_\+element}}
+\index{imel\+\_\+info\+\_\+cut\+\_\+remove\+\_\+element@{imel\+\_\+info\+\_\+cut\+\_\+remove\+\_\+element}!info\+\_\+cut.\+c@{info\+\_\+cut.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+info\+\_\+cut\+\_\+remove\+\_\+element(\+Imel\+Info\+Cut $\ast$cut\+\_\+info, Imel\+Size index)}{imel_info_cut_remove_element(ImelInfoCut *cut_info, ImelSize index)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Info\+Cut}$\ast$ imel\+\_\+info\+\_\+cut\+\_\+remove\+\_\+element (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Info\+Cut} $\ast$}]{cut\+\_\+info, }
+\item[{{\bf Imel\+Size}}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{info__cut_8c_a8242b3f5a1f69a298d509dfab9940fa4}{}\label{info__cut_8c_a8242b3f5a1f69a298d509dfab9940fa4}
+
+
+Remove a guide line from a list. 
+
+This function remove the element which index is equal to {\ttfamily index} in the {\ttfamily cut\+\_\+info} list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cut\+\_\+info} & Guide lines list \\
+\hline
+{\em index} & Index of the element to remove \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the start of the {\ttfamily cut\+\_\+info} passed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{info__cut_8c_aa8e34152e2f5716e6a195ee1b8107f85}{imel\+\_\+info\+\_\+cut\+\_\+add} 
+\end{DoxySeeAlso}
+\index{info\+\_\+cut.\+c@{info\+\_\+cut.\+c}!imel\+\_\+info\+\_\+cut\+\_\+swap\+\_\+index@{imel\+\_\+info\+\_\+cut\+\_\+swap\+\_\+index}}
+\index{imel\+\_\+info\+\_\+cut\+\_\+swap\+\_\+index@{imel\+\_\+info\+\_\+cut\+\_\+swap\+\_\+index}!info\+\_\+cut.\+c@{info\+\_\+cut.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+info\+\_\+cut\+\_\+swap\+\_\+index(\+Imel\+Info\+Cut $\ast$cut\+\_\+info, Imel\+Size index\+\_\+a, Imel\+Size index\+\_\+b)}{imel_info_cut_swap_index(ImelInfoCut *cut_info, ImelSize index_a, ImelSize index_b)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+info\+\_\+cut\+\_\+swap\+\_\+index (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Info\+Cut} $\ast$}]{cut\+\_\+info, }
+\item[{{\bf Imel\+Size}}]{index\+\_\+a, }
+\item[{{\bf Imel\+Size}}]{index\+\_\+b}
+\end{DoxyParamCaption}
+)}\hypertarget{info__cut_8c_a8ab936dfd037dbc4bf7fdeb3e746ae78}{}\label{info__cut_8c_a8ab936dfd037dbc4bf7fdeb3e746ae78}
+
+
+Swap two element of a guide lines list. 
+
+This function swap the element at index {\ttfamily index\+\_\+a} with the element at index {\ttfamily index\+\_\+b}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cut\+\_\+info} & Guide lines list \\
+\hline
+{\em index\+\_\+a} & Index of the first element \\
+\hline
+{\em index\+\_\+b} & Index of the second element \\
+\hline
+\end{DoxyParams}

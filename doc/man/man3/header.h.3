@@ -1,0 +1,952 @@
+.TH "header.h" 3 "Thu Sep 1 2016" "Version 3.0" "Imel" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+header.h \- This file contains types and macros used by Imel library\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdint\&.h>\fP
+.br
+\fC#include <stdarg\&.h>\fP
+.br
+\fC#include 'error\&.h'\fP
+.br
+\fC#include 'image_enum\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_imel_pixel\fP"
+.br
+.RI "\fIRappresentation of a pixel in Imel library\&. \fP"
+.ti -1c
+.RI "struct \fB_imel_image\fP"
+.br
+.RI "\fIRappresentation of an image in Imel library\&. \fP"
+.ti -1c
+.RI "struct \fB_imel_point\fP"
+.br
+.RI "\fIRappresentation of a point in Imel library\&. \fP"
+.ti -1c
+.RI "struct \fB_imel_error\fP"
+.br
+.RI "\fISpecialized type in reporting errors inside Imel\&. \fP"
+.ti -1c
+.RI "struct \fB_imel_info_cut\fP"
+.br
+.ti -1c
+.RI "struct \fB_imel_hsl\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBIMEL_VERSION_MAJOR\fP   3"
+.br
+.ti -1c
+.RI "#define \fBIMEL_VERSION_MINOR\fP   0"
+.br
+.ti -1c
+.RI "#define \fBRGBA_R_MASK\fP(val)   (((val) & 0xff000000) >> 24)"
+.br
+.ti -1c
+.RI "#define \fBRGBA_G_MASK\fP(val)   (((val) & 0xff0000) >> 16)"
+.br
+.ti -1c
+.RI "#define \fBRGBA_B_MASK\fP(val)   (((val) & 0xff00) >> 8)"
+.br
+.ti -1c
+.RI "#define \fBRGBA_A_MASK\fP(val)   ((val) & 0xff)"
+.br
+.ti -1c
+.RI "#define \fBDEG_TO_RAD\fP(val)   (0\&.017453292 * (val))"
+.br
+.ti -1c
+.RI "#define \fBRAD_TO_DEG\fP(val)   (57\&.29577951 * (val))"
+.br
+.ti -1c
+.RI "#define \fBreturn_var_if_fail\fP(condition,  var)"
+.br
+.ti -1c
+.RI "#define \fBreturn_if_fail\fP(condition)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef enum _bool_type \fBbool\fP"
+.br
+.ti -1c
+.RI "typedef uint32_t \fBImelSize\fP"
+.br
+.ti -1c
+.RI "typedef uint8_t \fBImelColor\fP"
+.br
+.ti -1c
+.RI "typedef int32_t \fBImelLevel\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_effect\fP \fBImelEffect\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_mask\fP \fBImelMask\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_logic_operation\fP \fBImelLogicOperation\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_font_size\fP \fBImelFontSize\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_histogram\fP \fBImelHistogram\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_histogram_layout\fP \fBImelHistogramLayout\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_orientation\fP \fBImelOrientation\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_level_operation\fP \fBImelLevelOperation\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_noise_operation\fP \fBImelNoiseOperation\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_pattern_operation\fP \fBImelPatternOperation\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_alignment\fP \fBImelAlignment\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_ref\fP \fBImelRef\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_value\fP \fBImelValue\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_imel_pixel\fP \fBImelPixel\fP"
+.br
+.RI "\fIRappresentation of a pixel in Imel library\&. \fP"
+.ti -1c
+.RI "typedef struct \fB_imel_image\fP \fBImelImage\fP"
+.br
+.RI "\fIRappresentation of an image in Imel library\&. \fP"
+.ti -1c
+.RI "typedef struct \fB_imel_point\fP \fBImelPoint\fP"
+.br
+.RI "\fIRappresentation of a point in Imel library\&. \fP"
+.ti -1c
+.RI "typedef struct \fB_imel_error\fP \fBImelError\fP"
+.br
+.RI "\fISpecialized type in reporting errors inside Imel\&. \fP"
+.ti -1c
+.RI "typedef struct \fB_imel_info_cut\fP \fBImelInfoCut\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_imel_hsl\fP \fBImelHSL\fP"
+.br
+.ti -1c
+.RI "typedef \fBImelImage\fP * \fBImelImagePtr\fP"
+.br
+.ti -1c
+.RI "typedef void * \fBImelGenericPtr\fP"
+.br
+.ti -1c
+.RI "typedef void(* \fBImelGenericFuncPtr\fP) (\fBImelImagePtr\fP, \fBImelGenericPtr\fP)"
+.br
+.in -1c
+.SS "Enumerations"
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbool\fP \fBimel_printf_debug\fP (const char *function, const char *filename, const char *error_level, char *__format,\&.\&.\&.)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file contains types and macros used by Imel library\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Davide Francesco Merico 
+.RE
+.PP
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DEG_TO_RAD(val)   (0\&.017453292 * (val))"
+Convert degrees to radians 
+.SS "#define IMEL_VERSION_MAJOR   3"
+Imel version major 
+.SS "#define IMEL_VERSION_MINOR   0"
+Imel version minor 
+.SS "#define RAD_TO_DEG(val)   (57\&.29577951 * (val))"
+Convert radians to degrees 
+.SS "#define return_if_fail(condition)"
+\fBValue:\fP
+.PP
+.nf
+if ( !(condition) ) { \\
+             imel_printf_debug (NULL, NULL, "warning", "condition failed\&.\n"); \
+             return; \
+        }
+.fi
+Return if \fCcondition\fP is TRUE 
+.SS "#define return_var_if_fail(condition, var)"
+\fBValue:\fP
+.PP
+.nf
+if ( !(condition) ) { \\
+             imel_printf_debug (NULL, NULL, "warning", "condition failed\&.\n"); \
+             return (var); \
+        }
+.fi
+Return \fCvar\fP if \fCcondition\fP is TRUE 
+.SS "#define RGBA_A_MASK(val)   ((val) & 0xff)"
+Mask for alpha channel in a RGBA value 
+.SS "#define RGBA_B_MASK(val)   (((val) & 0xff00) >> 8)"
+Mask for blue channel in a RGBA value 
+.SS "#define RGBA_G_MASK(val)   (((val) & 0xff0000) >> 16)"
+Mask for green channel in a RGBA value 
+.SS "#define RGBA_R_MASK(val)   (((val) & 0xff000000) >> 24)"
+Mask for red channel in a RGBA value 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef enum _bool_type  \fBbool\fP"
+Boolean type 
+.SS "typedef enum \fB_imel_alignment\fP  \fBImelAlignment\fP"
+ImelAlignment type\&. Specifies the image alignment\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_union\fP 
+.RE
+.PP
+
+.SS "typedef uint8_t \fBImelColor\fP"
+ImelColor type 
+.SS "typedef enum \fB_imel_effect\fP  \fBImelEffect\fP"
+Effects to apply through \fBimel_image_apply_effect\fP or some other function\&.
+.PP
+\fBNote:\fP
+.RS 4
+Enum values starts from 0 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_apply_effect\fP 
+.RE
+.PP
+
+.SS "typedef struct \fB_imel_error\fP  \fBImelError\fP"
+
+.PP
+Specialized type in reporting errors inside Imel\&. This type report an error if occurred when doing operations in Imel\&. Each error have a code and a description\&.
+.PP
+\fBNote:\fP
+.RS 4
+Usually it can be used in this way: 
+.PP
+.nf
+1 ImelImage *image;
+2 ImelError error;
+3 
+4 image = imel_image_new_from ("image\&.png", 0, &error);
+5 if ( !image ) {
+6      fprintf (stderr, "Error %d: %s\n", error\&.code, error\&.description);
+7      return 1;
+8 }
+
+.fi
+.PP
+ 
+.RE
+.PP
+
+.SS "typedef enum \fB_imel_font_size\fP  \fBImelFontSize\fP"
+ImelFontSize type\&. Enumerator created to facilitate the insertion of standard sizes for the internal fonts in Imel whose size is 14px or IMEL_FONT_SIZE_MEDIUM, other values have been incorporated to avoid as much as possible the presence of artifacts that degrade the image\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_font_write_string\fP 
+.PP
+\fBimel_font_write_vstring\fP 
+.RE
+.PP
+
+.SS "typedef void(* ImelGenericFuncPtr) (\fBImelImagePtr\fP, \fBImelGenericPtr\fP)"
+Generic function to operate with image and data\&. 
+.PP
+\fBNote:\fP
+.RS 4
+Used internally\&. 
+.RE
+.PP
+
+.SS "typedef void* \fBImelGenericPtr\fP"
+Generic pointer 
+.PP
+\fBNote:\fP
+.RS 4
+Used internally\&. 
+.RE
+.PP
+
+.SS "typedef enum \fB_imel_histogram\fP  \fBImelHistogram\fP"
+ImelHistogram type\&. Specifies which histogram to get from an image\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_get_histogram\fP 
+.PP
+\fBimel_image_get_histogram_image\fP 
+.RE
+.PP
+
+.SS "typedef enum \fB_imel_histogram_layout\fP  \fBImelHistogramLayout\fP"
+ImelhistogramLayout type\&. Specifies the histogram layout\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_get_histograms_image\fP 
+.RE
+.PP
+
+.SS "typedef struct \fB_imel_hsl\fP  \fBImelHSL\fP"
+This type can identify a color through HSL values\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_pixel_new_from_hsl\fP 
+.PP
+\fBimel_pixel_get_hsl\fP 
+.RE
+.PP
+
+.SS "typedef struct \fB_imel_image\fP  \fBImelImage\fP"
+
+.PP
+Rappresentation of an image in Imel library\&. The most important type of Imel with \fBImelPixel\fP is this\&. This type, in Imel, is an image which contains its resolution and its colors\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new\fP 
+.PP
+\fBimel_image_new_from\fP 
+.RE
+.PP
+
+.SS "typedef \fBImelImage\fP* \fBImelImagePtr\fP"
+Pointer to an \fBImelImage\fP
+.PP
+\fBNote:\fP
+.RS 4
+Used internally\&. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelImage\fP 
+.RE
+.PP
+
+.SS "typedef struct \fB_imel_info_cut\fP  \fBImelInfoCut\fP"
+This type collect information about the hypothetical lines that cut an image vertically or horizontally at a specific point\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_cut_grid\fP 
+.PP
+\fBimel_info_cut_new\fP 
+.PP
+\fBimel_info_cut_add\fP 
+.PP
+\fBimel_info_cut_free\fP 
+.RE
+.PP
+
+.SS "typedef int32_t \fBImelLevel\fP"
+ImelLivel type 
+.SS "typedef enum \fB_imel_level_operation\fP  \fBImelLevelOperation\fP"
+ImelLevelOperation type\&. Specifies operations with levels\&.
+.PP
+\fBNote:\fP
+.RS 4
+Enum values starts from 0 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_change_color_level\fP 
+.PP
+\fBimel_image_change_level\fP 
+.RE
+.PP
+
+.SS "typedef enum \fB_imel_logic_operation\fP  \fBImelLogicOperation\fP"
+ImelLogicOperation type\&. Specifies which logic operation to use\&.
+.PP
+\fBNote:\fP
+.RS 4
+Enum values starts from 0\&. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_apply_logic_operation\fP 
+.RE
+.PP
+
+.SS "typedef enum \fB_imel_mask\fP  \fBImelMask\fP"
+ImelMask type\&. Specifies one or more channels of an image to which to apply a given operation\&.
+.PP
+.PP
+.nf
+1 ImelMask red_blue = IMEL_MASK_RED | IMEL_MASK_BLUE;
+2 ImelMask green = IMEL_MASK_GREEN;
+3 ImelMask rgb = red_blue | green;
+.fi
+.PP
+ 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_remove_noise\fP 
+.PP
+\fBimel_image_apply_noise\fP 
+.PP
+\fBimel_image_apply_filter\fP 
+.PP
+\fBimel_image_remove_base_color\fP 
+.RE
+.PP
+
+.SS "typedef enum \fB_imel_noise_operation\fP  \fBImelNoiseOperation\fP"
+ImelNoiseOperation type\&. Specifies operations with the noise\&.
+.PP
+\fBNote:\fP
+.RS 4
+Enum values starts from 0 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_apply_noise\fP 
+.RE
+.PP
+
+.SS "typedef enum \fB_imel_orientation\fP  \fBImelOrientation\fP"
+ImelOrientation type\&. Specifies vertical or horizontal orientation\&.
+.PP
+\fBNote:\fP
+.RS 4
+Enum values starts from 0 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_draw_gradient\fP 
+.PP
+\fBimel_image_perspective\fP 
+.PP
+\fBimel_image_slant\fP 
+.PP
+\fBimel_image_shift\fP 
+.PP
+\fBimel_image_shift_lines\fP 
+.PP
+\fBimel_info_cut_add\fP 
+.RE
+.PP
+
+.SS "typedef enum \fB_imel_pattern_operation\fP  \fBImelPatternOperation\fP"
+ImelPatternOperation type\&. Specifies operations with patterns\&.
+.PP
+\fBNote:\fP
+.RS 4
+Enum values starts from 0 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_apply_pattern\fP 
+.RE
+.PP
+
+.SS "typedef struct \fB_imel_pixel\fP  \fBImelPixel\fP"
+
+.PP
+Rappresentation of a pixel in Imel library\&. This type is the fundamental one, includes all the information needed to create a pixel composed of the three basic colors and its importance or transparency\&.
+.PP
+.PP
+.nf
+1 ImelPixel m1_color = { 255, 255, 255, 0 };
+2 ImelPixel m2_color;
+3 
+4 m2_color = imel_pixel_new_from_string ('#ffffff', 0);
+.fi
+.PP
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_pixel_new\fP 
+.PP
+\fBimel_pixel_new_from_string\fP 
+.PP
+\fBimel_pixel_new_from_rgba\fP 
+.PP
+\fBimel_pixel_new_from_hsl\fP 
+.PP
+\fBimel_pixel_copy\fP
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+If two pixels have different level values when they are used in functions like \fBimel_pixel_copy\fP the first one can be replaced only if the second one has the same or greater level value\&. 
+.RE
+.PP
+
+.SS "typedef struct \fB_imel_point\fP  \fBImelPoint\fP"
+
+.PP
+Rappresentation of a point in Imel library\&. This type can rappresent a point with coordinates, color and level\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_point_new\fP 
+.RE
+.PP
+
+.SS "typedef enum \fB_imel_ref\fP  \fBImelRef\fP"
+ImelRef type\&. Specifies the reference\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_auto_cut\fP 
+.RE
+.PP
+
+.SS "typedef uint32_t \fBImelSize\fP"
+ImelSize type 
+.SS "typedef enum \fB_imel_value\fP  \fBImelValue\fP"
+ImelValue type\&. Specifies the units of measure\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_point_get_from_line\fP 
+.PP
+\fBimel_value_convert\fP 
+.RE
+.PP
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fB_imel_alignment\fP"
+ImelAlignment type\&. Specifies the image alignment\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_union\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_ALIGNMENT_TL \fP\fP
+Alignment: Top Left 
+.TP
+\fB\fIIMEL_ALIGNMENT_TR \fP\fP
+Alignment: Top Right 
+.TP
+\fB\fIIMEL_ALIGNMENT_BL \fP\fP
+Alignment: Bottom Left 
+.TP
+\fB\fIIMEL_ALIGNMENT_BR \fP\fP
+Alignment: Bottom Right 
+.SS "enum \fB_imel_effect\fP"
+Effects to apply through \fBimel_image_apply_effect\fP or some other function\&.
+.PP
+\fBNote:\fP
+.RS 4
+Enum values starts from 0 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_apply_effect\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_EFFECT_WHITE_BLACK \fP\fP
+Grayscale effect to an image\&. 
+.TP
+\fB\fIIMEL_EFFECT_ANTIQUE \fP\fP
+Antique effect ( less bright colors )\&. 
+.TP
+\fB\fIIMEL_EFFECT_INVERT \fP\fP
+Invert colors\&. 
+.TP
+\fB\fIIMEL_EFFECT_NORMALIZE \fP\fP
+Calculates the average of colors of the image and apply it to RGB channel selected\&. When used as a parameter for \fBimel_image_apply_effect\fP function takes as a parameter a value of ImelMask type (with the option to combine multiple channels with the OR operator)\&. 
+.TP
+\fB\fIIMEL_EFFECT_BRIGHTNESS \fP\fP
+Affect the image brightness\&. When used as a parameter for \fBimel_image_apply_effect\fP function takes as a parameter a value between -100 and +100\&. 
+.TP
+\fB\fIIMEL_EFFECT_CONTRAST_STRETCHING \fP\fP
+Auto contrast enhancement\&. 
+.TP
+\fB\fIIMEL_EFFECT_CONTRAST \fP\fP
+Affect the image contrast\&. When used as a parameter for \fBimel_image_apply_effect\fP function takes as a parameter a number between -127 and +128\&. 
+.TP
+\fB\fIIMEL_EFFECT_RASTERIZE \fP\fP
+Rasterizes the image, which divides the image into squares of size chosen, colored with the average of pixels that are inside each square\&. When used as a parameter for the \fBimel_image_apply_effect\fP function it takes as a parameter the size in pixels of the side of the square\&. 
+.TP
+\fB\fIIMEL_EFFECT_ANTIALIAS \fP\fP
+Apply antialiasing effect\&. First calculating the value that takes each pixel of the image and then sets it\&. When used as a parameter for \fBimel_image_apply_effect\fP function it takes as a parameter the number of pixels of the side of the square to be analyzed to calculate the value of the current pixel\&. 
+.TP
+\fB\fIIMEL_EFFECT_DIRECT_ANTIALIAS \fP\fP
+As IMEL_EFFECT_ANTIALIAS except for the fact that the value of the current pixel applies it immediately after it is calculated\&. 
+.TP
+\fB\fIIMEL_EFFECT_IMAGE_ADD \fP\fP
+Sum the colors of an image to the colors of another\&. When used as a parameter for the function \fBimel_image_apply_effect\fP requires as a parameter the image to be added\&. 
+.TP
+\fB\fIIMEL_EFFECT_IMAGE_SUBTRACT \fP\fP
+Subtract the colors of an image to the colors of another\&. When used as a parameter for the function \fBimel_image_apply_effect\fP requires as a parameter the image to be subtracted\&. 
+.TP
+\fB\fIIMEL_EFFECT_COLOR_TO_ALPHA \fP\fP
+It allows to bring a shade of color to transparency to creating the right shades so that the resulting image can be retrofit on a different background\&. It receives as a parameter the color to be eliminated in the form of pointer to \fBImelPixel\fP variable\&. 
+.SS "enum \fB_imel_font_size\fP"
+ImelFontSize type\&. Enumerator created to facilitate the insertion of standard sizes for the internal fonts in Imel whose size is 14px or IMEL_FONT_SIZE_MEDIUM, other values have been incorporated to avoid as much as possible the presence of artifacts that degrade the image\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_font_write_string\fP 
+.PP
+\fBimel_font_write_vstring\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_FONT_SIZE_SMALL \fP\fP
+Small Size: 7px 
+.TP
+\fB\fIIMEL_FONT_SIZE_MEDIUM \fP\fP
+Medium\\Original Size: 14px 
+.TP
+\fB\fIIMEL_FONT_SIZE_LARGE \fP\fP
+Large Size: 28px 
+.SS "enum \fB_imel_histogram\fP"
+ImelHistogram type\&. Specifies which histogram to get from an image\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_get_histogram\fP 
+.PP
+\fBimel_image_get_histogram_image\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_HISTOGRAM_RED \fP\fP
+It produces only the histogram for the Red channel\&. 
+.TP
+\fB\fIIMEL_HISTOGRAM_GREEN \fP\fP
+It produces only the histogram for the Green channel\&. 
+.TP
+\fB\fIIMEL_HISTOGRAM_BLUE \fP\fP
+It produces only the histogram for the Blue channel\&. 
+.TP
+\fB\fIIMEL_HISTOGRAM_COMPLETE \fP\fP
+It produces only the histogram for the image brightness\&. 
+.SS "enum \fB_imel_histogram_layout\fP"
+ImelhistogramLayout type\&. Specifies the histogram layout\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_get_histograms_image\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_HISTOGRAM_LAYOUT_VERTICAL \fP\fP
+It realizes the histograms with vertical layout 
+.TP
+\fB\fIIMEL_HISTOGRAM_LAYOUT_HORIZONTAL \fP\fP
+It realizes the histograms with horizontal layout 
+.TP
+\fB\fIIMEL_HISTOGRAM_LAYOUT_PANELS \fP\fP
+It realizes the histograms with panel layour 
+.SS "enum \fB_imel_level_operation\fP"
+ImelLevelOperation type\&. Specifies operations with levels\&.
+.PP
+\fBNote:\fP
+.RS 4
+Enum values starts from 0 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_change_color_level\fP 
+.PP
+\fBimel_image_change_level\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_LEVEL_OPERATION_SET \fP\fP
+Set the value 
+.TP
+\fB\fIIMEL_LEVEL_OPERATION_ADD \fP\fP
+Add the value an existed one 
+.SS "enum \fB_imel_logic_operation\fP"
+ImelLogicOperation type\&. Specifies which logic operation to use\&.
+.PP
+\fBNote:\fP
+.RS 4
+Enum values starts from 0\&. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_apply_logic_operation\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_LOGIC_AND \fP\fP
+Logic AND 
+.TP
+\fB\fIIMEL_LOGIC_OR \fP\fP
+Logic OR 
+.TP
+\fB\fIIMEL_LOGIC_XOR \fP\fP
+Logic XOR 
+.SS "enum \fB_imel_mask\fP"
+ImelMask type\&. Specifies one or more channels of an image to which to apply a given operation\&.
+.PP
+.PP
+.nf
+1 ImelMask red_blue = IMEL_MASK_RED | IMEL_MASK_BLUE;
+2 ImelMask green = IMEL_MASK_GREEN;
+3 ImelMask rgb = red_blue | green;
+.fi
+.PP
+ 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_remove_noise\fP 
+.PP
+\fBimel_image_apply_noise\fP 
+.PP
+\fBimel_image_apply_filter\fP 
+.PP
+\fBimel_image_remove_base_color\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_MASK_RED \fP\fP
+Red Mask ( Value: 1 ) 
+.TP
+\fB\fIIMEL_MASK_GREEN \fP\fP
+Green Mask ( Value: 2 ) 
+.TP
+\fB\fIIMEL_MASK_BLUE \fP\fP
+Blue Mask ( Value: 4 ) 
+.TP
+\fB\fIIMEL_MASK_LEVEL \fP\fP
+Level Mask ( Value: 8 ) 
+.SS "enum \fB_imel_noise_operation\fP"
+ImelNoiseOperation type\&. Specifies operations with the noise\&.
+.PP
+\fBNote:\fP
+.RS 4
+Enum values starts from 0 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_apply_noise\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_NOISE_OPERATION_SUM \fP\fP
+Sum Operation 
+.TP
+\fB\fIIMEL_NOISE_OPERATION_SUBTRACT \fP\fP
+Subtract Operation 
+.TP
+\fB\fIIMEL_NOISE_OPERATION_MULTIPLY \fP\fP
+Multiply Operation 
+.TP
+\fB\fIIMEL_NOISE_OPERATION_DIVIDE \fP\fP
+Divide Operation 
+.TP
+\fB\fIIMEL_NOISE_OPERATION_RANDOM \fP\fP
+Random Operation ( between the four above ) 
+.SS "enum \fB_imel_orientation\fP"
+ImelOrientation type\&. Specifies vertical or horizontal orientation\&.
+.PP
+\fBNote:\fP
+.RS 4
+Enum values starts from 0 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_draw_gradient\fP 
+.PP
+\fBimel_image_perspective\fP 
+.PP
+\fBimel_image_slant\fP 
+.PP
+\fBimel_image_shift\fP 
+.PP
+\fBimel_image_shift_lines\fP 
+.PP
+\fBimel_info_cut_add\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_ORIENTATION_HORIZONTAL \fP\fP
+Horizontal Orientation 
+.TP
+\fB\fIIMEL_ORIENTATION_VERTICAL \fP\fP
+Vertical Orientation 
+.SS "enum \fB_imel_pattern_operation\fP"
+ImelPatternOperation type\&. Specifies operations with patterns\&.
+.PP
+\fBNote:\fP
+.RS 4
+Enum values starts from 0 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_apply_pattern\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_PATTERN_OPERATION_INSERT \fP\fP
+Insert pattern over the original image 
+.TP
+\fB\fIIMEL_PATTERN_OPERATION_SUM \fP\fP
+Sum pattern colors to original image colors 
+.TP
+\fB\fIIMEL_PATTERN_OPERATION_SUBTRACT \fP\fP
+Subtract pattern colors from original image colors 
+.SS "enum \fB_imel_ref\fP"
+ImelRef type\&. Specifies the reference\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_auto_cut\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_REF_COLOR \fP\fP
+Reference to color 
+.TP
+\fB\fIIMEL_REF_LEVEL \fP\fP
+Reference to level 
+.SS "enum \fB_imel_value\fP"
+ImelValue type\&. Specifies the units of measure\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_point_get_from_line\fP 
+.PP
+\fBimel_value_convert\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_VALUE_PERCENTAGE \fP\fP
+Percentage 
+.TP
+\fB\fIIMEL_VALUE_PIXEL \fP\fP
+Pixel 
+.SH "Function Documentation"
+.PP 
+.SS "\fBbool\fP imel_printf_debug (const char * function, const char * filename, const char * error_level, char * __format,  \&.\&.\&.)"
+imel_debug_printf are foundamental for macro \fBreturn_if_fail\fP and \fBreturn_var_if_fail\fP\&. It print the message only if compiled with debug=true\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfunction\fP Name of the function where it's called or NULL 
+.br
+\fIfilename\fP Name of the file or NULL 
+.br
+\fIerror_level\fP Type of error ( Warning, Error, Info, \&.\&.\&. ) or NULL 
+.br
+\fI__format\fP Message 
+.br
+\fI\&.\&.\&.\fP Parameters requested by \fC__format\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE if debug=true, else FALSE 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Imel from the source code\&.

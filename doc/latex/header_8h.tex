@@ -1,0 +1,864 @@
+\hypertarget{header_8h}{}\section{header.\+h File Reference}
+\label{header_8h}\index{header.\+h@{header.\+h}}
+
+
+This file contains types and macros used by Imel library.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$stdarg.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}image\+\_\+enum.\+h\char`\"{}}\\*
+Include dependency graph for header.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{header_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{header_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__imel__pixel}{\+\_\+imel\+\_\+pixel}
+\begin{DoxyCompactList}\small\item\em Rappresentation of a pixel in Imel library. \end{DoxyCompactList}\item 
+struct \hyperlink{struct__imel__image}{\+\_\+imel\+\_\+image}
+\begin{DoxyCompactList}\small\item\em Rappresentation of an image in Imel library. \end{DoxyCompactList}\item 
+struct \hyperlink{struct__imel__point}{\+\_\+imel\+\_\+point}
+\begin{DoxyCompactList}\small\item\em Rappresentation of a point in Imel library. \end{DoxyCompactList}\item 
+struct \hyperlink{struct__imel__error}{\+\_\+imel\+\_\+error}
+\begin{DoxyCompactList}\small\item\em Specialized type in reporting errors inside Imel. \end{DoxyCompactList}\item 
+struct \hyperlink{struct__imel__info__cut}{\+\_\+imel\+\_\+info\+\_\+cut}
+\item 
+struct \hyperlink{struct__imel__hsl}{\+\_\+imel\+\_\+hsl}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{header_8h_a2ae0a8abf6869d91ed8f6847fb3b014d}{I\+M\+E\+L\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR}~3
+\item 
+\#define \hyperlink{header_8h_ac4bb99e092c40c1a0519fd1b9d538d82}{I\+M\+E\+L\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR}~0
+\item 
+\#define \hyperlink{header_8h_a2505069f13628a303bdf360de2d8490f}{R\+G\+B\+A\+\_\+\+R\+\_\+\+M\+A\+SK}(val)~(((val) \& 0xff000000) $>$$>$ 24)
+\item 
+\#define \hyperlink{header_8h_a632c40a96aac3972b668bb536fb1af06}{R\+G\+B\+A\+\_\+\+G\+\_\+\+M\+A\+SK}(val)~(((val) \& 0xff0000) $>$$>$ 16)
+\item 
+\#define \hyperlink{header_8h_ade6c182c68e6a0a7638eb05a6143f3f0}{R\+G\+B\+A\+\_\+\+B\+\_\+\+M\+A\+SK}(val)~(((val) \& 0xff00) $>$$>$ 8)
+\item 
+\#define \hyperlink{header_8h_ac837716be1eb4f0071c03b7b4b4fb2b0}{R\+G\+B\+A\+\_\+\+A\+\_\+\+M\+A\+SK}(val)~((val) \& 0xff)
+\item 
+\#define \hyperlink{header_8h_a0978c9c7420f81adda347a7c6d22f085}{D\+E\+G\+\_\+\+T\+O\+\_\+\+R\+AD}(val)~(0.\+017453292 $\ast$ (val))
+\item 
+\#define \hyperlink{header_8h_adff9f86a929b90364f856932fc5e064f}{R\+A\+D\+\_\+\+T\+O\+\_\+\+D\+EG}(val)~(57.\+29577951 $\ast$ (val))
+\item 
+\#define \hyperlink{header_8h_aedf541d4162f35857638d2ececedc2d7}{return\+\_\+var\+\_\+if\+\_\+fail}(condition,  var)
+\item 
+\#define \hyperlink{header_8h_afa6c4a6400518363dd86d406785585b2}{return\+\_\+if\+\_\+fail}(condition)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \+\_\+bool\+\_\+type \hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool}
+\item 
+typedef uint32\+\_\+t \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size}
+\item 
+typedef uint8\+\_\+t \hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color}
+\item 
+typedef int32\+\_\+t \hyperlink{header_8h_a97bc4b146a807c2d83b966983132f4fc}{Imel\+Level}
+\item 
+typedef enum \hyperlink{header_8h_a765ae01cc88c760f3df918af6fd4943c}{\+\_\+imel\+\_\+effect} \hyperlink{header_8h_a4919a9d01ef8388db452c59507d67f2e}{Imel\+Effect}
+\item 
+typedef enum \hyperlink{header_8h_a5a8e15aebc9573a522ef1d8eb86bac6e}{\+\_\+imel\+\_\+mask} \hyperlink{header_8h_a9facf73fdf3eb7434d01cd1c07341a28}{Imel\+Mask}
+\item 
+typedef enum \hyperlink{header_8h_a9f975dccb73dc4b4f6f137cd80fc1387}{\+\_\+imel\+\_\+logic\+\_\+operation} \hyperlink{header_8h_af92bba14d49d8e59b2642eb300fedb5e}{Imel\+Logic\+Operation}
+\item 
+typedef enum \hyperlink{header_8h_abc4cf7641abd06646b239f69f7800e37}{\+\_\+imel\+\_\+font\+\_\+size} \hyperlink{header_8h_a6d4b2e3b4cd24301c1cf501e73176eed}{Imel\+Font\+Size}
+\item 
+typedef enum \hyperlink{header_8h_ace9df0e53e30f77ba713148ea7b106a8}{\+\_\+imel\+\_\+histogram} \hyperlink{header_8h_a8879c5e403ddb26c326b1cc2c3e529bf}{Imel\+Histogram}
+\item 
+typedef enum \hyperlink{header_8h_af6c0ec142c15baf126c12fbd5c57f322}{\+\_\+imel\+\_\+histogram\+\_\+layout} \hyperlink{header_8h_aacf376be43512b219081df71ed7ee438}{Imel\+Histogram\+Layout}
+\item 
+typedef enum \hyperlink{header_8h_a2165f253ebc3e84d406c905ab1d77e7f}{\+\_\+imel\+\_\+orientation} \hyperlink{header_8h_aef27fcac7a96d118b3c3194c2577049f}{Imel\+Orientation}
+\item 
+typedef enum \hyperlink{header_8h_a07a69c435daa766b8e1b6962f0956202}{\+\_\+imel\+\_\+level\+\_\+operation} \hyperlink{header_8h_abece8958e8db1e2826f21fd822c14694}{Imel\+Level\+Operation}
+\item 
+typedef enum \hyperlink{header_8h_aacc3beb92f2372f7d6ae2a9f8de1a567}{\+\_\+imel\+\_\+noise\+\_\+operation} \hyperlink{header_8h_abb411905768327b93668c636957a73ff}{Imel\+Noise\+Operation}
+\item 
+typedef enum \hyperlink{header_8h_a191ba3a796907e762b75b21308992809}{\+\_\+imel\+\_\+pattern\+\_\+operation} \hyperlink{header_8h_a7321d084db08c3a51089e8a4612b332b}{Imel\+Pattern\+Operation}
+\item 
+typedef enum \hyperlink{header_8h_aaf7d1762a05a9d183fd8b718cbb2d338}{\+\_\+imel\+\_\+alignment} \hyperlink{header_8h_a4d620b3c547205ca76d92f43f09320d1}{Imel\+Alignment}
+\item 
+typedef enum \hyperlink{header_8h_ad11ee694d9812e135c152f4623da3452}{\+\_\+imel\+\_\+ref} \hyperlink{header_8h_a6182c8947d12d828155f0fb8cb024209}{Imel\+Ref}
+\item 
+typedef enum \hyperlink{header_8h_aa326347c06714f71ccc11ba6eea7a08a}{\+\_\+imel\+\_\+value} \hyperlink{header_8h_a3b961ca2b6e1029ab77a0951c3ae7260}{Imel\+Value}
+\item 
+typedef struct \hyperlink{struct__imel__pixel}{\+\_\+imel\+\_\+pixel} \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel}
+\begin{DoxyCompactList}\small\item\em Rappresentation of a pixel in Imel library. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{struct__imel__image}{\+\_\+imel\+\_\+image} \hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image}
+\begin{DoxyCompactList}\small\item\em Rappresentation of an image in Imel library. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{struct__imel__point}{\+\_\+imel\+\_\+point} \hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point}
+\begin{DoxyCompactList}\small\item\em Rappresentation of a point in Imel library. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{struct__imel__error}{\+\_\+imel\+\_\+error} \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error}
+\begin{DoxyCompactList}\small\item\em Specialized type in reporting errors inside Imel. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{struct__imel__info__cut}{\+\_\+imel\+\_\+info\+\_\+cut} \hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut}
+\item 
+typedef struct \hyperlink{struct__imel__hsl}{\+\_\+imel\+\_\+hsl} \hyperlink{header_8h_a851541a4411924d91d8abd55939c3b23}{Imel\+H\+SL}
+\item 
+typedef \hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{header_8h_aaa14cf408b64a8162fd57c4b4c081e1a}{Imel\+Image\+Ptr}
+\item 
+typedef void $\ast$ \hyperlink{header_8h_a0a9244570c47547d00bfba1bb77d70f1}{Imel\+Generic\+Ptr}
+\item 
+typedef void($\ast$ \hyperlink{header_8h_afae32b8dba9014bfbe4456e85ddbb9ac}{Imel\+Generic\+Func\+Ptr}) (\hyperlink{header_8h_aaa14cf408b64a8162fd57c4b4c081e1a}{Imel\+Image\+Ptr}, \hyperlink{header_8h_a0a9244570c47547d00bfba1bb77d70f1}{Imel\+Generic\+Ptr})
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{header_8h_ad4629c597b8f8827434c9ca3b183c4de}{imel\+\_\+printf\+\_\+debug} (const char $\ast$function, const char $\ast$filename, const char $\ast$error\+\_\+level, char $\ast$\+\_\+\+\_\+format,...)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains types and macros used by Imel library. 
+
+\begin{DoxyAuthor}{Author}
+Davide Francesco Merico 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\index{header.\+h@{header.\+h}!D\+E\+G\+\_\+\+T\+O\+\_\+\+R\+AD@{D\+E\+G\+\_\+\+T\+O\+\_\+\+R\+AD}}
+\index{D\+E\+G\+\_\+\+T\+O\+\_\+\+R\+AD@{D\+E\+G\+\_\+\+T\+O\+\_\+\+R\+AD}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+G\+\_\+\+T\+O\+\_\+\+R\+AD}{DEG_TO_RAD}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+G\+\_\+\+T\+O\+\_\+\+R\+AD(
+\begin{DoxyParamCaption}
+\item[{}]{val}
+\end{DoxyParamCaption}
+)~(0.\+017453292 $\ast$ (val))}\hypertarget{header_8h_a0978c9c7420f81adda347a7c6d22f085}{}\label{header_8h_a0978c9c7420f81adda347a7c6d22f085}
+Convert degrees to radians \index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR@{I\+M\+E\+L\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR}}
+\index{I\+M\+E\+L\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR@{I\+M\+E\+L\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{I\+M\+E\+L\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR}{IMEL_VERSION_MAJOR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+M\+E\+L\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR~3}\hypertarget{header_8h_a2ae0a8abf6869d91ed8f6847fb3b014d}{}\label{header_8h_a2ae0a8abf6869d91ed8f6847fb3b014d}
+Imel version major \index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR@{I\+M\+E\+L\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR}}
+\index{I\+M\+E\+L\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR@{I\+M\+E\+L\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{I\+M\+E\+L\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR}{IMEL_VERSION_MINOR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+M\+E\+L\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR~0}\hypertarget{header_8h_ac4bb99e092c40c1a0519fd1b9d538d82}{}\label{header_8h_ac4bb99e092c40c1a0519fd1b9d538d82}
+Imel version minor \index{header.\+h@{header.\+h}!R\+A\+D\+\_\+\+T\+O\+\_\+\+D\+EG@{R\+A\+D\+\_\+\+T\+O\+\_\+\+D\+EG}}
+\index{R\+A\+D\+\_\+\+T\+O\+\_\+\+D\+EG@{R\+A\+D\+\_\+\+T\+O\+\_\+\+D\+EG}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+D\+\_\+\+T\+O\+\_\+\+D\+EG}{RAD_TO_DEG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+A\+D\+\_\+\+T\+O\+\_\+\+D\+EG(
+\begin{DoxyParamCaption}
+\item[{}]{val}
+\end{DoxyParamCaption}
+)~(57.\+29577951 $\ast$ (val))}\hypertarget{header_8h_adff9f86a929b90364f856932fc5e064f}{}\label{header_8h_adff9f86a929b90364f856932fc5e064f}
+Convert radians to degrees \index{header.\+h@{header.\+h}!return\+\_\+if\+\_\+fail@{return\+\_\+if\+\_\+fail}}
+\index{return\+\_\+if\+\_\+fail@{return\+\_\+if\+\_\+fail}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{return\+\_\+if\+\_\+fail}{return_if_fail}}]{\setlength{\rightskip}{0pt plus 5cm}\#define return\+\_\+if\+\_\+fail(
+\begin{DoxyParamCaption}
+\item[{}]{condition}
+\end{DoxyParamCaption}
+)}\hypertarget{header_8h_afa6c4a6400518363dd86d406785585b2}{}\label{header_8h_afa6c4a6400518363dd86d406785585b2}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} ( !(condition) ) \{ \hyperlink{header_8h_ad4629c597b8f8827434c9ca3b183c4de}{\(\backslash\)}
+\hyperlink{header_8h_ad4629c597b8f8827434c9ca3b183c4de}{             imel\_printf\_debug} (NULL, NULL, \textcolor{stringliteral}{"warning"}, \textcolor{stringliteral}{"condition failed.\(\backslash\)n"})
+      ; \(\backslash\)
+             return; \(\backslash\)
+        \}
+\end{DoxyCode}
+Return if {\ttfamily condition} is T\+R\+UE \index{header.\+h@{header.\+h}!return\+\_\+var\+\_\+if\+\_\+fail@{return\+\_\+var\+\_\+if\+\_\+fail}}
+\index{return\+\_\+var\+\_\+if\+\_\+fail@{return\+\_\+var\+\_\+if\+\_\+fail}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{return\+\_\+var\+\_\+if\+\_\+fail}{return_var_if_fail}}]{\setlength{\rightskip}{0pt plus 5cm}\#define return\+\_\+var\+\_\+if\+\_\+fail(
+\begin{DoxyParamCaption}
+\item[{}]{condition, }
+\item[{}]{var}
+\end{DoxyParamCaption}
+)}\hypertarget{header_8h_aedf541d4162f35857638d2ececedc2d7}{}\label{header_8h_aedf541d4162f35857638d2ececedc2d7}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} ( !(condition) ) \{ \hyperlink{header_8h_ad4629c597b8f8827434c9ca3b183c4de}{\(\backslash\)}
+\hyperlink{header_8h_ad4629c597b8f8827434c9ca3b183c4de}{             imel\_printf\_debug} (NULL, NULL, \textcolor{stringliteral}{"warning"}, \textcolor{stringliteral}{"condition failed.\(\backslash\)n"})
+      ; \(\backslash\)
+             return (var); \(\backslash\)
+        \}
+\end{DoxyCode}
+Return {\ttfamily var} if {\ttfamily condition} is T\+R\+UE \index{header.\+h@{header.\+h}!R\+G\+B\+A\+\_\+\+A\+\_\+\+M\+A\+SK@{R\+G\+B\+A\+\_\+\+A\+\_\+\+M\+A\+SK}}
+\index{R\+G\+B\+A\+\_\+\+A\+\_\+\+M\+A\+SK@{R\+G\+B\+A\+\_\+\+A\+\_\+\+M\+A\+SK}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{R\+G\+B\+A\+\_\+\+A\+\_\+\+M\+A\+SK}{RGBA_A_MASK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+B\+A\+\_\+\+A\+\_\+\+M\+A\+SK(
+\begin{DoxyParamCaption}
+\item[{}]{val}
+\end{DoxyParamCaption}
+)~((val) \& 0xff)}\hypertarget{header_8h_ac837716be1eb4f0071c03b7b4b4fb2b0}{}\label{header_8h_ac837716be1eb4f0071c03b7b4b4fb2b0}
+Mask for alpha channel in a R\+G\+BA value \index{header.\+h@{header.\+h}!R\+G\+B\+A\+\_\+\+B\+\_\+\+M\+A\+SK@{R\+G\+B\+A\+\_\+\+B\+\_\+\+M\+A\+SK}}
+\index{R\+G\+B\+A\+\_\+\+B\+\_\+\+M\+A\+SK@{R\+G\+B\+A\+\_\+\+B\+\_\+\+M\+A\+SK}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{R\+G\+B\+A\+\_\+\+B\+\_\+\+M\+A\+SK}{RGBA_B_MASK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+B\+A\+\_\+\+B\+\_\+\+M\+A\+SK(
+\begin{DoxyParamCaption}
+\item[{}]{val}
+\end{DoxyParamCaption}
+)~(((val) \& 0xff00) $>$$>$ 8)}\hypertarget{header_8h_ade6c182c68e6a0a7638eb05a6143f3f0}{}\label{header_8h_ade6c182c68e6a0a7638eb05a6143f3f0}
+Mask for blue channel in a R\+G\+BA value \index{header.\+h@{header.\+h}!R\+G\+B\+A\+\_\+\+G\+\_\+\+M\+A\+SK@{R\+G\+B\+A\+\_\+\+G\+\_\+\+M\+A\+SK}}
+\index{R\+G\+B\+A\+\_\+\+G\+\_\+\+M\+A\+SK@{R\+G\+B\+A\+\_\+\+G\+\_\+\+M\+A\+SK}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{R\+G\+B\+A\+\_\+\+G\+\_\+\+M\+A\+SK}{RGBA_G_MASK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+B\+A\+\_\+\+G\+\_\+\+M\+A\+SK(
+\begin{DoxyParamCaption}
+\item[{}]{val}
+\end{DoxyParamCaption}
+)~(((val) \& 0xff0000) $>$$>$ 16)}\hypertarget{header_8h_a632c40a96aac3972b668bb536fb1af06}{}\label{header_8h_a632c40a96aac3972b668bb536fb1af06}
+Mask for green channel in a R\+G\+BA value \index{header.\+h@{header.\+h}!R\+G\+B\+A\+\_\+\+R\+\_\+\+M\+A\+SK@{R\+G\+B\+A\+\_\+\+R\+\_\+\+M\+A\+SK}}
+\index{R\+G\+B\+A\+\_\+\+R\+\_\+\+M\+A\+SK@{R\+G\+B\+A\+\_\+\+R\+\_\+\+M\+A\+SK}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{R\+G\+B\+A\+\_\+\+R\+\_\+\+M\+A\+SK}{RGBA_R_MASK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+B\+A\+\_\+\+R\+\_\+\+M\+A\+SK(
+\begin{DoxyParamCaption}
+\item[{}]{val}
+\end{DoxyParamCaption}
+)~(((val) \& 0xff000000) $>$$>$ 24)}\hypertarget{header_8h_a2505069f13628a303bdf360de2d8490f}{}\label{header_8h_a2505069f13628a303bdf360de2d8490f}
+Mask for red channel in a R\+G\+BA value 
+
+\subsection{Typedef Documentation}
+\index{header.\+h@{header.\+h}!bool@{bool}}
+\index{bool@{bool}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{bool}{bool}}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum \+\_\+bool\+\_\+type  {\bf bool}}\hypertarget{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{}\label{header_8h_a669b28ed18156f1a4f13732e070d6cf2}
+Boolean type \index{header.\+h@{header.\+h}!Imel\+Alignment@{Imel\+Alignment}}
+\index{Imel\+Alignment@{Imel\+Alignment}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Alignment}{ImelAlignment}}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf \+\_\+imel\+\_\+alignment}  {\bf Imel\+Alignment}}\hypertarget{header_8h_a4d620b3c547205ca76d92f43f09320d1}{}\label{header_8h_a4d620b3c547205ca76d92f43f09320d1}
+Imel\+Alignment type. Specifies the image alignment.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a12519cad063897a1dcf9eb4c677b8304}{imel\+\_\+image\+\_\+union} 
+\end{DoxySeeAlso}
+\index{header.\+h@{header.\+h}!Imel\+Color@{Imel\+Color}}
+\index{Imel\+Color@{Imel\+Color}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Color}{ImelColor}}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\+\_\+t {\bf Imel\+Color}}\hypertarget{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{}\label{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}
+Imel\+Color type \index{header.\+h@{header.\+h}!Imel\+Effect@{Imel\+Effect}}
+\index{Imel\+Effect@{Imel\+Effect}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Effect}{ImelEffect}}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf \+\_\+imel\+\_\+effect}  {\bf Imel\+Effect}}\hypertarget{header_8h_a4919a9d01ef8388db452c59507d67f2e}{}\label{header_8h_a4919a9d01ef8388db452c59507d67f2e}
+Effects to apply through \hyperlink{image_8c_af617e35a65519b8c9c33b49fc8e59e89}{imel\+\_\+image\+\_\+apply\+\_\+effect} or some other function.
+
+\begin{DoxyNote}{Note}
+Enum values starts from 0 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_af617e35a65519b8c9c33b49fc8e59e89}{imel\+\_\+image\+\_\+apply\+\_\+effect} 
+\end{DoxySeeAlso}
+\index{header.\+h@{header.\+h}!Imel\+Error@{Imel\+Error}}
+\index{Imel\+Error@{Imel\+Error}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Error}{ImelError}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+imel\+\_\+error}  {\bf Imel\+Error}}\hypertarget{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{}\label{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}
+
+
+Specialized type in reporting errors inside Imel. 
+
+This type report an error if occurred when doing operations in Imel. Each error have a code and a description.
+
+\begin{DoxyNote}{Note}
+Usually it can be used in this way\+: 
+\begin{DoxyCode}
+1 ImelImage *image;
+2 ImelError error;
+3 
+4 image = imel\_image\_new\_from ("image.png", 0, &error);
+5 if ( !image ) \{
+6      fprintf (stderr, "Error %d: %s\(\backslash\)n", error.code, error.description);
+7      return 1;
+8 \}
+\end{DoxyCode}
+ 
+\end{DoxyNote}
+\index{header.\+h@{header.\+h}!Imel\+Font\+Size@{Imel\+Font\+Size}}
+\index{Imel\+Font\+Size@{Imel\+Font\+Size}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Font\+Size}{ImelFontSize}}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf \+\_\+imel\+\_\+font\+\_\+size}  {\bf Imel\+Font\+Size}}\hypertarget{header_8h_a6d4b2e3b4cd24301c1cf501e73176eed}{}\label{header_8h_a6d4b2e3b4cd24301c1cf501e73176eed}
+Imel\+Font\+Size type. Enumerator created to facilitate the insertion of standard sizes for the internal fonts in Imel whose size is 14px or I\+M\+E\+L\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+E\+D\+I\+UM, other values have been incorporated to avoid as much as possible the presence of artifacts that degrade the image.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{font_8c_a4d66f474b22ed57e551e1c03b08baafe}{imel\+\_\+font\+\_\+write\+\_\+string} 
+
+\hyperlink{font_8c_a300099d0629f76d81f9e86ce1e5ef73a}{imel\+\_\+font\+\_\+write\+\_\+vstring} 
+\end{DoxySeeAlso}
+\index{header.\+h@{header.\+h}!Imel\+Generic\+Func\+Ptr@{Imel\+Generic\+Func\+Ptr}}
+\index{Imel\+Generic\+Func\+Ptr@{Imel\+Generic\+Func\+Ptr}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Generic\+Func\+Ptr}{ImelGenericFuncPtr}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ Imel\+Generic\+Func\+Ptr) ({\bf Imel\+Image\+Ptr}, {\bf Imel\+Generic\+Ptr})}\hypertarget{header_8h_afae32b8dba9014bfbe4456e85ddbb9ac}{}\label{header_8h_afae32b8dba9014bfbe4456e85ddbb9ac}
+Generic function to operate with image and data. \begin{DoxyNote}{Note}
+Used internally. 
+\end{DoxyNote}
+\index{header.\+h@{header.\+h}!Imel\+Generic\+Ptr@{Imel\+Generic\+Ptr}}
+\index{Imel\+Generic\+Ptr@{Imel\+Generic\+Ptr}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Generic\+Ptr}{ImelGenericPtr}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf Imel\+Generic\+Ptr}}\hypertarget{header_8h_a0a9244570c47547d00bfba1bb77d70f1}{}\label{header_8h_a0a9244570c47547d00bfba1bb77d70f1}
+Generic pointer \begin{DoxyNote}{Note}
+Used internally. 
+\end{DoxyNote}
+\index{header.\+h@{header.\+h}!Imel\+Histogram@{Imel\+Histogram}}
+\index{Imel\+Histogram@{Imel\+Histogram}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Histogram}{ImelHistogram}}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf \+\_\+imel\+\_\+histogram}  {\bf Imel\+Histogram}}\hypertarget{header_8h_a8879c5e403ddb26c326b1cc2c3e529bf}{}\label{header_8h_a8879c5e403ddb26c326b1cc2c3e529bf}
+Imel\+Histogram type. Specifies which histogram to get from an image.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_afa2cd389929358c87f2d21e1e7b2ef9a}{imel\+\_\+image\+\_\+get\+\_\+histogram} 
+
+\hyperlink{image_8c_ae416e85c63ce2f3f60df3fb31c5d41b5}{imel\+\_\+image\+\_\+get\+\_\+histogram\+\_\+image} 
+\end{DoxySeeAlso}
+\index{header.\+h@{header.\+h}!Imel\+Histogram\+Layout@{Imel\+Histogram\+Layout}}
+\index{Imel\+Histogram\+Layout@{Imel\+Histogram\+Layout}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Histogram\+Layout}{ImelHistogramLayout}}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf \+\_\+imel\+\_\+histogram\+\_\+layout}  {\bf Imel\+Histogram\+Layout}}\hypertarget{header_8h_aacf376be43512b219081df71ed7ee438}{}\label{header_8h_aacf376be43512b219081df71ed7ee438}
+Imelhistogram\+Layout type. Specifies the histogram layout.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a41cc4f146e4863e1969bfa15ca3e7afc}{imel\+\_\+image\+\_\+get\+\_\+histograms\+\_\+image} 
+\end{DoxySeeAlso}
+\index{header.\+h@{header.\+h}!Imel\+H\+SL@{Imel\+H\+SL}}
+\index{Imel\+H\+SL@{Imel\+H\+SL}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+H\+SL}{ImelHSL}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+imel\+\_\+hsl}  {\bf Imel\+H\+SL}}\hypertarget{header_8h_a851541a4411924d91d8abd55939c3b23}{}\label{header_8h_a851541a4411924d91d8abd55939c3b23}
+This type can identify a color through H\+SL values.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{pixel_8c_a8ba2bb2ac90703240cd2c7556a4b9680}{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+hsl} 
+
+\hyperlink{pixel_8c_a29873cfd499af84deec32931e77e178e}{imel\+\_\+pixel\+\_\+get\+\_\+hsl} 
+\end{DoxySeeAlso}
+\index{header.\+h@{header.\+h}!Imel\+Image@{Imel\+Image}}
+\index{Imel\+Image@{Imel\+Image}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Image}{ImelImage}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+imel\+\_\+image}  {\bf Imel\+Image}}\hypertarget{header_8h_ad8298d38a89742ed84029b278c6acee5}{}\label{header_8h_ad8298d38a89742ed84029b278c6acee5}
+
+
+Rappresentation of an image in Imel library. 
+
+The most important type of Imel with \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} is this. This type, in Imel, is an image which contains its resolution and its colors.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_af3a4abcb52f5611781065536fda0f97e}{imel\+\_\+image\+\_\+new} 
+
+\hyperlink{image__new__from_8c_a43a15b507cf100b80bc07ce92a48adc7}{imel\+\_\+image\+\_\+new\+\_\+from} 
+\end{DoxySeeAlso}
+\index{header.\+h@{header.\+h}!Imel\+Image\+Ptr@{Imel\+Image\+Ptr}}
+\index{Imel\+Image\+Ptr@{Imel\+Image\+Ptr}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Image\+Ptr}{ImelImagePtr}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Imel\+Image}$\ast$ {\bf Imel\+Image\+Ptr}}\hypertarget{header_8h_aaa14cf408b64a8162fd57c4b4c081e1a}{}\label{header_8h_aaa14cf408b64a8162fd57c4b4c081e1a}
+Pointer to an \hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image}
+
+\begin{DoxyNote}{Note}
+Used internally. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} 
+\end{DoxySeeAlso}
+\index{header.\+h@{header.\+h}!Imel\+Info\+Cut@{Imel\+Info\+Cut}}
+\index{Imel\+Info\+Cut@{Imel\+Info\+Cut}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Info\+Cut}{ImelInfoCut}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+imel\+\_\+info\+\_\+cut}  {\bf Imel\+Info\+Cut}}\hypertarget{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{}\label{header_8h_a3f4de920943cb4d0979d415b4c5e3989}
+This type collect information about the hypothetical lines that cut an image vertically or horizontally at a specific point.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a31943792f957de747e49b6dc1fbbab05}{imel\+\_\+image\+\_\+cut\+\_\+grid} 
+
+\hyperlink{info__cut_8c_ad06ec44d23c494c1f501d03de880007e}{imel\+\_\+info\+\_\+cut\+\_\+new} 
+
+\hyperlink{info__cut_8c_aa8e34152e2f5716e6a195ee1b8107f85}{imel\+\_\+info\+\_\+cut\+\_\+add} 
+
+\hyperlink{info__cut_8c_a73ba0a29544436cf4248c71a935560cd}{imel\+\_\+info\+\_\+cut\+\_\+free} 
+\end{DoxySeeAlso}
+\index{header.\+h@{header.\+h}!Imel\+Level@{Imel\+Level}}
+\index{Imel\+Level@{Imel\+Level}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Level}{ImelLevel}}]{\setlength{\rightskip}{0pt plus 5cm}typedef int32\+\_\+t {\bf Imel\+Level}}\hypertarget{header_8h_a97bc4b146a807c2d83b966983132f4fc}{}\label{header_8h_a97bc4b146a807c2d83b966983132f4fc}
+Imel\+Livel type \index{header.\+h@{header.\+h}!Imel\+Level\+Operation@{Imel\+Level\+Operation}}
+\index{Imel\+Level\+Operation@{Imel\+Level\+Operation}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Level\+Operation}{ImelLevelOperation}}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf \+\_\+imel\+\_\+level\+\_\+operation}  {\bf Imel\+Level\+Operation}}\hypertarget{header_8h_abece8958e8db1e2826f21fd822c14694}{}\label{header_8h_abece8958e8db1e2826f21fd822c14694}
+Imel\+Level\+Operation type. Specifies operations with levels.
+
+\begin{DoxyNote}{Note}
+Enum values starts from 0 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a3e8526c34b3cb916894f09923ea2a116}{imel\+\_\+image\+\_\+change\+\_\+color\+\_\+level} 
+
+\hyperlink{image_8c_a5fd7c413bcd1025d2c94810d66ba36eb}{imel\+\_\+image\+\_\+change\+\_\+level} 
+\end{DoxySeeAlso}
+\index{header.\+h@{header.\+h}!Imel\+Logic\+Operation@{Imel\+Logic\+Operation}}
+\index{Imel\+Logic\+Operation@{Imel\+Logic\+Operation}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Logic\+Operation}{ImelLogicOperation}}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf \+\_\+imel\+\_\+logic\+\_\+operation}  {\bf Imel\+Logic\+Operation}}\hypertarget{header_8h_af92bba14d49d8e59b2642eb300fedb5e}{}\label{header_8h_af92bba14d49d8e59b2642eb300fedb5e}
+Imel\+Logic\+Operation type. Specifies which logic operation to use.
+
+\begin{DoxyNote}{Note}
+Enum values starts from 0. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_acbb25e82ef469246170ce9b541a4d220}{imel\+\_\+image\+\_\+apply\+\_\+logic\+\_\+operation} 
+\end{DoxySeeAlso}
+\index{header.\+h@{header.\+h}!Imel\+Mask@{Imel\+Mask}}
+\index{Imel\+Mask@{Imel\+Mask}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Mask}{ImelMask}}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf \+\_\+imel\+\_\+mask}  {\bf Imel\+Mask}}\hypertarget{header_8h_a9facf73fdf3eb7434d01cd1c07341a28}{}\label{header_8h_a9facf73fdf3eb7434d01cd1c07341a28}
+Imel\+Mask type. Specifies one or more channels of an image to which to apply a given operation.
+
+
+\begin{DoxyCode}
+1 ImelMask red\_blue = IMEL\_MASK\_RED | IMEL\_MASK\_BLUE;
+2 ImelMask green = IMEL\_MASK\_GREEN;
+3 ImelMask rgb = red\_blue | green;
+\end{DoxyCode}
+ \begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_aedeae21c9710c31bf78b5a12d03a031f}{imel\+\_\+image\+\_\+remove\+\_\+noise} 
+
+\hyperlink{image_8c_a5b3d70708a116076bfbcaeb7a9cd2b5d}{imel\+\_\+image\+\_\+apply\+\_\+noise} 
+
+\hyperlink{image_8c_abdb78af6d874ae54552a6f3219c75127}{imel\+\_\+image\+\_\+apply\+\_\+filter} 
+
+\hyperlink{image_8c_ae2c499f2810e903a36b2b766541a815e}{imel\+\_\+image\+\_\+remove\+\_\+base\+\_\+color} 
+\end{DoxySeeAlso}
+\index{header.\+h@{header.\+h}!Imel\+Noise\+Operation@{Imel\+Noise\+Operation}}
+\index{Imel\+Noise\+Operation@{Imel\+Noise\+Operation}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Noise\+Operation}{ImelNoiseOperation}}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf \+\_\+imel\+\_\+noise\+\_\+operation}  {\bf Imel\+Noise\+Operation}}\hypertarget{header_8h_abb411905768327b93668c636957a73ff}{}\label{header_8h_abb411905768327b93668c636957a73ff}
+Imel\+Noise\+Operation type. Specifies operations with the noise.
+
+\begin{DoxyNote}{Note}
+Enum values starts from 0 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a5b3d70708a116076bfbcaeb7a9cd2b5d}{imel\+\_\+image\+\_\+apply\+\_\+noise} 
+\end{DoxySeeAlso}
+\index{header.\+h@{header.\+h}!Imel\+Orientation@{Imel\+Orientation}}
+\index{Imel\+Orientation@{Imel\+Orientation}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Orientation}{ImelOrientation}}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf \+\_\+imel\+\_\+orientation}  {\bf Imel\+Orientation}}\hypertarget{header_8h_aef27fcac7a96d118b3c3194c2577049f}{}\label{header_8h_aef27fcac7a96d118b3c3194c2577049f}
+Imel\+Orientation type. Specifies vertical or horizontal orientation.
+
+\begin{DoxyNote}{Note}
+Enum values starts from 0 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{draw_8c_a94c27538a3f6dec9bbd8b8790e37d08f}{imel\+\_\+draw\+\_\+gradient} 
+
+\hyperlink{image_8c_ad08c629d2c44d24e7c485b7ff9a28021}{imel\+\_\+image\+\_\+perspective} 
+
+\hyperlink{image_8c_aa517733f37a96bfcccf4ee666a92b206}{imel\+\_\+image\+\_\+slant} 
+
+\hyperlink{image_8c_a66997f20203b384d1185a1dd9985dd67}{imel\+\_\+image\+\_\+shift} 
+
+\hyperlink{image_8c_add471c449ecce1b4bd78fc34a698f44f}{imel\+\_\+image\+\_\+shift\+\_\+lines} 
+
+\hyperlink{info__cut_8c_aa8e34152e2f5716e6a195ee1b8107f85}{imel\+\_\+info\+\_\+cut\+\_\+add} 
+\end{DoxySeeAlso}
+\index{header.\+h@{header.\+h}!Imel\+Pattern\+Operation@{Imel\+Pattern\+Operation}}
+\index{Imel\+Pattern\+Operation@{Imel\+Pattern\+Operation}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Pattern\+Operation}{ImelPatternOperation}}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf \+\_\+imel\+\_\+pattern\+\_\+operation}  {\bf Imel\+Pattern\+Operation}}\hypertarget{header_8h_a7321d084db08c3a51089e8a4612b332b}{}\label{header_8h_a7321d084db08c3a51089e8a4612b332b}
+Imel\+Pattern\+Operation type. Specifies operations with patterns.
+
+\begin{DoxyNote}{Note}
+Enum values starts from 0 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_af026795ee048b2294876418c64729d03}{imel\+\_\+image\+\_\+apply\+\_\+pattern} 
+\end{DoxySeeAlso}
+\index{header.\+h@{header.\+h}!Imel\+Pixel@{Imel\+Pixel}}
+\index{Imel\+Pixel@{Imel\+Pixel}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Pixel}{ImelPixel}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+imel\+\_\+pixel}  {\bf Imel\+Pixel}}\hypertarget{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{}\label{header_8h_add7dd9f8c093208bc4fd135a22a670ba}
+
+
+Rappresentation of a pixel in Imel library. 
+
+This type is the fundamental one, includes all the information needed to create a pixel composed of the three basic colors and its importance or transparency.
+
+
+\begin{DoxyCode}
+1 ImelPixel m1\_color = \{ 255, 255, 255, 0 \};
+2 ImelPixel m2\_color;
+3 
+4 m2\_color = imel\_pixel\_new\_from\_string ('#ffffff', 0);
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{pixel_8c_aaf2dba6a30b6612b7c1730195935a88d}{imel\+\_\+pixel\+\_\+new} 
+
+\hyperlink{pixel_8c_a0d1c4cb614847e8084854f40d05d0eb7}{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+string} 
+
+\hyperlink{pixel_8c_af701f338fec84020c7e812f7c1eb84df}{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+rgba} 
+
+\hyperlink{pixel_8c_a8ba2bb2ac90703240cd2c7556a4b9680}{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+hsl} 
+
+\hyperlink{pixel_8c_a9bc6aa8b3ec663f1635827b0ebbdf46a}{imel\+\_\+pixel\+\_\+copy}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+If two pixels have different level values when they are used in functions like \hyperlink{pixel_8c_a9bc6aa8b3ec663f1635827b0ebbdf46a}{imel\+\_\+pixel\+\_\+copy} the first one can be replaced only if the second one has the same or greater level value. 
+\end{DoxyNote}
+\index{header.\+h@{header.\+h}!Imel\+Point@{Imel\+Point}}
+\index{Imel\+Point@{Imel\+Point}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Point}{ImelPoint}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+imel\+\_\+point}  {\bf Imel\+Point}}\hypertarget{header_8h_a8b81d020f830e116585b833ea21410c1}{}\label{header_8h_a8b81d020f830e116585b833ea21410c1}
+
+
+Rappresentation of a point in Imel library. 
+
+This type can rappresent a point with coordinates, color and level.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{point_8c_a20c030176364130df49237e29b69308c}{imel\+\_\+point\+\_\+new} 
+\end{DoxySeeAlso}
+\index{header.\+h@{header.\+h}!Imel\+Ref@{Imel\+Ref}}
+\index{Imel\+Ref@{Imel\+Ref}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Ref}{ImelRef}}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf \+\_\+imel\+\_\+ref}  {\bf Imel\+Ref}}\hypertarget{header_8h_a6182c8947d12d828155f0fb8cb024209}{}\label{header_8h_a6182c8947d12d828155f0fb8cb024209}
+Imel\+Ref type. Specifies the reference.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a75fbdaa484f8b191b8988af68181c488}{imel\+\_\+image\+\_\+auto\+\_\+cut} 
+\end{DoxySeeAlso}
+\index{header.\+h@{header.\+h}!Imel\+Size@{Imel\+Size}}
+\index{Imel\+Size@{Imel\+Size}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Size}{ImelSize}}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint32\+\_\+t {\bf Imel\+Size}}\hypertarget{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{}\label{header_8h_af8a2b40c34eeed326846d0098ea84ec2}
+Imel\+Size type \index{header.\+h@{header.\+h}!Imel\+Value@{Imel\+Value}}
+\index{Imel\+Value@{Imel\+Value}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{Imel\+Value}{ImelValue}}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf \+\_\+imel\+\_\+value}  {\bf Imel\+Value}}\hypertarget{header_8h_a3b961ca2b6e1029ab77a0951c3ae7260}{}\label{header_8h_a3b961ca2b6e1029ab77a0951c3ae7260}
+Imel\+Value type. Specifies the units of measure.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{point_8c_a5378c3d9ccaeb5f1325b64dd5740a072}{imel\+\_\+point\+\_\+get\+\_\+from\+\_\+line} 
+
+\hyperlink{value_8c_a09670d688bb50c3334e933772839fb23}{imel\+\_\+value\+\_\+convert} 
+\end{DoxySeeAlso}
+
+
+\subsection{Enumeration Type Documentation}
+\index{header.\+h@{header.\+h}!\+\_\+imel\+\_\+alignment@{\+\_\+imel\+\_\+alignment}}
+\index{\+\_\+imel\+\_\+alignment@{\+\_\+imel\+\_\+alignment}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+imel\+\_\+alignment}{_imel_alignment}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \+\_\+imel\+\_\+alignment}}\hypertarget{header_8h_aaf7d1762a05a9d183fd8b718cbb2d338}{}\label{header_8h_aaf7d1762a05a9d183fd8b718cbb2d338}
+Imel\+Alignment type. Specifies the image alignment.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a12519cad063897a1dcf9eb4c677b8304}{imel\+\_\+image\+\_\+union} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+TL@{I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+TL}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+TL@{I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+TL}}\item[{\em 
+I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+TL\hypertarget{header_8h_aaf7d1762a05a9d183fd8b718cbb2d338a880a4615c1d6abb682cafb89461487d8}{}\label{header_8h_aaf7d1762a05a9d183fd8b718cbb2d338a880a4615c1d6abb682cafb89461487d8}
+}]Alignment\+: Top Left \index{I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+TR@{I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+TR}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+TR@{I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+TR}}\item[{\em 
+I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+TR\hypertarget{header_8h_aaf7d1762a05a9d183fd8b718cbb2d338a3703c2891e8d1f5ffb90cd711042b949}{}\label{header_8h_aaf7d1762a05a9d183fd8b718cbb2d338a3703c2891e8d1f5ffb90cd711042b949}
+}]Alignment\+: Top Right \index{I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+BL@{I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+BL}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+BL@{I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+BL}}\item[{\em 
+I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+BL\hypertarget{header_8h_aaf7d1762a05a9d183fd8b718cbb2d338a6c4bff2515465c6b1152bf35b1cfcd03}{}\label{header_8h_aaf7d1762a05a9d183fd8b718cbb2d338a6c4bff2515465c6b1152bf35b1cfcd03}
+}]Alignment\+: Bottom Left \index{I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+BR@{I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+BR}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+BR@{I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+BR}}\item[{\em 
+I\+M\+E\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+BR\hypertarget{header_8h_aaf7d1762a05a9d183fd8b718cbb2d338a8869eaac74703b8d718f0e99541b0fa5}{}\label{header_8h_aaf7d1762a05a9d183fd8b718cbb2d338a8869eaac74703b8d718f0e99541b0fa5}
+}]Alignment\+: Bottom Right \end{description}
+\end{Desc}
+\index{header.\+h@{header.\+h}!\+\_\+imel\+\_\+effect@{\+\_\+imel\+\_\+effect}}
+\index{\+\_\+imel\+\_\+effect@{\+\_\+imel\+\_\+effect}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+imel\+\_\+effect}{_imel_effect}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \+\_\+imel\+\_\+effect}}\hypertarget{header_8h_a765ae01cc88c760f3df918af6fd4943c}{}\label{header_8h_a765ae01cc88c760f3df918af6fd4943c}
+Effects to apply through \hyperlink{image_8c_af617e35a65519b8c9c33b49fc8e59e89}{imel\+\_\+image\+\_\+apply\+\_\+effect} or some other function.
+
+\begin{DoxyNote}{Note}
+Enum values starts from 0 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_af617e35a65519b8c9c33b49fc8e59e89}{imel\+\_\+image\+\_\+apply\+\_\+effect} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+W\+H\+I\+T\+E\+\_\+\+B\+L\+A\+CK@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+W\+H\+I\+T\+E\+\_\+\+B\+L\+A\+CK}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+W\+H\+I\+T\+E\+\_\+\+B\+L\+A\+CK@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+W\+H\+I\+T\+E\+\_\+\+B\+L\+A\+CK}}\item[{\em 
+I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+W\+H\+I\+T\+E\+\_\+\+B\+L\+A\+CK\hypertarget{header_8h_a765ae01cc88c760f3df918af6fd4943ca504746b9b02d06d774f1435565ba2f99}{}\label{header_8h_a765ae01cc88c760f3df918af6fd4943ca504746b9b02d06d774f1435565ba2f99}
+}]Grayscale effect to an image. \index{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+A\+N\+T\+I\+Q\+UE@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+A\+N\+T\+I\+Q\+UE}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+A\+N\+T\+I\+Q\+UE@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+A\+N\+T\+I\+Q\+UE}}\item[{\em 
+I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+A\+N\+T\+I\+Q\+UE\hypertarget{header_8h_a765ae01cc88c760f3df918af6fd4943caafb642394f6d6b945beaa04cea1820dd}{}\label{header_8h_a765ae01cc88c760f3df918af6fd4943caafb642394f6d6b945beaa04cea1820dd}
+}]Antique effect ( less bright colors ). \index{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+I\+N\+V\+E\+RT@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+I\+N\+V\+E\+RT}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+I\+N\+V\+E\+RT@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+I\+N\+V\+E\+RT}}\item[{\em 
+I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+I\+N\+V\+E\+RT\hypertarget{header_8h_a765ae01cc88c760f3df918af6fd4943ca346547bea8bff9059f9b530ed4c0eb41}{}\label{header_8h_a765ae01cc88c760f3df918af6fd4943ca346547bea8bff9059f9b530ed4c0eb41}
+}]Invert colors. \index{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+N\+O\+R\+M\+A\+L\+I\+ZE@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+N\+O\+R\+M\+A\+L\+I\+ZE}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+N\+O\+R\+M\+A\+L\+I\+ZE@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+N\+O\+R\+M\+A\+L\+I\+ZE}}\item[{\em 
+I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+N\+O\+R\+M\+A\+L\+I\+ZE\hypertarget{header_8h_a765ae01cc88c760f3df918af6fd4943cac6572be5a85fa38d9016ed184dc0213c}{}\label{header_8h_a765ae01cc88c760f3df918af6fd4943cac6572be5a85fa38d9016ed184dc0213c}
+}]Calculates the average of colors of the image and apply it to R\+GB channel selected. When used as a parameter for \hyperlink{image_8c_af617e35a65519b8c9c33b49fc8e59e89}{imel\+\_\+image\+\_\+apply\+\_\+effect} function takes as a parameter a value of Imel\+Mask type (with the option to combine multiple channels with the OR operator). \index{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+SS@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+SS}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+SS@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+SS}}\item[{\em 
+I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+SS\hypertarget{header_8h_a765ae01cc88c760f3df918af6fd4943ca73ed0e4e95e2c1cce28bfabd12483b3e}{}\label{header_8h_a765ae01cc88c760f3df918af6fd4943ca73ed0e4e95e2c1cce28bfabd12483b3e}
+}]Affect the image brightness. When used as a parameter for \hyperlink{image_8c_af617e35a65519b8c9c33b49fc8e59e89}{imel\+\_\+image\+\_\+apply\+\_\+effect} function takes as a parameter a value between -\/100 and +100. \index{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+C\+O\+N\+T\+R\+A\+S\+T\+\_\+\+S\+T\+R\+E\+T\+C\+H\+I\+NG@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+C\+O\+N\+T\+R\+A\+S\+T\+\_\+\+S\+T\+R\+E\+T\+C\+H\+I\+NG}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+C\+O\+N\+T\+R\+A\+S\+T\+\_\+\+S\+T\+R\+E\+T\+C\+H\+I\+NG@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+C\+O\+N\+T\+R\+A\+S\+T\+\_\+\+S\+T\+R\+E\+T\+C\+H\+I\+NG}}\item[{\em 
+I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+C\+O\+N\+T\+R\+A\+S\+T\+\_\+\+S\+T\+R\+E\+T\+C\+H\+I\+NG\hypertarget{header_8h_a765ae01cc88c760f3df918af6fd4943ca1c05d6c7970d375e2a6c43ac0a4f81f4}{}\label{header_8h_a765ae01cc88c760f3df918af6fd4943ca1c05d6c7970d375e2a6c43ac0a4f81f4}
+}]Auto contrast enhancement. \index{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+C\+O\+N\+T\+R\+A\+ST@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+C\+O\+N\+T\+R\+A\+ST}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+C\+O\+N\+T\+R\+A\+ST@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+C\+O\+N\+T\+R\+A\+ST}}\item[{\em 
+I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+C\+O\+N\+T\+R\+A\+ST\hypertarget{header_8h_a765ae01cc88c760f3df918af6fd4943ca01d68f23d49258e052da936ceb364971}{}\label{header_8h_a765ae01cc88c760f3df918af6fd4943ca01d68f23d49258e052da936ceb364971}
+}]Affect the image contrast. When used as a parameter for \hyperlink{image_8c_af617e35a65519b8c9c33b49fc8e59e89}{imel\+\_\+image\+\_\+apply\+\_\+effect} function takes as a parameter a number between -\/127 and +128. \index{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+R\+A\+S\+T\+E\+R\+I\+ZE@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+R\+A\+S\+T\+E\+R\+I\+ZE}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+R\+A\+S\+T\+E\+R\+I\+ZE@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+R\+A\+S\+T\+E\+R\+I\+ZE}}\item[{\em 
+I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+R\+A\+S\+T\+E\+R\+I\+ZE\hypertarget{header_8h_a765ae01cc88c760f3df918af6fd4943cac5ec00f15a861f5feced1f82aaf0af6c}{}\label{header_8h_a765ae01cc88c760f3df918af6fd4943cac5ec00f15a861f5feced1f82aaf0af6c}
+}]Rasterizes the image, which divides the image into squares of size chosen, colored with the average of pixels that are inside each square. When used as a parameter for the \hyperlink{image_8c_af617e35a65519b8c9c33b49fc8e59e89}{imel\+\_\+image\+\_\+apply\+\_\+effect} function it takes as a parameter the size in pixels of the side of the square. \index{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+A\+N\+T\+I\+A\+L\+I\+AS@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+A\+N\+T\+I\+A\+L\+I\+AS}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+A\+N\+T\+I\+A\+L\+I\+AS@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+A\+N\+T\+I\+A\+L\+I\+AS}}\item[{\em 
+I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+A\+N\+T\+I\+A\+L\+I\+AS\hypertarget{header_8h_a765ae01cc88c760f3df918af6fd4943ca3b8790fe5d33b691435fe8dae957b1fd}{}\label{header_8h_a765ae01cc88c760f3df918af6fd4943ca3b8790fe5d33b691435fe8dae957b1fd}
+}]Apply antialiasing effect. First calculating the value that takes each pixel of the image and then sets it. When used as a parameter for \hyperlink{image_8c_af617e35a65519b8c9c33b49fc8e59e89}{imel\+\_\+image\+\_\+apply\+\_\+effect} function it takes as a parameter the number of pixels of the side of the square to be analyzed to calculate the value of the current pixel. \index{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+A\+N\+T\+I\+A\+L\+I\+AS@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+A\+N\+T\+I\+A\+L\+I\+AS}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+A\+N\+T\+I\+A\+L\+I\+AS@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+A\+N\+T\+I\+A\+L\+I\+AS}}\item[{\em 
+I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+A\+N\+T\+I\+A\+L\+I\+AS\hypertarget{header_8h_a765ae01cc88c760f3df918af6fd4943ca148fb66f87544d3e7023774e071b7cea}{}\label{header_8h_a765ae01cc88c760f3df918af6fd4943ca148fb66f87544d3e7023774e071b7cea}
+}]As I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+A\+N\+T\+I\+A\+L\+I\+AS except for the fact that the value of the current pixel applies it immediately after it is calculated. \index{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+I\+M\+A\+G\+E\+\_\+\+A\+DD@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+I\+M\+A\+G\+E\+\_\+\+A\+DD}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+I\+M\+A\+G\+E\+\_\+\+A\+DD@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+I\+M\+A\+G\+E\+\_\+\+A\+DD}}\item[{\em 
+I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+I\+M\+A\+G\+E\+\_\+\+A\+DD\hypertarget{header_8h_a765ae01cc88c760f3df918af6fd4943ca67276e784d47f3ed16616f4717c0327c}{}\label{header_8h_a765ae01cc88c760f3df918af6fd4943ca67276e784d47f3ed16616f4717c0327c}
+}]Sum the colors of an image to the colors of another. When used as a parameter for the function \hyperlink{image_8c_af617e35a65519b8c9c33b49fc8e59e89}{imel\+\_\+image\+\_\+apply\+\_\+effect} requires as a parameter the image to be added. \index{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+U\+B\+T\+R\+A\+CT@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+U\+B\+T\+R\+A\+CT}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+U\+B\+T\+R\+A\+CT@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+U\+B\+T\+R\+A\+CT}}\item[{\em 
+I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+U\+B\+T\+R\+A\+CT\hypertarget{header_8h_a765ae01cc88c760f3df918af6fd4943cae8788463059cea5f294536f5d8db39fc}{}\label{header_8h_a765ae01cc88c760f3df918af6fd4943cae8788463059cea5f294536f5d8db39fc}
+}]Subtract the colors of an image to the colors of another. When used as a parameter for the function \hyperlink{image_8c_af617e35a65519b8c9c33b49fc8e59e89}{imel\+\_\+image\+\_\+apply\+\_\+effect} requires as a parameter the image to be subtracted. \index{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+T\+O\+\_\+\+A\+L\+P\+HA@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+T\+O\+\_\+\+A\+L\+P\+HA}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+T\+O\+\_\+\+A\+L\+P\+HA@{I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+T\+O\+\_\+\+A\+L\+P\+HA}}\item[{\em 
+I\+M\+E\+L\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+T\+O\+\_\+\+A\+L\+P\+HA\hypertarget{header_8h_a765ae01cc88c760f3df918af6fd4943cacb479d399eb7fe4f4e1f23c29bee815d}{}\label{header_8h_a765ae01cc88c760f3df918af6fd4943cacb479d399eb7fe4f4e1f23c29bee815d}
+}]It allows to bring a shade of color to transparency to creating the right shades so that the resulting image can be retrofit on a different background. It receives as a parameter the color to be eliminated in the form of pointer to \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} variable. \end{description}
+\end{Desc}
+\index{header.\+h@{header.\+h}!\+\_\+imel\+\_\+font\+\_\+size@{\+\_\+imel\+\_\+font\+\_\+size}}
+\index{\+\_\+imel\+\_\+font\+\_\+size@{\+\_\+imel\+\_\+font\+\_\+size}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+imel\+\_\+font\+\_\+size}{_imel_font_size}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \+\_\+imel\+\_\+font\+\_\+size}}\hypertarget{header_8h_abc4cf7641abd06646b239f69f7800e37}{}\label{header_8h_abc4cf7641abd06646b239f69f7800e37}
+Imel\+Font\+Size type. Enumerator created to facilitate the insertion of standard sizes for the internal fonts in Imel whose size is 14px or I\+M\+E\+L\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+E\+D\+I\+UM, other values have been incorporated to avoid as much as possible the presence of artifacts that degrade the image.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{font_8c_a4d66f474b22ed57e551e1c03b08baafe}{imel\+\_\+font\+\_\+write\+\_\+string} 
+
+\hyperlink{font_8c_a300099d0629f76d81f9e86ce1e5ef73a}{imel\+\_\+font\+\_\+write\+\_\+vstring} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\+M\+E\+L\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+S\+M\+A\+LL@{I\+M\+E\+L\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+S\+M\+A\+LL}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+S\+M\+A\+LL@{I\+M\+E\+L\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+S\+M\+A\+LL}}\item[{\em 
+I\+M\+E\+L\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+S\+M\+A\+LL\hypertarget{header_8h_abc4cf7641abd06646b239f69f7800e37ac3ca11db6cbe14a0d3b265273b8d3814}{}\label{header_8h_abc4cf7641abd06646b239f69f7800e37ac3ca11db6cbe14a0d3b265273b8d3814}
+}]Small Size\+: 7px \index{I\+M\+E\+L\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+E\+D\+I\+UM@{I\+M\+E\+L\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+E\+D\+I\+UM}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+E\+D\+I\+UM@{I\+M\+E\+L\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+E\+D\+I\+UM}}\item[{\em 
+I\+M\+E\+L\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+E\+D\+I\+UM\hypertarget{header_8h_abc4cf7641abd06646b239f69f7800e37acee35174998d53dad225305a7677fad7}{}\label{header_8h_abc4cf7641abd06646b239f69f7800e37acee35174998d53dad225305a7677fad7}
+}]Medium\textbackslash{}Original Size\+: 14px \index{I\+M\+E\+L\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+L\+A\+R\+GE@{I\+M\+E\+L\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+L\+A\+R\+GE}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+L\+A\+R\+GE@{I\+M\+E\+L\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+L\+A\+R\+GE}}\item[{\em 
+I\+M\+E\+L\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+L\+A\+R\+GE\hypertarget{header_8h_abc4cf7641abd06646b239f69f7800e37aff14e4fb7bf96b7f4901b839e044dead}{}\label{header_8h_abc4cf7641abd06646b239f69f7800e37aff14e4fb7bf96b7f4901b839e044dead}
+}]Large Size\+: 28px \end{description}
+\end{Desc}
+\index{header.\+h@{header.\+h}!\+\_\+imel\+\_\+histogram@{\+\_\+imel\+\_\+histogram}}
+\index{\+\_\+imel\+\_\+histogram@{\+\_\+imel\+\_\+histogram}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+imel\+\_\+histogram}{_imel_histogram}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \+\_\+imel\+\_\+histogram}}\hypertarget{header_8h_ace9df0e53e30f77ba713148ea7b106a8}{}\label{header_8h_ace9df0e53e30f77ba713148ea7b106a8}
+Imel\+Histogram type. Specifies which histogram to get from an image.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_afa2cd389929358c87f2d21e1e7b2ef9a}{imel\+\_\+image\+\_\+get\+\_\+histogram} 
+
+\hyperlink{image_8c_ae416e85c63ce2f3f60df3fb31c5d41b5}{imel\+\_\+image\+\_\+get\+\_\+histogram\+\_\+image} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+R\+ED@{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+R\+ED}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+R\+ED@{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+R\+ED}}\item[{\em 
+I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+R\+ED\hypertarget{header_8h_ace9df0e53e30f77ba713148ea7b106a8aa98651349b7ee1f42c25926b788e7e56}{}\label{header_8h_ace9df0e53e30f77ba713148ea7b106a8aa98651349b7ee1f42c25926b788e7e56}
+}]It produces only the histogram for the Red channel. \index{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+G\+R\+E\+EN@{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+G\+R\+E\+EN}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+G\+R\+E\+EN@{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+G\+R\+E\+EN}}\item[{\em 
+I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+G\+R\+E\+EN\hypertarget{header_8h_ace9df0e53e30f77ba713148ea7b106a8ac07bb7bcee3ad10947e3561600bf4c03}{}\label{header_8h_ace9df0e53e30f77ba713148ea7b106a8ac07bb7bcee3ad10947e3561600bf4c03}
+}]It produces only the histogram for the Green channel. \index{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+B\+L\+UE@{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+B\+L\+UE}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+B\+L\+UE@{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+B\+L\+UE}}\item[{\em 
+I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+B\+L\+UE\hypertarget{header_8h_ace9df0e53e30f77ba713148ea7b106a8a6bedfe395a37b98764b1e413345a4434}{}\label{header_8h_ace9df0e53e30f77ba713148ea7b106a8a6bedfe395a37b98764b1e413345a4434}
+}]It produces only the histogram for the Blue channel. \index{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+C\+O\+M\+P\+L\+E\+TE@{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+C\+O\+M\+P\+L\+E\+TE}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+C\+O\+M\+P\+L\+E\+TE@{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+C\+O\+M\+P\+L\+E\+TE}}\item[{\em 
+I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+C\+O\+M\+P\+L\+E\+TE\hypertarget{header_8h_ace9df0e53e30f77ba713148ea7b106a8ae25611f3281873ad6693e3b1f57fabf5}{}\label{header_8h_ace9df0e53e30f77ba713148ea7b106a8ae25611f3281873ad6693e3b1f57fabf5}
+}]It produces only the histogram for the image brightness. \end{description}
+\end{Desc}
+\index{header.\+h@{header.\+h}!\+\_\+imel\+\_\+histogram\+\_\+layout@{\+\_\+imel\+\_\+histogram\+\_\+layout}}
+\index{\+\_\+imel\+\_\+histogram\+\_\+layout@{\+\_\+imel\+\_\+histogram\+\_\+layout}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+imel\+\_\+histogram\+\_\+layout}{_imel_histogram_layout}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \+\_\+imel\+\_\+histogram\+\_\+layout}}\hypertarget{header_8h_af6c0ec142c15baf126c12fbd5c57f322}{}\label{header_8h_af6c0ec142c15baf126c12fbd5c57f322}
+Imelhistogram\+Layout type. Specifies the histogram layout.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a41cc4f146e4863e1969bfa15ca3e7afc}{imel\+\_\+image\+\_\+get\+\_\+histograms\+\_\+image} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+L\+A\+Y\+O\+U\+T\+\_\+\+V\+E\+R\+T\+I\+C\+AL@{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+L\+A\+Y\+O\+U\+T\+\_\+\+V\+E\+R\+T\+I\+C\+AL}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+L\+A\+Y\+O\+U\+T\+\_\+\+V\+E\+R\+T\+I\+C\+AL@{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+L\+A\+Y\+O\+U\+T\+\_\+\+V\+E\+R\+T\+I\+C\+AL}}\item[{\em 
+I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+L\+A\+Y\+O\+U\+T\+\_\+\+V\+E\+R\+T\+I\+C\+AL\hypertarget{header_8h_af6c0ec142c15baf126c12fbd5c57f322abf8468e21867fef9954f626ed8e65ce0}{}\label{header_8h_af6c0ec142c15baf126c12fbd5c57f322abf8468e21867fef9954f626ed8e65ce0}
+}]It realizes the histograms with vertical layout \index{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+L\+A\+Y\+O\+U\+T\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL@{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+L\+A\+Y\+O\+U\+T\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+L\+A\+Y\+O\+U\+T\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL@{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+L\+A\+Y\+O\+U\+T\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL}}\item[{\em 
+I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+L\+A\+Y\+O\+U\+T\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL\hypertarget{header_8h_af6c0ec142c15baf126c12fbd5c57f322a9949de7170eff5051c260307388ab86a}{}\label{header_8h_af6c0ec142c15baf126c12fbd5c57f322a9949de7170eff5051c260307388ab86a}
+}]It realizes the histograms with horizontal layout \index{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+L\+A\+Y\+O\+U\+T\+\_\+\+P\+A\+N\+E\+LS@{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+L\+A\+Y\+O\+U\+T\+\_\+\+P\+A\+N\+E\+LS}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+L\+A\+Y\+O\+U\+T\+\_\+\+P\+A\+N\+E\+LS@{I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+L\+A\+Y\+O\+U\+T\+\_\+\+P\+A\+N\+E\+LS}}\item[{\em 
+I\+M\+E\+L\+\_\+\+H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+L\+A\+Y\+O\+U\+T\+\_\+\+P\+A\+N\+E\+LS\hypertarget{header_8h_af6c0ec142c15baf126c12fbd5c57f322ae51370b791b9d5f5be8b643d3e3958e9}{}\label{header_8h_af6c0ec142c15baf126c12fbd5c57f322ae51370b791b9d5f5be8b643d3e3958e9}
+}]It realizes the histograms with panel layour \end{description}
+\end{Desc}
+\index{header.\+h@{header.\+h}!\+\_\+imel\+\_\+level\+\_\+operation@{\+\_\+imel\+\_\+level\+\_\+operation}}
+\index{\+\_\+imel\+\_\+level\+\_\+operation@{\+\_\+imel\+\_\+level\+\_\+operation}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+imel\+\_\+level\+\_\+operation}{_imel_level_operation}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \+\_\+imel\+\_\+level\+\_\+operation}}\hypertarget{header_8h_a07a69c435daa766b8e1b6962f0956202}{}\label{header_8h_a07a69c435daa766b8e1b6962f0956202}
+Imel\+Level\+Operation type. Specifies operations with levels.
+
+\begin{DoxyNote}{Note}
+Enum values starts from 0 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a3e8526c34b3cb916894f09923ea2a116}{imel\+\_\+image\+\_\+change\+\_\+color\+\_\+level} 
+
+\hyperlink{image_8c_a5fd7c413bcd1025d2c94810d66ba36eb}{imel\+\_\+image\+\_\+change\+\_\+level} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\+M\+E\+L\+\_\+\+L\+E\+V\+E\+L\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+ET@{I\+M\+E\+L\+\_\+\+L\+E\+V\+E\+L\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+ET}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+L\+E\+V\+E\+L\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+ET@{I\+M\+E\+L\+\_\+\+L\+E\+V\+E\+L\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+ET}}\item[{\em 
+I\+M\+E\+L\+\_\+\+L\+E\+V\+E\+L\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+ET\hypertarget{header_8h_a07a69c435daa766b8e1b6962f0956202a6bdbe20ebfbfaa0c321dc61e6a786c56}{}\label{header_8h_a07a69c435daa766b8e1b6962f0956202a6bdbe20ebfbfaa0c321dc61e6a786c56}
+}]Set the value \index{I\+M\+E\+L\+\_\+\+L\+E\+V\+E\+L\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+A\+DD@{I\+M\+E\+L\+\_\+\+L\+E\+V\+E\+L\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+A\+DD}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+L\+E\+V\+E\+L\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+A\+DD@{I\+M\+E\+L\+\_\+\+L\+E\+V\+E\+L\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+A\+DD}}\item[{\em 
+I\+M\+E\+L\+\_\+\+L\+E\+V\+E\+L\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+A\+DD\hypertarget{header_8h_a07a69c435daa766b8e1b6962f0956202a2b0e609fe276c93eb43941983c08d114}{}\label{header_8h_a07a69c435daa766b8e1b6962f0956202a2b0e609fe276c93eb43941983c08d114}
+}]Add the value an existed one \end{description}
+\end{Desc}
+\index{header.\+h@{header.\+h}!\+\_\+imel\+\_\+logic\+\_\+operation@{\+\_\+imel\+\_\+logic\+\_\+operation}}
+\index{\+\_\+imel\+\_\+logic\+\_\+operation@{\+\_\+imel\+\_\+logic\+\_\+operation}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+imel\+\_\+logic\+\_\+operation}{_imel_logic_operation}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \+\_\+imel\+\_\+logic\+\_\+operation}}\hypertarget{header_8h_a9f975dccb73dc4b4f6f137cd80fc1387}{}\label{header_8h_a9f975dccb73dc4b4f6f137cd80fc1387}
+Imel\+Logic\+Operation type. Specifies which logic operation to use.
+
+\begin{DoxyNote}{Note}
+Enum values starts from 0. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_acbb25e82ef469246170ce9b541a4d220}{imel\+\_\+image\+\_\+apply\+\_\+logic\+\_\+operation} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\+M\+E\+L\+\_\+\+L\+O\+G\+I\+C\+\_\+\+A\+ND@{I\+M\+E\+L\+\_\+\+L\+O\+G\+I\+C\+\_\+\+A\+ND}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+L\+O\+G\+I\+C\+\_\+\+A\+ND@{I\+M\+E\+L\+\_\+\+L\+O\+G\+I\+C\+\_\+\+A\+ND}}\item[{\em 
+I\+M\+E\+L\+\_\+\+L\+O\+G\+I\+C\+\_\+\+A\+ND\hypertarget{header_8h_a9f975dccb73dc4b4f6f137cd80fc1387abd47120a5ab5696da620071e4846f1bc}{}\label{header_8h_a9f975dccb73dc4b4f6f137cd80fc1387abd47120a5ab5696da620071e4846f1bc}
+}]Logic A\+ND \index{I\+M\+E\+L\+\_\+\+L\+O\+G\+I\+C\+\_\+\+OR@{I\+M\+E\+L\+\_\+\+L\+O\+G\+I\+C\+\_\+\+OR}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+L\+O\+G\+I\+C\+\_\+\+OR@{I\+M\+E\+L\+\_\+\+L\+O\+G\+I\+C\+\_\+\+OR}}\item[{\em 
+I\+M\+E\+L\+\_\+\+L\+O\+G\+I\+C\+\_\+\+OR\hypertarget{header_8h_a9f975dccb73dc4b4f6f137cd80fc1387acede8a0ea7b5c4e3381a063d15b9fde8}{}\label{header_8h_a9f975dccb73dc4b4f6f137cd80fc1387acede8a0ea7b5c4e3381a063d15b9fde8}
+}]Logic OR \index{I\+M\+E\+L\+\_\+\+L\+O\+G\+I\+C\+\_\+\+X\+OR@{I\+M\+E\+L\+\_\+\+L\+O\+G\+I\+C\+\_\+\+X\+OR}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+L\+O\+G\+I\+C\+\_\+\+X\+OR@{I\+M\+E\+L\+\_\+\+L\+O\+G\+I\+C\+\_\+\+X\+OR}}\item[{\em 
+I\+M\+E\+L\+\_\+\+L\+O\+G\+I\+C\+\_\+\+X\+OR\hypertarget{header_8h_a9f975dccb73dc4b4f6f137cd80fc1387a1601315cf34231799baf3848ee568b6b}{}\label{header_8h_a9f975dccb73dc4b4f6f137cd80fc1387a1601315cf34231799baf3848ee568b6b}
+}]Logic X\+OR \end{description}
+\end{Desc}
+\index{header.\+h@{header.\+h}!\+\_\+imel\+\_\+mask@{\+\_\+imel\+\_\+mask}}
+\index{\+\_\+imel\+\_\+mask@{\+\_\+imel\+\_\+mask}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+imel\+\_\+mask}{_imel_mask}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \+\_\+imel\+\_\+mask}}\hypertarget{header_8h_a5a8e15aebc9573a522ef1d8eb86bac6e}{}\label{header_8h_a5a8e15aebc9573a522ef1d8eb86bac6e}
+Imel\+Mask type. Specifies one or more channels of an image to which to apply a given operation.
+
+
+\begin{DoxyCode}
+1 ImelMask red\_blue = IMEL\_MASK\_RED | IMEL\_MASK\_BLUE;
+2 ImelMask green = IMEL\_MASK\_GREEN;
+3 ImelMask rgb = red\_blue | green;
+\end{DoxyCode}
+ \begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_aedeae21c9710c31bf78b5a12d03a031f}{imel\+\_\+image\+\_\+remove\+\_\+noise} 
+
+\hyperlink{image_8c_a5b3d70708a116076bfbcaeb7a9cd2b5d}{imel\+\_\+image\+\_\+apply\+\_\+noise} 
+
+\hyperlink{image_8c_abdb78af6d874ae54552a6f3219c75127}{imel\+\_\+image\+\_\+apply\+\_\+filter} 
+
+\hyperlink{image_8c_ae2c499f2810e903a36b2b766541a815e}{imel\+\_\+image\+\_\+remove\+\_\+base\+\_\+color} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+R\+ED@{I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+R\+ED}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+R\+ED@{I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+R\+ED}}\item[{\em 
+I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+R\+ED\hypertarget{header_8h_a5a8e15aebc9573a522ef1d8eb86bac6ea28b75508f301d3739796cf774ccdcf3f}{}\label{header_8h_a5a8e15aebc9573a522ef1d8eb86bac6ea28b75508f301d3739796cf774ccdcf3f}
+}]Red Mask ( Value\+: 1 ) \index{I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+G\+R\+E\+EN@{I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+G\+R\+E\+EN}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+G\+R\+E\+EN@{I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+G\+R\+E\+EN}}\item[{\em 
+I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+G\+R\+E\+EN\hypertarget{header_8h_a5a8e15aebc9573a522ef1d8eb86bac6ea65ec31764aea05dca54259449c88fe4b}{}\label{header_8h_a5a8e15aebc9573a522ef1d8eb86bac6ea65ec31764aea05dca54259449c88fe4b}
+}]Green Mask ( Value\+: 2 ) \index{I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+B\+L\+UE@{I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+B\+L\+UE}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+B\+L\+UE@{I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+B\+L\+UE}}\item[{\em 
+I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+B\+L\+UE\hypertarget{header_8h_a5a8e15aebc9573a522ef1d8eb86bac6ea4191ae770e30bbe5d9aceec673b13ad3}{}\label{header_8h_a5a8e15aebc9573a522ef1d8eb86bac6ea4191ae770e30bbe5d9aceec673b13ad3}
+}]Blue Mask ( Value\+: 4 ) \index{I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+L\+E\+V\+EL@{I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+L\+E\+V\+EL}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+L\+E\+V\+EL@{I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+L\+E\+V\+EL}}\item[{\em 
+I\+M\+E\+L\+\_\+\+M\+A\+S\+K\+\_\+\+L\+E\+V\+EL\hypertarget{header_8h_a5a8e15aebc9573a522ef1d8eb86bac6ea2cc1b52a71bdaebb2b3255e0ce16f600}{}\label{header_8h_a5a8e15aebc9573a522ef1d8eb86bac6ea2cc1b52a71bdaebb2b3255e0ce16f600}
+}]Level Mask ( Value\+: 8 ) \end{description}
+\end{Desc}
+\index{header.\+h@{header.\+h}!\+\_\+imel\+\_\+noise\+\_\+operation@{\+\_\+imel\+\_\+noise\+\_\+operation}}
+\index{\+\_\+imel\+\_\+noise\+\_\+operation@{\+\_\+imel\+\_\+noise\+\_\+operation}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+imel\+\_\+noise\+\_\+operation}{_imel_noise_operation}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \+\_\+imel\+\_\+noise\+\_\+operation}}\hypertarget{header_8h_aacc3beb92f2372f7d6ae2a9f8de1a567}{}\label{header_8h_aacc3beb92f2372f7d6ae2a9f8de1a567}
+Imel\+Noise\+Operation type. Specifies operations with the noise.
+
+\begin{DoxyNote}{Note}
+Enum values starts from 0 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a5b3d70708a116076bfbcaeb7a9cd2b5d}{imel\+\_\+image\+\_\+apply\+\_\+noise} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+UM@{I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+UM}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+UM@{I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+UM}}\item[{\em 
+I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+UM\hypertarget{header_8h_aacc3beb92f2372f7d6ae2a9f8de1a567ac6fec1e5530ee0e5077583bf30fa7a36}{}\label{header_8h_aacc3beb92f2372f7d6ae2a9f8de1a567ac6fec1e5530ee0e5077583bf30fa7a36}
+}]Sum Operation \index{I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+U\+B\+T\+R\+A\+CT@{I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+U\+B\+T\+R\+A\+CT}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+U\+B\+T\+R\+A\+CT@{I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+U\+B\+T\+R\+A\+CT}}\item[{\em 
+I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+U\+B\+T\+R\+A\+CT\hypertarget{header_8h_aacc3beb92f2372f7d6ae2a9f8de1a567ae27d98f46a36d3a6cf54af3f6eae93aa}{}\label{header_8h_aacc3beb92f2372f7d6ae2a9f8de1a567ae27d98f46a36d3a6cf54af3f6eae93aa}
+}]Subtract Operation \index{I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+U\+L\+T\+I\+P\+LY@{I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+U\+L\+T\+I\+P\+LY}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+U\+L\+T\+I\+P\+LY@{I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+U\+L\+T\+I\+P\+LY}}\item[{\em 
+I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+U\+L\+T\+I\+P\+LY\hypertarget{header_8h_aacc3beb92f2372f7d6ae2a9f8de1a567ab395671c43fcc57531f1528caa222e90}{}\label{header_8h_aacc3beb92f2372f7d6ae2a9f8de1a567ab395671c43fcc57531f1528caa222e90}
+}]Multiply Operation \index{I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+I\+V\+I\+DE@{I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+I\+V\+I\+DE}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+I\+V\+I\+DE@{I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+I\+V\+I\+DE}}\item[{\em 
+I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+I\+V\+I\+DE\hypertarget{header_8h_aacc3beb92f2372f7d6ae2a9f8de1a567aff31c8c8cd9bf5748dabda341f9d21fa}{}\label{header_8h_aacc3beb92f2372f7d6ae2a9f8de1a567aff31c8c8cd9bf5748dabda341f9d21fa}
+}]Divide Operation \index{I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+R\+A\+N\+D\+OM@{I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+R\+A\+N\+D\+OM}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+R\+A\+N\+D\+OM@{I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+R\+A\+N\+D\+OM}}\item[{\em 
+I\+M\+E\+L\+\_\+\+N\+O\+I\+S\+E\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+R\+A\+N\+D\+OM\hypertarget{header_8h_aacc3beb92f2372f7d6ae2a9f8de1a567afc1e965796a405512360c74550df088c}{}\label{header_8h_aacc3beb92f2372f7d6ae2a9f8de1a567afc1e965796a405512360c74550df088c}
+}]Random Operation ( between the four above ) \end{description}
+\end{Desc}
+\index{header.\+h@{header.\+h}!\+\_\+imel\+\_\+orientation@{\+\_\+imel\+\_\+orientation}}
+\index{\+\_\+imel\+\_\+orientation@{\+\_\+imel\+\_\+orientation}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+imel\+\_\+orientation}{_imel_orientation}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \+\_\+imel\+\_\+orientation}}\hypertarget{header_8h_a2165f253ebc3e84d406c905ab1d77e7f}{}\label{header_8h_a2165f253ebc3e84d406c905ab1d77e7f}
+Imel\+Orientation type. Specifies vertical or horizontal orientation.
+
+\begin{DoxyNote}{Note}
+Enum values starts from 0 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{draw_8c_a94c27538a3f6dec9bbd8b8790e37d08f}{imel\+\_\+draw\+\_\+gradient} 
+
+\hyperlink{image_8c_ad08c629d2c44d24e7c485b7ff9a28021}{imel\+\_\+image\+\_\+perspective} 
+
+\hyperlink{image_8c_aa517733f37a96bfcccf4ee666a92b206}{imel\+\_\+image\+\_\+slant} 
+
+\hyperlink{image_8c_a66997f20203b384d1185a1dd9985dd67}{imel\+\_\+image\+\_\+shift} 
+
+\hyperlink{image_8c_add471c449ecce1b4bd78fc34a698f44f}{imel\+\_\+image\+\_\+shift\+\_\+lines} 
+
+\hyperlink{info__cut_8c_aa8e34152e2f5716e6a195ee1b8107f85}{imel\+\_\+info\+\_\+cut\+\_\+add} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\+M\+E\+L\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL@{I\+M\+E\+L\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL@{I\+M\+E\+L\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL}}\item[{\em 
+I\+M\+E\+L\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL\hypertarget{header_8h_a2165f253ebc3e84d406c905ab1d77e7fa54193b97bb75606080a6da0f63d4a016}{}\label{header_8h_a2165f253ebc3e84d406c905ab1d77e7fa54193b97bb75606080a6da0f63d4a016}
+}]Horizontal Orientation \index{I\+M\+E\+L\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+V\+E\+R\+T\+I\+C\+AL@{I\+M\+E\+L\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+V\+E\+R\+T\+I\+C\+AL}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+V\+E\+R\+T\+I\+C\+AL@{I\+M\+E\+L\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+V\+E\+R\+T\+I\+C\+AL}}\item[{\em 
+I\+M\+E\+L\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+V\+E\+R\+T\+I\+C\+AL\hypertarget{header_8h_a2165f253ebc3e84d406c905ab1d77e7faa9b3644e7dcb9da8fe41e2981b044687}{}\label{header_8h_a2165f253ebc3e84d406c905ab1d77e7faa9b3644e7dcb9da8fe41e2981b044687}
+}]Vertical Orientation \end{description}
+\end{Desc}
+\index{header.\+h@{header.\+h}!\+\_\+imel\+\_\+pattern\+\_\+operation@{\+\_\+imel\+\_\+pattern\+\_\+operation}}
+\index{\+\_\+imel\+\_\+pattern\+\_\+operation@{\+\_\+imel\+\_\+pattern\+\_\+operation}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+imel\+\_\+pattern\+\_\+operation}{_imel_pattern_operation}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \+\_\+imel\+\_\+pattern\+\_\+operation}}\hypertarget{header_8h_a191ba3a796907e762b75b21308992809}{}\label{header_8h_a191ba3a796907e762b75b21308992809}
+Imel\+Pattern\+Operation type. Specifies operations with patterns.
+
+\begin{DoxyNote}{Note}
+Enum values starts from 0 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_af026795ee048b2294876418c64729d03}{imel\+\_\+image\+\_\+apply\+\_\+pattern} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\+M\+E\+L\+\_\+\+P\+A\+T\+T\+E\+R\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+I\+N\+S\+E\+RT@{I\+M\+E\+L\+\_\+\+P\+A\+T\+T\+E\+R\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+I\+N\+S\+E\+RT}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+P\+A\+T\+T\+E\+R\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+I\+N\+S\+E\+RT@{I\+M\+E\+L\+\_\+\+P\+A\+T\+T\+E\+R\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+I\+N\+S\+E\+RT}}\item[{\em 
+I\+M\+E\+L\+\_\+\+P\+A\+T\+T\+E\+R\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+I\+N\+S\+E\+RT\hypertarget{header_8h_a191ba3a796907e762b75b21308992809ae8fa9b5dc7dd0573fed840d173a001e3}{}\label{header_8h_a191ba3a796907e762b75b21308992809ae8fa9b5dc7dd0573fed840d173a001e3}
+}]Insert pattern over the original image \index{I\+M\+E\+L\+\_\+\+P\+A\+T\+T\+E\+R\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+UM@{I\+M\+E\+L\+\_\+\+P\+A\+T\+T\+E\+R\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+UM}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+P\+A\+T\+T\+E\+R\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+UM@{I\+M\+E\+L\+\_\+\+P\+A\+T\+T\+E\+R\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+UM}}\item[{\em 
+I\+M\+E\+L\+\_\+\+P\+A\+T\+T\+E\+R\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+UM\hypertarget{header_8h_a191ba3a796907e762b75b21308992809a7166285e129b5f5df4a08e226e4154d9}{}\label{header_8h_a191ba3a796907e762b75b21308992809a7166285e129b5f5df4a08e226e4154d9}
+}]Sum pattern colors to original image colors \index{I\+M\+E\+L\+\_\+\+P\+A\+T\+T\+E\+R\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+U\+B\+T\+R\+A\+CT@{I\+M\+E\+L\+\_\+\+P\+A\+T\+T\+E\+R\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+U\+B\+T\+R\+A\+CT}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+P\+A\+T\+T\+E\+R\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+U\+B\+T\+R\+A\+CT@{I\+M\+E\+L\+\_\+\+P\+A\+T\+T\+E\+R\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+U\+B\+T\+R\+A\+CT}}\item[{\em 
+I\+M\+E\+L\+\_\+\+P\+A\+T\+T\+E\+R\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+U\+B\+T\+R\+A\+CT\hypertarget{header_8h_a191ba3a796907e762b75b21308992809a2f80a7dac9b5bcd6d2b7a45e3e5b1196}{}\label{header_8h_a191ba3a796907e762b75b21308992809a2f80a7dac9b5bcd6d2b7a45e3e5b1196}
+}]Subtract pattern colors from original image colors \end{description}
+\end{Desc}
+\index{header.\+h@{header.\+h}!\+\_\+imel\+\_\+ref@{\+\_\+imel\+\_\+ref}}
+\index{\+\_\+imel\+\_\+ref@{\+\_\+imel\+\_\+ref}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+imel\+\_\+ref}{_imel_ref}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \+\_\+imel\+\_\+ref}}\hypertarget{header_8h_ad11ee694d9812e135c152f4623da3452}{}\label{header_8h_ad11ee694d9812e135c152f4623da3452}
+Imel\+Ref type. Specifies the reference.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a75fbdaa484f8b191b8988af68181c488}{imel\+\_\+image\+\_\+auto\+\_\+cut} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\+M\+E\+L\+\_\+\+R\+E\+F\+\_\+\+C\+O\+L\+OR@{I\+M\+E\+L\+\_\+\+R\+E\+F\+\_\+\+C\+O\+L\+OR}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+R\+E\+F\+\_\+\+C\+O\+L\+OR@{I\+M\+E\+L\+\_\+\+R\+E\+F\+\_\+\+C\+O\+L\+OR}}\item[{\em 
+I\+M\+E\+L\+\_\+\+R\+E\+F\+\_\+\+C\+O\+L\+OR\hypertarget{header_8h_ad11ee694d9812e135c152f4623da3452a65348fcfbd02d80ad03c9d5a7bda9695}{}\label{header_8h_ad11ee694d9812e135c152f4623da3452a65348fcfbd02d80ad03c9d5a7bda9695}
+}]Reference to color \index{I\+M\+E\+L\+\_\+\+R\+E\+F\+\_\+\+L\+E\+V\+EL@{I\+M\+E\+L\+\_\+\+R\+E\+F\+\_\+\+L\+E\+V\+EL}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+R\+E\+F\+\_\+\+L\+E\+V\+EL@{I\+M\+E\+L\+\_\+\+R\+E\+F\+\_\+\+L\+E\+V\+EL}}\item[{\em 
+I\+M\+E\+L\+\_\+\+R\+E\+F\+\_\+\+L\+E\+V\+EL\hypertarget{header_8h_ad11ee694d9812e135c152f4623da3452a6a037a9aaa6628819ec5be2dabc53522}{}\label{header_8h_ad11ee694d9812e135c152f4623da3452a6a037a9aaa6628819ec5be2dabc53522}
+}]Reference to level \end{description}
+\end{Desc}
+\index{header.\+h@{header.\+h}!\+\_\+imel\+\_\+value@{\+\_\+imel\+\_\+value}}
+\index{\+\_\+imel\+\_\+value@{\+\_\+imel\+\_\+value}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+imel\+\_\+value}{_imel_value}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \+\_\+imel\+\_\+value}}\hypertarget{header_8h_aa326347c06714f71ccc11ba6eea7a08a}{}\label{header_8h_aa326347c06714f71ccc11ba6eea7a08a}
+Imel\+Value type. Specifies the units of measure.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{point_8c_a5378c3d9ccaeb5f1325b64dd5740a072}{imel\+\_\+point\+\_\+get\+\_\+from\+\_\+line} 
+
+\hyperlink{value_8c_a09670d688bb50c3334e933772839fb23}{imel\+\_\+value\+\_\+convert} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\+M\+E\+L\+\_\+\+V\+A\+L\+U\+E\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE@{I\+M\+E\+L\+\_\+\+V\+A\+L\+U\+E\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+V\+A\+L\+U\+E\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE@{I\+M\+E\+L\+\_\+\+V\+A\+L\+U\+E\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE}}\item[{\em 
+I\+M\+E\+L\+\_\+\+V\+A\+L\+U\+E\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE\hypertarget{header_8h_aa326347c06714f71ccc11ba6eea7a08aa5928e9174fddf8bf39132d2c607b9052}{}\label{header_8h_aa326347c06714f71ccc11ba6eea7a08aa5928e9174fddf8bf39132d2c607b9052}
+}]Percentage \index{I\+M\+E\+L\+\_\+\+V\+A\+L\+U\+E\+\_\+\+P\+I\+X\+EL@{I\+M\+E\+L\+\_\+\+V\+A\+L\+U\+E\+\_\+\+P\+I\+X\+EL}!header.\+h@{header.\+h}}\index{header.\+h@{header.\+h}!I\+M\+E\+L\+\_\+\+V\+A\+L\+U\+E\+\_\+\+P\+I\+X\+EL@{I\+M\+E\+L\+\_\+\+V\+A\+L\+U\+E\+\_\+\+P\+I\+X\+EL}}\item[{\em 
+I\+M\+E\+L\+\_\+\+V\+A\+L\+U\+E\+\_\+\+P\+I\+X\+EL\hypertarget{header_8h_aa326347c06714f71ccc11ba6eea7a08aa627199d00b867bb7f645da67f9006562}{}\label{header_8h_aa326347c06714f71ccc11ba6eea7a08aa627199d00b867bb7f645da67f9006562}
+}]Pixel \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{header.\+h@{header.\+h}!imel\+\_\+printf\+\_\+debug@{imel\+\_\+printf\+\_\+debug}}
+\index{imel\+\_\+printf\+\_\+debug@{imel\+\_\+printf\+\_\+debug}!header.\+h@{header.\+h}}
+\subsubsection[{\texorpdfstring{imel\+\_\+printf\+\_\+debug(const char $\ast$function, const char $\ast$filename, const char $\ast$error\+\_\+level, char $\ast$\+\_\+\+\_\+format,...)}{imel_printf_debug(const char *function, const char *filename, const char *error_level, char *__format,...)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+printf\+\_\+debug (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{function, }
+\item[{const char $\ast$}]{filename, }
+\item[{const char $\ast$}]{error\+\_\+level, }
+\item[{char $\ast$}]{\+\_\+\+\_\+format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{header_8h_ad4629c597b8f8827434c9ca3b183c4de}{}\label{header_8h_ad4629c597b8f8827434c9ca3b183c4de}
+imel\+\_\+debug\+\_\+printf are foundamental for macro \hyperlink{header_8h_afa6c4a6400518363dd86d406785585b2}{return\+\_\+if\+\_\+fail} and \hyperlink{header_8h_aedf541d4162f35857638d2ececedc2d7}{return\+\_\+var\+\_\+if\+\_\+fail}. It print the message only if compiled with debug=true.
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & Name of the function where it\textquotesingle{}s called or N\+U\+LL \\
+\hline
+{\em filename} & Name of the file or N\+U\+LL \\
+\hline
+{\em error\+\_\+level} & Type of error ( Warning, Error, Info, ... ) or N\+U\+LL \\
+\hline
+{\em \+\_\+\+\_\+format} & Message \\
+\hline
+{\em ...} & Parameters requested by {\ttfamily \+\_\+\+\_\+format} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if debug=true, else F\+A\+L\+SE 
+\end{DoxyReturn}

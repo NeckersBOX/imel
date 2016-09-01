@@ -1,0 +1,81 @@
+.TH "_imel_pixel" 3 "Thu Sep 1 2016" "Version 3.0" "Imel" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_imel_pixel \- Rappresentation of a pixel in Imel library\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <header\&.h>\fP
+.SS "Data Fields"
+
+.PP
+.RI "\fB\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "\fBImelColor\fP \fBred\fP"
+.br
+.ti -1c
+.RI "\fBImelColor\fP \fBgreen\fP"
+.br
+.ti -1c
+.RI "\fBImelColor\fP \fBblue\fP"
+.br
+.ti -1c
+.RI "\fBImelLevel\fP \fBlevel\fP"
+.br
+.in -1c
+.in -1c
+.SH "Detailed Description"
+.PP 
+Rappresentation of a pixel in Imel library\&. 
+
+This type is the fundamental one, includes all the information needed to create a pixel composed of the three basic colors and its importance or transparency\&.
+.PP
+.PP
+.nf
+ImelPixel m1_color = { 255, 255, 255, 0 };
+ImelPixel m2_color;
+
+m2_color = imel_pixel_new_from_string ('#ffffff', 0);
+.fi
+.PP
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_pixel_new\fP 
+.PP
+\fBimel_pixel_new_from_string\fP 
+.PP
+\fBimel_pixel_new_from_rgba\fP 
+.PP
+\fBimel_pixel_new_from_hsl\fP 
+.PP
+\fBimel_pixel_copy\fP
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+If two pixels have different level values when they are used in functions like \fBimel_pixel_copy\fP the first one can be replaced only if the second one has the same or greater level value\&. 
+.RE
+.PP
+
+.SH "Field Documentation"
+.PP 
+.SS "\fBImelColor\fP _imel_pixel::blue"
+Blue channel\&. Values from 0 to 255\&. 
+.SS "\fBImelColor\fP _imel_pixel::green"
+Green channel\&. Values from 0 to 255\&. 
+.SS "\fBImelLevel\fP _imel_pixel::level"
+Alpha for values from 0 to -255, else level 
+.SS "\fBImelColor\fP _imel_pixel::red"
+Red channel\&. Values from 0 to 255\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Imel from the source code\&.

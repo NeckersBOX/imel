@@ -1,0 +1,118 @@
+.TH "miscellaneous.c" 3 "Thu Sep 1 2016" "Version 3.0" "Imel" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+miscellaneous.c \- This file contains miscellaneus function\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'header\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbool\fP \fBimel_enable_brush\fP (\fBImelImage\fP *brush)"
+.br
+.RI "\fIEnable the brush\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_disable_brush\fP (void)"
+.br
+.RI "\fIDisable the brush\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_printf_debug\fP (const char *function, const char *filename, const char *error_level, char *__format,\&.\&.\&.)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBImelImage\fP * \fBglobal_brush\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file contains miscellaneus function\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Davide Francesco Merico 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBbool\fP imel_disable_brush (void)"
+
+.PP
+Disable the brush\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success, FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBglobal_brush\fP 
+.PP
+\fBimel_disable_brush\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_enable_brush (\fBImelImage\fP * brush)"
+
+.PP
+Enable the brush\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbrush\fP Image containing the brush 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success, FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBglobal_brush\fP 
+.PP
+\fBimel_disable_brush\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_printf_debug (const char * function, const char * filename, const char * error_level, char * __format,  \&.\&.\&.)"
+imel_debug_printf are foundamental for macro \fBreturn_if_fail\fP and \fBreturn_var_if_fail\fP\&. It print the message only if compiled with debug=true\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfunction\fP Name of the function where it's called or NULL 
+.br
+\fIfilename\fP Name of the file or NULL 
+.br
+\fIerror_level\fP Type of error ( Warning, Error, Info, \&.\&.\&. ) or NULL 
+.br
+\fI__format\fP Message 
+.br
+\fI\&.\&.\&.\fP Parameters requested by \fC__format\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE if debug=true, else FALSE 
+.RE
+.PP
+
+.SH "Variable Documentation"
+.PP 
+.SS "\fBImelImage\fP* global_brush"
+If brush is enabled, this variable will contain the brush image and will be used in all drawing functions except \fBimel_draw_point\fP\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Imel from the source code\&.

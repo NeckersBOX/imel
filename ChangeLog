@@ -1,0 +1,32 @@
+ - To: 0.3.0 version
+
+2016-07-29 Merico Davide Francesco <hds619@gmail.com>
+    + Bug fix: imel_pixel_union
+    + Bug fix: imel_draw_line
+    + Bug fix: imel_draw_rect
+    
+    + Minor bug fix: imel_pixel_compare
+    + Minor bug fix: imel_effect_rasterize
+    
+    + Added function: imel_pixel_get_hsl ()
+    + Added function: imel_pixel_new_from_hsl ()
+    + Added function: imel_pixel_get_distance ()
+    
+    + Added type: ImelHSL
+    
+    + Fix some compiling warning..
+    
+    - Removed: FAXG3 image format
+
+2016-08-22 Merico Davide Francesco <hds619@gmail.com> 
+    + Changed: ImelInfoCut type in a single-linked-list.   
+    + Changed: imel_info_cut_* functions
+    
+    + Rewritten: imel_image_cut_grid
+
+2016-08-24 Merico Davide Francesco <hds619@gmail.com>
+	+ Bug fix: Memory leak in imel_point_array_free ()
+	+ Bug fix: imel_draw_line doesn't use brush when it's enabled
+	+ Bug fix: imel_point_get_point_from_image
+	
+    + Documentation was rewritten with doxygen

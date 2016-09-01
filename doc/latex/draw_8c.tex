@@ -1,0 +1,1085 @@
+\hypertarget{draw_8c}{}\section{draw.\+c File Reference}
+\label{draw_8c}\index{draw.\+c@{draw.\+c}}
+
+
+This file contains functions to draw.  
+
+
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}header.\+h\char`\"{}}\\*
+Include dependency graph for draw.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{draw_8c_a3e8d240e5d85197b6070f0ec97b2c030}{imel\+\_\+draw\+\_\+circle} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} radius, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pxl)
+\begin{DoxyCompactList}\small\item\em Draw a circle. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{draw_8c_ad8b931ece29f161af9b5a4153d186dd4}{imel\+\_\+draw\+\_\+partial\+\_\+reg\+\_\+shape} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} r, long v, short p, double start\+\_\+angle, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pxl)
+\begin{DoxyCompactList}\small\item\em Draw a partial regular shape. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{draw_8c_a4cc27abce5f2d1cfe72dc7e5b078adc8}{imel\+\_\+draw\+\_\+arch} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} radius, double start\+\_\+angle, double end\+\_\+angle, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pxl)
+\begin{DoxyCompactList}\small\item\em Draw an arch. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{draw_8c_ac7a6615ed3eeda8f99766116040a86e9}{imel\+\_\+draw\+\_\+filled\+\_\+arch} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} radius, double start\+\_\+angle, double end\+\_\+angle, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pxl)
+\begin{DoxyCompactList}\small\item\em Draw a filled arch. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{draw_8c_a0168dd78ad67c50479e3244c9f6cc2a6}{imel\+\_\+draw\+\_\+line} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+sx, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+sy, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+ex, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+ey, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pixel)
+\begin{DoxyCompactList}\small\item\em Draw a line. \end{DoxyCompactList}\item 
+void \hyperlink{draw_8c_a80e6d667aceb3de202823e5493a774b1}{imel\+\_\+draw\+\_\+point} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pixel)
+\begin{DoxyCompactList}\small\item\em Draw a single point in an image. \end{DoxyCompactList}\item 
+void \hyperlink{draw_8c_a9d6234ac96cccab2e2d6b36acc78a865}{imel\+\_\+draw\+\_\+filled\+\_\+circle} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} radius, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pxl)
+\begin{DoxyCompactList}\small\item\em Draw a filled circle. \end{DoxyCompactList}\item 
+void \hyperlink{draw_8c_aa6c826f436252a630b7e4d1d10c73309}{imel\+\_\+draw\+\_\+rect} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x1, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y1, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x2, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y2, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pixel, \hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} fill)
+\begin{DoxyCompactList}\small\item\em Draw a rectangle ( filled or not ) \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{draw_8c_a72fb4e6cce353b8051c269d89460cd1c}{imel\+\_\+draw\+\_\+rect\+\_\+with\+\_\+rounded\+\_\+angles} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x1, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y1, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x2, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y2, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} radius, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pixel, \hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} fill)
+\begin{DoxyCompactList}\small\item\em Draw a rectangle with rounded angles ( filled or not ) \end{DoxyCompactList}\item 
+void \hyperlink{draw_8c_a0f6a2052074967fa5b57e487544f42ee}{imel\+\_\+draw\+\_\+point\+\_\+from\+\_\+array} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} n\+\_\+points, \hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} $\ast$$\ast$points)
+\begin{DoxyCompactList}\small\item\em Draw more point at the same time. \end{DoxyCompactList}\item 
+void \hyperlink{draw_8c_a6e85b1251f6fe37a3fd75e2642ef7d10}{imel\+\_\+draw\+\_\+ellipse} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y, double a, double b, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pxl)
+\begin{DoxyCompactList}\small\item\em Draw an ellipse. \end{DoxyCompactList}\item 
+void \hyperlink{draw_8c_a9e9f3690fd2cb70848b39036a1fe9745}{imel\+\_\+draw\+\_\+filled\+\_\+ellipse} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y, double a, double b, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pxl)
+\begin{DoxyCompactList}\small\item\em Draw a filled ellipse. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{draw_8c_a0f17ca4ca8df8aada79f12e7cbd2397b}{imel\+\_\+draw\+\_\+gradient\+\_\+line} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+x1, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+y1, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+x2, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+y2, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} start, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} end)
+\begin{DoxyCompactList}\small\item\em Draw a line with gradient. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{draw_8c_a538f52427d2d8f84b45e5570d1dbf080}{imel\+\_\+draw\+\_\+filled\+\_\+line} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+x1, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+y1, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+x2, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+y2, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} ox, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} oy, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pixel)
+\begin{DoxyCompactList}\small\item\em Draw a filled line. \end{DoxyCompactList}\item 
+void \hyperlink{draw_8c_a2269fedea0f39513774d343c09587f2a}{imel\+\_\+draw\+\_\+figure} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} n\+\_\+points, \hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} $\ast$$\ast$starts, \hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} $\ast$$\ast$ends, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pixel)
+\begin{DoxyCompactList}\small\item\em Draw a non contiguous figure. \end{DoxyCompactList}\item 
+void \hyperlink{draw_8c_a8fc23d2f1a63119c89e2d8e20acad3e5}{imel\+\_\+draw\+\_\+contiguous\+\_\+figure} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} n\+\_\+points, \hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} $\ast$$\ast$points, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pixel)
+\begin{DoxyCompactList}\small\item\em Draw a contiguous figure. \end{DoxyCompactList}\item 
+void \hyperlink{draw_8c_afa90031c54946a102a04d37f86053605}{imel\+\_\+draw\+\_\+curve} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x1, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y1, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x2, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y2, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x3, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y3, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x4, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y4, int \+\_\+p, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pixel)
+\begin{DoxyCompactList}\small\item\em Draw a Bèzier\textquotesingle{}s curve. \end{DoxyCompactList}\item 
+void \hyperlink{draw_8c_a952856ed6ab73528312b3be16b5d2f67}{imel\+\_\+draw\+\_\+line\+\_\+connecting\+\_\+all\+\_\+points} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} $\ast$$\ast$points, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pxl)
+\begin{DoxyCompactList}\small\item\em Draw lines between all points passed. \end{DoxyCompactList}\item 
+void \hyperlink{draw_8c_ae51d3cb0d3e8009f633d4943f8ce53fa}{imel\+\_\+draw\+\_\+gradient\+\_\+curve} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x1, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y1, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x2, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y2, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x3, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y3, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x4, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y4, int \+\_\+p, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} start, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} end)
+\begin{DoxyCompactList}\small\item\em Draw a Bèzier\textquotesingle{}s curve with gradient. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{draw_8c_a2864f976c426f7664dea01afff43f794}{imel\+\_\+draw\+\_\+dashed\+\_\+line} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+x1, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+y1, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+x2, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+y2, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} size\+\_\+line, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} space\+\_\+line, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pixel)
+\begin{DoxyCompactList}\small\item\em Draw a dashed line. \end{DoxyCompactList}\item 
+void \hyperlink{draw_8c_a95650481eb72e49f9a549d11927f9d21}{imel\+\_\+draw\+\_\+dashed\+\_\+grid} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} sx, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} sy, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} ex, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} ey, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} col\+\_\+space, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} row\+\_\+space, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} size\+\_\+line, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} space\+\_\+line, \hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} init\+\_\+from\+\_\+start, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pixel)
+\begin{DoxyCompactList}\small\item\em Draw a dashed grid. \end{DoxyCompactList}\item 
+void \hyperlink{draw_8c_a57f5caaec1f269da475429df204d4829}{imel\+\_\+draw\+\_\+grid} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} sx, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} sy, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} ex, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} ey, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} col\+\_\+space, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} row\+\_\+space, \hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} init\+\_\+from\+\_\+start, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pixel)
+\begin{DoxyCompactList}\small\item\em Draw a grid. \end{DoxyCompactList}\item 
+void \hyperlink{draw_8c_a94c27538a3f6dec9bbd8b8790e37d08f}{imel\+\_\+draw\+\_\+gradient} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_aef27fcac7a96d118b3c3194c2577049f}{Imel\+Orientation} orientation, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} start, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} end, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} start\+\_\+color, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} end\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Draw a gradient. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{draw_8c_a15536050acc27defca08e29c54c6748e}{imel\+\_\+draw\+\_\+reg\+\_\+shape} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} r, long v, double start\+\_\+angle, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pxl)
+\begin{DoxyCompactList}\small\item\em Draw a regular shape. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{draw_8c_a0f49d79eedfe9f8083d97ce2496c2ac0}{imel\+\_\+draw\+\_\+spiral} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} radius, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} distance, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pxl)
+\begin{DoxyCompactList}\small\item\em Draw a spiral. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains functions to draw. 
+
+\begin{DoxyAuthor}{Author}
+Davide Francesco Merico These functions allow you to draw lines, curves, circles and much more inside an image. 
+\end{DoxyAuthor}
+\begin{DoxyNote}{Note}
+Most of the draw actions is made by imel\+\_\+pixel\+\_\+copy () 
+
+Angle can be set from 0 to 360 degrees 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{pixel_8c_a9bc6aa8b3ec663f1635827b0ebbdf46a}{imel\+\_\+pixel\+\_\+copy} 
+\end{DoxySeeAlso}
+
+
+\subsection{Function Documentation}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+arch@{imel\+\_\+draw\+\_\+arch}}
+\index{imel\+\_\+draw\+\_\+arch@{imel\+\_\+draw\+\_\+arch}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+arch(\+Imel\+Image $\ast$image, Imel\+Size x, Imel\+Size y, Imel\+Size radius, double start\+\_\+angle, double end\+\_\+angle, Imel\+Pixel pxl)}{imel_draw_arch(ImelImage *image, ImelSize x, ImelSize y, ImelSize radius, double start_angle, double end_angle, ImelPixel pxl)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+draw\+\_\+arch (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{x, }
+\item[{{\bf Imel\+Size}}]{y, }
+\item[{{\bf Imel\+Size}}]{radius, }
+\item[{double}]{start\+\_\+angle, }
+\item[{double}]{end\+\_\+angle, }
+\item[{{\bf Imel\+Pixel}}]{pxl}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a4cc27abce5f2d1cfe72dc7e5b078adc8}{}\label{draw_8c_a4cc27abce5f2d1cfe72dc7e5b078adc8}
+
+
+Draw an arch. 
+
+This function draw an arch in {\ttfamily image} with center in coordinate $(x,y)$ and radius of {\ttfamily radius} pixels.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the arch \\
+\hline
+{\em x} & Center coordinate x \\
+\hline
+{\em y} & Center coordinate y \\
+\hline
+{\em radius} & Radius of the arch \\
+\hline
+{\em start\+\_\+angle} & Start angle of the arch in radians \\
+\hline
+{\em end\+\_\+angle} & End angle of the arch in radians \\
+\hline
+{\em pxl} & Color and level of the arch \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if all values are valid, else F\+A\+L\+SE 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{draw_8c_ac7a6615ed3eeda8f99766116040a86e9}{imel\+\_\+draw\+\_\+filled\+\_\+arch} 
+\end{DoxySeeAlso}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+circle@{imel\+\_\+draw\+\_\+circle}}
+\index{imel\+\_\+draw\+\_\+circle@{imel\+\_\+draw\+\_\+circle}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+circle(\+Imel\+Image $\ast$image, Imel\+Size x, Imel\+Size y, Imel\+Size radius, Imel\+Pixel pxl)}{imel_draw_circle(ImelImage *image, ImelSize x, ImelSize y, ImelSize radius, ImelPixel pxl)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+draw\+\_\+circle (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{x, }
+\item[{{\bf Imel\+Size}}]{y, }
+\item[{{\bf Imel\+Size}}]{radius, }
+\item[{{\bf Imel\+Pixel}}]{pxl}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a3e8d240e5d85197b6070f0ec97b2c030}{}\label{draw_8c_a3e8d240e5d85197b6070f0ec97b2c030}
+
+
+Draw a circle. 
+
+This function draw a circle in {\ttfamily image} with center in coordinate $(x,y)$ and radius {\ttfamily radius}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the circle \\
+\hline
+{\em x} & Center coordinate x \\
+\hline
+{\em y} & Center coordinate y \\
+\hline
+{\em radius} & Radius size \\
+\hline
+{\em pxl} & Color and level of the circle \\
+\hline
+\end{DoxyParams}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+contiguous\+\_\+figure@{imel\+\_\+draw\+\_\+contiguous\+\_\+figure}}
+\index{imel\+\_\+draw\+\_\+contiguous\+\_\+figure@{imel\+\_\+draw\+\_\+contiguous\+\_\+figure}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+contiguous\+\_\+figure(\+Imel\+Image $\ast$image, Imel\+Size n\+\_\+points, Imel\+Point $\ast$$\ast$points, Imel\+Pixel pixel)}{imel_draw_contiguous_figure(ImelImage *image, ImelSize n_points, ImelPoint **points, ImelPixel pixel)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+draw\+\_\+contiguous\+\_\+figure (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{n\+\_\+points, }
+\item[{{\bf Imel\+Point} $\ast$$\ast$}]{points, }
+\item[{{\bf Imel\+Pixel}}]{pixel}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a8fc23d2f1a63119c89e2d8e20acad3e5}{}\label{draw_8c_a8fc23d2f1a63119c89e2d8e20acad3e5}
+
+
+Draw a contiguous figure. 
+
+This function draw a contiguous figure in {\ttfamily image} from a list of {\ttfamily points} where each point is linked to the next one.
+
+
+\begin{DoxyCode}
+1 ImelImage *image = imel\_image\_new (100, 100);
+2 ImelPixel white = imel\_pixel\_new (0xff, 0xff, 0xff, 0);
+3 ImelPoint *points[5] = \{
+4          imel\_point\_new (image, 10, 10, white),
+5          imel\_point\_new (image, 90, 10, white),
+6          imel\_point\_new (image, 90, 90, white),
+7          imel\_point\_new (image, 10, 90, white),
+8          NULL \};
+9 
+10 points[4] = *points;
+11 imel\_draw\_contiguous\_figure (image, 5, points, white);
+12 points[4] = NULL;
+13 imel\_point\_array\_free (points);
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the figure \\
+\hline
+{\em n\+\_\+points} & Number of points in {\ttfamily points} or 0 if it\textquotesingle{}s a N\+U\+L\+L-\/terminated array. \\
+\hline
+{\em points} & Points to link togheter \\
+\hline
+{\em pixel} & Color and level of the figure \\
+\hline
+\end{DoxyParams}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+curve@{imel\+\_\+draw\+\_\+curve}}
+\index{imel\+\_\+draw\+\_\+curve@{imel\+\_\+draw\+\_\+curve}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+curve(\+Imel\+Image $\ast$image, Imel\+Size x1, Imel\+Size y1, Imel\+Size x2, Imel\+Size y2, Imel\+Size x3, Imel\+Size y3, Imel\+Size x4, Imel\+Size y4, int \+\_\+p, Imel\+Pixel pixel)}{imel_draw_curve(ImelImage *image, ImelSize x1, ImelSize y1, ImelSize x2, ImelSize y2, ImelSize x3, ImelSize y3, ImelSize x4, ImelSize y4, int _p, ImelPixel pixel)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+draw\+\_\+curve (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{x1, }
+\item[{{\bf Imel\+Size}}]{y1, }
+\item[{{\bf Imel\+Size}}]{x2, }
+\item[{{\bf Imel\+Size}}]{y2, }
+\item[{{\bf Imel\+Size}}]{x3, }
+\item[{{\bf Imel\+Size}}]{y3, }
+\item[{{\bf Imel\+Size}}]{x4, }
+\item[{{\bf Imel\+Size}}]{y4, }
+\item[{int}]{\+\_\+p, }
+\item[{{\bf Imel\+Pixel}}]{pixel}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_afa90031c54946a102a04d37f86053605}{}\label{draw_8c_afa90031c54946a102a04d37f86053605}
+
+
+Draw a Bèzier\textquotesingle{}s curve. 
+
+This function draw a Bèzier\textquotesingle{}s curve in {\ttfamily image} with color and level passed in {\ttfamily pixel}.
+
+
+\begin{DoxyCode}
+1 ImelPixel px\_p = \{ 255, 0, 0, 0 \}, px\_c = \{ 0, 0, 0, 1 \};
+2 ImelImage *image;
+3 
+4 image = imel\_image\_new (200, 200);
+5 imel\_draw\_circle (image, 10, 190, 5, px\_p);
+6 imel\_font\_write\_string (image, 17, 183, "x1, y1", 7, px\_p);
+7 imel\_draw\_circle (image, 10, 60, 5, px\_p);
+8 imel\_font\_write\_string (image, 17, 53, "x2, y2", 7, px\_p);
+9 imel\_draw\_circle (image, 190, 190, 5, px\_p);
+10 imel\_font\_write\_string (image, 140, 183, "x3, y3", 7, px\_p);
+11 imel\_draw\_circle (image, 130, 10, 5, px\_p);
+12 imel\_font\_write\_string (image, 137, 3, "x4, y4", 7, px\_p);
+13 
+14 imel\_draw\_curve (image, 10, 190, 10, 60, 190, 190, 130, 10, 200, px\_c);
+\end{DoxyCode}
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/curva_bezier}
+\caption{Example output}
+\end{DoxyImage}
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the curve \\
+\hline
+{\em x1} & Start coordinate x of the curve \\
+\hline
+{\em y1} & Start coordinate y of the curve \\
+\hline
+{\em x2} & First reference coordinate x \\
+\hline
+{\em y2} & First reference coordinate y \\
+\hline
+{\em x3} & End coordinate x of the curve \\
+\hline
+{\em y3} & End coordinate y of the curve \\
+\hline
+{\em x4} & Second reference coordinate x \\
+\hline
+{\em y4} & Second reference coordinate y \\
+\hline
+{\em \+\_\+p} & Number of steps to draw the curve, -\/1 to set default steps ( 1024 ) \\
+\hline
+{\em pixel} & Color and level of the curve \\
+\hline
+\end{DoxyParams}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+dashed\+\_\+grid@{imel\+\_\+draw\+\_\+dashed\+\_\+grid}}
+\index{imel\+\_\+draw\+\_\+dashed\+\_\+grid@{imel\+\_\+draw\+\_\+dashed\+\_\+grid}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+dashed\+\_\+grid(\+Imel\+Image $\ast$image, Imel\+Size sx, Imel\+Size sy, Imel\+Size ex, Imel\+Size ey, Imel\+Size col\+\_\+space, Imel\+Size row\+\_\+space, Imel\+Size size\+\_\+line, Imel\+Size space\+\_\+line, bool init\+\_\+from\+\_\+start, Imel\+Pixel pixel)}{imel_draw_dashed_grid(ImelImage *image, ImelSize sx, ImelSize sy, ImelSize ex, ImelSize ey, ImelSize col_space, ImelSize row_space, ImelSize size_line, ImelSize space_line, bool init_from_start, ImelPixel pixel)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+draw\+\_\+dashed\+\_\+grid (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{sx, }
+\item[{{\bf Imel\+Size}}]{sy, }
+\item[{{\bf Imel\+Size}}]{ex, }
+\item[{{\bf Imel\+Size}}]{ey, }
+\item[{{\bf Imel\+Size}}]{col\+\_\+space, }
+\item[{{\bf Imel\+Size}}]{row\+\_\+space, }
+\item[{{\bf Imel\+Size}}]{size\+\_\+line, }
+\item[{{\bf Imel\+Size}}]{space\+\_\+line, }
+\item[{{\bf bool}}]{init\+\_\+from\+\_\+start, }
+\item[{{\bf Imel\+Pixel}}]{pixel}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a95650481eb72e49f9a549d11927f9d21}{}\label{draw_8c_a95650481eb72e49f9a549d11927f9d21}
+
+
+Draw a dashed grid. 
+
+This function draw a dashed grid in {\ttfamily image} from coordinate $(sx,sy)$ to coordinate $(ex,ey)$ with columns length {\ttfamily col\+\_\+space} and rows length {\ttfamily row\+\_\+space}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the grid \\
+\hline
+{\em sx} & Start coordinate x of the grid \\
+\hline
+{\em sy} & Start coordinate y of the grid \\
+\hline
+{\em ex} & End coordinate x of the grid \\
+\hline
+{\em ey} & End coordinate y of the grid \\
+\hline
+{\em col\+\_\+space} & Space between columns \\
+\hline
+{\em row\+\_\+space} & Space between rows \\
+\hline
+{\em size\+\_\+line} & Length of the small lines \\
+\hline
+{\em space\+\_\+line} & Space between the small lines \\
+\hline
+{\em init\+\_\+from\+\_\+start} & T\+R\+UE if the first column and row init from coordinate $(sx,sy)$, else F\+A\+L\+SE \\
+\hline
+{\em pixel} & Color and level of the line \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{draw_8c_a2864f976c426f7664dea01afff43f794}{imel\+\_\+draw\+\_\+dashed\+\_\+line} 
+\end{DoxySeeAlso}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+dashed\+\_\+line@{imel\+\_\+draw\+\_\+dashed\+\_\+line}}
+\index{imel\+\_\+draw\+\_\+dashed\+\_\+line@{imel\+\_\+draw\+\_\+dashed\+\_\+line}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+dashed\+\_\+line(\+Imel\+Image $\ast$image, Imel\+Size \+\_\+x1, Imel\+Size \+\_\+y1, Imel\+Size \+\_\+x2, Imel\+Size \+\_\+y2, Imel\+Size size\+\_\+line, Imel\+Size space\+\_\+line, Imel\+Pixel pixel)}{imel_draw_dashed_line(ImelImage *image, ImelSize _x1, ImelSize _y1, ImelSize _x2, ImelSize _y2, ImelSize size_line, ImelSize space_line, ImelPixel pixel)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+draw\+\_\+dashed\+\_\+line (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{\+\_\+x1, }
+\item[{{\bf Imel\+Size}}]{\+\_\+y1, }
+\item[{{\bf Imel\+Size}}]{\+\_\+x2, }
+\item[{{\bf Imel\+Size}}]{\+\_\+y2, }
+\item[{{\bf Imel\+Size}}]{size\+\_\+line, }
+\item[{{\bf Imel\+Size}}]{space\+\_\+line, }
+\item[{{\bf Imel\+Pixel}}]{pixel}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a2864f976c426f7664dea01afff43f794}{}\label{draw_8c_a2864f976c426f7664dea01afff43f794}
+
+
+Draw a dashed line. 
+
+This function draw a dashed line in {\ttfamily image} from coordinate $(\_x_1,\_y_1)$ to coordinate $(\_x_2,\_y_2)$ with small lines length {\ttfamily size\+\_\+line} pixels and space between them of {\ttfamily space\+\_\+line} pixels.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the line \\
+\hline
+{\em \+\_\+x1} & Start coordinate x of the line \\
+\hline
+{\em \+\_\+y1} & Start coordinate y of the line \\
+\hline
+{\em \+\_\+x2} & End coordinate x of the line \\
+\hline
+{\em \+\_\+y2} & End coordinate y of the line \\
+\hline
+{\em size\+\_\+line} & Length of the small lines \\
+\hline
+{\em space\+\_\+line} & Space between the small lines \\
+\hline
+{\em pixel} & Color and level of the line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+F\+A\+L\+SE if image or size\+\_\+line values aren\textquotesingle{}t valid, else T\+R\+UE 
+\end{DoxyReturn}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+ellipse@{imel\+\_\+draw\+\_\+ellipse}}
+\index{imel\+\_\+draw\+\_\+ellipse@{imel\+\_\+draw\+\_\+ellipse}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+ellipse(\+Imel\+Image $\ast$image, Imel\+Size x, Imel\+Size y, double a, double b, Imel\+Pixel pxl)}{imel_draw_ellipse(ImelImage *image, ImelSize x, ImelSize y, double a, double b, ImelPixel pxl)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+draw\+\_\+ellipse (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{x, }
+\item[{{\bf Imel\+Size}}]{y, }
+\item[{double}]{a, }
+\item[{double}]{b, }
+\item[{{\bf Imel\+Pixel}}]{pxl}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a6e85b1251f6fe37a3fd75e2642ef7d10}{}\label{draw_8c_a6e85b1251f6fe37a3fd75e2642ef7d10}
+
+
+Draw an ellipse. 
+
+This function draw an ellipse in {\ttfamily image} with center in coordinate $(x,y)$ with {\ttfamily a} width and {\ttfamily b} height.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the ellipse \\
+\hline
+{\em x} & Coordinate x of the ellipse center \\
+\hline
+{\em y} & Coordinate y of the ellipse center \\
+\hline
+{\em a} & Length of the horizontal axis \\
+\hline
+{\em b} & Length of the vertical axis \\
+\hline
+{\em pxl} & Color and level of the ellipse \\
+\hline
+\end{DoxyParams}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+figure@{imel\+\_\+draw\+\_\+figure}}
+\index{imel\+\_\+draw\+\_\+figure@{imel\+\_\+draw\+\_\+figure}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+figure(\+Imel\+Image $\ast$image, Imel\+Size n\+\_\+points, Imel\+Point $\ast$$\ast$starts, Imel\+Point $\ast$$\ast$ends, Imel\+Pixel pixel)}{imel_draw_figure(ImelImage *image, ImelSize n_points, ImelPoint **starts, ImelPoint **ends, ImelPixel pixel)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+draw\+\_\+figure (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{n\+\_\+points, }
+\item[{{\bf Imel\+Point} $\ast$$\ast$}]{starts, }
+\item[{{\bf Imel\+Point} $\ast$$\ast$}]{ends, }
+\item[{{\bf Imel\+Pixel}}]{pixel}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a2269fedea0f39513774d343c09587f2a}{}\label{draw_8c_a2269fedea0f39513774d343c09587f2a}
+
+
+Draw a non contiguous figure. 
+
+This function draw a non contiguous figure in {\ttfamily image} where each start and end point is knowed. Each point have color and level passed {\ttfamily pixel} 
+
+
+\begin{DoxyCode}
+1 ImelPoint *starts[4] = \{ NULL \}, *ends[3];
+2 ImelPixel pixel = \{ 255, 0, 0, 0 \};
+3 
+4 image = imel\_image\_new (64, 64);
+5 
+6 starts[0] = imel\_point\_new (image, 8, 8, pixel);
+7 starts[1] = imel\_point\_new (image, 56, 8, pixel);
+8 starts[2] = imel\_point\_new (image, 32, 58, pixel);
+9 
+10 ends[0] = imel\_point\_new (image, 32, 32, pixel);
+11 ends[1] = ends[2] = ends[0];
+12 
+13 imel\_draw\_figure (image, 3, starts, ends, pixel);
+14 imel\_point\_free (ends[0]);
+15 imel\_point\_array\_free (starts);
+\end{DoxyCode}
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/draw_figure}
+\caption{Example output}
+\end{DoxyImage}
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the figure \\
+\hline
+{\em n\+\_\+points} & Number of points in {\ttfamily starts} and {\ttfamily ends} \\
+\hline
+{\em starts} & Start points \\
+\hline
+{\em ends} & End points \\
+\hline
+{\em pixel} & Color and level of the figure \\
+\hline
+\end{DoxyParams}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+filled\+\_\+arch@{imel\+\_\+draw\+\_\+filled\+\_\+arch}}
+\index{imel\+\_\+draw\+\_\+filled\+\_\+arch@{imel\+\_\+draw\+\_\+filled\+\_\+arch}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+filled\+\_\+arch(\+Imel\+Image $\ast$image, Imel\+Size x, Imel\+Size y, Imel\+Size radius, double start\+\_\+angle, double end\+\_\+angle, Imel\+Pixel pxl)}{imel_draw_filled_arch(ImelImage *image, ImelSize x, ImelSize y, ImelSize radius, double start_angle, double end_angle, ImelPixel pxl)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+draw\+\_\+filled\+\_\+arch (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{x, }
+\item[{{\bf Imel\+Size}}]{y, }
+\item[{{\bf Imel\+Size}}]{radius, }
+\item[{double}]{start\+\_\+angle, }
+\item[{double}]{end\+\_\+angle, }
+\item[{{\bf Imel\+Pixel}}]{pxl}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_ac7a6615ed3eeda8f99766116040a86e9}{}\label{draw_8c_ac7a6615ed3eeda8f99766116040a86e9}
+
+
+Draw a filled arch. 
+
+This function draw a filled arch in {\ttfamily image} with center in coordinate $(x,y)$ and radius of {\ttfamily radius} pixels.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the arch \\
+\hline
+{\em x} & Center coordinate x \\
+\hline
+{\em y} & Center coordinate y \\
+\hline
+{\em radius} & Radius of the arch \\
+\hline
+{\em start\+\_\+angle} & Start angle of the arch in radians \\
+\hline
+{\em end\+\_\+angle} & End angle of the arch in radians \\
+\hline
+{\em pxl} & Color and level of the arch \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if all values are valid, else F\+A\+L\+SE 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{draw_8c_a4cc27abce5f2d1cfe72dc7e5b078adc8}{imel\+\_\+draw\+\_\+arch} 
+\end{DoxySeeAlso}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+filled\+\_\+circle@{imel\+\_\+draw\+\_\+filled\+\_\+circle}}
+\index{imel\+\_\+draw\+\_\+filled\+\_\+circle@{imel\+\_\+draw\+\_\+filled\+\_\+circle}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+filled\+\_\+circle(\+Imel\+Image $\ast$image, Imel\+Size x, Imel\+Size y, Imel\+Size radius, Imel\+Pixel pxl)}{imel_draw_filled_circle(ImelImage *image, ImelSize x, ImelSize y, ImelSize radius, ImelPixel pxl)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+draw\+\_\+filled\+\_\+circle (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{x, }
+\item[{{\bf Imel\+Size}}]{y, }
+\item[{{\bf Imel\+Size}}]{radius, }
+\item[{{\bf Imel\+Pixel}}]{pxl}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a9d6234ac96cccab2e2d6b36acc78a865}{}\label{draw_8c_a9d6234ac96cccab2e2d6b36acc78a865}
+
+
+Draw a filled circle. 
+
+This function draw a circle filled with color and level passed in {\ttfamily pxl} at coordinate $(x,y)$ with a radius of {\ttfamily radius} pixels.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the circle \\
+\hline
+{\em x} & Coordinate x of the circle center \\
+\hline
+{\em y} & Coordinate y of the circle center \\
+\hline
+{\em radius} & Radius of the circle in pixels \\
+\hline
+{\em pxl} & Color and level of the circle \\
+\hline
+\end{DoxyParams}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+filled\+\_\+ellipse@{imel\+\_\+draw\+\_\+filled\+\_\+ellipse}}
+\index{imel\+\_\+draw\+\_\+filled\+\_\+ellipse@{imel\+\_\+draw\+\_\+filled\+\_\+ellipse}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+filled\+\_\+ellipse(\+Imel\+Image $\ast$image, Imel\+Size x, Imel\+Size y, double a, double b, Imel\+Pixel pxl)}{imel_draw_filled_ellipse(ImelImage *image, ImelSize x, ImelSize y, double a, double b, ImelPixel pxl)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+draw\+\_\+filled\+\_\+ellipse (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{x, }
+\item[{{\bf Imel\+Size}}]{y, }
+\item[{double}]{a, }
+\item[{double}]{b, }
+\item[{{\bf Imel\+Pixel}}]{pxl}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a9e9f3690fd2cb70848b39036a1fe9745}{}\label{draw_8c_a9e9f3690fd2cb70848b39036a1fe9745}
+
+
+Draw a filled ellipse. 
+
+This function draw a filled ellipse in {\ttfamily image} with center in coordinate $(x,y)$ with {\ttfamily a} width and {\ttfamily b} height.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the ellipse \\
+\hline
+{\em x} & Coordinate x of the ellipse center \\
+\hline
+{\em y} & Coordinate y of the ellipse center \\
+\hline
+{\em a} & Length of the horizontal axis \\
+\hline
+{\em b} & Length of the vertical axis \\
+\hline
+{\em pxl} & Color and level of the ellipse \\
+\hline
+\end{DoxyParams}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+filled\+\_\+line@{imel\+\_\+draw\+\_\+filled\+\_\+line}}
+\index{imel\+\_\+draw\+\_\+filled\+\_\+line@{imel\+\_\+draw\+\_\+filled\+\_\+line}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+filled\+\_\+line(\+Imel\+Image $\ast$image, Imel\+Size \+\_\+x1, Imel\+Size \+\_\+y1, Imel\+Size \+\_\+x2, Imel\+Size \+\_\+y2, Imel\+Size ox, Imel\+Size oy, Imel\+Pixel pixel)}{imel_draw_filled_line(ImelImage *image, ImelSize _x1, ImelSize _y1, ImelSize _x2, ImelSize _y2, ImelSize ox, ImelSize oy, ImelPixel pixel)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+draw\+\_\+filled\+\_\+line (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{\+\_\+x1, }
+\item[{{\bf Imel\+Size}}]{\+\_\+y1, }
+\item[{{\bf Imel\+Size}}]{\+\_\+x2, }
+\item[{{\bf Imel\+Size}}]{\+\_\+y2, }
+\item[{{\bf Imel\+Size}}]{ox, }
+\item[{{\bf Imel\+Size}}]{oy, }
+\item[{{\bf Imel\+Pixel}}]{pixel}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a538f52427d2d8f84b45e5570d1dbf080}{}\label{draw_8c_a538f52427d2d8f84b45e5570d1dbf080}
+
+
+Draw a filled line. 
+
+This function draw a line in {\ttfamily image} from coordinate $(\_x_1,\_y_1)$ to coordinate $(\_x_2,\_y_2)$ with a color and level passed in {\ttfamily pixel}, where each point of the line is linked to a coordinate $(ox,oy)$.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the line \\
+\hline
+{\em \+\_\+x1} & Start x coordinate \\
+\hline
+{\em \+\_\+y1} & Start y coordinate \\
+\hline
+{\em \+\_\+x2} & End x coordinate \\
+\hline
+{\em \+\_\+y2} & End y coordinate \\
+\hline
+{\em ox} & Coordinate x of the common point \\
+\hline
+{\em oy} & Coordinate y of the common point \\
+\hline
+{\em pixel} & Color and level of the line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+F\+A\+L\+SE if {\ttfamily image} isn\textquotesingle{}t a valid image, else T\+R\+UE 
+\end{DoxyReturn}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+gradient@{imel\+\_\+draw\+\_\+gradient}}
+\index{imel\+\_\+draw\+\_\+gradient@{imel\+\_\+draw\+\_\+gradient}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+gradient(\+Imel\+Image $\ast$image, Imel\+Orientation orientation, Imel\+Size start, Imel\+Size end, Imel\+Pixel start\+\_\+color, Imel\+Pixel end\+\_\+color)}{imel_draw_gradient(ImelImage *image, ImelOrientation orientation, ImelSize start, ImelSize end, ImelPixel start_color, ImelPixel end_color)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+draw\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Orientation}}]{orientation, }
+\item[{{\bf Imel\+Size}}]{start, }
+\item[{{\bf Imel\+Size}}]{end, }
+\item[{{\bf Imel\+Pixel}}]{start\+\_\+color, }
+\item[{{\bf Imel\+Pixel}}]{end\+\_\+color}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a94c27538a3f6dec9bbd8b8790e37d08f}{}\label{draw_8c_a94c27538a3f6dec9bbd8b8790e37d08f}
+
+
+Draw a gradient. 
+
+This function draw a gradient in {\ttfamily image}, with an {\ttfamily orientation} chosen, from color and level passed in {\ttfamily start\+\_\+color} to {\ttfamily end\+\_\+color}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the gradient \\
+\hline
+{\em orientation} & Gradient orientation \\
+\hline
+{\em start} & Start row or column ( depends from orientation ) \\
+\hline
+{\em end} & End row or column ( depends from orientation ) \\
+\hline
+{\em start\+\_\+color} & Start color and level \\
+\hline
+{\em end\+\_\+color} & End color and level \\
+\hline
+\end{DoxyParams}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+gradient\+\_\+curve@{imel\+\_\+draw\+\_\+gradient\+\_\+curve}}
+\index{imel\+\_\+draw\+\_\+gradient\+\_\+curve@{imel\+\_\+draw\+\_\+gradient\+\_\+curve}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+gradient\+\_\+curve(\+Imel\+Image $\ast$image, Imel\+Size x1, Imel\+Size y1, Imel\+Size x2, Imel\+Size y2, Imel\+Size x3, Imel\+Size y3, Imel\+Size x4, Imel\+Size y4, int \+\_\+p, Imel\+Pixel start, Imel\+Pixel end)}{imel_draw_gradient_curve(ImelImage *image, ImelSize x1, ImelSize y1, ImelSize x2, ImelSize y2, ImelSize x3, ImelSize y3, ImelSize x4, ImelSize y4, int _p, ImelPixel start, ImelPixel end)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+draw\+\_\+gradient\+\_\+curve (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{x1, }
+\item[{{\bf Imel\+Size}}]{y1, }
+\item[{{\bf Imel\+Size}}]{x2, }
+\item[{{\bf Imel\+Size}}]{y2, }
+\item[{{\bf Imel\+Size}}]{x3, }
+\item[{{\bf Imel\+Size}}]{y3, }
+\item[{{\bf Imel\+Size}}]{x4, }
+\item[{{\bf Imel\+Size}}]{y4, }
+\item[{int}]{\+\_\+p, }
+\item[{{\bf Imel\+Pixel}}]{start, }
+\item[{{\bf Imel\+Pixel}}]{end}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_ae51d3cb0d3e8009f633d4943f8ce53fa}{}\label{draw_8c_ae51d3cb0d3e8009f633d4943f8ce53fa}
+
+
+Draw a Bèzier\textquotesingle{}s curve with gradient. 
+
+This function draw a Bèzier\textquotesingle{}s curve in {\ttfamily image} with gradient from color and level passed in {\ttfamily start} to color and level passed in {\ttfamily end}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the curve \\
+\hline
+{\em x1} & Start coordinate x of the curve \\
+\hline
+{\em y1} & Start coordinate y of the curve \\
+\hline
+{\em x2} & First reference coordinate x \\
+\hline
+{\em y2} & First reference coordinate y \\
+\hline
+{\em x3} & End coordinate x of the curve \\
+\hline
+{\em y3} & End coordinate y of the curve \\
+\hline
+{\em x4} & Second reference coordinate x \\
+\hline
+{\em y4} & Second reference coordinate y \\
+\hline
+{\em \+\_\+p} & Number of steps to draw the curve, -\/1 to set default steps ( 1024 ) \\
+\hline
+{\em start} & Start color and level of the curve \\
+\hline
+{\em end} & End color and level of the curve \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{draw_8c_afa90031c54946a102a04d37f86053605}{imel\+\_\+draw\+\_\+curve} 
+\end{DoxySeeAlso}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+gradient\+\_\+line@{imel\+\_\+draw\+\_\+gradient\+\_\+line}}
+\index{imel\+\_\+draw\+\_\+gradient\+\_\+line@{imel\+\_\+draw\+\_\+gradient\+\_\+line}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+gradient\+\_\+line(\+Imel\+Image $\ast$image, Imel\+Size \+\_\+x1, Imel\+Size \+\_\+y1, Imel\+Size \+\_\+x2, Imel\+Size \+\_\+y2, Imel\+Pixel start, Imel\+Pixel end)}{imel_draw_gradient_line(ImelImage *image, ImelSize _x1, ImelSize _y1, ImelSize _x2, ImelSize _y2, ImelPixel start, ImelPixel end)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+draw\+\_\+gradient\+\_\+line (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{\+\_\+x1, }
+\item[{{\bf Imel\+Size}}]{\+\_\+y1, }
+\item[{{\bf Imel\+Size}}]{\+\_\+x2, }
+\item[{{\bf Imel\+Size}}]{\+\_\+y2, }
+\item[{{\bf Imel\+Pixel}}]{start, }
+\item[{{\bf Imel\+Pixel}}]{end}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a0f17ca4ca8df8aada79f12e7cbd2397b}{}\label{draw_8c_a0f17ca4ca8df8aada79f12e7cbd2397b}
+
+
+Draw a line with gradient. 
+
+This function draw a line in {\ttfamily image} from coordinate $(\_x_1,\_y_1)$ to coordinate $(\_x_2,\_y_2)$ with a color and level gradient from {\ttfamily start} to {\ttfamily end}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the line \\
+\hline
+{\em \+\_\+x1} & Start x coordinate \\
+\hline
+{\em \+\_\+y1} & Start y coordinate \\
+\hline
+{\em \+\_\+x2} & End x coordinate \\
+\hline
+{\em \+\_\+y2} & End y coordinate \\
+\hline
+{\em start} & Start color and level of the line \\
+\hline
+{\em end} & End color and level of the line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+F\+A\+L\+SE if {\ttfamily image} isn\textquotesingle{}t a valid image, else T\+R\+UE 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{draw_8c_a0168dd78ad67c50479e3244c9f6cc2a6}{imel\+\_\+draw\+\_\+line} 
+\end{DoxySeeAlso}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+grid@{imel\+\_\+draw\+\_\+grid}}
+\index{imel\+\_\+draw\+\_\+grid@{imel\+\_\+draw\+\_\+grid}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+grid(\+Imel\+Image $\ast$image, Imel\+Size sx, Imel\+Size sy, Imel\+Size ex, Imel\+Size ey, Imel\+Size col\+\_\+space, Imel\+Size row\+\_\+space, bool init\+\_\+from\+\_\+start, Imel\+Pixel pixel)}{imel_draw_grid(ImelImage *image, ImelSize sx, ImelSize sy, ImelSize ex, ImelSize ey, ImelSize col_space, ImelSize row_space, bool init_from_start, ImelPixel pixel)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+draw\+\_\+grid (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{sx, }
+\item[{{\bf Imel\+Size}}]{sy, }
+\item[{{\bf Imel\+Size}}]{ex, }
+\item[{{\bf Imel\+Size}}]{ey, }
+\item[{{\bf Imel\+Size}}]{col\+\_\+space, }
+\item[{{\bf Imel\+Size}}]{row\+\_\+space, }
+\item[{{\bf bool}}]{init\+\_\+from\+\_\+start, }
+\item[{{\bf Imel\+Pixel}}]{pixel}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a57f5caaec1f269da475429df204d4829}{}\label{draw_8c_a57f5caaec1f269da475429df204d4829}
+
+
+Draw a grid. 
+
+This function draw a grid in {\ttfamily image} from coordinate $(sx,sy)$ to coordinate $(ex,ey)$ witch columns length {\ttfamily col\+\_\+space} and rows length {\ttfamily row\+\_\+space}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the grid \\
+\hline
+{\em sx} & Start coordinate x of the grid \\
+\hline
+{\em sy} & Start coordinate y of the grid \\
+\hline
+{\em ex} & End coordinate x of the grid \\
+\hline
+{\em ey} & End coordinate y of the grid \\
+\hline
+{\em col\+\_\+space} & Space between columns \\
+\hline
+{\em row\+\_\+space} & Space between rows \\
+\hline
+{\em init\+\_\+from\+\_\+start} & T\+R\+UE if the first column and row init from coordinate $(sx,sy)$, else F\+A\+L\+SE \\
+\hline
+{\em pixel} & Color and level of the line \\
+\hline
+\end{DoxyParams}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+line@{imel\+\_\+draw\+\_\+line}}
+\index{imel\+\_\+draw\+\_\+line@{imel\+\_\+draw\+\_\+line}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+line(\+Imel\+Image $\ast$image, Imel\+Size \+\_\+sx, Imel\+Size \+\_\+sy, Imel\+Size \+\_\+ex, Imel\+Size \+\_\+ey, Imel\+Pixel pixel)}{imel_draw_line(ImelImage *image, ImelSize _sx, ImelSize _sy, ImelSize _ex, ImelSize _ey, ImelPixel pixel)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+draw\+\_\+line (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{\+\_\+sx, }
+\item[{{\bf Imel\+Size}}]{\+\_\+sy, }
+\item[{{\bf Imel\+Size}}]{\+\_\+ex, }
+\item[{{\bf Imel\+Size}}]{\+\_\+ey, }
+\item[{{\bf Imel\+Pixel}}]{pixel}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a0168dd78ad67c50479e3244c9f6cc2a6}{}\label{draw_8c_a0168dd78ad67c50479e3244c9f6cc2a6}
+
+
+Draw a line. 
+
+This function draw a line in {\ttfamily image} from coordinate $(\_sx,\_sy)$ to coordinate $(\_ex,\_ey)$ with a color and level passed in {\ttfamily pixel} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the line \\
+\hline
+{\em \+\_\+sx} & Start x coordinate \\
+\hline
+{\em \+\_\+sy} & Start y coordinate \\
+\hline
+{\em \+\_\+ex} & End x coordinate \\
+\hline
+{\em \+\_\+ey} & End y coordinate \\
+\hline
+{\em pixel} & Color and level of the line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+F\+A\+L\+SE if {\ttfamily image} isn\textquotesingle{}t a valid image, else T\+R\+UE 
+\end{DoxyReturn}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+line\+\_\+connecting\+\_\+all\+\_\+points@{imel\+\_\+draw\+\_\+line\+\_\+connecting\+\_\+all\+\_\+points}}
+\index{imel\+\_\+draw\+\_\+line\+\_\+connecting\+\_\+all\+\_\+points@{imel\+\_\+draw\+\_\+line\+\_\+connecting\+\_\+all\+\_\+points}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+line\+\_\+connecting\+\_\+all\+\_\+points(\+Imel\+Image $\ast$image, Imel\+Point $\ast$$\ast$points, Imel\+Pixel pxl)}{imel_draw_line_connecting_all_points(ImelImage *image, ImelPoint **points, ImelPixel pxl)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+draw\+\_\+line\+\_\+connecting\+\_\+all\+\_\+points (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Point} $\ast$$\ast$}]{points, }
+\item[{{\bf Imel\+Pixel}}]{pxl}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a952856ed6ab73528312b3be16b5d2f67}{}\label{draw_8c_a952856ed6ab73528312b3be16b5d2f67}
+
+
+Draw lines between all points passed. 
+
+This function draw lines from each point to all different points linking each one to all others.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw these lines \\
+\hline
+{\em points} & A N\+U\+L\+L-\/terminated array with the points to link \\
+\hline
+{\em pxl} & Color and level of the lines \\
+\hline
+\end{DoxyParams}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+partial\+\_\+reg\+\_\+shape@{imel\+\_\+draw\+\_\+partial\+\_\+reg\+\_\+shape}}
+\index{imel\+\_\+draw\+\_\+partial\+\_\+reg\+\_\+shape@{imel\+\_\+draw\+\_\+partial\+\_\+reg\+\_\+shape}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+partial\+\_\+reg\+\_\+shape(\+Imel\+Image $\ast$image, Imel\+Size x, Imel\+Size y, Imel\+Size r, long v, short p, double start\+\_\+angle, Imel\+Pixel pxl)}{imel_draw_partial_reg_shape(ImelImage *image, ImelSize x, ImelSize y, ImelSize r, long v, short p, double start_angle, ImelPixel pxl)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+draw\+\_\+partial\+\_\+reg\+\_\+shape (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{x, }
+\item[{{\bf Imel\+Size}}]{y, }
+\item[{{\bf Imel\+Size}}]{r, }
+\item[{long}]{v, }
+\item[{short}]{p, }
+\item[{double}]{start\+\_\+angle, }
+\item[{{\bf Imel\+Pixel}}]{pxl}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_ad8b931ece29f161af9b5a4153d186dd4}{}\label{draw_8c_ad8b931ece29f161af9b5a4153d186dd4}
+
+
+Draw a partial regular shape. 
+
+This function draw a partial regular shape in {\ttfamily image} with center in coordinate $(x,y)$, radius {\ttfamily r}, vertices {\ttfamily v} and rotation {\ttfamily start\+\_\+angle} in radians. The shape will be draw for only the {\ttfamily p} percent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the shape \\
+\hline
+{\em x} & Center coordinate x \\
+\hline
+{\em y} & Center coordinate y \\
+\hline
+{\em r} & Radius of the shape \\
+\hline
+{\em v} & Number of vertices \\
+\hline
+{\em p} & Percentage of the shape ( Values from 0 to 100 ) \\
+\hline
+{\em start\+\_\+angle} & Rotation angle in radians \\
+\hline
+{\em pxl} & Color and level of the shape \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if all values are valid, else F\+A\+L\+SE 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{draw_8c_a15536050acc27defca08e29c54c6748e}{imel\+\_\+draw\+\_\+reg\+\_\+shape} 
+\end{DoxySeeAlso}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+point@{imel\+\_\+draw\+\_\+point}}
+\index{imel\+\_\+draw\+\_\+point@{imel\+\_\+draw\+\_\+point}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+point(\+Imel\+Image $\ast$image, Imel\+Size x, Imel\+Size y, Imel\+Pixel pixel)}{imel_draw_point(ImelImage *image, ImelSize x, ImelSize y, ImelPixel pixel)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+draw\+\_\+point (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{x, }
+\item[{{\bf Imel\+Size}}]{y, }
+\item[{{\bf Imel\+Pixel}}]{pixel}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a80e6d667aceb3de202823e5493a774b1}{}\label{draw_8c_a80e6d667aceb3de202823e5493a774b1}
+
+
+Draw a single point in an image. 
+
+This function draw a point in {\ttfamily image} at coordinate $(x,y)$ with color and level specified in {\ttfamily pixel}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the point \\
+\hline
+{\em x} & Coordinate x of the point \\
+\hline
+{\em y} & Coordinate y of the point \\
+\hline
+{\em pixel} & Color and level of the point \\
+\hline
+\end{DoxyParams}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+point\+\_\+from\+\_\+array@{imel\+\_\+draw\+\_\+point\+\_\+from\+\_\+array}}
+\index{imel\+\_\+draw\+\_\+point\+\_\+from\+\_\+array@{imel\+\_\+draw\+\_\+point\+\_\+from\+\_\+array}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+point\+\_\+from\+\_\+array(\+Imel\+Image $\ast$image, Imel\+Size n\+\_\+points, Imel\+Point $\ast$$\ast$points)}{imel_draw_point_from_array(ImelImage *image, ImelSize n_points, ImelPoint **points)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+draw\+\_\+point\+\_\+from\+\_\+array (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{n\+\_\+points, }
+\item[{{\bf Imel\+Point} $\ast$$\ast$}]{points}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a0f6a2052074967fa5b57e487544f42ee}{}\label{draw_8c_a0f6a2052074967fa5b57e487544f42ee}
+
+
+Draw more point at the same time. 
+
+This function draw a list of {\ttfamily points} in the {\ttfamily image} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the points \\
+\hline
+{\em n\+\_\+points} & Number of points to draw or 0 if {\ttfamily points} is a N\+U\+L\+L-\/terminated array and you want to draw its all. \\
+\hline
+{\em points} & Points to draw \\
+\hline
+\end{DoxyParams}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+rect@{imel\+\_\+draw\+\_\+rect}}
+\index{imel\+\_\+draw\+\_\+rect@{imel\+\_\+draw\+\_\+rect}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+rect(\+Imel\+Image $\ast$image, Imel\+Size x1, Imel\+Size y1, Imel\+Size x2, Imel\+Size y2, Imel\+Pixel pixel, bool fill)}{imel_draw_rect(ImelImage *image, ImelSize x1, ImelSize y1, ImelSize x2, ImelSize y2, ImelPixel pixel, bool fill)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+draw\+\_\+rect (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{x1, }
+\item[{{\bf Imel\+Size}}]{y1, }
+\item[{{\bf Imel\+Size}}]{x2, }
+\item[{{\bf Imel\+Size}}]{y2, }
+\item[{{\bf Imel\+Pixel}}]{pixel, }
+\item[{{\bf bool}}]{fill}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_aa6c826f436252a630b7e4d1d10c73309}{}\label{draw_8c_aa6c826f436252a630b7e4d1d10c73309}
+
+
+Draw a rectangle ( filled or not ) 
+
+This function draw a rectangle that can be filled inside an {\ttfamily image} from coordinate $(x_1,y_1)$ to coordinate $(x_2,y_2)$ with color and level passed in {\ttfamily pixel}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the rectangle \\
+\hline
+{\em x1} & Start x coordinate of the rectangle \\
+\hline
+{\em y1} & Start y coordinate of the rectangle \\
+\hline
+{\em x2} & End x coordinate of the rectangle \\
+\hline
+{\em y2} & End y coordinate of the rectangle \\
+\hline
+{\em pixel} & Color and level of the rectangle \\
+\hline
+{\em fill} & T\+R\+UE for filled rectangle, else F\+A\+L\+SE \\
+\hline
+\end{DoxyParams}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+rect\+\_\+with\+\_\+rounded\+\_\+angles@{imel\+\_\+draw\+\_\+rect\+\_\+with\+\_\+rounded\+\_\+angles}}
+\index{imel\+\_\+draw\+\_\+rect\+\_\+with\+\_\+rounded\+\_\+angles@{imel\+\_\+draw\+\_\+rect\+\_\+with\+\_\+rounded\+\_\+angles}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+rect\+\_\+with\+\_\+rounded\+\_\+angles(\+Imel\+Image $\ast$image, Imel\+Size x1, Imel\+Size y1, Imel\+Size x2, Imel\+Size y2, Imel\+Size radius, Imel\+Pixel pixel, bool fill)}{imel_draw_rect_with_rounded_angles(ImelImage *image, ImelSize x1, ImelSize y1, ImelSize x2, ImelSize y2, ImelSize radius, ImelPixel pixel, bool fill)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+draw\+\_\+rect\+\_\+with\+\_\+rounded\+\_\+angles (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{x1, }
+\item[{{\bf Imel\+Size}}]{y1, }
+\item[{{\bf Imel\+Size}}]{x2, }
+\item[{{\bf Imel\+Size}}]{y2, }
+\item[{{\bf Imel\+Size}}]{radius, }
+\item[{{\bf Imel\+Pixel}}]{pixel, }
+\item[{{\bf bool}}]{fill}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a72fb4e6cce353b8051c269d89460cd1c}{}\label{draw_8c_a72fb4e6cce353b8051c269d89460cd1c}
+
+
+Draw a rectangle with rounded angles ( filled or not ) 
+
+This function draw a rectangle that can be filled inside an {\ttfamily image} from coordinate $(x_1,y_1)$ to coordinate $(x_2,y_2)$ with color and level passed in {\ttfamily pixel} and rounded angles.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the rectangle \\
+\hline
+{\em x1} & Start x coordinate of the rectangle \\
+\hline
+{\em y1} & Start y coordinate of the rectangle \\
+\hline
+{\em x2} & End x coordinate of the rectangle \\
+\hline
+{\em y2} & End y coordinate of the rectangle \\
+\hline
+{\em radius} & Angles radius in pixels. \\
+\hline
+{\em pixel} & Color and level of the rectangle \\
+\hline
+{\em fill} & T\+R\+UE for filled rectangle, else F\+A\+L\+SE \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+F\+A\+L\+SE if {\ttfamily image} or {\ttfamily radius} values aren\textquotesingle{}t valid, else T\+R\+UE 
+\end{DoxyReturn}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+reg\+\_\+shape@{imel\+\_\+draw\+\_\+reg\+\_\+shape}}
+\index{imel\+\_\+draw\+\_\+reg\+\_\+shape@{imel\+\_\+draw\+\_\+reg\+\_\+shape}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+reg\+\_\+shape(\+Imel\+Image $\ast$image, Imel\+Size x, Imel\+Size y, Imel\+Size r, long v, double start\+\_\+angle, Imel\+Pixel pxl)}{imel_draw_reg_shape(ImelImage *image, ImelSize x, ImelSize y, ImelSize r, long v, double start_angle, ImelPixel pxl)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+draw\+\_\+reg\+\_\+shape (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{x, }
+\item[{{\bf Imel\+Size}}]{y, }
+\item[{{\bf Imel\+Size}}]{r, }
+\item[{long}]{v, }
+\item[{double}]{start\+\_\+angle, }
+\item[{{\bf Imel\+Pixel}}]{pxl}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a15536050acc27defca08e29c54c6748e}{}\label{draw_8c_a15536050acc27defca08e29c54c6748e}
+
+
+Draw a regular shape. 
+
+This function draw a regular shape in {\ttfamily image} with center in coordinate $(x,y)$, chosen {\ttfamily radius} and {\ttfamily v} vertices with a rotation of {\ttfamily start\+\_\+angle} radians.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the shape \\
+\hline
+{\em x} & Center coordinate x \\
+\hline
+{\em y} & Center coordinate y \\
+\hline
+{\em r} & Radius of the shape \\
+\hline
+{\em v} & Vertices of the shape \\
+\hline
+{\em start\+\_\+angle} & Rotation of the shape in radians \\
+\hline
+{\em pxl} & Color and level of the shape \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if all values are valid, else F\+A\+L\+SE 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{draw_8c_ad8b931ece29f161af9b5a4153d186dd4}{imel\+\_\+draw\+\_\+partial\+\_\+reg\+\_\+shape} 
+\end{DoxySeeAlso}
+\index{draw.\+c@{draw.\+c}!imel\+\_\+draw\+\_\+spiral@{imel\+\_\+draw\+\_\+spiral}}
+\index{imel\+\_\+draw\+\_\+spiral@{imel\+\_\+draw\+\_\+spiral}!draw.\+c@{draw.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+draw\+\_\+spiral(\+Imel\+Image $\ast$image, Imel\+Size x, Imel\+Size y, Imel\+Size radius, Imel\+Size distance, Imel\+Pixel pxl)}{imel_draw_spiral(ImelImage *image, ImelSize x, ImelSize y, ImelSize radius, ImelSize distance, ImelPixel pxl)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+draw\+\_\+spiral (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{x, }
+\item[{{\bf Imel\+Size}}]{y, }
+\item[{{\bf Imel\+Size}}]{radius, }
+\item[{{\bf Imel\+Size}}]{distance, }
+\item[{{\bf Imel\+Pixel}}]{pxl}
+\end{DoxyParamCaption}
+)}\hypertarget{draw_8c_a0f49d79eedfe9f8083d97ce2496c2ac0}{}\label{draw_8c_a0f49d79eedfe9f8083d97ce2496c2ac0}
+
+
+Draw a spiral. 
+
+This function draw an Archimedean spiral in {\ttfamily image} with center in coordinate $(x,y)$ with a radius of {\ttfamily radius} pixels and {\ttfamily distance} pixels between each spiral\textquotesingle{}s arm.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where draw the spiral \\
+\hline
+{\em x} & Center coordinate x \\
+\hline
+{\em y} & Center coordinate y \\
+\hline
+{\em radius} & Radius of the spiral \\
+\hline
+{\em distance} & Distance between each spiral\textquotesingle{}s arm \\
+\hline
+{\em pxl} & Color and level of the spiral \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+F\+A\+L\+SE if image isn\textquotesingle{}t valid, else T\+R\+UE 
+\end{DoxyReturn}

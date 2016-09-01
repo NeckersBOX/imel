@@ -1,0 +1,308 @@
+.TH "point.c" 3 "Thu Sep 1 2016" "Version 3.0" "Imel" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+point.c \- This file contains functions to operate with points\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include 'header\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImelPoint\fP * \fBimel_point_new\fP (\fBImelImage\fP *image, \fBImelSize\fP x, \fBImelSize\fP y, \fBImelPixel\fP pixel)"
+.br
+.RI "\fIMake a new point\&. \fP"
+.ti -1c
+.RI "void \fBimel_point_free\fP (\fBImelPoint\fP *point)"
+.br
+.RI "\fIFree the memory allocated for the point\&. \fP"
+.ti -1c
+.RI "void \fBimel_point_array_free\fP (\fBImelPoint\fP **points)"
+.br
+.RI "\fIFree the memory allocated for an array of points\&. \fP"
+.ti -1c
+.RI "\fBImelPoint\fP * \fBimel_point_get_point_from_image\fP (\fBImelImage\fP *image, \fBImelSize\fP x, \fBImelSize\fP y)"
+.br
+.RI "\fIGet a reference point from an image\&. \fP"
+.ti -1c
+.RI "\fBImelPoint\fP ** \fBimel_point_get_from_line\fP (\fBImelSize\fP _x1, \fBImelSize\fP _y1, \fBImelSize\fP _x2, \fBImelSize\fP _y2, long int *lx, long int *ly, \fBImelValue\fP value_type, double value)"
+.br
+.RI "\fIGet a line points\&. \fP"
+.ti -1c
+.RI "\fBImelPoint\fP ** \fBimel_point_get_from_reg_shape\fP (\fBImelSize\fP x, \fBImelSize\fP y, \fBImelSize\fP r, long v, double start_angle)"
+.br
+.RI "\fIGet a regular shape points\&. \fP"
+.ti -1c
+.RI "\fBImelPoint\fP * \fBimel_point_get_darkest_point\fP (\fBImelImage\fP *image)"
+.br
+.RI "\fIGet the darkest point of an image\&. \fP"
+.ti -1c
+.RI "\fBImelPoint\fP ** \fBimel_point_get_darkest_points\fP (\fBImelImage\fP *image)"
+.br
+.RI "\fIGet the darkest points of an image\&. \fP"
+.ti -1c
+.RI "\fBImelPoint\fP * \fBimel_point_get_brightest_point\fP (\fBImelImage\fP *image)"
+.br
+.RI "\fIGet the brightest point of an image\&. \fP"
+.ti -1c
+.RI "\fBImelPoint\fP ** \fBimel_point_get_brightest_points\fP (\fBImelImage\fP *image)"
+.br
+.RI "\fIGet the brightest points of an image\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file contains functions to operate with points\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Davide Francesco Merico 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "void imel_point_array_free (\fBImelPoint\fP ** points)"
+
+.PP
+Free the memory allocated for an array of points\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpoints\fP NULL-terminated \fBImelPoint\fP array 
+.RE
+.PP
+
+.SS "void imel_point_free (\fBImelPoint\fP * point)"
+
+.PP
+Free the memory allocated for the point\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpoint\fP Point to free 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+Same as \fCfree (point)\fP 
+.RE
+.PP
+
+.SS "\fBImelPoint\fP* imel_point_get_brightest_point (\fBImelImage\fP * image)"
+
+.PP
+Get the brightest point of an image\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Reference image 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new \fBImelPoint\fP type
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_point_get_brightest_points\fP 
+.PP
+\fBimel_point_get_darkest_point\fP 
+.RE
+.PP
+
+.SS "\fBImelPoint\fP** imel_point_get_brightest_points (\fBImelImage\fP * image)"
+
+.PP
+Get the brightest points of an image\&. This function return the brightest point in \fCimage\fP and if are more then one point return a reference to all occourrence of the brightest point\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Reference image 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new \fBImelPoint\fP type
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_point_get_brightest_point\fP 
+.PP
+\fBimel_point_get_darkest_points\fP 
+.RE
+.PP
+
+.SS "\fBImelPoint\fP* imel_point_get_darkest_point (\fBImelImage\fP * image)"
+
+.PP
+Get the darkest point of an image\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Reference image 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new \fBImelPoint\fP type
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_point_get_brightest_point\fP 
+.PP
+\fBimel_point_get_darkest_points\fP 
+.RE
+.PP
+
+.SS "\fBImelPoint\fP** imel_point_get_darkest_points (\fBImelImage\fP * image)"
+
+.PP
+Get the darkest points of an image\&. This function return the darkest point in \fCimage\fP and if are more then one point return a reference to all occourrence of the darkest point\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Reference image 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new \fBImelPoint\fP type
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_point_get_brightest_point\fP 
+.PP
+\fBimel_point_get_darkest_point\fP 
+.RE
+.PP
+
+.SS "\fBImelPoint\fP** imel_point_get_from_line (\fBImelSize\fP _x1, \fBImelSize\fP _y1, \fBImelSize\fP _x2, \fBImelSize\fP _y2, long int * lx, long int * ly, \fBImelValue\fP value_type, double value)"
+
+.PP
+Get a line points\&. This function get all points in the line from coordinate $(\_x_1,\_y_1)$ to coordinate $(\_x_2,\_y_2)$\&. You can get the line width and height respectively from \fClx\fP and \fCly\fP argument\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fI_x1\fP Start line x coordinate 
+.br
+\fI_y1\fP Start line y coordinate 
+.br
+\fI_x2\fP End line x coordinate 
+.br
+\fI_y2\fP End line y coordinate 
+.br
+\fIlx\fP NULL or if passed, this function put inside it the line width 
+.br
+\fIly\fP NULL or if passed, this function put inside it the line height 
+.br
+\fIvalue_type\fP Type of value passed as \fCvalue\fP 
+.br
+\fIvalue\fP Number of points you want to get from the line\&. The points will be uniformely distributed\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A NULL-terminated array with the line points\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelValue\fP 
+.PP
+\fBimel_point_array_free\fP 
+.RE
+.PP
+
+.SS "\fBImelPoint\fP** imel_point_get_from_reg_shape (\fBImelSize\fP x, \fBImelSize\fP y, \fBImelSize\fP r, long v, double start_angle)"
+
+.PP
+Get a regular shape points\&. This function get the points from a regular shape with center in coordinate $(x,y)$, \fCr\fP radius, \fCv\fP vertices and an angle of \fCstart\fP angle\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP Center x coordinate 
+.br
+\fIy\fP Center y coordinate 
+.br
+\fIr\fP Radius 
+.br
+\fIv\fP Vertices 
+.br
+\fIstart_angle\fP Start angle in radians 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A NULL-terminated array with the regular shape points
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_point_array_free\fP 
+.PP
+\fBRAD_TO_DEG\fP 
+.PP
+\fBDEG_TO_RAD\fP 
+.RE
+.PP
+
+.SS "\fBImelPoint\fP* imel_point_get_point_from_image (\fBImelImage\fP * image, \fBImelSize\fP x, \fBImelSize\fP y)"
+
+.PP
+Get a reference point from an image\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Reference image 
+.br
+\fIx\fP Point x coordinate 
+.br
+\fIy\fP Point y coordinate 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new \fBImelPoint\fP type with a pixel set equal to the image pixel at coordinate $(x,y)$\&. 
+.RE
+.PP
+
+.SS "\fBImelPoint\fP* imel_point_new (\fBImelImage\fP * image, \fBImelSize\fP x, \fBImelSize\fP y, \fBImelPixel\fP pixel)"
+
+.PP
+Make a new point\&. This function makes a point at coordinate $(x,y)\in image$ with a chosen color and level\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Reference image 
+.br
+\fIx\fP Point x coordinate 
+.br
+\fIy\fP Point y coordinate 
+.br
+\fIpixel\fP Point color and level 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new \fBImelPoint\fP type or NULL on error 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Imel from the source code\&.

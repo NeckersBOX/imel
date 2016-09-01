@@ -1,0 +1,351 @@
+.TH "pixel.c" 3 "Thu Sep 1 2016" "Version 3.0" "Imel" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pixel.c \- This file contains functions to operate with guide lines\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <ctype\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include 'header\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImelPixel\fP \fBimel_pixel_union\fP (\fBImelPixel\fP a, \fBImelPixel\fP b, unsigned char _opacity)"
+.br
+.RI "\fIJoin two pixel with a chosen opacity\&. \fP"
+.ti -1c
+.RI "\fBImelPixel\fP \fBimel_pixel_new\fP (\fBImelColor\fP red, \fBImelColor\fP green, \fBImelColor\fP blue, \fBImelLevel\fP level)"
+.br
+.RI "\fIMake a new pixel\&. \fP"
+.ti -1c
+.RI "\fBImelPixel\fP \fBimel_pixel_new_from_string\fP (const char *string, \fBImelLevel\fP level)"
+.br
+.RI "\fIMake a new pixel from a string\&. \fP"
+.ti -1c
+.RI "void \fBimel_pixel_set\fP (\fBImelPixel\fP *pixel, \fBImelColor\fP red, \fBImelColor\fP green, \fBImelColor\fP blue, \fBImelLevel\fP level)"
+.br
+.RI "\fISet a new value for a pixel\&. \fP"
+.ti -1c
+.RI "double \fBimel_pixel_get_distance\fP (\fBImelPixel\fP a, \fBImelPixel\fP b)"
+.br
+.RI "\fIGet the chromatic distance between two colors\&. \fP"
+.ti -1c
+.RI "void \fBimel_pixel_set_from_pixel\fP (\fBImelPixel\fP *pixel, \fBImelPixel\fP pxl)"
+.br
+.RI "\fICopy the values of a pixel in another one\&. \fP"
+.ti -1c
+.RI "void \fBimel_pixel_set_from_string\fP (\fBImelPixel\fP *pixel, const char *string, \fBImelLevel\fP level)"
+.br
+.RI "\fISet a new value for a pixel from a string\&. \fP"
+.ti -1c
+.RI "void \fBimel_pixel_copy\fP (\fBImelPixel\fP *dest, \fBImelPixel\fP src)"
+.br
+.RI "\fICopy a pixel over another one\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_pixel_compare_level\fP (\fBImelLevel\fP a, \fBImelLevel\fP b, \fBImelSize\fP tollerance)"
+.br
+.RI "\fICompare two level\&. \fP"
+.ti -1c
+.RI "uint32_t \fBimel_pixel_get_rgba\fP (\fBImelPixel\fP pxl)"
+.br
+.RI "\fIConvert an ImelPixel in a single RGBA variable\&. \fP"
+.ti -1c
+.RI "\fBImelPixel\fP \fBimel_pixel_new_from_rgba\fP (uint32_t rgba)"
+.br
+.RI "\fIConvert an RGBA variable in a ImelPixel type\&. \fP"
+.ti -1c
+.RI "\fBImelPixel\fP \fBimel_pixel_new_from_hsl\fP (\fBImelHSL\fP value)"
+.br
+.RI "\fIConvert an ImelHSL in a ImelPixel type\&. \fP"
+.ti -1c
+.RI "\fBImelHSL\fP \fBimel_pixel_get_hsl\fP (\fBImelPixel\fP p)"
+.br
+.RI "\fIConvert an ImelPixel in a ImelHSL type\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file contains functions to operate with guide lines\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Davide Francesco Merico 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBbool\fP imel_pixel_compare_level (\fBImelLevel\fP a, \fBImelLevel\fP b, \fBImelSize\fP tollerance)"
+
+.PP
+Compare two level\&. This function compare the levels \fCa\fP and \fCb\fP with a chosen \fCtollerance\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP First Level 
+.br
+\fIb\fP Second level 
+.br
+\fItollerance\fP Tollerance 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE if $(b-tollerance)\leq(a)\leq(b+tollerance)$, else FALSE\&. 
+.RE
+.PP
+
+.SS "void imel_pixel_copy (\fBImelPixel\fP * dest, \fBImelPixel\fP src)"
+
+.PP
+Copy a pixel over another one\&. This function copy \fCsrc\fP on \fCdest\fP only if \fCsrc->level\fP is equal or greater then \fCdest->level\fP\&. If \fCsrc->level\fP is an alpha value call \fBimel_pixel_union\fP function to copy the element\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdest\fP Destination pixel 
+.br
+\fIsrc\fP Source pixel 
+.RE
+.PP
+
+.SS "double imel_pixel_get_distance (\fBImelPixel\fP a, \fBImelPixel\fP b)"
+
+.PP
+Get the chromatic distance between two colors\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP Fist color 
+.br
+\fIb\fP Second color 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Chromatic distance between \fCa\fP and \fCb\fP 
+.RE
+.PP
+
+.SS "\fBImelHSL\fP imel_pixel_get_hsl (\fBImelPixel\fP p)"
+
+.PP
+Convert an ImelPixel in a ImelHSL type\&. This function converts \fCpxl\fP data in a HSL rappresentation that contains Hue, Saturation and Luminosity values\&. This conversion loss information on level values\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp\fP Pixel to convert in a \fBImelHSL\fP type 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new \fBImelHSL\fP
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_pixel_new_from_hsl\fP 
+.RE
+.PP
+
+.SS "uint32_t imel_pixel_get_rgba (\fBImelPixel\fP pxl)"
+
+.PP
+Convert an ImelPixel in a single RGBA variable\&. This function converts \fCpxl\fP data in a single 32 bit variable that contains RGBA values\&. This conversion loss information on level values different from $[0,-255]$ range\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpxl\fP Pixel to convert in a RGBA value 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A 32 bit variable with \fCpxl\fP data
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBRGBA_R_MASK\fP 
+.PP
+\fBRGBA_G_MASK\fP 
+.PP
+\fBRGBA_B_MASK\fP 
+.PP
+\fBRGBA_A_MASK\fP 
+.PP
+\fBimel_pixel_new_from_rgba\fP 
+.RE
+.PP
+
+.SS "\fBImelPixel\fP imel_pixel_new (\fBImelColor\fP red, \fBImelColor\fP green, \fBImelColor\fP blue, \fBImelLevel\fP level)"
+
+.PP
+Make a new pixel\&. This function makes a new pixel with a RGB value and level specified\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIred\fP Red channel\&. Values between 0 and 255 
+.br
+\fIgreen\fP Green channel\&. Values between 0 and 255 
+.br
+\fIblue\fP Blue channel\&. Values between 0 and 255 
+.br
+\fIlevel\fP Level for values between 0 and 2147483647\&. Alpha for values between 0 and -255\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new \fBImelPixel\fP type\&. 
+.RE
+.PP
+
+.SS "\fBImelPixel\fP imel_pixel_new_from_hsl (\fBImelHSL\fP value)"
+
+.PP
+Convert an ImelHSL in a ImelPixel type\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP \fBImelHSL\fP type to convert 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new \fBImelPixel\fP type with level set to 0\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_pixel_get_hsl\fP 
+.RE
+.PP
+
+.SS "\fBImelPixel\fP imel_pixel_new_from_rgba (uint32_t rgba)"
+
+.PP
+Convert an RGBA variable in a ImelPixel type\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIrgba\fP RGBA variable 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new \fBImelPixel\fP type
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBRGBA_R_MASK\fP 
+.PP
+\fBRGBA_G_MASK\fP 
+.PP
+\fBRGBA_B_MASK\fP 
+.PP
+\fBRGBA_A_MASK\fP 
+.PP
+\fBimel_pixel_get_rgba\fP 
+.RE
+.PP
+
+.SS "\fBImelPixel\fP imel_pixel_new_from_string (const char * string, \fBImelLevel\fP level)"
+
+.PP
+Make a new pixel from a string\&. This function makes a new pixel with a RGB value specified from a string in HTML format '#rrggbb' and level specified separately\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP Color in HTML format 
+.br
+\fIlevel\fP Level for values between 0 and 2147483647\&. Alpha for values between 0 and -255\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new \fBImelPixel\fP type\&. 
+.RE
+.PP
+
+.SS "void imel_pixel_set (\fBImelPixel\fP * pixel, \fBImelColor\fP red, \fBImelColor\fP green, \fBImelColor\fP blue, \fBImelLevel\fP level)"
+
+.PP
+Set a new value for a pixel\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpixel\fP Pixel to modify 
+.br
+\fIred\fP Red channel\&. Values between 0 and 255 
+.br
+\fIgreen\fP Green channel\&. Values between 0 and 255 
+.br
+\fIblue\fP Blue channel\&. Values between 0 and 255 
+.br
+\fIlevel\fP Level for values between 0 and 2147483647\&. Alpha for values between 0 and -255\&. 
+.RE
+.PP
+
+.SS "void imel_pixel_set_from_pixel (\fBImelPixel\fP * pixel, \fBImelPixel\fP pxl)"
+
+.PP
+Copy the values of a pixel in another one\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpixel\fP Pixel to set equal to \fCpxl\fP 
+.br
+\fIpxl\fP Pixel to copy 
+.RE
+.PP
+
+.SS "void imel_pixel_set_from_string (\fBImelPixel\fP * pixel, const char * string, \fBImelLevel\fP level)"
+
+.PP
+Set a new value for a pixel from a string\&. This function sets new values for \fCpixel\fP from a string in HTML format '#rrggbb'\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpixel\fP Pixel to modify 
+.br
+\fIstring\fP Color in HTML format 
+.br
+\fIlevel\fP Level for values between 0 and 2147483647\&. Alpha for values between 0 and -255\&. 
+.RE
+.PP
+
+.SS "\fBImelPixel\fP imel_pixel_union (\fBImelPixel\fP a, \fBImelPixel\fP b, unsigned char _opacity)"
+
+.PP
+Join two pixel with a chosen opacity\&. This function join pixel \fCa\fP with pixel \fCb\fP given to it a chosen \fC_opacity\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP Base pixel 
+.br
+\fIb\fP Pixel to join with \fCa\fP 
+.br
+\fI_opacity\fP Opacity of pixel \fCb\fP\&. Values between 0, transparent, and 255\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new \fBImelPixel\fP type\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Imel from the source code\&.

@@ -1,0 +1,15 @@
+<map id="error.h" name="error.h">
+<area shape="rect" id="node2" href="$header_8h.html" title="This file contains types and macros used by Imel library. " alt="" coords="561,80,633,107"/>
+<area shape="rect" id="node3" href="$color_8c.html" title="This file contains functions to operate with colors. " alt="" coords="5,155,67,181"/>
+<area shape="rect" id="node4" href="$draw_8c.html" title="This file contains functions to draw. " alt="" coords="91,155,152,181"/>
+<area shape="rect" id="node5" href="$font_8c.html" title="This file contains function to use fonts in an image. " alt="" coords="177,155,231,181"/>
+<area shape="rect" id="node6" href="$image_8c.html" title="This file contains functions to elaborate images. " alt="" coords="255,155,323,181"/>
+<area shape="rect" id="node7" href="$image__fill_8c.html" title="This file contains functions to fill areas of an image. " alt="" coords="348,155,436,181"/>
+<area shape="rect" id="node8" href="$image__new__from_8c.html" title="This file contains function to load different image format. " alt="" coords="461,155,593,181"/>
+<area shape="rect" id="node9" href="$image__save_8c.html" title="This file contains function to save in different image format. " alt="" coords="617,155,719,181"/>
+<area shape="rect" id="node10" href="$info__cut_8c.html" title="This file contains functions to operate with guide lines. " alt="" coords="743,155,822,181"/>
+<area shape="rect" id="node11" href="$miscellaneous_8c.html" title="This file contains miscellaneus function. " alt="" coords="846,155,962,181"/>
+<area shape="rect" id="node12" href="$pixel_8c.html" title="This file contains functions to operate with guide lines. " alt="" coords="986,155,1046,181"/>
+<area shape="rect" id="node13" href="$point_8c.html" title="This file contains functions to operate with points. " alt="" coords="1071,155,1132,181"/>
+<area shape="rect" id="node14" href="$value_8c.html" title="This file contains functions to convert values. " alt="" coords="1156,155,1220,181"/>
+</map>

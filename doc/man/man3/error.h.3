@@ -1,0 +1,230 @@
+.TH "error.h" 3 "Thu Sep 1 2016" "Version 3.0" "Imel" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+error.h \- This file contains error codes used by Imel library\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBIMEL_ERR_LOAD\fP   0xa0"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_JPEG_LOAD\fP   0x60"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_PNG_LOAD\fP   0x61"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_TIFF_LOAD\fP   0x62"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_BMP_LOAD\fP   0x63"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_DDS_LOAD\fP   0x64"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_FAXG3_LOAD\fP   0x65"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_CUT_LOAD\fP   0x66"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_XPM_LOAD\fP   0x67"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_XBM_LOAD\fP   0x68"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_SGI_LOAD\fP   0x69"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_WBMP_LOAD\fP   0x70"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_HDR_LOAD\fP   0x71"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_PSD_LOAD\fP   0x72"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_IFF_LOAD\fP   0x73"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_JNG_LOAD\fP   0x74"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_KOALA_LOAD\fP   0x75"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_MNG_LOAD\fP   0x76"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_PCX_LOAD\fP   0x77"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_PGM_LOAD\fP   0x78"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_PGMRAW_LOAD\fP   0x79"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_RAS_LOAD\fP   0x80"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_EXR_LOAD\fP   0x81"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_J2K_LOAD\fP   0x82"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_PPM_LOAD\fP   0x83"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_PPMRAW_LOAD\fP   0x84"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_PBM_LOAD\fP   0x85"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_PBMRAW_LOAD\fP   0x86"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_TARGA_LOAD\fP   0x87"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_JP2_LOAD\fP   0x88"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_ICO_LOAD\fP   0x89"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_PCD_LOAD\fP   0x90"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_GIF_LOAD\fP   0x91"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_PNG_WRITE_STRUCT\fP   0x10"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_PNG_INFO_STRUCT\fP   0x11"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_PNG_SET_JMP\fP   0x12"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_RAW_BPP\fP   0x52"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_RAW_LENGTH\fP   0x53"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_RAW_FILE_LENGTH\fP   0x54"
+.br
+.ti -1c
+.RI "#define \fBIMEL_ERR_RAW_BPP2\fP   0x55"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file contains error codes used by Imel library\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Davide Francesco Merico 
+.RE
+.PP
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define IMEL_ERR_BMP_LOAD   0x63"
+Error while loading the bmp image 
+.SS "#define IMEL_ERR_CUT_LOAD   0x66"
+Error while loading the cut image 
+.SS "#define IMEL_ERR_DDS_LOAD   0x64"
+Error while loading the dds image 
+.SS "#define IMEL_ERR_EXR_LOAD   0x81"
+Error while loading the exr image 
+.SS "#define IMEL_ERR_FAXG3_LOAD   0x65"
+Error while loading the faxg3 image 
+.SS "#define IMEL_ERR_GIF_LOAD   0x91"
+Error while loading the gif image 
+.SS "#define IMEL_ERR_HDR_LOAD   0x71"
+Error while loading the hdr image 
+.SS "#define IMEL_ERR_ICO_LOAD   0x89"
+Error while loading the ico image 
+.SS "#define IMEL_ERR_IFF_LOAD   0x73"
+Error while loading the iff image 
+.SS "#define IMEL_ERR_J2K_LOAD   0x82"
+Error while loading the j2k image 
+.SS "#define IMEL_ERR_JNG_LOAD   0x74"
+Error while loading the jng image 
+.SS "#define IMEL_ERR_JP2_LOAD   0x88"
+Error while loading the jp2 image 
+.SS "#define IMEL_ERR_JPEG_LOAD   0x60"
+Error while loading the jpeg image 
+.SS "#define IMEL_ERR_KOALA_LOAD   0x75"
+Error while loading the koala image 
+.SS "#define IMEL_ERR_LOAD   0xa0"
+Error while loading the image 
+.SS "#define IMEL_ERR_MNG_LOAD   0x76"
+Error while loading the mng image 
+.SS "#define IMEL_ERR_PBM_LOAD   0x85"
+Error while loading the pbm image 
+.SS "#define IMEL_ERR_PBMRAW_LOAD   0x86"
+Error while loading the pbmraw image 
+.SS "#define IMEL_ERR_PCD_LOAD   0x90"
+Error while loading the pcd image 
+.SS "#define IMEL_ERR_PCX_LOAD   0x77"
+Error while loading the pcx image 
+.SS "#define IMEL_ERR_PGM_LOAD   0x78"
+Error while loading the pgm image 
+.SS "#define IMEL_ERR_PGMRAW_LOAD   0x79"
+Error while loading the pgmraw image 
+.SS "#define IMEL_ERR_PNG_INFO_STRUCT   0x11"
+Could not create PNG info structure (out of memory?) 
+.SS "#define IMEL_ERR_PNG_LOAD   0x61"
+Error while loading the png image 
+.SS "#define IMEL_ERR_PNG_SET_JMP   0x12"
+Could not set PNG jump value 
+.SS "#define IMEL_ERR_PNG_WRITE_STRUCT   0x10"
+Could not create a PNG write structure (out of memory?) 
+.SS "#define IMEL_ERR_PPM_LOAD   0x83"
+Error while loading the ppm image 
+.SS "#define IMEL_ERR_PPMRAW_LOAD   0x84"
+Error while loading the ppmraw image 
+.SS "#define IMEL_ERR_PSD_LOAD   0x72"
+Error while loading the psd image 
+.SS "#define IMEL_ERR_RAS_LOAD   0x80"
+Error while loading the ras image 
+.SS "#define IMEL_ERR_RAW_BPP   0x52"
+The bpp are too big for Imel\&. 
+.SS "#define IMEL_ERR_RAW_BPP2   0x55"
+bpp equal to zero ( not valid )\&. 
+.SS "#define IMEL_ERR_RAW_FILE_LENGTH   0x54"
+The file length isn't valid\&. 
+.SS "#define IMEL_ERR_RAW_LENGTH   0x53"
+The bpp aren't multiples of 8\&. 
+.SS "#define IMEL_ERR_SGI_LOAD   0x69"
+Error while loading the sgi image 
+.SS "#define IMEL_ERR_TARGA_LOAD   0x87"
+Error while loading the targa image 
+.SS "#define IMEL_ERR_TIFF_LOAD   0x62"
+Error while loading the tiff image 
+.SS "#define IMEL_ERR_WBMP_LOAD   0x70"
+Error while loading the wbmp image 
+.SS "#define IMEL_ERR_XBM_LOAD   0x68"
+Error while loading the xbm image 
+.SS "#define IMEL_ERR_XPM_LOAD   0x67"
+Error while loading the xpm image 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Imel from the source code\&.

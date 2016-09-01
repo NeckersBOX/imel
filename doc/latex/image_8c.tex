@@ -1,0 +1,1590 @@
+\hypertarget{image_8c}{}\section{image.\+c File Reference}
+\label{image_8c}\index{image.\+c@{image.\+c}}
+
+
+This file contains functions to elaborate images.  
+
+
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}header.\+h\char`\"{}}\\*
+Include dependency graph for image.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{image_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{image_8c_af3a4abcb52f5611781065536fda0f97e}{imel\+\_\+image\+\_\+new} (\hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} width, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} height)
+\begin{DoxyCompactList}\small\item\em Make a new image. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{image_8c_a4692c85413196d5e15149cf4c66e1f08}{imel\+\_\+image\+\_\+new\+\_\+with\+\_\+background\+\_\+color} (\hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} width, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} height, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pixel)
+\begin{DoxyCompactList}\small\item\em Make a new image with background color and level specified. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{image_8c_a8d41302f949cde87f3741455b3b9c23d}{imel\+\_\+image\+\_\+copy} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image)
+\begin{DoxyCompactList}\small\item\em Duplicate an image. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \hyperlink{image_8c_a203143cba24be50f6d48eb50bcf64459}{imel\+\_\+image\+\_\+get\+\_\+width} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image)
+\begin{DoxyCompactList}\small\item\em Get image width. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \hyperlink{image_8c_acb0158f7e2714802231d7beb651ec47d}{imel\+\_\+image\+\_\+get\+\_\+height} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image)
+\begin{DoxyCompactList}\small\item\em Get image height. \end{DoxyCompactList}\item 
+void \hyperlink{image_8c_a873cba98c6f4f28e1db2bdf5da3cbfdd}{imel\+\_\+image\+\_\+free} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image)
+\begin{DoxyCompactList}\small\item\em Free an image. \end{DoxyCompactList}\item 
+void \hyperlink{image_8c_af617e35a65519b8c9c33b49fc8e59e89}{imel\+\_\+image\+\_\+apply\+\_\+effect} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_a4919a9d01ef8388db452c59507d67f2e}{Imel\+Effect} effect,...)
+\begin{DoxyCompactList}\small\item\em Apply an effect to an image. \end{DoxyCompactList}\item 
+void \hyperlink{image_8c_abdb78af6d874ae54552a6f3219c75127}{imel\+\_\+image\+\_\+apply\+\_\+filter} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_a9facf73fdf3eb7434d01cd1c07341a28}{Imel\+Mask} mask)
+\begin{DoxyCompactList}\small\item\em Apply a filter to an image. \end{DoxyCompactList}\item 
+void \hyperlink{image_8c_a9a31b005b5160c7f4cfc5917136ff7e3}{imel\+\_\+image\+\_\+apply\+\_\+color} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} red, \hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} green, \hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} blue, \hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} mono)
+\begin{DoxyCompactList}\small\item\em Apply a color to an image. \end{DoxyCompactList}\item 
+void \hyperlink{image_8c_ae2c499f2810e903a36b2b766541a815e}{imel\+\_\+image\+\_\+remove\+\_\+base\+\_\+color} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_a9facf73fdf3eb7434d01cd1c07341a28}{Imel\+Mask} mask)
+\begin{DoxyCompactList}\small\item\em Remove a color. \end{DoxyCompactList}\item 
+void \hyperlink{image_8c_a6975db091678649620213c772eafe0e4}{imel\+\_\+image\+\_\+apply\+\_\+color\+\_\+from\+\_\+string} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, const char $\ast$string, \hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} mono)
+\begin{DoxyCompactList}\small\item\em Apply a color from a string to an image. \end{DoxyCompactList}\item 
+void \hyperlink{image_8c_a155f45bccd5beef204d410a7d399bc00}{imel\+\_\+image\+\_\+replace\+\_\+color} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} src, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} dest, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} tollerance)
+\begin{DoxyCompactList}\small\item\em Replace a color with an other one. \end{DoxyCompactList}\item 
+void \hyperlink{image_8c_a59e0bc363c90fe9e002b1e93e66475e8}{imel\+\_\+image\+\_\+replace\+\_\+area\+\_\+color} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} src, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} dest, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} tollerance, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+x1, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+y1, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+x2, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+y2)
+\begin{DoxyCompactList}\small\item\em Replace a color with an other one in a specified area. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{image_8c_affee2b61640d48e8528d6bb173c9bf33}{imel\+\_\+image\+\_\+resize} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} width, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} height)
+\begin{DoxyCompactList}\small\item\em Resize an image. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{image_8c_a18663716510e90c30ddcb2973071c08e}{imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+left} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image)
+\begin{DoxyCompactList}\small\item\em Rotate an image to left. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{image_8c_a16511380a7ef0ed01a068f05273f8c08}{imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+right} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image)
+\begin{DoxyCompactList}\small\item\em Rotate an image to right. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{image_8c_a825a1b2309c771735d1c1379b484076d}{imel\+\_\+image\+\_\+rotate\+\_\+complete} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image)
+\begin{DoxyCompactList}\small\item\em Rotate an image to 180 degrees. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{image_8c_a4a2cd319143d8bcc9cd60cc191713664}{imel\+\_\+image\+\_\+mirror\+\_\+horizontal} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image)
+\begin{DoxyCompactList}\small\item\em Mirror an image to horizontal. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{image_8c_a9e7cf1420d1937b0528104da21bab4c2}{imel\+\_\+image\+\_\+mirror\+\_\+vertical} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image)
+\begin{DoxyCompactList}\small\item\em Mirror an image to vertical. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{image_8c_adac45043cb30a449868c1a7526671504}{imel\+\_\+image\+\_\+rotate} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, double rotate\+\_\+rad)
+\begin{DoxyCompactList}\small\item\em Rotate an image to a chosen angle. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{image_8c_ad08c629d2c44d24e7c485b7ff9a28021}{imel\+\_\+image\+\_\+perspective} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, double rad\+\_\+angle, \hyperlink{header_8h_aef27fcac7a96d118b3c3194c2577049f}{Imel\+Orientation} orientation)
+\begin{DoxyCompactList}\small\item\em Makes an horizontal or vertical perspective. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{image_8c_a54960c7fec6873dc13d2069d3c9eb718}{imel\+\_\+image\+\_\+cut} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} sx, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} sy, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} ex, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} ey)
+\begin{DoxyCompactList}\small\item\em Cut an image. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$$\ast$ \hyperlink{image_8c_a31943792f957de747e49b6dc1fbbab05}{imel\+\_\+image\+\_\+cut\+\_\+grid} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_a3f4de920943cb4d0979d415b4c5e3989}{Imel\+Info\+Cut} $\ast$cut\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Cut an image in more images. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{image_8c_a75fbdaa484f8b191b8988af68181c488}{imel\+\_\+image\+\_\+auto\+\_\+cut} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} tollerance, \hyperlink{header_8h_a6182c8947d12d828155f0fb8cb024209}{Imel\+Ref} reference,...)
+\begin{DoxyCompactList}\small\item\em Cut automatically an image. \end{DoxyCompactList}\item 
+void \hyperlink{image_8c_acdefba6da2457b909d9ca2600a13bc65}{imel\+\_\+image\+\_\+insert\+\_\+image} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$dest, \hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$src, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} sx, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} sy)
+\begin{DoxyCompactList}\small\item\em Insert an image in another one. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{image_8c_acbb25e82ef469246170ce9b541a4d220}{imel\+\_\+image\+\_\+apply\+\_\+logic\+\_\+operation} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$img1, \hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$img2, \hyperlink{header_8h_af92bba14d49d8e59b2642eb300fedb5e}{Imel\+Logic\+Operation} logic\+\_\+operation)
+\begin{DoxyCompactList}\small\item\em Apply a logic operation between two images. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{image_8c_afa2cd389929358c87f2d21e1e7b2ef9a}{imel\+\_\+image\+\_\+get\+\_\+histogram} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_a8879c5e403ddb26c326b1cc2c3e529bf}{Imel\+Histogram} histogram\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Get histogram values from an image. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{image_8c_ae416e85c63ce2f3f60df3fb31c5d41b5}{imel\+\_\+image\+\_\+get\+\_\+histogram\+\_\+image} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, int $\ast$\+\_\+\+\_\+histogram, \hyperlink{header_8h_a8879c5e403ddb26c326b1cc2c3e529bf}{Imel\+Histogram} histogram\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Make an histogram image for an image chosen. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{image_8c_a41cc4f146e4863e1969bfa15ca3e7afc}{imel\+\_\+image\+\_\+get\+\_\+histograms\+\_\+image} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_aacf376be43512b219081df71ed7ee438}{Imel\+Histogram\+Layout} layout)
+\begin{DoxyCompactList}\small\item\em Make all types of histogram of an image. \end{DoxyCompactList}\item 
+void \hyperlink{image_8c_a5fd7c413bcd1025d2c94810d66ba36eb}{imel\+\_\+image\+\_\+change\+\_\+level} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_abece8958e8db1e2826f21fd822c14694}{Imel\+Level\+Operation} level\+\_\+operation, \hyperlink{header_8h_a97bc4b146a807c2d83b966983132f4fc}{Imel\+Level} level)
+\begin{DoxyCompactList}\small\item\em Change level of an image. \end{DoxyCompactList}\item 
+void \hyperlink{image_8c_a3e8526c34b3cb916894f09923ea2a116}{imel\+\_\+image\+\_\+change\+\_\+color\+\_\+level} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_abece8958e8db1e2826f21fd822c14694}{Imel\+Level\+Operation} level\+\_\+operation, \hyperlink{header_8h_a97bc4b146a807c2d83b966983132f4fc}{Imel\+Level} level, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} color\+\_\+pxl, \hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} tollerance)
+\begin{DoxyCompactList}\small\item\em Change level to a specified color. \end{DoxyCompactList}\item 
+void \hyperlink{image_8c_a52a572198c8e082a7efeb5acc5dfab8e}{imel\+\_\+image\+\_\+apply\+\_\+convolution} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, double $\ast$$\ast$filter, int width, int height, double factor, double bias)
+\begin{DoxyCompactList}\small\item\em Apply a convolution matrix to an image. \end{DoxyCompactList}\item 
+void \hyperlink{image_8c_af026795ee048b2294876418c64729d03}{imel\+\_\+image\+\_\+apply\+\_\+pattern} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$pattern, \hyperlink{header_8h_a7321d084db08c3a51089e8a4612b332b}{Imel\+Pattern\+Operation} operation)
+\begin{DoxyCompactList}\small\item\em Apply a pattern to an imaage. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{image_8c_a12519cad063897a1dcf9eb4c677b8304}{imel\+\_\+image\+\_\+union} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$img1, \hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$img2, unsigned char opacity, \hyperlink{header_8h_a4d620b3c547205ca76d92f43f09320d1}{Imel\+Alignment} alignment)
+\begin{DoxyCompactList}\small\item\em Insert an image in another with a chosen opacity. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{image_8c_aa517733f37a96bfcccf4ee666a92b206}{imel\+\_\+image\+\_\+slant} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x0, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y0, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x1, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y1, \hyperlink{header_8h_aef27fcac7a96d118b3c3194c2577049f}{Imel\+Orientation} orientation, \hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} lengthens)
+\begin{DoxyCompactList}\small\item\em Slant an image or a small area inside it. \end{DoxyCompactList}\item 
+void \hyperlink{image_8c_a66997f20203b384d1185a1dd9985dd67}{imel\+\_\+image\+\_\+shift} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_aef27fcac7a96d118b3c3194c2577049f}{Imel\+Orientation} orientation, long int move\+\_\+pxl, \hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} lengthens)
+\begin{DoxyCompactList}\small\item\em Shift an image. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image_8c_add471c449ecce1b4bd78fc34a698f44f}{imel\+\_\+image\+\_\+shift\+\_\+lines} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_aef27fcac7a96d118b3c3194c2577049f}{Imel\+Orientation} move\+\_\+type, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} line, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} width, long int move\+\_\+pixel, \hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} lengthens)
+\begin{DoxyCompactList}\small\item\em Shift only some image lines. \end{DoxyCompactList}\item 
+void \hyperlink{image_8c_a3b9a4fb2f3fd678b206196e9f9bf4889}{imel\+\_\+image\+\_\+shift\+\_\+bpc} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, int bpc\+\_\+shift\+\_\+red, int bpc\+\_\+shift\+\_\+green, int bpc\+\_\+shift\+\_\+blue)
+\begin{DoxyCompactList}\small\item\em Shift the R\+GB values of an image. \end{DoxyCompactList}\item 
+void \hyperlink{image_8c_aedeae21c9710c31bf78b5a12d03a031f}{imel\+\_\+image\+\_\+remove\+\_\+noise} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} size\+\_\+q, \hyperlink{header_8h_a9facf73fdf3eb7434d01cd1c07341a28}{Imel\+Mask} mask, \hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} tollerance)
+\begin{DoxyCompactList}\small\item\em Remove noise from an image. \end{DoxyCompactList}\item 
+void \hyperlink{image_8c_a5b3d70708a116076bfbcaeb7a9cd2b5d}{imel\+\_\+image\+\_\+apply\+\_\+noise} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} noise\+\_\+range, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} noise\+\_\+quantity, \hyperlink{header_8h_a9facf73fdf3eb7434d01cd1c07341a28}{Imel\+Mask} mask, \hyperlink{header_8h_abb411905768327b93668c636957a73ff}{Imel\+Noise\+Operation} operation, \hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} nepc)
+\begin{DoxyCompactList}\small\item\em Apply a noise to an image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains functions to elaborate images. 
+
+\begin{DoxyAuthor}{Author}
+Davide Francesco Merico 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+apply\+\_\+color@{imel\+\_\+image\+\_\+apply\+\_\+color}}
+\index{imel\+\_\+image\+\_\+apply\+\_\+color@{imel\+\_\+image\+\_\+apply\+\_\+color}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+apply\+\_\+color(\+Imel\+Image $\ast$image, Imel\+Color red, Imel\+Color green, Imel\+Color blue, bool mono)}{imel_image_apply_color(ImelImage *image, ImelColor red, ImelColor green, ImelColor blue, bool mono)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+apply\+\_\+color (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Color}}]{red, }
+\item[{{\bf Imel\+Color}}]{green, }
+\item[{{\bf Imel\+Color}}]{blue, }
+\item[{{\bf bool}}]{mono}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a9a31b005b5160c7f4cfc5917136ff7e3}{}\label{image_8c_a9a31b005b5160c7f4cfc5917136ff7e3}
+
+
+Apply a color to an image. 
+
+This function apply a chosen color to the {\ttfamily image}. It can be set as unique color or as reference to existed color in {\ttfamily image}.
+
+
+\begin{DoxyCode}
+1 ImelImage *image = imel\_image\_new\_from ("image.jpg", 0, NULL);
+2 
+3 imel\_image\_apply\_color (image, 0xfd, 0xb4, 0x55, false);
+4 ...
+5 imel\_image\_apply\_color (image, 0xfd, 0xb4, ox55, true);
+\end{DoxyCode}
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/orig}
+\caption{Original Image}
+\end{DoxyImage}
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/imac-f}
+\caption{Passed F\+A\+L\+SE as last argument}
+\end{DoxyImage}
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/imac-t}
+\caption{Passed T\+R\+UE as last argument}
+\end{DoxyImage}
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image on which apply the color \\
+\hline
+{\em red} & Red channel of the color to apply \\
+\hline
+{\em green} & Green channel of the color to apply \\
+\hline
+{\em blue} & Blue channel of the color to apply \\
+\hline
+{\em mono} & T\+R\+UE if the color chosen is the only color of the image, else F\+A\+L\+SE \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a6975db091678649620213c772eafe0e4}{imel\+\_\+image\+\_\+apply\+\_\+color\+\_\+from\+\_\+string} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+apply\+\_\+color\+\_\+from\+\_\+string@{imel\+\_\+image\+\_\+apply\+\_\+color\+\_\+from\+\_\+string}}
+\index{imel\+\_\+image\+\_\+apply\+\_\+color\+\_\+from\+\_\+string@{imel\+\_\+image\+\_\+apply\+\_\+color\+\_\+from\+\_\+string}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+apply\+\_\+color\+\_\+from\+\_\+string(\+Imel\+Image $\ast$image, const char $\ast$string, bool mono)}{imel_image_apply_color_from_string(ImelImage *image, const char *string, bool mono)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+apply\+\_\+color\+\_\+from\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{const char $\ast$}]{string, }
+\item[{{\bf bool}}]{mono}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a6975db091678649620213c772eafe0e4}{}\label{image_8c_a6975db091678649620213c772eafe0e4}
+
+
+Apply a color from a string to an image. 
+
+This function apply a chosen color from a string to the {\ttfamily image}. It can be set as unique color or as reference to existed color in {\ttfamily image}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image on which apply the color \\
+\hline
+{\em string} & Color to apply to the image in H\+T\+ML format ( \textquotesingle{}\#rrggbb\textquotesingle{} ) \\
+\hline
+{\em mono} & T\+R\+UE if the color chosen is the only color of the image, else F\+A\+L\+SE \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a9a31b005b5160c7f4cfc5917136ff7e3}{imel\+\_\+image\+\_\+apply\+\_\+color} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+apply\+\_\+convolution@{imel\+\_\+image\+\_\+apply\+\_\+convolution}}
+\index{imel\+\_\+image\+\_\+apply\+\_\+convolution@{imel\+\_\+image\+\_\+apply\+\_\+convolution}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+apply\+\_\+convolution(\+Imel\+Image $\ast$image, double $\ast$$\ast$filter, int width, int height, double factor, double bias)}{imel_image_apply_convolution(ImelImage *image, double **filter, int width, int height, double factor, double bias)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+apply\+\_\+convolution (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{double $\ast$$\ast$}]{filter, }
+\item[{int}]{width, }
+\item[{int}]{height, }
+\item[{double}]{factor, }
+\item[{double}]{bias}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a52a572198c8e082a7efeb5acc5dfab8e}{}\label{image_8c_a52a572198c8e082a7efeb5acc5dfab8e}
+
+
+Apply a convolution matrix to an image. 
+
+This function apply a convolution matrix of chosen size to {\ttfamily image}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to apply the {\ttfamily filter} \\
+\hline
+{\em filter} & Convolution matrix \\
+\hline
+{\em width} & Width of matrix \\
+\hline
+{\em height} & Height of matrix \\
+\hline
+{\em factor} & Multiply factor \\
+\hline
+{\em bias} & Offset to apply to matrix\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\href{https://en.wikipedia.org/wiki/Kernel_(image_processing)}{\tt https\+://en.\+wikipedia.\+org/wiki/\+Kernel\+\_\+(image\+\_\+processing)} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+apply\+\_\+effect@{imel\+\_\+image\+\_\+apply\+\_\+effect}}
+\index{imel\+\_\+image\+\_\+apply\+\_\+effect@{imel\+\_\+image\+\_\+apply\+\_\+effect}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+apply\+\_\+effect(\+Imel\+Image $\ast$image, Imel\+Effect effect,...)}{imel_image_apply_effect(ImelImage *image, ImelEffect effect,...)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+apply\+\_\+effect (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Effect}}]{effect, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_af617e35a65519b8c9c33b49fc8e59e89}{}\label{image_8c_af617e35a65519b8c9c33b49fc8e59e89}
+
+
+Apply an effect to an image. 
+
+This function apply the {\ttfamily effect} to the {\ttfamily image}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image on which apply the {\ttfamily effect} \\
+\hline
+{\em effect} & Effect to apply to the {\ttfamily image} \\
+\hline
+{\em ...} & Options for the {\ttfamily effect} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_a4919a9d01ef8388db452c59507d67f2e}{Imel\+Effect} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+apply\+\_\+filter@{imel\+\_\+image\+\_\+apply\+\_\+filter}}
+\index{imel\+\_\+image\+\_\+apply\+\_\+filter@{imel\+\_\+image\+\_\+apply\+\_\+filter}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+apply\+\_\+filter(\+Imel\+Image $\ast$image, Imel\+Mask mask)}{imel_image_apply_filter(ImelImage *image, ImelMask mask)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+apply\+\_\+filter (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Mask}}]{mask}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_abdb78af6d874ae54552a6f3219c75127}{}\label{image_8c_abdb78af6d874ae54552a6f3219c75127}
+
+
+Apply a filter to an image. 
+
+This function set to 255 the channel, or the channels, specified as {\ttfamily mask}.
+
+
+\begin{DoxyCode}
+1 ImelImage *image = imel\_image\_new\_from ("image.jpg", 0, NULL);
+2 
+3 imel\_image\_apply\_filter (image, IMEL\_MASK\_RED | IMEL\_MASK\_BLUE);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image on which apply the filter \\
+\hline
+{\em mask} & Channel, or channels, to set to 255. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_a9facf73fdf3eb7434d01cd1c07341a28}{Imel\+Mask} 
+
+\hyperlink{image_8c_ae2c499f2810e903a36b2b766541a815e}{imel\+\_\+image\+\_\+remove\+\_\+base\+\_\+color} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+apply\+\_\+logic\+\_\+operation@{imel\+\_\+image\+\_\+apply\+\_\+logic\+\_\+operation}}
+\index{imel\+\_\+image\+\_\+apply\+\_\+logic\+\_\+operation@{imel\+\_\+image\+\_\+apply\+\_\+logic\+\_\+operation}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+apply\+\_\+logic\+\_\+operation(\+Imel\+Image $\ast$img1, Imel\+Image $\ast$img2, Imel\+Logic\+Operation logic\+\_\+operation)}{imel_image_apply_logic_operation(ImelImage *img1, ImelImage *img2, ImelLogicOperation logic_operation)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$ imel\+\_\+image\+\_\+apply\+\_\+logic\+\_\+operation (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{img1, }
+\item[{{\bf Imel\+Image} $\ast$}]{img2, }
+\item[{{\bf Imel\+Logic\+Operation}}]{logic\+\_\+operation}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_acbb25e82ef469246170ce9b541a4d220}{}\label{image_8c_acbb25e82ef469246170ce9b541a4d220}
+
+
+Apply a logic operation between two images. 
+
+This function apply the {\ttfamily logic\+\_\+operation} to {\ttfamily img1} and {\ttfamily img2}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em img1} & First image \\
+\hline
+{\em img2} & Second image \\
+\hline
+{\em logic\+\_\+operation} & Type of operation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An image result from the operation between {\ttfamily img1} and {\ttfamily img2} 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_af92bba14d49d8e59b2642eb300fedb5e}{Imel\+Logic\+Operation} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+apply\+\_\+noise@{imel\+\_\+image\+\_\+apply\+\_\+noise}}
+\index{imel\+\_\+image\+\_\+apply\+\_\+noise@{imel\+\_\+image\+\_\+apply\+\_\+noise}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+apply\+\_\+noise(\+Imel\+Image $\ast$image, Imel\+Color noise\+\_\+range, Imel\+Size noise\+\_\+quantity, Imel\+Mask mask, Imel\+Noise\+Operation operation, bool nepc)}{imel_image_apply_noise(ImelImage *image, ImelColor noise_range, ImelSize noise_quantity, ImelMask mask, ImelNoiseOperation operation, bool nepc)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+apply\+\_\+noise (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Color}}]{noise\+\_\+range, }
+\item[{{\bf Imel\+Size}}]{noise\+\_\+quantity, }
+\item[{{\bf Imel\+Mask}}]{mask, }
+\item[{{\bf Imel\+Noise\+Operation}}]{operation, }
+\item[{{\bf bool}}]{nepc}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a5b3d70708a116076bfbcaeb7a9cd2b5d}{}\label{image_8c_a5b3d70708a116076bfbcaeb7a9cd2b5d}
+
+
+Apply a noise to an image. 
+
+This function apply a noise to {\ttfamily image} at one or more R\+GB channels.
+
+
+\begin{DoxyCode}
+1 ImelImage *image = imel\_image\_new\_from ("apply\_noise.jpg", 0, NULL);
+2 ImelMask mask = IMEL\_MASK\_RED | IMEL\_MASK\_GREEN | IMEL\_MASK\_BLUE;
+3 
+4 imel\_image\_apply\_noise (image, 90, 30, mask, IMEL\_NOISE\_OPERATION\_SUM, false);
+\end{DoxyCode}
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/noise}
+\caption{Input Image}
+\end{DoxyImage}
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/apply_noise}
+\caption{Result Image}
+\end{DoxyImage}
+ 
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to apply the noise \\
+\hline
+{\em noise\+\_\+range} & Value for {\ttfamily operation}. This value specifies the max value can be added, subtracted, multiply or divided when noise is applied. \\
+\hline
+{\em noise\+\_\+quantity} & Specifies how much noise can be applied randomly to image. Values\+: 1 for apply the noise to each pixel, 4294967295 is the max value. \\
+\hline
+{\em mask} & Channels affected from noise. \\
+\hline
+{\em operation} & Operation to do when apply the noise \\
+\hline
+{\em nepc} & If T\+R\+UE apply the noise value calculated to each R\+GB channel specified, else each noise value will be calculated separately.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_abb411905768327b93668c636957a73ff}{Imel\+Noise\+Operation} 
+
+\hyperlink{image_8c_aedeae21c9710c31bf78b5a12d03a031f}{imel\+\_\+image\+\_\+remove\+\_\+noise} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+apply\+\_\+pattern@{imel\+\_\+image\+\_\+apply\+\_\+pattern}}
+\index{imel\+\_\+image\+\_\+apply\+\_\+pattern@{imel\+\_\+image\+\_\+apply\+\_\+pattern}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+apply\+\_\+pattern(\+Imel\+Image $\ast$image, Imel\+Image $\ast$pattern, Imel\+Pattern\+Operation operation)}{imel_image_apply_pattern(ImelImage *image, ImelImage *pattern, ImelPatternOperation operation)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+apply\+\_\+pattern (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Image} $\ast$}]{pattern, }
+\item[{{\bf Imel\+Pattern\+Operation}}]{operation}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_af026795ee048b2294876418c64729d03}{}\label{image_8c_af026795ee048b2294876418c64729d03}
+
+
+Apply a pattern to an imaage. 
+
+This function apply an image {\ttfamily pattern} to {\ttfamily image} with a chosen {\ttfamily operation}.
+
+
+\begin{DoxyCode}
+1 ImelImage *pattern = imel\_image\_new\_from ("pattern.png", 0, NULL);
+2 ImelImage *image = imel\_image\_new (150, 151);
+3 
+4 imel\_image\_apply\_pattern (image, pattern, IMEL\_PATTERN\_OPERATION\_INSERT);
+5 imel\_image\_free (pattern);
+\end{DoxyCode}
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/stripe}
+\caption{Pattern image}
+\end{DoxyImage}
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/pattern}
+\caption{Output image}
+\end{DoxyImage}
+ 
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to apply {\ttfamily pattern} \\
+\hline
+{\em pattern} & Pattern image \\
+\hline
+{\em operation} & Type of operation\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_a7321d084db08c3a51089e8a4612b332b}{Imel\+Pattern\+Operation} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+auto\+\_\+cut@{imel\+\_\+image\+\_\+auto\+\_\+cut}}
+\index{imel\+\_\+image\+\_\+auto\+\_\+cut@{imel\+\_\+image\+\_\+auto\+\_\+cut}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+auto\+\_\+cut(\+Imel\+Image $\ast$image, Imel\+Size tollerance, Imel\+Ref reference,...)}{imel_image_auto_cut(ImelImage *image, ImelSize tollerance, ImelRef reference,...)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$ imel\+\_\+image\+\_\+auto\+\_\+cut (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{tollerance, }
+\item[{{\bf Imel\+Ref}}]{reference, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a75fbdaa484f8b191b8988af68181c488}{}\label{image_8c_a75fbdaa484f8b191b8988af68181c488}
+
+
+Cut automatically an image. 
+
+This function cuts automatically an {\ttfamily image} removing from the sides all the aereas with a specified color or level.
+
+
+\begin{DoxyCode}
+1 ImelImage *image, *cut\_image;
+2 ImelPixel cut\_pixel = \{ 16, 16, 16, -255 \};
+3 
+4 image = imel\_image\_new\_from ("image.bmp", 0, NULL);
+5 
+6 // Auto cut transparency
+7 cut\_image = imel\_image\_auto\_cut (image, 254, IMEL\_REF\_LEVEL, cut\_pixel.level);
+8 imel\_image\_free (image);
+9       
+10 // Auto cut color ( \{0, 0, 0\} - \{32, 32, 32\} )
+11 image = imel\_image\_auto\_cut (cut\_image, 16, IMEL\_REF\_COLOR, cut\_pixel);
+12 imel\_image\_free (cut\_image);
+13 ...
+14 imel\_image\_free (image);
+\end{DoxyCode}
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/imel_cutme}
+\caption{Original Image}
+\end{DoxyImage}
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/auto_cut}
+\caption{Image Result}
+\end{DoxyImage}
+ 
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to cut \\
+\hline
+{\em tollerance} & Tollerance for level or color to remove. \\
+\hline
+{\em reference} & Which type of cut do \\
+\hline
+{\em ...} & Level ( Imel\+Size ) or color ( Imel\+Pixel ) to remove from the sides. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cutted image.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a54960c7fec6873dc13d2069d3c9eb718}{imel\+\_\+image\+\_\+cut} 
+
+\hyperlink{image_8c_a31943792f957de747e49b6dc1fbbab05}{imel\+\_\+image\+\_\+cut\+\_\+grid} 
+
+\hyperlink{header_8h_a6182c8947d12d828155f0fb8cb024209}{Imel\+Ref} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+change\+\_\+color\+\_\+level@{imel\+\_\+image\+\_\+change\+\_\+color\+\_\+level}}
+\index{imel\+\_\+image\+\_\+change\+\_\+color\+\_\+level@{imel\+\_\+image\+\_\+change\+\_\+color\+\_\+level}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+change\+\_\+color\+\_\+level(\+Imel\+Image $\ast$image, Imel\+Level\+Operation level\+\_\+operation, Imel\+Level level, Imel\+Pixel color\+\_\+pxl, Imel\+Color tollerance)}{imel_image_change_color_level(ImelImage *image, ImelLevelOperation level_operation, ImelLevel level, ImelPixel color_pxl, ImelColor tollerance)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+change\+\_\+color\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Level\+Operation}}]{level\+\_\+operation, }
+\item[{{\bf Imel\+Level}}]{level, }
+\item[{{\bf Imel\+Pixel}}]{color\+\_\+pxl, }
+\item[{{\bf Imel\+Color}}]{tollerance}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a3e8526c34b3cb916894f09923ea2a116}{}\label{image_8c_a3e8526c34b3cb916894f09923ea2a116}
+
+
+Change level to a specified color. 
+
+This function change the level value for each {\ttfamily image} pixel that have a color equal or similar to {\ttfamily color\+\_\+pxl}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to elaborate \\
+\hline
+{\em level\+\_\+operation} & Type of operation \\
+\hline
+{\em level} & New level or value for {\ttfamily level\+\_\+operation} \\
+\hline
+{\em color\+\_\+pxl} & Color to change the level \\
+\hline
+{\em tollerance} & Tollerance to find {\ttfamily color} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_abece8958e8db1e2826f21fd822c14694}{Imel\+Level\+Operation} 
+
+imel\+\_\+pixel\+\_\+compare 
+
+\hyperlink{image_8c_a5fd7c413bcd1025d2c94810d66ba36eb}{imel\+\_\+image\+\_\+change\+\_\+level} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+change\+\_\+level@{imel\+\_\+image\+\_\+change\+\_\+level}}
+\index{imel\+\_\+image\+\_\+change\+\_\+level@{imel\+\_\+image\+\_\+change\+\_\+level}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+change\+\_\+level(\+Imel\+Image $\ast$image, Imel\+Level\+Operation level\+\_\+operation, Imel\+Level level)}{imel_image_change_level(ImelImage *image, ImelLevelOperation level_operation, ImelLevel level)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+change\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Level\+Operation}}]{level\+\_\+operation, }
+\item[{{\bf Imel\+Level}}]{level}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a5fd7c413bcd1025d2c94810d66ba36eb}{}\label{image_8c_a5fd7c413bcd1025d2c94810d66ba36eb}
+
+
+Change level of an image. 
+
+This function change the level of {\ttfamily image}. It can be added or setted through the {\ttfamily level\+\_\+operation} argument.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to which change the level \\
+\hline
+{\em level\+\_\+operation} & Type of operation \\
+\hline
+{\em level} & New level or value for {\ttfamily level\+\_\+operation} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_abece8958e8db1e2826f21fd822c14694}{Imel\+Level\+Operation} 
+
+\hyperlink{image_8c_a3e8526c34b3cb916894f09923ea2a116}{imel\+\_\+image\+\_\+change\+\_\+color\+\_\+level} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+copy@{imel\+\_\+image\+\_\+copy}}
+\index{imel\+\_\+image\+\_\+copy@{imel\+\_\+image\+\_\+copy}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+copy(\+Imel\+Image $\ast$image)}{imel_image_copy(ImelImage *image)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$ imel\+\_\+image\+\_\+copy (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a8d41302f949cde87f3741455b3b9c23d}{}\label{image_8c_a8d41302f949cde87f3741455b3b9c23d}
+
+
+Duplicate an image. 
+
+This function copy {\ttfamily image} passed in a new one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new Imel\+Image equal to {\ttfamily image} 
+\end{DoxyReturn}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+cut@{imel\+\_\+image\+\_\+cut}}
+\index{imel\+\_\+image\+\_\+cut@{imel\+\_\+image\+\_\+cut}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+cut(\+Imel\+Image $\ast$image, Imel\+Size sx, Imel\+Size sy, Imel\+Size ex, Imel\+Size ey)}{imel_image_cut(ImelImage *image, ImelSize sx, ImelSize sy, ImelSize ex, ImelSize ey)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$ imel\+\_\+image\+\_\+cut (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{sx, }
+\item[{{\bf Imel\+Size}}]{sy, }
+\item[{{\bf Imel\+Size}}]{ex, }
+\item[{{\bf Imel\+Size}}]{ey}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a54960c7fec6873dc13d2069d3c9eb718}{}\label{image_8c_a54960c7fec6873dc13d2069d3c9eb718}
+
+
+Cut an image. 
+
+This function cuts {\ttfamily image} from the coordinate {\ttfamily sx}, {\ttfamily sy} to the coordinate {\ttfamily ex}, {\ttfamily ey}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to cut \\
+\hline
+{\em sx} & Start x coordinate \\
+\hline
+{\em sy} & Start y coordinate \\
+\hline
+{\em ex} & End x coordinate \\
+\hline
+{\em ey} & End y coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new image with the {\ttfamily image} cutted 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a75fbdaa484f8b191b8988af68181c488}{imel\+\_\+image\+\_\+auto\+\_\+cut} 
+
+\hyperlink{image_8c_a31943792f957de747e49b6dc1fbbab05}{imel\+\_\+image\+\_\+cut\+\_\+grid} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+cut\+\_\+grid@{imel\+\_\+image\+\_\+cut\+\_\+grid}}
+\index{imel\+\_\+image\+\_\+cut\+\_\+grid@{imel\+\_\+image\+\_\+cut\+\_\+grid}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+cut\+\_\+grid(\+Imel\+Image $\ast$image, Imel\+Info\+Cut $\ast$cut\+\_\+info)}{imel_image_cut_grid(ImelImage *image, ImelInfoCut *cut_info)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$$\ast$ imel\+\_\+image\+\_\+cut\+\_\+grid (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Info\+Cut} $\ast$}]{cut\+\_\+info}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a31943792f957de747e49b6dc1fbbab05}{}\label{image_8c_a31943792f957de747e49b6dc1fbbab05}
+
+
+Cut an image in more images. 
+
+This function cut {\ttfamily image} in more images through a guide lines passed as {\ttfamily cut\+\_\+info}.
+
+
+\begin{DoxyCode}
+1 ImelImage *image = imel\_image\_new\_from ("cut\_orig.jpg", 0, NULL);
+2 ImelImage **tiles;
+3 ImelInfoCut *cut\_info;
+4 int j;
+5 
+6 cut\_info = imel\_info\_cut\_new (IMEL\_ORIENTATION\_HORIZONTAL, 35);
+7 cut\_info = imel\_info\_cut\_add (cut\_info, IMEL\_ORIENTATION\_HORIZONTAL, image->height - 35);
+8 cut\_info = imel\_info\_cut\_add (cut\_info, IMEL\_ORIENTATION\_VERTICAL, 35);
+9 cut\_info = imel\_info\_cut\_add (cut\_info, IMEL\_ORIENTATION\_VERTICAL, image->width - 35);
+10 
+11 tiles = imel\_image\_cut\_grid (image, cut\_info);
+12 imel\_info\_cut\_free (cut\_info);
+13 imel\_image\_free (image);
+14 ...
+15 for ( j = 0; tiles[j]; imel\_image\_free (tiles[j]), j++ );
+16 free (tiles);
+\end{DoxyCode}
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/cut_orig}
+\caption{Original Image}
+\end{DoxyImage}
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/cut_result}
+\caption{Result Images}
+\end{DoxyImage}
+ 
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to cut \\
+\hline
+{\em cut\+\_\+info} & guide lines \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cutted images in order inverse ( column, row ) inside a N\+U\+L\+L-\/terminated L\+I\+FO array.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a54960c7fec6873dc13d2069d3c9eb718}{imel\+\_\+image\+\_\+cut} 
+
+\hyperlink{image_8c_a75fbdaa484f8b191b8988af68181c488}{imel\+\_\+image\+\_\+auto\+\_\+cut} 
+
+\hyperlink{info__cut_8c_ad06ec44d23c494c1f501d03de880007e}{imel\+\_\+info\+\_\+cut\+\_\+new} 
+
+\hyperlink{info__cut_8c_aa8e34152e2f5716e6a195ee1b8107f85}{imel\+\_\+info\+\_\+cut\+\_\+add} 
+
+\hyperlink{info__cut_8c_a73ba0a29544436cf4248c71a935560cd}{imel\+\_\+info\+\_\+cut\+\_\+free} 
+
+\hyperlink{header_8h_aef27fcac7a96d118b3c3194c2577049f}{Imel\+Orientation} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+free@{imel\+\_\+image\+\_\+free}}
+\index{imel\+\_\+image\+\_\+free@{imel\+\_\+image\+\_\+free}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+free(\+Imel\+Image $\ast$image)}{imel_image_free(ImelImage *image)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a873cba98c6f4f28e1db2bdf5da3cbfdd}{}\label{image_8c_a873cba98c6f4f28e1db2bdf5da3cbfdd}
+
+
+Free an image. 
+
+This function free memory allocated by {\ttfamily image}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to free \\
+\hline
+\end{DoxyParams}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+get\+\_\+height@{imel\+\_\+image\+\_\+get\+\_\+height}}
+\index{imel\+\_\+image\+\_\+get\+\_\+height@{imel\+\_\+image\+\_\+get\+\_\+height}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+get\+\_\+height(\+Imel\+Image $\ast$image)}{imel_image_get_height(ImelImage *image)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Size} imel\+\_\+image\+\_\+get\+\_\+height (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_acb0158f7e2714802231d7beb651ec47d}{}\label{image_8c_acb0158f7e2714802231d7beb651ec47d}
+
+
+Get image height. 
+
+This function get {\ttfamily image} height.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image from which get the height \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily image} height 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Same as {\ttfamily image-\/$>$height} 
+\end{DoxyNote}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+get\+\_\+histogram@{imel\+\_\+image\+\_\+get\+\_\+histogram}}
+\index{imel\+\_\+image\+\_\+get\+\_\+histogram@{imel\+\_\+image\+\_\+get\+\_\+histogram}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+get\+\_\+histogram(\+Imel\+Image $\ast$image, Imel\+Histogram histogram\+\_\+type)}{imel_image_get_histogram(ImelImage *image, ImelHistogram histogram_type)}}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ imel\+\_\+image\+\_\+get\+\_\+histogram (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Histogram}}]{histogram\+\_\+type}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_afa2cd389929358c87f2d21e1e7b2ef9a}{}\label{image_8c_afa2cd389929358c87f2d21e1e7b2ef9a}
+
+
+Get histogram values from an image. 
+
+This function get the histogram values from {\ttfamily image} for {\ttfamily histogram\+\_\+type} chosen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image from which get the values \\
+\hline
+{\em histogram\+\_\+type} & Types of values to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An array with 256 element
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_a8879c5e403ddb26c326b1cc2c3e529bf}{Imel\+Histogram} 
+
+\hyperlink{image_8c_ae416e85c63ce2f3f60df3fb31c5d41b5}{imel\+\_\+image\+\_\+get\+\_\+histogram\+\_\+image} 
+
+\hyperlink{image_8c_a41cc4f146e4863e1969bfa15ca3e7afc}{imel\+\_\+image\+\_\+get\+\_\+histograms\+\_\+image} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+get\+\_\+histogram\+\_\+image@{imel\+\_\+image\+\_\+get\+\_\+histogram\+\_\+image}}
+\index{imel\+\_\+image\+\_\+get\+\_\+histogram\+\_\+image@{imel\+\_\+image\+\_\+get\+\_\+histogram\+\_\+image}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+get\+\_\+histogram\+\_\+image(\+Imel\+Image $\ast$image, int $\ast$\+\_\+\+\_\+histogram, Imel\+Histogram histogram\+\_\+type)}{imel_image_get_histogram_image(ImelImage *image, int *__histogram, ImelHistogram histogram_type)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$ imel\+\_\+image\+\_\+get\+\_\+histogram\+\_\+image (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{int $\ast$}]{\+\_\+\+\_\+histogram, }
+\item[{{\bf Imel\+Histogram}}]{histogram\+\_\+type}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_ae416e85c63ce2f3f60df3fb31c5d41b5}{}\label{image_8c_ae416e85c63ce2f3f60df3fb31c5d41b5}
+
+
+Make an histogram image for an image chosen. 
+
+This function make an histogram for {\ttfamily image} from which are already elaborated the values through \hyperlink{image_8c_afa2cd389929358c87f2d21e1e7b2ef9a}{imel\+\_\+image\+\_\+get\+\_\+histogram} () function.
+
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/histogram_me}
+\caption{Original Image}
+\end{DoxyImage}
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/histogram}
+\caption{Output Image}
+\end{DoxyImage}
+ 
+\begin{DoxyParams}{Parameters}
+{\em image} & Image from which get the histogram \\
+\hline
+{\em \+\_\+\+\_\+histogram} & Values returned from imel\+\_\+image\+\_\+get\+\_\+histogram () function \\
+\hline
+{\em histogram\+\_\+type} & Histogram type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Histogram image
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_a8879c5e403ddb26c326b1cc2c3e529bf}{Imel\+Histogram} 
+
+\hyperlink{image_8c_afa2cd389929358c87f2d21e1e7b2ef9a}{imel\+\_\+image\+\_\+get\+\_\+histogram} 
+
+\hyperlink{image_8c_a41cc4f146e4863e1969bfa15ca3e7afc}{imel\+\_\+image\+\_\+get\+\_\+histograms\+\_\+image} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+get\+\_\+histograms\+\_\+image@{imel\+\_\+image\+\_\+get\+\_\+histograms\+\_\+image}}
+\index{imel\+\_\+image\+\_\+get\+\_\+histograms\+\_\+image@{imel\+\_\+image\+\_\+get\+\_\+histograms\+\_\+image}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+get\+\_\+histograms\+\_\+image(\+Imel\+Image $\ast$image, Imel\+Histogram\+Layout layout)}{imel_image_get_histograms_image(ImelImage *image, ImelHistogramLayout layout)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$ imel\+\_\+image\+\_\+get\+\_\+histograms\+\_\+image (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Histogram\+Layout}}]{layout}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a41cc4f146e4863e1969bfa15ca3e7afc}{}\label{image_8c_a41cc4f146e4863e1969bfa15ca3e7afc}
+
+
+Make all types of histogram of an image. 
+
+This function make all types of histogram of {\ttfamily image} with a chosen {\ttfamily layout}.
+
+ 
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/histogram_panels}}
+\end{DoxyImageNoCaption}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image from which get histograms \\
+\hline
+{\em layout} & Layout of the histograms \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The image with all the histograms
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_aacf376be43512b219081df71ed7ee438}{Imel\+Histogram\+Layout} 
+
+\hyperlink{image_8c_afa2cd389929358c87f2d21e1e7b2ef9a}{imel\+\_\+image\+\_\+get\+\_\+histogram} 
+
+\hyperlink{image_8c_ae416e85c63ce2f3f60df3fb31c5d41b5}{imel\+\_\+image\+\_\+get\+\_\+histogram\+\_\+image} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+get\+\_\+width@{imel\+\_\+image\+\_\+get\+\_\+width}}
+\index{imel\+\_\+image\+\_\+get\+\_\+width@{imel\+\_\+image\+\_\+get\+\_\+width}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+get\+\_\+width(\+Imel\+Image $\ast$image)}{imel_image_get_width(ImelImage *image)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Size} imel\+\_\+image\+\_\+get\+\_\+width (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a203143cba24be50f6d48eb50bcf64459}{}\label{image_8c_a203143cba24be50f6d48eb50bcf64459}
+
+
+Get image width. 
+
+This function get {\ttfamily image} width.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image from which get the width \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily image} width 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Same as {\ttfamily image-\/$>$width} 
+\end{DoxyNote}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+insert\+\_\+image@{imel\+\_\+image\+\_\+insert\+\_\+image}}
+\index{imel\+\_\+image\+\_\+insert\+\_\+image@{imel\+\_\+image\+\_\+insert\+\_\+image}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+insert\+\_\+image(\+Imel\+Image $\ast$dest, Imel\+Image $\ast$src, Imel\+Size sx, Imel\+Size sy)}{imel_image_insert_image(ImelImage *dest, ImelImage *src, ImelSize sx, ImelSize sy)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+insert\+\_\+image (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{dest, }
+\item[{{\bf Imel\+Image} $\ast$}]{src, }
+\item[{{\bf Imel\+Size}}]{sx, }
+\item[{{\bf Imel\+Size}}]{sy}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_acdefba6da2457b909d9ca2600a13bc65}{}\label{image_8c_acdefba6da2457b909d9ca2600a13bc65}
+
+
+Insert an image in another one. 
+
+This function insert the image {\ttfamily src} in the image {\ttfamily dest} from position $(sx,sy)$.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & Destination image \\
+\hline
+{\em src} & Image to insert in {\ttfamily dest} \\
+\hline
+{\em sx} & Start x coordinate \\
+\hline
+{\em sy} & Start y coordinate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function uses indirectly \hyperlink{pixel_8c_a9bc6aa8b3ec663f1635827b0ebbdf46a}{imel\+\_\+pixel\+\_\+copy} () function to insert {\ttfamily src} in {\ttfamily dest} 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{pixel_8c_a9bc6aa8b3ec663f1635827b0ebbdf46a}{imel\+\_\+pixel\+\_\+copy} 
+
+\hyperlink{image_8c_a12519cad063897a1dcf9eb4c677b8304}{imel\+\_\+image\+\_\+union} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+mirror\+\_\+horizontal@{imel\+\_\+image\+\_\+mirror\+\_\+horizontal}}
+\index{imel\+\_\+image\+\_\+mirror\+\_\+horizontal@{imel\+\_\+image\+\_\+mirror\+\_\+horizontal}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+mirror\+\_\+horizontal(\+Imel\+Image $\ast$image)}{imel_image_mirror_horizontal(ImelImage *image)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$ imel\+\_\+image\+\_\+mirror\+\_\+horizontal (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a4a2cd319143d8bcc9cd60cc191713664}{}\label{image_8c_a4a2cd319143d8bcc9cd60cc191713664}
+
+
+Mirror an image to horizontal. 
+
+This function applies the mirror horizontal effect to {\ttfamily image}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to mirror \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A copy of {\ttfamily image} mirrored horizontally 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a9e7cf1420d1937b0528104da21bab4c2}{imel\+\_\+image\+\_\+mirror\+\_\+vertical} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+mirror\+\_\+vertical@{imel\+\_\+image\+\_\+mirror\+\_\+vertical}}
+\index{imel\+\_\+image\+\_\+mirror\+\_\+vertical@{imel\+\_\+image\+\_\+mirror\+\_\+vertical}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+mirror\+\_\+vertical(\+Imel\+Image $\ast$image)}{imel_image_mirror_vertical(ImelImage *image)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$ imel\+\_\+image\+\_\+mirror\+\_\+vertical (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a9e7cf1420d1937b0528104da21bab4c2}{}\label{image_8c_a9e7cf1420d1937b0528104da21bab4c2}
+
+
+Mirror an image to vertical. 
+
+This function applies the mirror vertical effect to {\ttfamily image}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to mirror \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A copy of {\ttfamily image} mirrored vertically 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a4a2cd319143d8bcc9cd60cc191713664}{imel\+\_\+image\+\_\+mirror\+\_\+horizontal} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+new@{imel\+\_\+image\+\_\+new}}
+\index{imel\+\_\+image\+\_\+new@{imel\+\_\+image\+\_\+new}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+new(\+Imel\+Size width, Imel\+Size height)}{imel_image_new(ImelSize width, ImelSize height)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$ imel\+\_\+image\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Size}}]{width, }
+\item[{{\bf Imel\+Size}}]{height}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_af3a4abcb52f5611781065536fda0f97e}{}\label{image_8c_af3a4abcb52f5611781065536fda0f97e}
+
+
+Make a new image. 
+
+This function make a new image with black background and level set to -\/255.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Image width \\
+\hline
+{\em height} & Image height \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new Imel\+Image or N\+U\+LL on error
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a4692c85413196d5e15149cf4c66e1f08}{imel\+\_\+image\+\_\+new\+\_\+with\+\_\+background\+\_\+color} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+new\+\_\+with\+\_\+background\+\_\+color@{imel\+\_\+image\+\_\+new\+\_\+with\+\_\+background\+\_\+color}}
+\index{imel\+\_\+image\+\_\+new\+\_\+with\+\_\+background\+\_\+color@{imel\+\_\+image\+\_\+new\+\_\+with\+\_\+background\+\_\+color}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+new\+\_\+with\+\_\+background\+\_\+color(\+Imel\+Size width, Imel\+Size height, Imel\+Pixel pixel)}{imel_image_new_with_background_color(ImelSize width, ImelSize height, ImelPixel pixel)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$ imel\+\_\+image\+\_\+new\+\_\+with\+\_\+background\+\_\+color (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Size}}]{width, }
+\item[{{\bf Imel\+Size}}]{height, }
+\item[{{\bf Imel\+Pixel}}]{pixel}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a4692c85413196d5e15149cf4c66e1f08}{}\label{image_8c_a4692c85413196d5e15149cf4c66e1f08}
+
+
+Make a new image with background color and level specified. 
+
+This function make a new image which each pixel is set to {\ttfamily pixel} passed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Image width \\
+\hline
+{\em height} & Image height \\
+\hline
+{\em pixel} & Color and level of the image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a new Imel\+Image
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_af3a4abcb52f5611781065536fda0f97e}{imel\+\_\+image\+\_\+new} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+perspective@{imel\+\_\+image\+\_\+perspective}}
+\index{imel\+\_\+image\+\_\+perspective@{imel\+\_\+image\+\_\+perspective}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+perspective(\+Imel\+Image $\ast$image, double rad\+\_\+angle, Imel\+Orientation orientation)}{imel_image_perspective(ImelImage *image, double rad_angle, ImelOrientation orientation)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$ imel\+\_\+image\+\_\+perspective (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{double}]{rad\+\_\+angle, }
+\item[{{\bf Imel\+Orientation}}]{orientation}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_ad08c629d2c44d24e7c485b7ff9a28021}{}\label{image_8c_ad08c629d2c44d24e7c485b7ff9a28021}
+
+
+Makes an horizontal or vertical perspective. 
+
+This function makes a perspective horizontal or vertical with a certain angle.
+
+
+\begin{DoxyCode}
+1 ImelImage *src = imel\_image\_new\_from ("butterfly.jpg", 0, NULL);
+2 ImelImage **p;
+3 
+4 p = imel\_image\_perspective (src, 0.785398, IMEL\_ORIENTATION\_HORIZONTAL);
+5 ...
+6 p = imel\_image\_perspective (src, -0.785398, IMEL\_ORIENTATION\_HORIZONTAL);
+7 ...
+8 p = imel\_image\_perspective (src, 0.785398, IMEL\_ORIENTATION\_VERTICAL);
+9 ...
+10 p = imel\_image\_perspective (src, -0.785398, IMEL\_ORIENTATION\_VERTICAL);
+\end{DoxyCode}
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/perspective}
+\caption{Example}
+\end{DoxyImage}
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Original image \\
+\hline
+{\em rad\+\_\+angle} & Perspective angle in radians. \\
+\hline
+{\em orientation} & Perspective type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new image with the effect applied. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_aef27fcac7a96d118b3c3194c2577049f}{Imel\+Orientation} 
+
+\hyperlink{image_8c_aa517733f37a96bfcccf4ee666a92b206}{imel\+\_\+image\+\_\+slant} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+remove\+\_\+base\+\_\+color@{imel\+\_\+image\+\_\+remove\+\_\+base\+\_\+color}}
+\index{imel\+\_\+image\+\_\+remove\+\_\+base\+\_\+color@{imel\+\_\+image\+\_\+remove\+\_\+base\+\_\+color}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+remove\+\_\+base\+\_\+color(\+Imel\+Image $\ast$image, Imel\+Mask mask)}{imel_image_remove_base_color(ImelImage *image, ImelMask mask)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+remove\+\_\+base\+\_\+color (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Mask}}]{mask}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_ae2c499f2810e903a36b2b766541a815e}{}\label{image_8c_ae2c499f2810e903a36b2b766541a815e}
+
+
+Remove a color. 
+
+This function set to 0 the channel, or the channels, specified
+
+This function set to 255 the channel, or the channels, specified as {\ttfamily mask}.
+
+
+\begin{DoxyCode}
+1 ImelImage *image = imel\_image\_new\_from ("image.jpg", 0, NULL);
+2 
+3 imel\_image\_remove\_base\_color (image, IMEL\_MASK\_RED | IMEL\_MASK\_BLUE);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image on which remove the color \\
+\hline
+{\em mask} & Channel, or channels, to set to 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_a9facf73fdf3eb7434d01cd1c07341a28}{Imel\+Mask} 
+
+\hyperlink{image_8c_abdb78af6d874ae54552a6f3219c75127}{imel\+\_\+image\+\_\+apply\+\_\+filter} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+remove\+\_\+noise@{imel\+\_\+image\+\_\+remove\+\_\+noise}}
+\index{imel\+\_\+image\+\_\+remove\+\_\+noise@{imel\+\_\+image\+\_\+remove\+\_\+noise}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+remove\+\_\+noise(\+Imel\+Image $\ast$image, Imel\+Size size\+\_\+q, Imel\+Mask mask, Imel\+Color tollerance)}{imel_image_remove_noise(ImelImage *image, ImelSize size_q, ImelMask mask, ImelColor tollerance)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+remove\+\_\+noise (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{size\+\_\+q, }
+\item[{{\bf Imel\+Mask}}]{mask, }
+\item[{{\bf Imel\+Color}}]{tollerance}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_aedeae21c9710c31bf78b5a12d03a031f}{}\label{image_8c_aedeae21c9710c31bf78b5a12d03a031f}
+
+
+Remove noise from an image. 
+
+This function remove noise from {\ttfamily image}. Compare each pixel with all other around in a square with side {\ttfamily size\+\_\+q} pixel. If current pixel are a value greater then the average of others pixel compared, with a specified {\ttfamily tollerance}, change its value with the average found.
+
+
+\begin{DoxyCode}
+1 ImelImage *image = imel\_image\_new\_from ("apply\_noise.jpg", 0, NULL);
+2 ImelMask mask = IMEL\_MASK\_RED | IMEL\_MASK\_GREEN | IMEL\_MASK\_BLUE;
+3 
+4 imel\_image\_remove\_noise (image, 6, mask, 24);
+\end{DoxyCode}
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/apply_noise}
+\caption{Input Image}
+\end{DoxyImage}
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/remove_noise}
+\caption{Result Image}
+\end{DoxyImage}
+ 
+\begin{DoxyParams}{Parameters}
+{\em image} & Image with noise \\
+\hline
+{\em size\+\_\+q} & Size of the square side where the current pixel are. \\
+\hline
+{\em mask} & Channels affected from noise. \\
+\hline
+{\em tollerance} & Tollerance when compare current pixel with the average of others.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a5b3d70708a116076bfbcaeb7a9cd2b5d}{imel\+\_\+image\+\_\+apply\+\_\+noise} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+replace\+\_\+area\+\_\+color@{imel\+\_\+image\+\_\+replace\+\_\+area\+\_\+color}}
+\index{imel\+\_\+image\+\_\+replace\+\_\+area\+\_\+color@{imel\+\_\+image\+\_\+replace\+\_\+area\+\_\+color}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+replace\+\_\+area\+\_\+color(\+Imel\+Image $\ast$image, Imel\+Pixel src, Imel\+Pixel dest, Imel\+Size tollerance, Imel\+Size \+\_\+x1, Imel\+Size \+\_\+y1, Imel\+Size \+\_\+x2, Imel\+Size \+\_\+y2)}{imel_image_replace_area_color(ImelImage *image, ImelPixel src, ImelPixel dest, ImelSize tollerance, ImelSize _x1, ImelSize _y1, ImelSize _x2, ImelSize _y2)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+replace\+\_\+area\+\_\+color (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Pixel}}]{src, }
+\item[{{\bf Imel\+Pixel}}]{dest, }
+\item[{{\bf Imel\+Size}}]{tollerance, }
+\item[{{\bf Imel\+Size}}]{\+\_\+x1, }
+\item[{{\bf Imel\+Size}}]{\+\_\+y1, }
+\item[{{\bf Imel\+Size}}]{\+\_\+x2, }
+\item[{{\bf Imel\+Size}}]{\+\_\+y2}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a59e0bc363c90fe9e002b1e93e66475e8}{}\label{image_8c_a59e0bc363c90fe9e002b1e93e66475e8}
+
+
+Replace a color with an other one in a specified area. 
+
+This function replace the pixel {\ttfamily src} with {\ttfamily desc} though \hyperlink{draw_8c_a80e6d667aceb3de202823e5493a774b1}{imel\+\_\+draw\+\_\+point} () in an area from coordinate $(\_x_1,\_y_1)$ to coordinate $(\_x_2,\_y_2)$ inside the {\ttfamily image}. The research of {\ttfamily src} in {\ttfamily image} will be done with a {\ttfamily tollerance} calculated in this function with \#imel\+\_\+pixel\+\_\+compare ().
+
+
+\begin{DoxyCode}
+1 ImelImage *image = imel\_image\_new\_from ("image.jpg", 0, NULL);
+2 ImelPixel find = \{ 0xff, 0x66, 0x00, 0 \}, replace = \{ 0xff, 0x00, 0x00, 0 \};
+3 ImelSize start[2], end[2];
+4 
+5 start[0] = image->width  / 2;
+6 start[1] = image->height / 2;
+7   end[0] = image->width  - start[0];
+8   end[1] = image->height - start[1];
+9 
+10 imel\_image\_replace\_area\_color (image, find, replace, 16, start[0], start[1], end[0], end[1]);
+\end{DoxyCode}
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/pattern}
+\caption{Original Image}
+\end{DoxyImage}
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/replace_area_color}
+\caption{Example Output}
+\end{DoxyImage}
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where replace {\ttfamily src} with {\ttfamily dest} \\
+\hline
+{\em src} & Pixel to replace with {\ttfamily dest} \\
+\hline
+{\em dest} & New pixel for {\ttfamily src} occourrences. \\
+\hline
+{\em tollerance} & Tollerance for {\ttfamily src}. Values between 0 and 255. \\
+\hline
+{\em \+\_\+x1} & Start x coordinate \\
+\hline
+{\em \+\_\+y1} & Start y coordinate \\
+\hline
+{\em \+\_\+x2} & End x coordinate \\
+\hline
+{\em \+\_\+y2} & End y coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{draw_8c_a80e6d667aceb3de202823e5493a774b1}{imel\+\_\+draw\+\_\+point} 
+
+imel\+\_\+pixel\+\_\+compare 
+
+\hyperlink{image_8c_a155f45bccd5beef204d410a7d399bc00}{imel\+\_\+image\+\_\+replace\+\_\+color} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+replace\+\_\+color@{imel\+\_\+image\+\_\+replace\+\_\+color}}
+\index{imel\+\_\+image\+\_\+replace\+\_\+color@{imel\+\_\+image\+\_\+replace\+\_\+color}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+replace\+\_\+color(\+Imel\+Image $\ast$image, Imel\+Pixel src, Imel\+Pixel dest, Imel\+Size tollerance)}{imel_image_replace_color(ImelImage *image, ImelPixel src, ImelPixel dest, ImelSize tollerance)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+replace\+\_\+color (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Pixel}}]{src, }
+\item[{{\bf Imel\+Pixel}}]{dest, }
+\item[{{\bf Imel\+Size}}]{tollerance}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a155f45bccd5beef204d410a7d399bc00}{}\label{image_8c_a155f45bccd5beef204d410a7d399bc00}
+
+
+Replace a color with an other one. 
+
+This function replace the pixel {\ttfamily src} with {\ttfamily desc} thorugh \hyperlink{draw_8c_a80e6d667aceb3de202823e5493a774b1}{imel\+\_\+draw\+\_\+point} () in {\ttfamily image}. The research of {\ttfamily src} in {\ttfamily image} will be done with a {\ttfamily tollerance} calculated in this function with \#imel\+\_\+pixel\+\_\+compare ().
+
+
+\begin{DoxyCode}
+1 ImelImage *image = imel\_image\_new\_from ("image.jpg", 0, NULL);
+2 ImelPixel find = \{ 0xff, 0x66, 0x00, 0 \}, replace = \{ 0xff, 0x00, 0x00, 0 \};
+3 
+4 imel\_image\_replace\_color (image, find, replace, 16);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where replace {\ttfamily src} with {\ttfamily dest} \\
+\hline
+{\em src} & Pixel to replace with {\ttfamily dest} \\
+\hline
+{\em dest} & New pixel for {\ttfamily src} occourrences. \\
+\hline
+{\em tollerance} & Tollerance for {\ttfamily src}. Values between 0 and 255. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{draw_8c_a80e6d667aceb3de202823e5493a774b1}{imel\+\_\+draw\+\_\+point} 
+
+imel\+\_\+pixel\+\_\+compare 
+
+imel\+\_\+immage\+\_\+replace\+\_\+area\+\_\+color 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+resize@{imel\+\_\+image\+\_\+resize}}
+\index{imel\+\_\+image\+\_\+resize@{imel\+\_\+image\+\_\+resize}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+resize(\+Imel\+Image $\ast$image, Imel\+Size width, Imel\+Size height)}{imel_image_resize(ImelImage *image, ImelSize width, ImelSize height)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$ imel\+\_\+image\+\_\+resize (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{width, }
+\item[{{\bf Imel\+Size}}]{height}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_affee2b61640d48e8528d6bb173c9bf33}{}\label{image_8c_affee2b61640d48e8528d6bb173c9bf33}
+
+
+Resize an image. 
+
+This function resize the {\ttfamily image} to {\ttfamily width} and {\ttfamily height} specified.
+
+
+\begin{DoxyCode}
+1 ImelImage *image = imel\_image\_new\_from ("image.tiff", 0, NULL);
+2 ImelImage *half;
+3 
+4 half = imel\_image\_resize (image, image->width / 2, image->height / 2);
+5 imel\_image\_free (image);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to resize \\
+\hline
+{\em width} & New width \\
+\hline
+{\em height} & New height \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A copy of {\ttfamily image} resized. 
+\end{DoxyReturn}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+rotate@{imel\+\_\+image\+\_\+rotate}}
+\index{imel\+\_\+image\+\_\+rotate@{imel\+\_\+image\+\_\+rotate}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+rotate(\+Imel\+Image $\ast$image, double rotate\+\_\+rad)}{imel_image_rotate(ImelImage *image, double rotate_rad)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$ imel\+\_\+image\+\_\+rotate (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{double}]{rotate\+\_\+rad}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_adac45043cb30a449868c1a7526671504}{}\label{image_8c_adac45043cb30a449868c1a7526671504}
+
+
+Rotate an image to a chosen angle. 
+
+This function rotate the {\ttfamily image} to {\ttfamily rotate\+\_\+rad} radians.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to rotate \\
+\hline
+{\em rotate\+\_\+rad} & Rotation value in radians \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A copy of {\ttfamily image} rotated 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_a18663716510e90c30ddcb2973071c08e}{imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+left} 
+
+\hyperlink{image_8c_a16511380a7ef0ed01a068f05273f8c08}{imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+right} 
+
+\hyperlink{image_8c_a825a1b2309c771735d1c1379b484076d}{imel\+\_\+image\+\_\+rotate\+\_\+complete} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+rotate\+\_\+complete@{imel\+\_\+image\+\_\+rotate\+\_\+complete}}
+\index{imel\+\_\+image\+\_\+rotate\+\_\+complete@{imel\+\_\+image\+\_\+rotate\+\_\+complete}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+rotate\+\_\+complete(\+Imel\+Image $\ast$image)}{imel_image_rotate_complete(ImelImage *image)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$ imel\+\_\+image\+\_\+rotate\+\_\+complete (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a825a1b2309c771735d1c1379b484076d}{}\label{image_8c_a825a1b2309c771735d1c1379b484076d}
+
+
+Rotate an image to 180 degrees. 
+
+This function rotate {\ttfamily image} passed to 180 degrees.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to rotate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A copy of {\ttfamily image} rotated to 180 degrees. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_adac45043cb30a449868c1a7526671504}{imel\+\_\+image\+\_\+rotate} 
+
+\hyperlink{image_8c_a18663716510e90c30ddcb2973071c08e}{imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+left} 
+
+\hyperlink{image_8c_a16511380a7ef0ed01a068f05273f8c08}{imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+right} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+left@{imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+left}}
+\index{imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+left@{imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+left}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+left(\+Imel\+Image $\ast$image)}{imel_image_rotate_to_left(ImelImage *image)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$ imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+left (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a18663716510e90c30ddcb2973071c08e}{}\label{image_8c_a18663716510e90c30ddcb2973071c08e}
+
+
+Rotate an image to left. 
+
+This function rotate {\ttfamily image} passed to left.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to rotate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A copy of {\ttfamily image} rotated to left 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_adac45043cb30a449868c1a7526671504}{imel\+\_\+image\+\_\+rotate} 
+
+\hyperlink{image_8c_a16511380a7ef0ed01a068f05273f8c08}{imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+right} 
+
+\hyperlink{image_8c_a825a1b2309c771735d1c1379b484076d}{imel\+\_\+image\+\_\+rotate\+\_\+complete} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+right@{imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+right}}
+\index{imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+right@{imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+right}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+right(\+Imel\+Image $\ast$image)}{imel_image_rotate_to_right(ImelImage *image)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$ imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+right (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a16511380a7ef0ed01a068f05273f8c08}{}\label{image_8c_a16511380a7ef0ed01a068f05273f8c08}
+
+
+Rotate an image to right. 
+
+This function rotate {\ttfamily image} passed to right.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to rotate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A copy of {\ttfamily image} rotated to right 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image_8c_adac45043cb30a449868c1a7526671504}{imel\+\_\+image\+\_\+rotate} 
+
+\hyperlink{image_8c_a18663716510e90c30ddcb2973071c08e}{imel\+\_\+image\+\_\+rotate\+\_\+to\+\_\+left} 
+
+\hyperlink{image_8c_a825a1b2309c771735d1c1379b484076d}{imel\+\_\+image\+\_\+rotate\+\_\+complete} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+shift@{imel\+\_\+image\+\_\+shift}}
+\index{imel\+\_\+image\+\_\+shift@{imel\+\_\+image\+\_\+shift}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+shift(\+Imel\+Image $\ast$image, Imel\+Orientation orientation, long int move\+\_\+pxl, bool lengthens)}{imel_image_shift(ImelImage *image, ImelOrientation orientation, long int move_pxl, bool lengthens)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+shift (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Orientation}}]{orientation, }
+\item[{long int}]{move\+\_\+pxl, }
+\item[{{\bf bool}}]{lengthens}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a66997f20203b384d1185a1dd9985dd67}{}\label{image_8c_a66997f20203b384d1185a1dd9985dd67}
+
+
+Shift an image. 
+
+This function shift {\ttfamily image} to the Right, to the Left, Up or Down of chosen size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to shift \\
+\hline
+{\em orientation} & Specified if the shift is horizontal or vertical \\
+\hline
+{\em move\+\_\+pxl} & Length of shift ( positive values for Right, Down, negative for Left, Up ) \\
+\hline
+{\em lengthens} & If T\+R\+UE the pixels that are \textquotesingle{}empty\textquotesingle{} after the operation will be setted with the value of the last pixel in that line, else if F\+A\+L\+SE that pixels will be setted with total transparency and base color black.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_aef27fcac7a96d118b3c3194c2577049f}{Imel\+Orientation} 
+
+\hyperlink{image_8c_add471c449ecce1b4bd78fc34a698f44f}{imel\+\_\+image\+\_\+shift\+\_\+lines} 
+
+\hyperlink{image_8c_ad08c629d2c44d24e7c485b7ff9a28021}{imel\+\_\+image\+\_\+perspective} 
+
+\hyperlink{image_8c_aa517733f37a96bfcccf4ee666a92b206}{imel\+\_\+image\+\_\+slant} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+shift\+\_\+bpc@{imel\+\_\+image\+\_\+shift\+\_\+bpc}}
+\index{imel\+\_\+image\+\_\+shift\+\_\+bpc@{imel\+\_\+image\+\_\+shift\+\_\+bpc}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+shift\+\_\+bpc(\+Imel\+Image $\ast$image, int bpc\+\_\+shift\+\_\+red, int bpc\+\_\+shift\+\_\+green, int bpc\+\_\+shift\+\_\+blue)}{imel_image_shift_bpc(ImelImage *image, int bpc_shift_red, int bpc_shift_green, int bpc_shift_blue)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+shift\+\_\+bpc (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{int}]{bpc\+\_\+shift\+\_\+red, }
+\item[{int}]{bpc\+\_\+shift\+\_\+green, }
+\item[{int}]{bpc\+\_\+shift\+\_\+blue}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a3b9a4fb2f3fd678b206196e9f9bf4889}{}\label{image_8c_a3b9a4fb2f3fd678b206196e9f9bf4889}
+
+
+Shift the R\+GB values of an image. 
+
+This function applies a shift operation for each R\+GB channel. Negative value for left shift, positive for right shift.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to apply the shift \\
+\hline
+{\em bpc\+\_\+shift\+\_\+red} & Shift for red channel \\
+\hline
+{\em bpc\+\_\+shift\+\_\+green} & Shift for green channel \\
+\hline
+{\em bpc\+\_\+shift\+\_\+blue} & Shift for blue channel \\
+\hline
+\end{DoxyParams}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+shift\+\_\+lines@{imel\+\_\+image\+\_\+shift\+\_\+lines}}
+\index{imel\+\_\+image\+\_\+shift\+\_\+lines@{imel\+\_\+image\+\_\+shift\+\_\+lines}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+shift\+\_\+lines(\+Imel\+Image $\ast$image, Imel\+Orientation move\+\_\+type, Imel\+Size line, Imel\+Size width, long int move\+\_\+pixel, bool lengthens)}{imel_image_shift_lines(ImelImage *image, ImelOrientation move_type, ImelSize line, ImelSize width, long int move_pixel, bool lengthens)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+shift\+\_\+lines (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Orientation}}]{move\+\_\+type, }
+\item[{{\bf Imel\+Size}}]{line, }
+\item[{{\bf Imel\+Size}}]{width, }
+\item[{long int}]{move\+\_\+pixel, }
+\item[{{\bf bool}}]{lengthens}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_add471c449ecce1b4bd78fc34a698f44f}{}\label{image_8c_add471c449ecce1b4bd78fc34a698f44f}
+
+
+Shift only some image lines. 
+
+This function shift the {\ttfamily line} and next {\ttfamily width} lines of {\ttfamily image} to the Right, to the Left, Up or Down of chosen size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image with the lines to shift \\
+\hline
+{\em move\+\_\+type} & Specified if the shift is horizontal or vertical \\
+\hline
+{\em line} & Position of the start line to shift \\
+\hline
+{\em width} & Width of lines to shift ( including start line ) \\
+\hline
+{\em move\+\_\+pixel} & Length of shift ( positive values for Right, Down, negative for Left, Up ) \\
+\hline
+{\em lengthens} & If T\+R\+UE the pixels that are \textquotesingle{}empty\textquotesingle{} after the operation will be setted with the value of the last pixel in that line, else if F\+A\+L\+SE that pixels will be setted with total transparency and base color black.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_aef27fcac7a96d118b3c3194c2577049f}{Imel\+Orientation} 
+
+\hyperlink{image_8c_a66997f20203b384d1185a1dd9985dd67}{imel\+\_\+image\+\_\+shift} 
+
+\hyperlink{image_8c_ad08c629d2c44d24e7c485b7ff9a28021}{imel\+\_\+image\+\_\+perspective} 
+
+\hyperlink{image_8c_aa517733f37a96bfcccf4ee666a92b206}{imel\+\_\+image\+\_\+slant} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+slant@{imel\+\_\+image\+\_\+slant}}
+\index{imel\+\_\+image\+\_\+slant@{imel\+\_\+image\+\_\+slant}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+slant(\+Imel\+Image $\ast$image, Imel\+Size x0, Imel\+Size y0, Imel\+Size x1, Imel\+Size y1, Imel\+Orientation orientation, bool lengthens)}{imel_image_slant(ImelImage *image, ImelSize x0, ImelSize y0, ImelSize x1, ImelSize y1, ImelOrientation orientation, bool lengthens)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$ imel\+\_\+image\+\_\+slant (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{x0, }
+\item[{{\bf Imel\+Size}}]{y0, }
+\item[{{\bf Imel\+Size}}]{x1, }
+\item[{{\bf Imel\+Size}}]{y1, }
+\item[{{\bf Imel\+Orientation}}]{orientation, }
+\item[{{\bf bool}}]{lengthens}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_aa517733f37a96bfcccf4ee666a92b206}{}\label{image_8c_aa517733f37a96bfcccf4ee666a92b206}
+
+
+Slant an image or a small area inside it. 
+
+This function slant {\ttfamily image} following a line from coordinate $(x_0,y_0)$ to coordinate $(x_1,y_1)$ with a choosen {\ttfamily orientation}.
+
+ 
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{images/distort_example}}
+\end{DoxyImageNoCaption}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to slant \\
+\hline
+{\em x0} & Start x coordinate of followed line \\
+\hline
+{\em y0} & Start y coordinate of followed line \\
+\hline
+{\em x1} & End x coordinate of followed line \\
+\hline
+{\em y1} & End y coordinate of followed line \\
+\hline
+{\em orientation} & Vertical or Horizontal slant \\
+\hline
+{\em lengthens} & If T\+R\+UE the pixels that are \textquotesingle{}empty\textquotesingle{} after the operation will be setted with the value of the last pixel in that line, else if F\+A\+L\+SE that pixels will be setted with total transparency and base color black. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result image
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_aef27fcac7a96d118b3c3194c2577049f}{Imel\+Orientation} 
+
+\hyperlink{image_8c_a66997f20203b384d1185a1dd9985dd67}{imel\+\_\+image\+\_\+shift} 
+
+\hyperlink{image_8c_add471c449ecce1b4bd78fc34a698f44f}{imel\+\_\+image\+\_\+shift\+\_\+lines} 
+
+\hyperlink{image_8c_ad08c629d2c44d24e7c485b7ff9a28021}{imel\+\_\+image\+\_\+perspective} 
+\end{DoxySeeAlso}
+\index{image.\+c@{image.\+c}!imel\+\_\+image\+\_\+union@{imel\+\_\+image\+\_\+union}}
+\index{imel\+\_\+image\+\_\+union@{imel\+\_\+image\+\_\+union}!image.\+c@{image.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+union(\+Imel\+Image $\ast$img1, Imel\+Image $\ast$img2, unsigned char opacity, Imel\+Alignment alignment)}{imel_image_union(ImelImage *img1, ImelImage *img2, unsigned char opacity, ImelAlignment alignment)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$ imel\+\_\+image\+\_\+union (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{img1, }
+\item[{{\bf Imel\+Image} $\ast$}]{img2, }
+\item[{unsigned char}]{opacity, }
+\item[{{\bf Imel\+Alignment}}]{alignment}
+\end{DoxyParamCaption}
+)}\hypertarget{image_8c_a12519cad063897a1dcf9eb4c677b8304}{}\label{image_8c_a12519cad063897a1dcf9eb4c677b8304}
+
+
+Insert an image in another with a chosen opacity. 
+
+This function insert {\ttfamily img2} over {\ttfamily img1} with a chosen {\ttfamily opacity} at position specified by {\ttfamily alignment}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em img1} & Base image \\
+\hline
+{\em img2} & Image to insert over {\ttfamily img1} \\
+\hline
+{\em opacity} & Opacity of {\ttfamily img2}. Values between 0 and 255. \\
+\hline
+{\em alignment} & Alignment of {\ttfamily img2} in {\ttfamily img1} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result image
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{pixel_8c_acafccb8e6ccf0cb329498d8343ba1775}{imel\+\_\+pixel\+\_\+union} 
+
+\hyperlink{header_8h_a4d620b3c547205ca76d92f43f09320d1}{Imel\+Alignment} 
+\end{DoxySeeAlso}

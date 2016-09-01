@@ -1,0 +1,329 @@
+\hypertarget{point_8c}{}\section{point.\+c File Reference}
+\label{point_8c}\index{point.\+c@{point.\+c}}
+
+
+This file contains functions to operate with points.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}header.\+h\char`\"{}}\\*
+Include dependency graph for point.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{point_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} $\ast$ \hyperlink{point_8c_a20c030176364130df49237e29b69308c}{imel\+\_\+point\+\_\+new} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pixel)
+\begin{DoxyCompactList}\small\item\em Make a new point. \end{DoxyCompactList}\item 
+void \hyperlink{point_8c_a2d4fd9ed985458d60083b5c31623b015}{imel\+\_\+point\+\_\+free} (\hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} $\ast$point)
+\begin{DoxyCompactList}\small\item\em Free the memory allocated for the point. \end{DoxyCompactList}\item 
+void \hyperlink{point_8c_a64a1116a6bd2ee937316ee47f9bd7640}{imel\+\_\+point\+\_\+array\+\_\+free} (\hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} $\ast$$\ast$points)
+\begin{DoxyCompactList}\small\item\em Free the memory allocated for an array of points. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} $\ast$ \hyperlink{point_8c_a43bca66a5e1544bb8ec8f5e9edb2c49f}{imel\+\_\+point\+\_\+get\+\_\+point\+\_\+from\+\_\+image} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y)
+\begin{DoxyCompactList}\small\item\em Get a reference point from an image. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} $\ast$$\ast$ \hyperlink{point_8c_a5378c3d9ccaeb5f1325b64dd5740a072}{imel\+\_\+point\+\_\+get\+\_\+from\+\_\+line} (\hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+x1, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+y1, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+x2, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} \+\_\+y2, long int $\ast$lx, long int $\ast$ly, \hyperlink{header_8h_a3b961ca2b6e1029ab77a0951c3ae7260}{Imel\+Value} value\+\_\+type, double value)
+\begin{DoxyCompactList}\small\item\em Get a line points. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} $\ast$$\ast$ \hyperlink{point_8c_af6ac146e5bc39ce7aa7e1f070502b73d}{imel\+\_\+point\+\_\+get\+\_\+from\+\_\+reg\+\_\+shape} (\hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} x, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} y, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} r, long v, double start\+\_\+angle)
+\begin{DoxyCompactList}\small\item\em Get a regular shape points. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} $\ast$ \hyperlink{point_8c_ace24f6757914dd6eb38df140abe4cb8a}{imel\+\_\+point\+\_\+get\+\_\+darkest\+\_\+point} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image)
+\begin{DoxyCompactList}\small\item\em Get the darkest point of an image. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} $\ast$$\ast$ \hyperlink{point_8c_a7bf05c9308f30c693a0a886dfb7c605b}{imel\+\_\+point\+\_\+get\+\_\+darkest\+\_\+points} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image)
+\begin{DoxyCompactList}\small\item\em Get the darkest points of an image. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} $\ast$ \hyperlink{point_8c_a84c44615d1002068825cfbdf9508e2c6}{imel\+\_\+point\+\_\+get\+\_\+brightest\+\_\+point} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image)
+\begin{DoxyCompactList}\small\item\em Get the brightest point of an image. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} $\ast$$\ast$ \hyperlink{point_8c_a821e4cca282e847f1367a23f58b7fffd}{imel\+\_\+point\+\_\+get\+\_\+brightest\+\_\+points} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image)
+\begin{DoxyCompactList}\small\item\em Get the brightest points of an image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains functions to operate with points. 
+
+\begin{DoxyAuthor}{Author}
+Davide Francesco Merico 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\index{point.\+c@{point.\+c}!imel\+\_\+point\+\_\+array\+\_\+free@{imel\+\_\+point\+\_\+array\+\_\+free}}
+\index{imel\+\_\+point\+\_\+array\+\_\+free@{imel\+\_\+point\+\_\+array\+\_\+free}!point.\+c@{point.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+point\+\_\+array\+\_\+free(\+Imel\+Point $\ast$$\ast$points)}{imel_point_array_free(ImelPoint **points)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+point\+\_\+array\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Point} $\ast$$\ast$}]{points}
+\end{DoxyParamCaption}
+)}\hypertarget{point_8c_a64a1116a6bd2ee937316ee47f9bd7640}{}\label{point_8c_a64a1116a6bd2ee937316ee47f9bd7640}
+
+
+Free the memory allocated for an array of points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & N\+U\+L\+L-\/terminated \hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} array \\
+\hline
+\end{DoxyParams}
+\index{point.\+c@{point.\+c}!imel\+\_\+point\+\_\+free@{imel\+\_\+point\+\_\+free}}
+\index{imel\+\_\+point\+\_\+free@{imel\+\_\+point\+\_\+free}!point.\+c@{point.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+point\+\_\+free(\+Imel\+Point $\ast$point)}{imel_point_free(ImelPoint *point)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+point\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Point} $\ast$}]{point}
+\end{DoxyParamCaption}
+)}\hypertarget{point_8c_a2d4fd9ed985458d60083b5c31623b015}{}\label{point_8c_a2d4fd9ed985458d60083b5c31623b015}
+
+
+Free the memory allocated for the point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & Point to free \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Same as {\ttfamily free (point)} 
+\end{DoxyNote}
+\index{point.\+c@{point.\+c}!imel\+\_\+point\+\_\+get\+\_\+brightest\+\_\+point@{imel\+\_\+point\+\_\+get\+\_\+brightest\+\_\+point}}
+\index{imel\+\_\+point\+\_\+get\+\_\+brightest\+\_\+point@{imel\+\_\+point\+\_\+get\+\_\+brightest\+\_\+point}!point.\+c@{point.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+point\+\_\+get\+\_\+brightest\+\_\+point(\+Imel\+Image $\ast$image)}{imel_point_get_brightest_point(ImelImage *image)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Point}$\ast$ imel\+\_\+point\+\_\+get\+\_\+brightest\+\_\+point (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image}
+\end{DoxyParamCaption}
+)}\hypertarget{point_8c_a84c44615d1002068825cfbdf9508e2c6}{}\label{point_8c_a84c44615d1002068825cfbdf9508e2c6}
+
+
+Get the brightest point of an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Reference image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} type
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{point_8c_a821e4cca282e847f1367a23f58b7fffd}{imel\+\_\+point\+\_\+get\+\_\+brightest\+\_\+points} 
+
+\hyperlink{point_8c_ace24f6757914dd6eb38df140abe4cb8a}{imel\+\_\+point\+\_\+get\+\_\+darkest\+\_\+point} 
+\end{DoxySeeAlso}
+\index{point.\+c@{point.\+c}!imel\+\_\+point\+\_\+get\+\_\+brightest\+\_\+points@{imel\+\_\+point\+\_\+get\+\_\+brightest\+\_\+points}}
+\index{imel\+\_\+point\+\_\+get\+\_\+brightest\+\_\+points@{imel\+\_\+point\+\_\+get\+\_\+brightest\+\_\+points}!point.\+c@{point.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+point\+\_\+get\+\_\+brightest\+\_\+points(\+Imel\+Image $\ast$image)}{imel_point_get_brightest_points(ImelImage *image)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Point}$\ast$$\ast$ imel\+\_\+point\+\_\+get\+\_\+brightest\+\_\+points (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image}
+\end{DoxyParamCaption}
+)}\hypertarget{point_8c_a821e4cca282e847f1367a23f58b7fffd}{}\label{point_8c_a821e4cca282e847f1367a23f58b7fffd}
+
+
+Get the brightest points of an image. 
+
+This function return the brightest point in {\ttfamily image} and if are more then one point return a reference to all occourrence of the brightest point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Reference image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} type
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{point_8c_a84c44615d1002068825cfbdf9508e2c6}{imel\+\_\+point\+\_\+get\+\_\+brightest\+\_\+point} 
+
+\hyperlink{point_8c_a7bf05c9308f30c693a0a886dfb7c605b}{imel\+\_\+point\+\_\+get\+\_\+darkest\+\_\+points} 
+\end{DoxySeeAlso}
+\index{point.\+c@{point.\+c}!imel\+\_\+point\+\_\+get\+\_\+darkest\+\_\+point@{imel\+\_\+point\+\_\+get\+\_\+darkest\+\_\+point}}
+\index{imel\+\_\+point\+\_\+get\+\_\+darkest\+\_\+point@{imel\+\_\+point\+\_\+get\+\_\+darkest\+\_\+point}!point.\+c@{point.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+point\+\_\+get\+\_\+darkest\+\_\+point(\+Imel\+Image $\ast$image)}{imel_point_get_darkest_point(ImelImage *image)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Point}$\ast$ imel\+\_\+point\+\_\+get\+\_\+darkest\+\_\+point (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image}
+\end{DoxyParamCaption}
+)}\hypertarget{point_8c_ace24f6757914dd6eb38df140abe4cb8a}{}\label{point_8c_ace24f6757914dd6eb38df140abe4cb8a}
+
+
+Get the darkest point of an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Reference image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} type
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{point_8c_a84c44615d1002068825cfbdf9508e2c6}{imel\+\_\+point\+\_\+get\+\_\+brightest\+\_\+point} 
+
+\hyperlink{point_8c_a7bf05c9308f30c693a0a886dfb7c605b}{imel\+\_\+point\+\_\+get\+\_\+darkest\+\_\+points} 
+\end{DoxySeeAlso}
+\index{point.\+c@{point.\+c}!imel\+\_\+point\+\_\+get\+\_\+darkest\+\_\+points@{imel\+\_\+point\+\_\+get\+\_\+darkest\+\_\+points}}
+\index{imel\+\_\+point\+\_\+get\+\_\+darkest\+\_\+points@{imel\+\_\+point\+\_\+get\+\_\+darkest\+\_\+points}!point.\+c@{point.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+point\+\_\+get\+\_\+darkest\+\_\+points(\+Imel\+Image $\ast$image)}{imel_point_get_darkest_points(ImelImage *image)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Point}$\ast$$\ast$ imel\+\_\+point\+\_\+get\+\_\+darkest\+\_\+points (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image}
+\end{DoxyParamCaption}
+)}\hypertarget{point_8c_a7bf05c9308f30c693a0a886dfb7c605b}{}\label{point_8c_a7bf05c9308f30c693a0a886dfb7c605b}
+
+
+Get the darkest points of an image. 
+
+This function return the darkest point in {\ttfamily image} and if are more then one point return a reference to all occourrence of the darkest point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Reference image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} type
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{point_8c_a84c44615d1002068825cfbdf9508e2c6}{imel\+\_\+point\+\_\+get\+\_\+brightest\+\_\+point} 
+
+\hyperlink{point_8c_ace24f6757914dd6eb38df140abe4cb8a}{imel\+\_\+point\+\_\+get\+\_\+darkest\+\_\+point} 
+\end{DoxySeeAlso}
+\index{point.\+c@{point.\+c}!imel\+\_\+point\+\_\+get\+\_\+from\+\_\+line@{imel\+\_\+point\+\_\+get\+\_\+from\+\_\+line}}
+\index{imel\+\_\+point\+\_\+get\+\_\+from\+\_\+line@{imel\+\_\+point\+\_\+get\+\_\+from\+\_\+line}!point.\+c@{point.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+point\+\_\+get\+\_\+from\+\_\+line(\+Imel\+Size \+\_\+x1, Imel\+Size \+\_\+y1, Imel\+Size \+\_\+x2, Imel\+Size \+\_\+y2, long int $\ast$lx, long int $\ast$ly, Imel\+Value value\+\_\+type, double value)}{imel_point_get_from_line(ImelSize _x1, ImelSize _y1, ImelSize _x2, ImelSize _y2, long int *lx, long int *ly, ImelValue value_type, double value)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Point}$\ast$$\ast$ imel\+\_\+point\+\_\+get\+\_\+from\+\_\+line (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Size}}]{\+\_\+x1, }
+\item[{{\bf Imel\+Size}}]{\+\_\+y1, }
+\item[{{\bf Imel\+Size}}]{\+\_\+x2, }
+\item[{{\bf Imel\+Size}}]{\+\_\+y2, }
+\item[{long int $\ast$}]{lx, }
+\item[{long int $\ast$}]{ly, }
+\item[{{\bf Imel\+Value}}]{value\+\_\+type, }
+\item[{double}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{point_8c_a5378c3d9ccaeb5f1325b64dd5740a072}{}\label{point_8c_a5378c3d9ccaeb5f1325b64dd5740a072}
+
+
+Get a line points. 
+
+This function get all points in the line from coordinate $(\_x_1,\_y_1)$ to coordinate $(\_x_2,\_y_2)$. You can get the line width and height respectively from {\ttfamily lx} and {\ttfamily ly} argument.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+x1} & Start line x coordinate \\
+\hline
+{\em \+\_\+y1} & Start line y coordinate \\
+\hline
+{\em \+\_\+x2} & End line x coordinate \\
+\hline
+{\em \+\_\+y2} & End line y coordinate \\
+\hline
+{\em lx} & N\+U\+LL or if passed, this function put inside it the line width \\
+\hline
+{\em ly} & N\+U\+LL or if passed, this function put inside it the line height \\
+\hline
+{\em value\+\_\+type} & Type of value passed as {\ttfamily value} \\
+\hline
+{\em value} & Number of points you want to get from the line. The points will be uniformely distributed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A N\+U\+L\+L-\/terminated array with the line points.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_a3b961ca2b6e1029ab77a0951c3ae7260}{Imel\+Value} 
+
+\hyperlink{point_8c_a64a1116a6bd2ee937316ee47f9bd7640}{imel\+\_\+point\+\_\+array\+\_\+free} 
+\end{DoxySeeAlso}
+\index{point.\+c@{point.\+c}!imel\+\_\+point\+\_\+get\+\_\+from\+\_\+reg\+\_\+shape@{imel\+\_\+point\+\_\+get\+\_\+from\+\_\+reg\+\_\+shape}}
+\index{imel\+\_\+point\+\_\+get\+\_\+from\+\_\+reg\+\_\+shape@{imel\+\_\+point\+\_\+get\+\_\+from\+\_\+reg\+\_\+shape}!point.\+c@{point.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+point\+\_\+get\+\_\+from\+\_\+reg\+\_\+shape(\+Imel\+Size x, Imel\+Size y, Imel\+Size r, long v, double start\+\_\+angle)}{imel_point_get_from_reg_shape(ImelSize x, ImelSize y, ImelSize r, long v, double start_angle)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Point}$\ast$$\ast$ imel\+\_\+point\+\_\+get\+\_\+from\+\_\+reg\+\_\+shape (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Size}}]{x, }
+\item[{{\bf Imel\+Size}}]{y, }
+\item[{{\bf Imel\+Size}}]{r, }
+\item[{long}]{v, }
+\item[{double}]{start\+\_\+angle}
+\end{DoxyParamCaption}
+)}\hypertarget{point_8c_af6ac146e5bc39ce7aa7e1f070502b73d}{}\label{point_8c_af6ac146e5bc39ce7aa7e1f070502b73d}
+
+
+Get a regular shape points. 
+
+This function get the points from a regular shape with center in coordinate $(x,y)$, {\ttfamily r} radius, {\ttfamily v} vertices and an angle of {\ttfamily start} angle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Center x coordinate \\
+\hline
+{\em y} & Center y coordinate \\
+\hline
+{\em r} & Radius \\
+\hline
+{\em v} & Vertices \\
+\hline
+{\em start\+\_\+angle} & Start angle in radians \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A N\+U\+L\+L-\/terminated array with the regular shape points
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{point_8c_a64a1116a6bd2ee937316ee47f9bd7640}{imel\+\_\+point\+\_\+array\+\_\+free} 
+
+\hyperlink{header_8h_adff9f86a929b90364f856932fc5e064f}{R\+A\+D\+\_\+\+T\+O\+\_\+\+D\+EG} 
+
+\hyperlink{header_8h_a0978c9c7420f81adda347a7c6d22f085}{D\+E\+G\+\_\+\+T\+O\+\_\+\+R\+AD} 
+\end{DoxySeeAlso}
+\index{point.\+c@{point.\+c}!imel\+\_\+point\+\_\+get\+\_\+point\+\_\+from\+\_\+image@{imel\+\_\+point\+\_\+get\+\_\+point\+\_\+from\+\_\+image}}
+\index{imel\+\_\+point\+\_\+get\+\_\+point\+\_\+from\+\_\+image@{imel\+\_\+point\+\_\+get\+\_\+point\+\_\+from\+\_\+image}!point.\+c@{point.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+point\+\_\+get\+\_\+point\+\_\+from\+\_\+image(\+Imel\+Image $\ast$image, Imel\+Size x, Imel\+Size y)}{imel_point_get_point_from_image(ImelImage *image, ImelSize x, ImelSize y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Point}$\ast$ imel\+\_\+point\+\_\+get\+\_\+point\+\_\+from\+\_\+image (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{x, }
+\item[{{\bf Imel\+Size}}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{point_8c_a43bca66a5e1544bb8ec8f5e9edb2c49f}{}\label{point_8c_a43bca66a5e1544bb8ec8f5e9edb2c49f}
+
+
+Get a reference point from an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Reference image \\
+\hline
+{\em x} & Point x coordinate \\
+\hline
+{\em y} & Point y coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} type with a pixel set equal to the image pixel at coordinate $(x,y)$. 
+\end{DoxyReturn}
+\index{point.\+c@{point.\+c}!imel\+\_\+point\+\_\+new@{imel\+\_\+point\+\_\+new}}
+\index{imel\+\_\+point\+\_\+new@{imel\+\_\+point\+\_\+new}!point.\+c@{point.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+point\+\_\+new(\+Imel\+Image $\ast$image, Imel\+Size x, Imel\+Size y, Imel\+Pixel pixel)}{imel_point_new(ImelImage *image, ImelSize x, ImelSize y, ImelPixel pixel)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Point}$\ast$ imel\+\_\+point\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Size}}]{x, }
+\item[{{\bf Imel\+Size}}]{y, }
+\item[{{\bf Imel\+Pixel}}]{pixel}
+\end{DoxyParamCaption}
+)}\hypertarget{point_8c_a20c030176364130df49237e29b69308c}{}\label{point_8c_a20c030176364130df49237e29b69308c}
+
+
+Make a new point. 
+
+This function makes a point at coordinate $(x,y)\in image$ with a chosen color and level.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Reference image \\
+\hline
+{\em x} & Point x coordinate \\
+\hline
+{\em y} & Point y coordinate \\
+\hline
+{\em pixel} & Point color and level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} type or N\+U\+LL on error 
+\end{DoxyReturn}

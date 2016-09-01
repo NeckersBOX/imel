@@ -1,0 +1,189 @@
+Imel is a library for image elaboration. Include tools to create, draw, save and modify different images types with more then 240 functions. It\textquotesingle{}s thinked to be easy to use with a good compromise between speed and memory usage.
+
+An image will be elaborated in a Imel\+Image type ( see documentation for more details ). It works with R\+GB channels plus a level to identify an image layer or the alpha if its value is between 0 and -\/255.
+
+Imel is written in C and released under G\+NU G\+PL 3 license. It can be included in C and C++ projects.
+
+\section*{Installation}
+
+Imel uses two libraries to read True\+Type fonts and open and save in different image formats. Before you compile it you must install these libraries\+:
+
+
+\begin{DoxyItemize}
+\item {\itshape libfreetype6} Required. To read True\+Type fonts
+\item {\itshape libfreeimage3} Required. To open and save in different image format
+\item {\itshape libstdc++6} Optional. To compile a static library.
+\end{DoxyItemize}
+
+On Debian-\/like system you can install these libraries with the command\+: 
+\begin{DoxyCode}
+1 apt-get install libfreetype6-dev libfreeimage-dev
+\end{DoxyCode}
+
+
+After this preliminary actions you can compile the source with {\itshape make}. 
+\begin{DoxyCode}
+1 make
+\end{DoxyCode}
+ {\bfseries Note\+:} For 64 bit systems you can add {\itshape flags=\textquotesingle{}-\/f\+P\+IC\textquotesingle{}}
+
+Then you can install Imel with\+: 
+\begin{DoxyCode}
+1 make install
+\end{DoxyCode}
+
+
+To clean make generated files you can do\+: 
+\begin{DoxyCode}
+1 make clean
+\end{DoxyCode}
+
+
+To uninstall\+: 
+\begin{DoxyCode}
+1 make uninstall
+\end{DoxyCode}
+
+
+( For debug you can call {\itshape make} with {\itshape debug=true} option )
+
+\section*{Documentation}
+
+From the 3.\+0 version the documentation was rewritten with {\bfseries Doxygen}. The Doxygen default configuration can be found in {\itshape imel\+\_\+src} folder and it configured to generate H\+T\+ML, L\+A\+T\+EX and M\+AN output. {\bfseries Note\+:} H\+T\+ML output was patched with a bootstrap theme
+
+You can generate the documentation with the command\+: 
+\begin{DoxyCode}
+1 make imel-doc
+\end{DoxyCode}
+
+
+And if you want clean it 
+\begin{DoxyCode}
+1 make imel-doc-clean
+\end{DoxyCode}
+
+
+\section*{Quick Start}
+
+To use Imel in your project you must only include its header with\+: 
+\begin{DoxyCode}
+1 #include <imel.h>
+\end{DoxyCode}
+
+
+And compile with 
+\begin{DoxyCode}
+1 gcc myfile.c -o myprogram -limel
+\end{DoxyCode}
+
+
+\subsection*{Image open and save}
+
+
+\begin{DoxyCode}
+1 #include <imel.h>
+2 
+3 int main (int argc, char *argv[]) 
+4 \{
+5  ImelImage *image;
+6 
+7  image = imel\_image\_new\_from (argv[1], 0, NULL);
+8  if ( !image )
+9       return 1;
+10 
+11  imel\_image\_save\_png (image, "image.png", IMEL\_PNG\_Z\_DEFAULT\_COMPRESSION, NULL);
+12  imel\_image\_free (image);
+13 
+14  return 0;
+15 \}
+\end{DoxyCode}
+
+
+Others examples can be found in some function description
+
+\section*{Imel Logic}
+
+Imel have, hope, an own logic to define its functions name\+: 
+\begin{DoxyCode}
+1 imel\_category\_action ()
+\end{DoxyCode}
+
+
+The {\itshape category} can be\+:
+\begin{DoxyItemize}
+\item {\itshape image}\+: Includes functions to elaborate the images with effects, filters, rotations and much more.
+\item {\itshape image\+\_\+fill}\+: Includes functions to fill an image area with colors or levels.
+\item {\itshape image\+\_\+new\+\_\+from}\+: Includes functions to load an existed image.
+\item {\itshape image\+\_\+save}\+: Includes functions to save in different image format.
+\item {\itshape color}\+: Includes functions to operate with a single color.
+\item {\itshape pixel}\+: Includes functions to operate with the single pixels.
+\item {\itshape draw}\+: Includes functions to draw in an image.
+\item {\itshape point}\+: Includes functions to reference a point in an image.
+\item {\itshape font}\+: Includes functions to write a string in an image.
+\item {\itshape value}\+: Includes functions to convert from a value to another one.
+\end{DoxyItemize}
+
+Special functions are\+:
+\begin{DoxyItemize}
+\item {\itshape imel\+\_\+printf\+\_\+debug ()}\+: Print a message only if imel was compiled with debug=true.
+\item {\itshape imel\+\_\+enable\+\_\+brush ()}\+: Enabled the draw with a brush chosen.
+\item {\itshape imel\+\_\+disable\+\_\+brush ()}\+: Disable the draw with a brush.
+\end{DoxyItemize}
+
+The functions in the category {\itshape image\+\_\+new\+\_\+from} have this format\+:
+
+
+\begin{DoxyItemize}
+\item imel\+\_\+image\+\_\+new\+\_\+from {\itshape format}
+\item imel\+\_\+image\+\_\+new\+\_\+from {\itshape format} handle
+\item imel\+\_\+image\+\_\+new\+\_\+from {\itshape format} memory
+\end{DoxyItemize}
+
+The functions in the category {\itshape image\+\_\+save} have the same format without {\itshape memory} action.
+
+\section*{Image save and open format}
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*5{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}{\bf Image Format }&\PBS\centering {\bf Open }&\PBS\centering {\bf Open Flags }&\PBS\centering {\bf Save }&\PBS\centering {\bf Save Flags  }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}{\bf Image Format }&\PBS\centering {\bf Open }&\PBS\centering {\bf Open Flags }&\PBS\centering {\bf Save }&\PBS\centering {\bf Save Flags  }\\\cline{1-5}
+\endhead
+B\+MP &\PBS\centering Yes &\PBS\centering No &\PBS\centering Yes &\PBS\centering Yes \\\cline{1-5}
+C\+UT &\PBS\centering Yes &\PBS\centering No &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+D\+DS &\PBS\centering Yes &\PBS\centering No &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+E\+XR &\PBS\centering Yes &\PBS\centering No &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+G\+IF &\PBS\centering Yes &\PBS\centering Yes &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+H\+DR &\PBS\centering Yes &\PBS\centering No &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+I\+CO &\PBS\centering Yes &\PBS\centering Yes &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+I\+FF &\PBS\centering Yes &\PBS\centering No &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+I\+M\+EL &\PBS\centering Yes &\PBS\centering No &\PBS\centering Yes &\PBS\centering No \\\cline{1-5}
+J2K &\PBS\centering Yes &\PBS\centering No &\PBS\centering Yes &\PBS\centering Yes \\\cline{1-5}
+J\+NG &\PBS\centering Yes &\PBS\centering No &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+J\+P2 &\PBS\centering Yes &\PBS\centering No &\PBS\centering Yes &\PBS\centering Yes \\\cline{1-5}
+J\+P\+EG &\PBS\centering Yes &\PBS\centering Yes &\PBS\centering Yes &\PBS\centering Yes \\\cline{1-5}
+K\+O\+A\+LA &\PBS\centering Yes &\PBS\centering No &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+M\+NG &\PBS\centering Yes &\PBS\centering No &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+P\+BM &\PBS\centering Yes &\PBS\centering No &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+P\+B\+M\+R\+AW &\PBS\centering Yes &\PBS\centering No &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+P\+CD &\PBS\centering Yes &\PBS\centering Yes &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+P\+CX &\PBS\centering Yes &\PBS\centering No &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+P\+GM &\PBS\centering Yes &\PBS\centering No &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+P\+G\+M\+R\+AW &\PBS\centering Yes &\PBS\centering No &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+P\+NG &\PBS\centering Yes &\PBS\centering Yes &\PBS\centering Yes &\PBS\centering Yes \\\cline{1-5}
+P\+PM &\PBS\centering Yes &\PBS\centering No &\PBS\centering Yes &\PBS\centering No \\\cline{1-5}
+P\+P\+M\+R\+AW &\PBS\centering Yes &\PBS\centering No &\PBS\centering Yes &\PBS\centering No \\\cline{1-5}
+P\+SD &\PBS\centering Yes &\PBS\centering No &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+R\+AS &\PBS\centering Yes &\PBS\centering No &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+R\+AW &\PBS\centering Yes &\PBS\centering Yes &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+S\+GI &\PBS\centering Yes &\PBS\centering No &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+T\+A\+R\+GA &\PBS\centering Yes &\PBS\centering No &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+T\+I\+FF &\PBS\centering Yes &\PBS\centering Yes &\PBS\centering Yes &\PBS\centering Yes \\\cline{1-5}
+W\+B\+MP &\PBS\centering Yes &\PBS\centering No &\PBS\centering Yes &\PBS\centering No \\\cline{1-5}
+X\+BM &\PBS\centering Yes &\PBS\centering No &\PBS\centering No &\PBS\centering No \\\cline{1-5}
+X\+PM &\PBS\centering Yes &\PBS\centering No &\PBS\centering Yes &\PBS\centering No \\\cline{1-5}
+\end{longtabu}

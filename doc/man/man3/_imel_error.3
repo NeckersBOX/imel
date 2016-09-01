@@ -1,0 +1,63 @@
+.TH "_imel_error" 3 "Thu Sep 1 2016" "Version 3.0" "Imel" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_imel_error \- Specialized type in reporting errors inside Imel\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <header\&.h>\fP
+.SS "Data Fields"
+
+.PP
+.RI "\fB\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "int \fBcode\fP"
+.br
+.ti -1c
+.RI "char * \fBdescription\fP"
+.br
+.in -1c
+.in -1c
+.SH "Detailed Description"
+.PP 
+Specialized type in reporting errors inside Imel\&. 
+
+This type report an error if occurred when doing operations in Imel\&. Each error have a code and a description\&.
+.PP
+\fBNote:\fP
+.RS 4
+Usually it can be used in this way: 
+.PP
+.nf
+ImelImage *image;
+ImelError error;
+
+image = imel_image_new_from ("image\&.png", 0, &error);
+if ( !image ) {
+     fprintf (stderr, "Error %d: %s\n", error\&.code, error\&.description);
+     return 1;
+}
+
+.fi
+.PP
+ 
+.RE
+.PP
+
+.SH "Field Documentation"
+.PP 
+.SS "int _imel_error::code"
+Error code 
+.SS "char* _imel_error::description"
+Error description 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Imel from the source code\&.

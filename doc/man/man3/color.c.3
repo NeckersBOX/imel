@@ -1,0 +1,174 @@
+.TH "color.c" 3 "Thu Sep 1 2016" "Version 3.0" "Imel" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+color.c \- This file contains functions to operate with colors\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include 'header\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBimel_color_set_background\fP (\fBImelImage\fP *image, \fBImelPixel\fP pixel)"
+.br
+.RI "\fISets a background color to a chosen image\&. \fP"
+.ti -1c
+.RI "\fBImelPixel\fP ** \fBimel_color_get_number\fP (\fBImelImage\fP *image, \fBImelSize\fP *number)"
+.br
+.RI "\fIGets a list of unique colors in an image\&. \fP"
+.ti -1c
+.RI "\fBImelColor\fP * \fBimel_color_get_from_pixel\fP (\fBImelPixel\fP pixel)"
+.br
+.RI "\fIGets an array with the colors in a pixel\&. \fP"
+.ti -1c
+.RI "\fBImelColor\fP \fBimel_color_sum\fP (\fBImelColor\fP a, \fBImelColor\fP b)"
+.br
+.RI "\fISum two colors\&. \fP"
+.ti -1c
+.RI "\fBImelColor\fP \fBimel_color_subtract\fP (\fBImelColor\fP a, \fBImelColor\fP b)"
+.br
+.RI "\fISubtract two colors\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file contains functions to operate with colors\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Davide Francesco Merico These functions allow you to add, subtract or extract information relative to the colors inside Imel types\&. 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBImelColor\fP* imel_color_get_from_pixel (\fBImelPixel\fP pixel)"
+
+.PP
+Gets an array with the colors in a pixel\&. This function make a color array with rgb value in \fCpixel\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpixel\fP Pixel from which get the colors\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+An array with RGB channels of \fCpixel\fP\&. 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+Each channel can be setted to 0 if \fCpixel\fP level is less then -255\&. 
+.RE
+.PP
+
+.SS "\fBImelPixel\fP** imel_color_get_number (\fBImelImage\fP * image, \fBImelSize\fP * number)"
+
+.PP
+Gets a list of unique colors in an image\&. This function get the unique colors number in \fCimage\fP and return a list of this colors\&.
+.PP
+.PP
+.nf
+1 ImelImage *image = imel_image_new_from ("image\&.png", 0, NULL);
+2 ImelSize n_colors;
+3 ImelPixel *list;
+4 
+5 list = imel_color_get_number (image, &n_colors);
+6 \&.\&.\&.
+7 free (list);
+.fi
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image from which exract the colors 
+.br
+\fInumber\fP In this variabile can be saved the colors number 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+NULL if \fCimage\fP isn't valid, else a NULL-terminated list with the found colors\&. 
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+Each pixel of the returned list is linked to an \fCimage\fP pixel, to free memory call free only on list as in example above\&. 
+.RE
+.PP
+
+.SS "void imel_color_set_background (\fBImelImage\fP * image, \fBImelPixel\fP pixel)"
+
+.PP
+Sets a background color to a chosen image\&. This function copy through \fBimel_pixel_copy\fP \fCpixel\fP in each pixel of \fCimage\fP\&.
+.PP
+.PP
+.nf
+1 ImelImage *image = imel_image_new_from ("image\&.gif", 0, NULL);
+2 ImelPixel bg_pixel = { 255, 255, 255, 0 };
+3 
+4 imel_color_set_background (image, bg_pixel);
+.fi
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to set a new background 
+.br
+\fIpixel\fP Background color
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_pixel_copy\fP 
+.RE
+.PP
+
+.SS "\fBImelColor\fP imel_color_subtract (\fBImelColor\fP a, \fBImelColor\fP b)"
+
+.PP
+Subtract two colors\&. This function subtract \fCb\fP from \fCa\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP First color 
+.br
+\fIb\fP Second color 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A color with the result of \fCb\fP - \fCa\fP, if the result is less then 0 return 0\&. 
+.RE
+.PP
+
+.SS "\fBImelColor\fP imel_color_sum (\fBImelColor\fP a, \fBImelColor\fP b)"
+
+.PP
+Sum two colors\&. This function sum colors \fCa\fP and \fCb\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP First color 
+.br
+\fIb\fP Second color 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A color with the sum of \fCa\fP and \fCb\fP, if the sum result is greater then 255 return 255\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Imel from the source code\&.

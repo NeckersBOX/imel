@@ -1,0 +1,74 @@
+\hypertarget{struct__imel__pixel}{}\section{\+\_\+imel\+\_\+pixel Struct Reference}
+\label{struct__imel__pixel}\index{\+\_\+imel\+\_\+pixel@{\+\_\+imel\+\_\+pixel}}
+
+
+Rappresentation of a pixel in Imel library.  
+
+
+
+
+{\ttfamily \#include $<$header.\+h$>$}
+
+\subsection*{Data Fields}
+{\bf }\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} \hyperlink{struct__imel__pixel_af491601f44bd0b35d72b77f94940ec65}{red}
+\item 
+\hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} \hyperlink{struct__imel__pixel_a3776e5a017e15b9dfad83b90b58e982e}{green}
+\item 
+\hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} \hyperlink{struct__imel__pixel_a1e3b4f517f6a56b353f4ed58f880a08e}{blue}
+\item 
+\hyperlink{header_8h_a97bc4b146a807c2d83b966983132f4fc}{Imel\+Level} \hyperlink{struct__imel__pixel_a729d8e2d9902ac1a6e2fbbc6f63cf1ed}{level}
+\end{DoxyCompactItemize}
+
+
+
+\subsection{Detailed Description}
+Rappresentation of a pixel in Imel library. 
+
+This type is the fundamental one, includes all the information needed to create a pixel composed of the three basic colors and its importance or transparency.
+
+
+\begin{DoxyCode}
+\hyperlink{struct__imel__pixel}{ImelPixel} m1\_color = \{ 255, 255, 255, 0 \};
+\hyperlink{struct__imel__pixel}{ImelPixel} m2\_color;
+
+m2\_color = \hyperlink{pixel_8c_a0d1c4cb614847e8084854f40d05d0eb7}{imel\_pixel\_new\_from\_string} (\textcolor{stringliteral}{'#ffffff'}, 0);
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{pixel_8c_aaf2dba6a30b6612b7c1730195935a88d}{imel\+\_\+pixel\+\_\+new} 
+
+\hyperlink{pixel_8c_a0d1c4cb614847e8084854f40d05d0eb7}{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+string} 
+
+\hyperlink{pixel_8c_af701f338fec84020c7e812f7c1eb84df}{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+rgba} 
+
+\hyperlink{pixel_8c_a8ba2bb2ac90703240cd2c7556a4b9680}{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+hsl} 
+
+\hyperlink{pixel_8c_a9bc6aa8b3ec663f1635827b0ebbdf46a}{imel\+\_\+pixel\+\_\+copy}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+If two pixels have different level values when they are used in functions like \hyperlink{pixel_8c_a9bc6aa8b3ec663f1635827b0ebbdf46a}{imel\+\_\+pixel\+\_\+copy} the first one can be replaced only if the second one has the same or greater level value. 
+\end{DoxyNote}
+
+
+\subsection{Field Documentation}
+\index{\+\_\+imel\+\_\+pixel@{\+\_\+imel\+\_\+pixel}!blue@{blue}}
+\index{blue@{blue}!\+\_\+imel\+\_\+pixel@{\+\_\+imel\+\_\+pixel}}
+\subsubsection[{\texorpdfstring{blue}{blue}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Color} \+\_\+imel\+\_\+pixel\+::blue}\hypertarget{struct__imel__pixel_a1e3b4f517f6a56b353f4ed58f880a08e}{}\label{struct__imel__pixel_a1e3b4f517f6a56b353f4ed58f880a08e}
+Blue channel. Values from 0 to 255. \index{\+\_\+imel\+\_\+pixel@{\+\_\+imel\+\_\+pixel}!green@{green}}
+\index{green@{green}!\+\_\+imel\+\_\+pixel@{\+\_\+imel\+\_\+pixel}}
+\subsubsection[{\texorpdfstring{green}{green}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Color} \+\_\+imel\+\_\+pixel\+::green}\hypertarget{struct__imel__pixel_a3776e5a017e15b9dfad83b90b58e982e}{}\label{struct__imel__pixel_a3776e5a017e15b9dfad83b90b58e982e}
+Green channel. Values from 0 to 255. \index{\+\_\+imel\+\_\+pixel@{\+\_\+imel\+\_\+pixel}!level@{level}}
+\index{level@{level}!\+\_\+imel\+\_\+pixel@{\+\_\+imel\+\_\+pixel}}
+\subsubsection[{\texorpdfstring{level}{level}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Level} \+\_\+imel\+\_\+pixel\+::level}\hypertarget{struct__imel__pixel_a729d8e2d9902ac1a6e2fbbc6f63cf1ed}{}\label{struct__imel__pixel_a729d8e2d9902ac1a6e2fbbc6f63cf1ed}
+Alpha for values from 0 to -\/255, else level \index{\+\_\+imel\+\_\+pixel@{\+\_\+imel\+\_\+pixel}!red@{red}}
+\index{red@{red}!\+\_\+imel\+\_\+pixel@{\+\_\+imel\+\_\+pixel}}
+\subsubsection[{\texorpdfstring{red}{red}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Color} \+\_\+imel\+\_\+pixel\+::red}\hypertarget{struct__imel__pixel_af491601f44bd0b35d72b77f94940ec65}{}\label{struct__imel__pixel_af491601f44bd0b35d72b77f94940ec65}
+Red channel. Values from 0 to 255. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{header_8h}{header.\+h}\end{DoxyCompactItemize}

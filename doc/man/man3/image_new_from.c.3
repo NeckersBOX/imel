@@ -1,0 +1,3177 @@
+.TH "image_new_from.c" 3 "Thu Sep 1 2016" "Version 3.0" "Imel" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+image_new_from.c \- This file contains function to load different image format\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string\&.h>\fP
+.br
+\fC#include <errno\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <FreeImage\&.h>\fP
+.br
+\fC#include 'header\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_imel\fP (const char *filename, \fBImelError\fP *error)"
+.br
+.RI "\fILoad an IMEL image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_imel_handle\fP (FILE *of, \fBImelError\fP *error)"
+.br
+.RI "\fILoad an IMEL image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_raw\fP (const char *filename, \fBImelSize\fP width, \fBImelSize\fP height, int bits_red, int bits_green, int bits_blue, int bits_level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a raw image from file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_jpeg\fP (const char *filename, long int level, \fBImelJpegLoadFlags\fP load_flags, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a JPEG image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_jpeg_handle\fP (FILE *file, long int level, \fBImelJpegLoadFlags\fP load_flags, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a JPEG image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_jpeg_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelJpegLoadFlags\fP load_flags, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a JPEG image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_png\fP (const char *filename, long int level, \fBImelPngLoadFlags\fP load_flags, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PNG image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_png_handle\fP (FILE *file, long int level, \fBImelPngLoadFlags\fP load_flags, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PNG image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_png_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelPngLoadFlags\fP load_flags, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PNG image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_tiff\fP (const char *filename, long int level, \fBImelTiffLoadFlags\fP load_flags, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a TIFF image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_tiff_handle\fP (FILE *file, long int level, \fBImelTiffLoadFlags\fP load_flags, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a TIFF image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_tiff_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelTiffLoadFlags\fP load_flags, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a TIFF image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_bmp\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a BMP image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_bmp_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a BMP image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_bmp_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a BMP image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_cut\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a CUT image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_cut_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a CUT image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_cut_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a CUT image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_dds\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a DDS image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_dds_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a DDS image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_dds_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a DDS image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_xpm\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a XPM image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_xpm_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a XPM image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_xpm_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a XPM image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_xbm\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a XBM image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_xbm_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a XBM image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_xbm_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a XBM image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_sgi\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a SGI image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_sgi_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a SGI image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_sgi_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a SGI image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_wbmp\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a WBMP image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_wbmp_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a WBMP image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_wbmp_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a WBMP image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_hdr\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a HDR image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_hdr_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a HDR image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_hdr_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a HDR image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_psd\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PSD image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_psd_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PSD image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_psd_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PSD image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_iff\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a IFF image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_iff_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a IFF image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_iff_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a IFF image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_jng\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a JNG image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_jng_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a JNG image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_jng_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a JNG image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_koala\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a KOALA image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_koala_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a KOALA image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_koala_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a KOALA image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_mng\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a MNG image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_mng_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a MNG image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_mng_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a MNG image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_pcx\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PCX image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_pcx_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PCX image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_pcx_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PCX image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_pgm\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PGM image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_pgm_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PGM image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_pgm_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PGM image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_pgmraw\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a raw PGM image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_pgmraw_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a raw PGM image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_pgmraw_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a raw PGM image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_ras\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a RAS image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_ras_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a RAS image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_ras_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a RAS image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_exr\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a EXR image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_exr_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a EXR image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_exr_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a EXR image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_j2k\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a J2K image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_j2k_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a J2K image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_j2k_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a J2K image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_ppm\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PPM image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_ppm_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PPM image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_ppm_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PPM image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_ppmraw\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a raw PPM image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_ppmraw_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a raw PPM image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_ppmraw_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a raw PPM image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_pbm\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PBM image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_pbm_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PBM image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_pbm_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PBM image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_pbmraw\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a raw PBM image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_pbmraw_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a raw PBM image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_pbmraw_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a raw PBM image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_targa\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a TARGA image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_targa_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a TARGA image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_targa_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a TARGA image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_jp2\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a JP2 image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_jp2_handle\fP (FILE *file, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a JP2 image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_jp2_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a JP2 image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_ico\fP (const char *filename, long int level, \fBImelIcoLoadFlags\fP load_flags, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a ICO image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_ico_handle\fP (FILE *file, long int level, \fBImelIcoLoadFlags\fP load_flags, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a ICO image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_ico_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelIcoLoadFlags\fP load_flags, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a ICO image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_pcd\fP (const char *filename, long int level, \fBImelPcdLoadFlags\fP load_flags, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PCD image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_pcd_handle\fP (FILE *file, long int level, \fBImelPcdLoadFlags\fP load_flags, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PCD image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_pcd_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelPcdLoadFlags\fP load_flags, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a PCD image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_gif\fP (const char *filename, long int level, \fBImelGifLoadFlags\fP load_flags, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a GIF image from a file name\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_gif_handle\fP (FILE *file, long int level, \fBImelGifLoadFlags\fP load_flags, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a GIF image from an already open file\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from_gif_memory\fP (uint8_t *memory, uint32_t length, long int level, \fBImelGifLoadFlags\fP load_flags, \fBImelError\fP *error)"
+.br
+.RI "\fILoad a GIF image from an one loaded in memory\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_from\fP (const char *filename, long int level, \fBImelError\fP *error)"
+.br
+.RI "\fILoad an image identify by it's extension\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file contains function to load different image format\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Davide Francesco Merico 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBImelImage\fP* imel_image_new_from (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load an image identify by it's extension\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_bmp (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a BMP image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_bmp_handle\fP 
+.PP
+\fBimel_image_new_from_bmp_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_bmp_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a BMP image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_bmp\fP 
+.PP
+\fBimel_image_new_from_bmp_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_bmp_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a BMP image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_bmp\fP 
+.PP
+\fBimel_image_new_from_bmp_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_cut (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a CUT image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_cut_handle\fP 
+.PP
+\fBimel_image_new_from_cut_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_cut_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a CUT image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_cut\fP 
+.PP
+\fBimel_image_new_from_cut_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_cut_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a CUT image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_cut\fP 
+.PP
+\fBimel_image_new_from_cut_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_dds (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a DDS image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_dds_handle\fP 
+.PP
+\fBimel_image_new_from_dds_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_dds_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a DDS image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_dds\fP 
+.PP
+\fBimel_image_new_from_dds_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_dds_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a DDS image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_dds\fP 
+.PP
+\fBimel_image_new_from_dds_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_exr (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a EXR image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_exr_handle\fP 
+.PP
+\fBimel_image_new_from_exr_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_exr_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a EXR image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_exr\fP 
+.PP
+\fBimel_image_new_from_exr_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_exr_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a EXR image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_exr\fP 
+.PP
+\fBimel_image_new_from_exr_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_gif (const char * filename, long int level, \fBImelGifLoadFlags\fP load_flags, \fBImelError\fP * error)"
+
+.PP
+Load a GIF image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIload_flags\fP Load options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelGifLoadFlags\fP 
+.PP
+\fBimel_image_new_from_gif_handle\fP 
+.PP
+\fBimel_image_new_from_gif_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_gif_handle (FILE * file, long int level, \fBImelGifLoadFlags\fP load_flags, \fBImelError\fP * error)"
+
+.PP
+Load a GIF image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIload_flags\fP Load options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelGifLoadFlags\fP 
+.PP
+\fBimel_image_new_from_gif\fP 
+.PP
+\fBimel_image_new_from_gif_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_gif_memory (uint8_t * memory, uint32_t length, long int level, \fBImelGifLoadFlags\fP load_flags, \fBImelError\fP * error)"
+
+.PP
+Load a GIF image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIload_flags\fP Load options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelGifLoadFlags\fP 
+.PP
+\fBimel_image_new_from_gif\fP 
+.PP
+\fBimel_image_new_from_gif_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_hdr (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a HDR image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_hdr_handle\fP 
+.PP
+\fBimel_image_new_from_hdr_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_hdr_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a HDR image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_hdr\fP 
+.PP
+\fBimel_image_new_from_hdr_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_hdr_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a HDR image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_hdr\fP 
+.PP
+\fBimel_image_new_from_hdr_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_ico (const char * filename, long int level, \fBImelIcoLoadFlags\fP load_flags, \fBImelError\fP * error)"
+
+.PP
+Load a ICO image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIload_flags\fP Load options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelIcoLoadFlags\fP 
+.PP
+\fBimel_image_new_from_ico_handle\fP 
+.PP
+\fBimel_image_new_from_ico_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_ico_handle (FILE * file, long int level, \fBImelIcoLoadFlags\fP load_flags, \fBImelError\fP * error)"
+
+.PP
+Load a ICO image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIload_flags\fP Load options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelIcoLoadFlags\fP 
+.PP
+\fBimel_image_new_from_ico\fP 
+.PP
+\fBimel_image_new_from_ico_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_ico_memory (uint8_t * memory, uint32_t length, long int level, \fBImelIcoLoadFlags\fP load_flags, \fBImelError\fP * error)"
+
+.PP
+Load a ICO image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIload_flags\fP Load options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelIcoLoadFlags\fP 
+.PP
+\fBimel_image_new_from_ico\fP 
+.PP
+\fBimel_image_new_from_ico_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_iff (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a IFF image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_iff_handle\fP 
+.PP
+\fBimel_image_new_from_iff_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_iff_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a IFF image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_iff\fP 
+.PP
+\fBimel_image_new_from_iff_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_iff_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a IFF image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_iff\fP 
+.PP
+\fBimel_image_new_from_iff_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_imel (const char * filename, \fBImelError\fP * error)"
+
+.PP
+Load an IMEL image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_imel_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_imel_handle (FILE * of, \fBImelError\fP * error)"
+
+.PP
+Load an IMEL image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIof\fP Initialized FILE type\&. 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_imel\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_j2k (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a J2K image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_j2k_handle\fP 
+.PP
+\fBimel_image_new_from_j2k_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_j2k_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a J2K image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_j2k\fP 
+.PP
+\fBimel_image_new_from_j2k_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_j2k_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a J2K image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_j2k\fP 
+.PP
+\fBimel_image_new_from_j2k_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_jng (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a JNG image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_jng_handle\fP 
+.PP
+\fBimel_image_new_from_jng_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_jng_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a JNG image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_jng\fP 
+.PP
+\fBimel_image_new_from_jng_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_jng_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a JNG image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_jng\fP 
+.PP
+\fBimel_image_new_from_jng_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_jp2 (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a JP2 image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_jp2_handle\fP 
+.PP
+\fBimel_image_new_from_jp2_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_jp2_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a JP2 image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_jp2\fP 
+.PP
+\fBimel_image_new_from_jp2_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_jp2_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a JP2 image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_jp2\fP 
+.PP
+\fBimel_image_new_from_jp2_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_jpeg (const char * filename, long int level, \fBImelJpegLoadFlags\fP load_flags, \fBImelError\fP * error)"
+
+.PP
+Load a JPEG image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIload_flags\fP Load options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelJpegLoadFlags\fP 
+.PP
+\fBimel_image_new_from_jpeg_handle\fP 
+.PP
+\fBimel_image_new_from_jpeg_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_jpeg_handle (FILE * file, long int level, \fBImelJpegLoadFlags\fP load_flags, \fBImelError\fP * error)"
+
+.PP
+Load a JPEG image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIload_flags\fP Load options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelJpegLoadFlags\fP 
+.PP
+\fBimel_image_new_from_jpeg\fP 
+.PP
+\fBimel_image_new_from_jpeg_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_jpeg_memory (uint8_t * memory, uint32_t length, long int level, \fBImelJpegLoadFlags\fP load_flags, \fBImelError\fP * error)"
+
+.PP
+Load a JPEG image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIload_flags\fP Load options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelJpegLoadFlags\fP 
+.PP
+\fBimel_image_new_from_jpeg\fP 
+.PP
+\fBimel_image_new_from_jpeg_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_koala (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a KOALA image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_koala_handle\fP 
+.PP
+\fBimel_image_new_from_koala_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_koala_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a KOALA image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_koala\fP 
+.PP
+\fBimel_image_new_from_koala_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_koala_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a KOALA image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_koala\fP 
+.PP
+\fBimel_image_new_from_koala_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_mng (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a MNG image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_mng_handle\fP 
+.PP
+\fBimel_image_new_from_mng_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_mng_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a MNG image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_mng\fP 
+.PP
+\fBimel_image_new_from_mng_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_mng_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a MNG image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_mng\fP 
+.PP
+\fBimel_image_new_from_mng_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_pbm (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a PBM image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_pbm_handle\fP 
+.PP
+\fBimel_image_new_from_pbm_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_pbm_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a PBM image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_pbm\fP 
+.PP
+\fBimel_image_new_from_pbm_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_pbm_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a PBM image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_pbm\fP 
+.PP
+\fBimel_image_new_from_pbm_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_pbmraw (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a raw PBM image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_pbmraw_handle\fP 
+.PP
+\fBimel_image_new_from_pbmraw_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_pbmraw_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a raw PBM image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_pbmraw\fP 
+.PP
+\fBimel_image_new_from_pbmraw_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_pbmraw_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a raw PBM image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_pbmraw\fP 
+.PP
+\fBimel_image_new_from_pbmraw_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_pcd (const char * filename, long int level, \fBImelPcdLoadFlags\fP load_flags, \fBImelError\fP * error)"
+
+.PP
+Load a PCD image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIload_flags\fP Load options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelPcdLoadFlags\fP 
+.PP
+\fBimel_image_new_from_pcd_handle\fP 
+.PP
+\fBimel_image_new_from_pcd_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_pcd_handle (FILE * file, long int level, \fBImelPcdLoadFlags\fP load_flags, \fBImelError\fP * error)"
+
+.PP
+Load a PCD image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIload_flags\fP Load options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelPcdLoadFlags\fP 
+.PP
+\fBimel_image_new_from_pcd\fP 
+.PP
+\fBimel_image_new_from_pcd_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_pcd_memory (uint8_t * memory, uint32_t length, long int level, \fBImelPcdLoadFlags\fP load_flags, \fBImelError\fP * error)"
+
+.PP
+Load a PCD image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIload_flags\fP Load options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelPcdLoadFlags\fP 
+.PP
+\fBimel_image_new_from_pcd\fP 
+.PP
+\fBimel_image_new_from_pcd_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_pcx (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a PCX image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_pcx_handle\fP 
+.PP
+\fBimel_image_new_from_pcx_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_pcx_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a PCX image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_pcx\fP 
+.PP
+\fBimel_image_new_from_pcx_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_pcx_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a PCX image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_pcx\fP 
+.PP
+\fBimel_image_new_from_pcx_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_pgm (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a PGM image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_pgm_handle\fP 
+.PP
+\fBimel_image_new_from_pgm_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_pgm_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a PGM image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_pgm\fP 
+.PP
+\fBimel_image_new_from_pgm_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_pgm_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a PGM image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_pgm\fP 
+.PP
+\fBimel_image_new_from_pgm_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_pgmraw (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a raw PGM image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_pgmraw_handle\fP 
+.PP
+\fBimel_image_new_from_pgmraw_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_pgmraw_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a raw PGM image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_pgmraw\fP 
+.PP
+\fBimel_image_new_from_pgmraw_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_pgmraw_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a raw PGM image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_pgmraw\fP 
+.PP
+\fBimel_image_new_from_pgmraw_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_png (const char * filename, long int level, \fBImelPngLoadFlags\fP load_flags, \fBImelError\fP * error)"
+
+.PP
+Load a PNG image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIload_flags\fP Load options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelPngLoadFlags\fP 
+.PP
+\fBimel_image_new_from_png_handle\fP 
+.PP
+\fBimel_image_new_from_png_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_png_handle (FILE * file, long int level, \fBImelPngLoadFlags\fP load_flags, \fBImelError\fP * error)"
+
+.PP
+Load a PNG image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIload_flags\fP Load options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelPngLoadFlags\fP 
+.PP
+\fBimel_image_new_from_png\fP 
+.PP
+\fBimel_image_new_from_png_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_png_memory (uint8_t * memory, uint32_t length, long int level, \fBImelPngLoadFlags\fP load_flags, \fBImelError\fP * error)"
+
+.PP
+Load a PNG image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIload_flags\fP Load options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelPngLoadFlags\fP 
+.PP
+\fBimel_image_new_from_png\fP 
+.PP
+\fBimel_image_new_from_png_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_ppm (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a PPM image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_ppm_handle\fP 
+.PP
+\fBimel_image_new_from_ppm_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_ppm_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a PPM image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_ppm\fP 
+.PP
+\fBimel_image_new_from_ppm_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_ppm_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a PPM image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_ppm\fP 
+.PP
+\fBimel_image_new_from_ppm_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_ppmraw (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a raw PPM image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_ppmraw_handle\fP 
+.PP
+\fBimel_image_new_from_ppmraw_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_ppmraw_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a raw PPM image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_ppmraw\fP 
+.PP
+\fBimel_image_new_from_ppmraw_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_ppmraw_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a raw PPM image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_ppmraw\fP 
+.PP
+\fBimel_image_new_from_ppmraw_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_psd (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a PSD image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_psd_handle\fP 
+.PP
+\fBimel_image_new_from_psd_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_psd_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a PSD image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_psd\fP 
+.PP
+\fBimel_image_new_from_psd_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_psd_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a PSD image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_psd\fP 
+.PP
+\fBimel_image_new_from_psd_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_ras (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a RAS image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_ras_handle\fP 
+.PP
+\fBimel_image_new_from_ras_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_ras_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a RAS image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_ras\fP 
+.PP
+\fBimel_image_new_from_ras_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_ras_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a RAS image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_ras\fP 
+.PP
+\fBimel_image_new_from_ras_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_raw (const char * filename, \fBImelSize\fP width, \fBImelSize\fP height, int bits_red, int bits_green, int bits_blue, int bits_level, \fBImelError\fP * error)"
+
+.PP
+Load a raw image from file name\&. This function can load a raw image with no header and different bits value to rappresent color channels\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension 
+.br
+\fIwidth\fP Image width 
+.br
+\fIheight\fP Image height 
+.br
+\fIbits_red\fP Bits of each red channel or 0 if it doesn't exist\&. 
+.br
+\fIbits_green\fP Bits of each green channel or 0 if it doesn't exist\&. 
+.br
+\fIbits_blue\fP Bits of each blue channel or 0 if it doesn't exist\&. 
+.br
+\fIbits_level\fP Bits of each level channel or 0 if it doesn't exist\&. 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&. 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_sgi (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a SGI image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_sgi_handle\fP 
+.PP
+\fBimel_image_new_from_sgi_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_sgi_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a SGI image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_sgi\fP 
+.PP
+\fBimel_image_new_from_sgi_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_sgi_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a SGI image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_sgi\fP 
+.PP
+\fBimel_image_new_from_sgi_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_targa (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a TARGA image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_targa_handle\fP 
+.PP
+\fBimel_image_new_from_targa_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_targa_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a TARGA image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_targa\fP 
+.PP
+\fBimel_image_new_from_targa_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_targa_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a TARGA image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_targa\fP 
+.PP
+\fBimel_image_new_from_targa_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_tiff (const char * filename, long int level, \fBImelTiffLoadFlags\fP load_flags, \fBImelError\fP * error)"
+
+.PP
+Load a TIFF image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIload_flags\fP Load options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelTiffLoadFlags\fP 
+.PP
+\fBimel_image_new_from_tiff_handle\fP 
+.PP
+\fBimel_image_new_from_tiff_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_tiff_handle (FILE * file, long int level, \fBImelTiffLoadFlags\fP load_flags, \fBImelError\fP * error)"
+
+.PP
+Load a TIFF image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIload_flags\fP Load options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelTiffLoadFlags\fP 
+.PP
+\fBimel_image_new_from_tiff\fP 
+.PP
+\fBimel_image_new_from_tiff_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_tiff_memory (uint8_t * memory, uint32_t length, long int level, \fBImelTiffLoadFlags\fP load_flags, \fBImelError\fP * error)"
+
+.PP
+Load a TIFF image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIload_flags\fP Load options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelTiffLoadFlags\fP 
+.PP
+\fBimel_image_new_from_tiff\fP 
+.PP
+\fBimel_image_new_from_tiff_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_wbmp (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a WBMP image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_wbmp_handle\fP 
+.PP
+\fBimel_image_new_from_wbmp_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_wbmp_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a WBMP image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_wbmp\fP 
+.PP
+\fBimel_image_new_from_wbmp_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_wbmp_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a WBMP image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_wbmp\fP 
+.PP
+\fBimel_image_new_from_wbmp_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_xbm (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a XBM image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_xbm_handle\fP 
+.PP
+\fBimel_image_new_from_xbm_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_xbm_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a XBM image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_xbm\fP 
+.PP
+\fBimel_image_new_from_xbm_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_xbm_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a XBM image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_xbm\fP 
+.PP
+\fBimel_image_new_from_xbm_handle\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_xpm (const char * filename, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a XPM image from a file name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the image with extension\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_xpm_handle\fP 
+.PP
+\fBimel_image_new_from_xpm_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_xpm_handle (FILE * file, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a XPM image from an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Initialized FILE type\&. 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_xpm\fP 
+.PP
+\fBimel_image_new_from_xpm_memory\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_from_xpm_memory (uint8_t * memory, uint32_t length, long int level, \fBImelError\fP * error)"
+
+.PP
+Load a XPM image from an one loaded in memory\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImemory\fP Content of the image 
+.br
+\fIlength\fP \fCmemory\fP length 
+.br
+\fIlevel\fP Image level 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image loaded in \fBImelImage\fP type on success or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_xpm\fP 
+.PP
+\fBimel_image_new_from_xpm_handle\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Imel from the source code\&.

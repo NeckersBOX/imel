@@ -1,0 +1,120 @@
+\hypertarget{miscellaneous_8c}{}\section{miscellaneous.\+c File Reference}
+\label{miscellaneous_8c}\index{miscellaneous.\+c@{miscellaneous.\+c}}
+
+
+This file contains miscellaneus function.  
+
+
+{\ttfamily \#include \char`\"{}header.\+h\char`\"{}}\\*
+Include dependency graph for miscellaneous.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{miscellaneous_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{miscellaneous_8c_acf020a7e381aafaa9ee87f8b91994c73}{imel\+\_\+enable\+\_\+brush} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$brush)
+\begin{DoxyCompactList}\small\item\em Enable the brush. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{miscellaneous_8c_abd21a9ca5c598a94d94e99102968916d}{imel\+\_\+disable\+\_\+brush} (void)
+\begin{DoxyCompactList}\small\item\em Disable the brush. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{miscellaneous_8c_ad4629c597b8f8827434c9ca3b183c4de}{imel\+\_\+printf\+\_\+debug} (const char $\ast$function, const char $\ast$filename, const char $\ast$error\+\_\+level, char $\ast$\+\_\+\+\_\+format,...)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$ \hyperlink{miscellaneous_8c_a321f8f9d07d202b736865ab1c4717169}{global\+\_\+brush}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains miscellaneus function. 
+
+\begin{DoxyAuthor}{Author}
+Davide Francesco Merico 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\index{miscellaneous.\+c@{miscellaneous.\+c}!imel\+\_\+disable\+\_\+brush@{imel\+\_\+disable\+\_\+brush}}
+\index{imel\+\_\+disable\+\_\+brush@{imel\+\_\+disable\+\_\+brush}!miscellaneous.\+c@{miscellaneous.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+disable\+\_\+brush(void)}{imel_disable_brush(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+disable\+\_\+brush (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{miscellaneous_8c_abd21a9ca5c598a94d94e99102968916d}{}\label{miscellaneous_8c_abd21a9ca5c598a94d94e99102968916d}
+
+
+Disable the brush. 
+
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success, F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{miscellaneous_8c_a321f8f9d07d202b736865ab1c4717169}{global\+\_\+brush} 
+
+\hyperlink{miscellaneous_8c_abd21a9ca5c598a94d94e99102968916d}{imel\+\_\+disable\+\_\+brush} 
+\end{DoxySeeAlso}
+\index{miscellaneous.\+c@{miscellaneous.\+c}!imel\+\_\+enable\+\_\+brush@{imel\+\_\+enable\+\_\+brush}}
+\index{imel\+\_\+enable\+\_\+brush@{imel\+\_\+enable\+\_\+brush}!miscellaneous.\+c@{miscellaneous.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+enable\+\_\+brush(\+Imel\+Image $\ast$brush)}{imel_enable_brush(ImelImage *brush)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+enable\+\_\+brush (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{brush}
+\end{DoxyParamCaption}
+)}\hypertarget{miscellaneous_8c_acf020a7e381aafaa9ee87f8b91994c73}{}\label{miscellaneous_8c_acf020a7e381aafaa9ee87f8b91994c73}
+
+
+Enable the brush. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em brush} & Image containing the brush \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success, F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{miscellaneous_8c_a321f8f9d07d202b736865ab1c4717169}{global\+\_\+brush} 
+
+\hyperlink{miscellaneous_8c_abd21a9ca5c598a94d94e99102968916d}{imel\+\_\+disable\+\_\+brush} 
+\end{DoxySeeAlso}
+\index{miscellaneous.\+c@{miscellaneous.\+c}!imel\+\_\+printf\+\_\+debug@{imel\+\_\+printf\+\_\+debug}}
+\index{imel\+\_\+printf\+\_\+debug@{imel\+\_\+printf\+\_\+debug}!miscellaneous.\+c@{miscellaneous.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+printf\+\_\+debug(const char $\ast$function, const char $\ast$filename, const char $\ast$error\+\_\+level, char $\ast$\+\_\+\+\_\+format,...)}{imel_printf_debug(const char *function, const char *filename, const char *error_level, char *__format,...)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+printf\+\_\+debug (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{function, }
+\item[{const char $\ast$}]{filename, }
+\item[{const char $\ast$}]{error\+\_\+level, }
+\item[{char $\ast$}]{\+\_\+\+\_\+format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{miscellaneous_8c_ad4629c597b8f8827434c9ca3b183c4de}{}\label{miscellaneous_8c_ad4629c597b8f8827434c9ca3b183c4de}
+imel\+\_\+debug\+\_\+printf are foundamental for macro \hyperlink{header_8h_afa6c4a6400518363dd86d406785585b2}{return\+\_\+if\+\_\+fail} and \hyperlink{header_8h_aedf541d4162f35857638d2ececedc2d7}{return\+\_\+var\+\_\+if\+\_\+fail}. It print the message only if compiled with debug=true.
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & Name of the function where it\textquotesingle{}s called or N\+U\+LL \\
+\hline
+{\em filename} & Name of the file or N\+U\+LL \\
+\hline
+{\em error\+\_\+level} & Type of error ( Warning, Error, Info, ... ) or N\+U\+LL \\
+\hline
+{\em \+\_\+\+\_\+format} & Message \\
+\hline
+{\em ...} & Parameters requested by {\ttfamily \+\_\+\+\_\+format} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if debug=true, else F\+A\+L\+SE 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\index{miscellaneous.\+c@{miscellaneous.\+c}!global\+\_\+brush@{global\+\_\+brush}}
+\index{global\+\_\+brush@{global\+\_\+brush}!miscellaneous.\+c@{miscellaneous.\+c}}
+\subsubsection[{\texorpdfstring{global\+\_\+brush}{global_brush}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Image}$\ast$ global\+\_\+brush}\hypertarget{miscellaneous_8c_a321f8f9d07d202b736865ab1c4717169}{}\label{miscellaneous_8c_a321f8f9d07d202b736865ab1c4717169}
+If brush is enabled, this variable will contain the brush image and will be used in all drawing functions except \hyperlink{draw_8c_a80e6d667aceb3de202823e5493a774b1}{imel\+\_\+draw\+\_\+point}. 

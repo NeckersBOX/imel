@@ -1,0 +1,62 @@
+.TH "_imel_info_cut" 3 "Thu Sep 1 2016" "Version 3.0" "Imel" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_imel_info_cut \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <header\&.h>\fP
+.SS "Data Fields"
+
+.PP
+.RI "\fB\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "\fBImelSize\fP \fBindex\fP"
+.br
+.ti -1c
+.RI "\fBImelOrientation\fP \fBorientation\fP"
+.br
+.ti -1c
+.RI "\fBImelSize\fP \fBposition\fP"
+.br
+.ti -1c
+.RI "struct \fB_imel_info_cut\fP * \fBnext\fP"
+.br
+.in -1c
+.in -1c
+.SH "Detailed Description"
+.PP 
+This type collect information about the hypothetical lines that cut an image vertically or horizontally at a specific point\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_cut_grid\fP 
+.PP
+\fBimel_info_cut_new\fP 
+.PP
+\fBimel_info_cut_add\fP 
+.PP
+\fBimel_info_cut_free\fP 
+.RE
+.PP
+
+.SH "Field Documentation"
+.PP 
+.SS "\fBImelSize\fP _imel_info_cut::index"
+Element index 
+.SS "struct \fB_imel_info_cut\fP* _imel_info_cut::next"
+Next element 
+.SS "\fBImelOrientation\fP _imel_info_cut::orientation"
+Line orientation 
+.SS "\fBImelSize\fP _imel_info_cut::position"
+Line position 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Imel from the source code\&.

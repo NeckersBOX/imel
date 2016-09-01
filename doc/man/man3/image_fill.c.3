@@ -1,0 +1,129 @@
+.TH "image_fill.c" 3 "Thu Sep 1 2016" "Version 3.0" "Imel" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+image_fill.c \- This file contains functions to fill areas of an image\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'header\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBimel_image_fill_color_with_color\fP (\fBImelImage\fP *image, \fBImelPoint\fP *point, \fBImelSize\fP tollerance)"
+.br
+.RI "\fIFill a specified color area with another color\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_fill_level_with_color\fP (\fBImelImage\fP *image, \fBImelPoint\fP *point, \fBImelSize\fP tollerance)"
+.br
+.RI "\fIFill a specified level area with another color\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_fill_color_with_level\fP (\fBImelImage\fP *image, \fBImelPoint\fP *point, \fBImelSize\fP tollerance)"
+.br
+.RI "\fIFill a specified color area with another level\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_fill_level_with_level\fP (\fBImelImage\fP *image, \fBImelPoint\fP *point, \fBImelSize\fP tollerance)"
+.br
+.RI "\fIFill a specified level area with another level\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file contains functions to fill areas of an image\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Davide Francesco Merico 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "void imel_image_fill_color_with_color (\fBImelImage\fP * image, \fBImelPoint\fP * point, \fBImelSize\fP tollerance)"
+
+.PP
+Fill a specified color area with another color\&. This function fill a color area with another color\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where area to fill exist\&. 
+.br
+\fIpoint\fP Coordinate of the position to start to fill and the new color value\&. 
+.br
+\fItollerance\fP Tollerance to find the next pixel to fill
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_point_new\fP 
+.RE
+.PP
+
+.SS "void imel_image_fill_color_with_level (\fBImelImage\fP * image, \fBImelPoint\fP * point, \fBImelSize\fP tollerance)"
+
+.PP
+Fill a specified color area with another level\&. This function fill a specified color area with another level\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where area to fill exist\&. 
+.br
+\fIpoint\fP Coordinate of the position to start to fill and new level value\&. 
+.br
+\fItollerance\fP Tollerance to find the next pixel to fill
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_point_new\fP 
+.RE
+.PP
+
+.SS "void imel_image_fill_level_with_color (\fBImelImage\fP * image, \fBImelPoint\fP * point, \fBImelSize\fP tollerance)"
+
+.PP
+Fill a specified level area with another color\&. This function fill a specified level area with another color\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where area to fill exist\&. 
+.br
+\fIpoint\fP Coordinate of the position to start to fill and the new color value\&. 
+.br
+\fItollerance\fP Tollerance to find the next pixel to fill
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_point_new\fP 
+.RE
+.PP
+
+.SS "void imel_image_fill_level_with_level (\fBImelImage\fP * image, \fBImelPoint\fP * point, \fBImelSize\fP tollerance)"
+
+.PP
+Fill a specified level area with another level\&. This function fill a specified level area with another level\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where area to fill exist\&. 
+.br
+\fIpoint\fP Coordinate of the position to start to fill and new level value\&. 
+.br
+\fItollerance\fP Tollerance to find the next pixel to fill
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_point_new\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Imel from the source code\&.

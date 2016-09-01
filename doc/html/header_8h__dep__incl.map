@@ -1,0 +1,14 @@
+<map id="header.h" name="header.h">
+<area shape="rect" id="node2" href="$color_8c.html" title="This file contains functions to operate with colors. " alt="" coords="5,80,67,107"/>
+<area shape="rect" id="node3" href="$draw_8c.html" title="This file contains functions to draw. " alt="" coords="91,80,152,107"/>
+<area shape="rect" id="node4" href="$font_8c.html" title="This file contains function to use fonts in an image. " alt="" coords="177,80,231,107"/>
+<area shape="rect" id="node5" href="$image_8c.html" title="This file contains functions to elaborate images. " alt="" coords="255,80,323,107"/>
+<area shape="rect" id="node6" href="$image__fill_8c.html" title="This file contains functions to fill areas of an image. " alt="" coords="348,80,436,107"/>
+<area shape="rect" id="node7" href="$image__new__from_8c.html" title="This file contains function to load different image format. " alt="" coords="461,80,593,107"/>
+<area shape="rect" id="node8" href="$image__save_8c.html" title="This file contains function to save in different image format. " alt="" coords="617,80,719,107"/>
+<area shape="rect" id="node9" href="$info__cut_8c.html" title="This file contains functions to operate with guide lines. " alt="" coords="743,80,822,107"/>
+<area shape="rect" id="node10" href="$miscellaneous_8c.html" title="This file contains miscellaneus function. " alt="" coords="846,80,962,107"/>
+<area shape="rect" id="node11" href="$pixel_8c.html" title="This file contains functions to operate with guide lines. " alt="" coords="986,80,1046,107"/>
+<area shape="rect" id="node12" href="$point_8c.html" title="This file contains functions to operate with points. " alt="" coords="1071,80,1132,107"/>
+<area shape="rect" id="node13" href="$value_8c.html" title="This file contains functions to convert values. " alt="" coords="1156,80,1220,107"/>
+</map>

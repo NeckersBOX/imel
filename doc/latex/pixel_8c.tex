@@ -1,0 +1,390 @@
+\hypertarget{pixel_8c}{}\section{pixel.\+c File Reference}
+\label{pixel_8c}\index{pixel.\+c@{pixel.\+c}}
+
+
+This file contains functions to operate with guide lines.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}header.\+h\char`\"{}}\\*
+Include dependency graph for pixel.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pixel_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} \hyperlink{pixel_8c_acafccb8e6ccf0cb329498d8343ba1775}{imel\+\_\+pixel\+\_\+union} (\hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} a, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} b, unsigned char \+\_\+opacity)
+\begin{DoxyCompactList}\small\item\em Join two pixel with a chosen opacity. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} \hyperlink{pixel_8c_aaf2dba6a30b6612b7c1730195935a88d}{imel\+\_\+pixel\+\_\+new} (\hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} red, \hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} green, \hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} blue, \hyperlink{header_8h_a97bc4b146a807c2d83b966983132f4fc}{Imel\+Level} level)
+\begin{DoxyCompactList}\small\item\em Make a new pixel. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} \hyperlink{pixel_8c_a0d1c4cb614847e8084854f40d05d0eb7}{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+string} (const char $\ast$string, \hyperlink{header_8h_a97bc4b146a807c2d83b966983132f4fc}{Imel\+Level} level)
+\begin{DoxyCompactList}\small\item\em Make a new pixel from a string. \end{DoxyCompactList}\item 
+void \hyperlink{pixel_8c_a46e21819169c162fbea522318638770a}{imel\+\_\+pixel\+\_\+set} (\hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} $\ast$pixel, \hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} red, \hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} green, \hyperlink{header_8h_add1326f75f0c1a7da9f14c2ed4f673e9}{Imel\+Color} blue, \hyperlink{header_8h_a97bc4b146a807c2d83b966983132f4fc}{Imel\+Level} level)
+\begin{DoxyCompactList}\small\item\em Set a new value for a pixel. \end{DoxyCompactList}\item 
+double \hyperlink{pixel_8c_a99414f31f8c6163710380d1c680e6360}{imel\+\_\+pixel\+\_\+get\+\_\+distance} (\hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} a, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} b)
+\begin{DoxyCompactList}\small\item\em Get the chromatic distance between two colors. \end{DoxyCompactList}\item 
+void \hyperlink{pixel_8c_ae756974e96560e68b72efa41aafd3d4a}{imel\+\_\+pixel\+\_\+set\+\_\+from\+\_\+pixel} (\hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} $\ast$pixel, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pxl)
+\begin{DoxyCompactList}\small\item\em Copy the values of a pixel in another one. \end{DoxyCompactList}\item 
+void \hyperlink{pixel_8c_af690161266179d255e4f8394b74ef08f}{imel\+\_\+pixel\+\_\+set\+\_\+from\+\_\+string} (\hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} $\ast$pixel, const char $\ast$string, \hyperlink{header_8h_a97bc4b146a807c2d83b966983132f4fc}{Imel\+Level} level)
+\begin{DoxyCompactList}\small\item\em Set a new value for a pixel from a string. \end{DoxyCompactList}\item 
+void \hyperlink{pixel_8c_a9bc6aa8b3ec663f1635827b0ebbdf46a}{imel\+\_\+pixel\+\_\+copy} (\hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} $\ast$dest, \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} src)
+\begin{DoxyCompactList}\small\item\em Copy a pixel over another one. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{pixel_8c_aae8d738e5cfe03ae694e794fa98665c2}{imel\+\_\+pixel\+\_\+compare\+\_\+level} (\hyperlink{header_8h_a97bc4b146a807c2d83b966983132f4fc}{Imel\+Level} a, \hyperlink{header_8h_a97bc4b146a807c2d83b966983132f4fc}{Imel\+Level} b, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} tollerance)
+\begin{DoxyCompactList}\small\item\em Compare two level. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{pixel_8c_af80946758bc4a2dafe9b374b465460db}{imel\+\_\+pixel\+\_\+get\+\_\+rgba} (\hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} pxl)
+\begin{DoxyCompactList}\small\item\em Convert an Imel\+Pixel in a single R\+G\+BA variable. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} \hyperlink{pixel_8c_af701f338fec84020c7e812f7c1eb84df}{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+rgba} (uint32\+\_\+t rgba)
+\begin{DoxyCompactList}\small\item\em Convert an R\+G\+BA variable in a Imel\+Pixel type. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} \hyperlink{pixel_8c_a8ba2bb2ac90703240cd2c7556a4b9680}{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+hsl} (\hyperlink{header_8h_a851541a4411924d91d8abd55939c3b23}{Imel\+H\+SL} value)
+\begin{DoxyCompactList}\small\item\em Convert an Imel\+H\+SL in a Imel\+Pixel type. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a851541a4411924d91d8abd55939c3b23}{Imel\+H\+SL} \hyperlink{pixel_8c_a29873cfd499af84deec32931e77e178e}{imel\+\_\+pixel\+\_\+get\+\_\+hsl} (\hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} p)
+\begin{DoxyCompactList}\small\item\em Convert an Imel\+Pixel in a Imel\+H\+SL type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains functions to operate with guide lines. 
+
+\begin{DoxyAuthor}{Author}
+Davide Francesco Merico 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\index{pixel.\+c@{pixel.\+c}!imel\+\_\+pixel\+\_\+compare\+\_\+level@{imel\+\_\+pixel\+\_\+compare\+\_\+level}}
+\index{imel\+\_\+pixel\+\_\+compare\+\_\+level@{imel\+\_\+pixel\+\_\+compare\+\_\+level}!pixel.\+c@{pixel.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+pixel\+\_\+compare\+\_\+level(\+Imel\+Level a, Imel\+Level b, Imel\+Size tollerance)}{imel_pixel_compare_level(ImelLevel a, ImelLevel b, ImelSize tollerance)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+pixel\+\_\+compare\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Level}}]{a, }
+\item[{{\bf Imel\+Level}}]{b, }
+\item[{{\bf Imel\+Size}}]{tollerance}
+\end{DoxyParamCaption}
+)}\hypertarget{pixel_8c_aae8d738e5cfe03ae694e794fa98665c2}{}\label{pixel_8c_aae8d738e5cfe03ae694e794fa98665c2}
+
+
+Compare two level. 
+
+This function compare the levels {\ttfamily a} and {\ttfamily b} with a chosen {\ttfamily tollerance}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First Level \\
+\hline
+{\em b} & Second level \\
+\hline
+{\em tollerance} & Tollerance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if $(b-tollerance)\leq(a)\leq(b+tollerance)$, else F\+A\+L\+SE. 
+\end{DoxyReturn}
+\index{pixel.\+c@{pixel.\+c}!imel\+\_\+pixel\+\_\+copy@{imel\+\_\+pixel\+\_\+copy}}
+\index{imel\+\_\+pixel\+\_\+copy@{imel\+\_\+pixel\+\_\+copy}!pixel.\+c@{pixel.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+pixel\+\_\+copy(\+Imel\+Pixel $\ast$dest, Imel\+Pixel src)}{imel_pixel_copy(ImelPixel *dest, ImelPixel src)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+pixel\+\_\+copy (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Pixel} $\ast$}]{dest, }
+\item[{{\bf Imel\+Pixel}}]{src}
+\end{DoxyParamCaption}
+)}\hypertarget{pixel_8c_a9bc6aa8b3ec663f1635827b0ebbdf46a}{}\label{pixel_8c_a9bc6aa8b3ec663f1635827b0ebbdf46a}
+
+
+Copy a pixel over another one. 
+
+This function copy {\ttfamily src} on {\ttfamily dest} only if {\ttfamily src-\/$>$level} is equal or greater then {\ttfamily dest-\/$>$level}. If {\ttfamily src-\/$>$level} is an alpha value call \hyperlink{pixel_8c_acafccb8e6ccf0cb329498d8343ba1775}{imel\+\_\+pixel\+\_\+union} function to copy the element.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & Destination pixel \\
+\hline
+{\em src} & Source pixel \\
+\hline
+\end{DoxyParams}
+\index{pixel.\+c@{pixel.\+c}!imel\+\_\+pixel\+\_\+get\+\_\+distance@{imel\+\_\+pixel\+\_\+get\+\_\+distance}}
+\index{imel\+\_\+pixel\+\_\+get\+\_\+distance@{imel\+\_\+pixel\+\_\+get\+\_\+distance}!pixel.\+c@{pixel.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+pixel\+\_\+get\+\_\+distance(\+Imel\+Pixel a, Imel\+Pixel b)}{imel_pixel_get_distance(ImelPixel a, ImelPixel b)}}]{\setlength{\rightskip}{0pt plus 5cm}double imel\+\_\+pixel\+\_\+get\+\_\+distance (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Pixel}}]{a, }
+\item[{{\bf Imel\+Pixel}}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{pixel_8c_a99414f31f8c6163710380d1c680e6360}{}\label{pixel_8c_a99414f31f8c6163710380d1c680e6360}
+
+
+Get the chromatic distance between two colors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Fist color \\
+\hline
+{\em b} & Second color \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Chromatic distance between {\ttfamily a} and {\ttfamily b} 
+\end{DoxyReturn}
+\index{pixel.\+c@{pixel.\+c}!imel\+\_\+pixel\+\_\+get\+\_\+hsl@{imel\+\_\+pixel\+\_\+get\+\_\+hsl}}
+\index{imel\+\_\+pixel\+\_\+get\+\_\+hsl@{imel\+\_\+pixel\+\_\+get\+\_\+hsl}!pixel.\+c@{pixel.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+pixel\+\_\+get\+\_\+hsl(\+Imel\+Pixel p)}{imel_pixel_get_hsl(ImelPixel p)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+H\+SL} imel\+\_\+pixel\+\_\+get\+\_\+hsl (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Pixel}}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{pixel_8c_a29873cfd499af84deec32931e77e178e}{}\label{pixel_8c_a29873cfd499af84deec32931e77e178e}
+
+
+Convert an Imel\+Pixel in a Imel\+H\+SL type. 
+
+This function converts {\ttfamily pxl} data in a H\+SL rappresentation that contains Hue, Saturation and Luminosity values. This conversion loss information on level values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Pixel to convert in a \hyperlink{header_8h_a851541a4411924d91d8abd55939c3b23}{Imel\+H\+SL} type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{header_8h_a851541a4411924d91d8abd55939c3b23}{Imel\+H\+SL}
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{pixel_8c_a8ba2bb2ac90703240cd2c7556a4b9680}{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+hsl} 
+\end{DoxySeeAlso}
+\index{pixel.\+c@{pixel.\+c}!imel\+\_\+pixel\+\_\+get\+\_\+rgba@{imel\+\_\+pixel\+\_\+get\+\_\+rgba}}
+\index{imel\+\_\+pixel\+\_\+get\+\_\+rgba@{imel\+\_\+pixel\+\_\+get\+\_\+rgba}!pixel.\+c@{pixel.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+pixel\+\_\+get\+\_\+rgba(\+Imel\+Pixel pxl)}{imel_pixel_get_rgba(ImelPixel pxl)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t imel\+\_\+pixel\+\_\+get\+\_\+rgba (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Pixel}}]{pxl}
+\end{DoxyParamCaption}
+)}\hypertarget{pixel_8c_af80946758bc4a2dafe9b374b465460db}{}\label{pixel_8c_af80946758bc4a2dafe9b374b465460db}
+
+
+Convert an Imel\+Pixel in a single R\+G\+BA variable. 
+
+This function converts {\ttfamily pxl} data in a single 32 bit variable that contains R\+G\+BA values. This conversion loss information on level values different from $[0,-255]$ range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pxl} & Pixel to convert in a R\+G\+BA value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A 32 bit variable with {\ttfamily pxl} data
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_a2505069f13628a303bdf360de2d8490f}{R\+G\+B\+A\+\_\+\+R\+\_\+\+M\+A\+SK} 
+
+\hyperlink{header_8h_a632c40a96aac3972b668bb536fb1af06}{R\+G\+B\+A\+\_\+\+G\+\_\+\+M\+A\+SK} 
+
+\hyperlink{header_8h_ade6c182c68e6a0a7638eb05a6143f3f0}{R\+G\+B\+A\+\_\+\+B\+\_\+\+M\+A\+SK} 
+
+\hyperlink{header_8h_ac837716be1eb4f0071c03b7b4b4fb2b0}{R\+G\+B\+A\+\_\+\+A\+\_\+\+M\+A\+SK} 
+
+\hyperlink{pixel_8c_af701f338fec84020c7e812f7c1eb84df}{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+rgba} 
+\end{DoxySeeAlso}
+\index{pixel.\+c@{pixel.\+c}!imel\+\_\+pixel\+\_\+new@{imel\+\_\+pixel\+\_\+new}}
+\index{imel\+\_\+pixel\+\_\+new@{imel\+\_\+pixel\+\_\+new}!pixel.\+c@{pixel.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+pixel\+\_\+new(\+Imel\+Color red, Imel\+Color green, Imel\+Color blue, Imel\+Level level)}{imel_pixel_new(ImelColor red, ImelColor green, ImelColor blue, ImelLevel level)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Pixel} imel\+\_\+pixel\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Color}}]{red, }
+\item[{{\bf Imel\+Color}}]{green, }
+\item[{{\bf Imel\+Color}}]{blue, }
+\item[{{\bf Imel\+Level}}]{level}
+\end{DoxyParamCaption}
+)}\hypertarget{pixel_8c_aaf2dba6a30b6612b7c1730195935a88d}{}\label{pixel_8c_aaf2dba6a30b6612b7c1730195935a88d}
+
+
+Make a new pixel. 
+
+This function makes a new pixel with a R\+GB value and level specified.
+
+
+\begin{DoxyParams}{Parameters}
+{\em red} & Red channel. Values between 0 and 255 \\
+\hline
+{\em green} & Green channel. Values between 0 and 255 \\
+\hline
+{\em blue} & Blue channel. Values between 0 and 255 \\
+\hline
+{\em level} & Level for values between 0 and 2147483647. Alpha for values between 0 and -\/255. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} type. 
+\end{DoxyReturn}
+\index{pixel.\+c@{pixel.\+c}!imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+hsl@{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+hsl}}
+\index{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+hsl@{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+hsl}!pixel.\+c@{pixel.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+hsl(\+Imel\+H\+S\+L value)}{imel_pixel_new_from_hsl(ImelHSL value)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Pixel} imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+hsl (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+H\+SL}}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{pixel_8c_a8ba2bb2ac90703240cd2c7556a4b9680}{}\label{pixel_8c_a8ba2bb2ac90703240cd2c7556a4b9680}
+
+
+Convert an Imel\+H\+SL in a Imel\+Pixel type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \hyperlink{header_8h_a851541a4411924d91d8abd55939c3b23}{Imel\+H\+SL} type to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} type with level set to 0.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{pixel_8c_a29873cfd499af84deec32931e77e178e}{imel\+\_\+pixel\+\_\+get\+\_\+hsl} 
+\end{DoxySeeAlso}
+\index{pixel.\+c@{pixel.\+c}!imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+rgba@{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+rgba}}
+\index{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+rgba@{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+rgba}!pixel.\+c@{pixel.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+rgba(uint32\+\_\+t rgba)}{imel_pixel_new_from_rgba(uint32_t rgba)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Pixel} imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+rgba (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{rgba}
+\end{DoxyParamCaption}
+)}\hypertarget{pixel_8c_af701f338fec84020c7e812f7c1eb84df}{}\label{pixel_8c_af701f338fec84020c7e812f7c1eb84df}
+
+
+Convert an R\+G\+BA variable in a Imel\+Pixel type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rgba} & R\+G\+BA variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} type
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{header_8h_a2505069f13628a303bdf360de2d8490f}{R\+G\+B\+A\+\_\+\+R\+\_\+\+M\+A\+SK} 
+
+\hyperlink{header_8h_a632c40a96aac3972b668bb536fb1af06}{R\+G\+B\+A\+\_\+\+G\+\_\+\+M\+A\+SK} 
+
+\hyperlink{header_8h_ade6c182c68e6a0a7638eb05a6143f3f0}{R\+G\+B\+A\+\_\+\+B\+\_\+\+M\+A\+SK} 
+
+\hyperlink{header_8h_ac837716be1eb4f0071c03b7b4b4fb2b0}{R\+G\+B\+A\+\_\+\+A\+\_\+\+M\+A\+SK} 
+
+\hyperlink{pixel_8c_af80946758bc4a2dafe9b374b465460db}{imel\+\_\+pixel\+\_\+get\+\_\+rgba} 
+\end{DoxySeeAlso}
+\index{pixel.\+c@{pixel.\+c}!imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+string@{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+string}}
+\index{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+string@{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+string}!pixel.\+c@{pixel.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+string(const char $\ast$string, Imel\+Level level)}{imel_pixel_new_from_string(const char *string, ImelLevel level)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Pixel} imel\+\_\+pixel\+\_\+new\+\_\+from\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{string, }
+\item[{{\bf Imel\+Level}}]{level}
+\end{DoxyParamCaption}
+)}\hypertarget{pixel_8c_a0d1c4cb614847e8084854f40d05d0eb7}{}\label{pixel_8c_a0d1c4cb614847e8084854f40d05d0eb7}
+
+
+Make a new pixel from a string. 
+
+This function makes a new pixel with a R\+GB value specified from a string in H\+T\+ML format \textquotesingle{}\#rrggbb\textquotesingle{} and level specified separately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Color in H\+T\+ML format \\
+\hline
+{\em level} & Level for values between 0 and 2147483647. Alpha for values between 0 and -\/255. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} type. 
+\end{DoxyReturn}
+\index{pixel.\+c@{pixel.\+c}!imel\+\_\+pixel\+\_\+set@{imel\+\_\+pixel\+\_\+set}}
+\index{imel\+\_\+pixel\+\_\+set@{imel\+\_\+pixel\+\_\+set}!pixel.\+c@{pixel.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+pixel\+\_\+set(\+Imel\+Pixel $\ast$pixel, Imel\+Color red, Imel\+Color green, Imel\+Color blue, Imel\+Level level)}{imel_pixel_set(ImelPixel *pixel, ImelColor red, ImelColor green, ImelColor blue, ImelLevel level)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+pixel\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Pixel} $\ast$}]{pixel, }
+\item[{{\bf Imel\+Color}}]{red, }
+\item[{{\bf Imel\+Color}}]{green, }
+\item[{{\bf Imel\+Color}}]{blue, }
+\item[{{\bf Imel\+Level}}]{level}
+\end{DoxyParamCaption}
+)}\hypertarget{pixel_8c_a46e21819169c162fbea522318638770a}{}\label{pixel_8c_a46e21819169c162fbea522318638770a}
+
+
+Set a new value for a pixel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pixel} & Pixel to modify \\
+\hline
+{\em red} & Red channel. Values between 0 and 255 \\
+\hline
+{\em green} & Green channel. Values between 0 and 255 \\
+\hline
+{\em blue} & Blue channel. Values between 0 and 255 \\
+\hline
+{\em level} & Level for values between 0 and 2147483647. Alpha for values between 0 and -\/255. \\
+\hline
+\end{DoxyParams}
+\index{pixel.\+c@{pixel.\+c}!imel\+\_\+pixel\+\_\+set\+\_\+from\+\_\+pixel@{imel\+\_\+pixel\+\_\+set\+\_\+from\+\_\+pixel}}
+\index{imel\+\_\+pixel\+\_\+set\+\_\+from\+\_\+pixel@{imel\+\_\+pixel\+\_\+set\+\_\+from\+\_\+pixel}!pixel.\+c@{pixel.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+pixel\+\_\+set\+\_\+from\+\_\+pixel(\+Imel\+Pixel $\ast$pixel, Imel\+Pixel pxl)}{imel_pixel_set_from_pixel(ImelPixel *pixel, ImelPixel pxl)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+pixel\+\_\+set\+\_\+from\+\_\+pixel (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Pixel} $\ast$}]{pixel, }
+\item[{{\bf Imel\+Pixel}}]{pxl}
+\end{DoxyParamCaption}
+)}\hypertarget{pixel_8c_ae756974e96560e68b72efa41aafd3d4a}{}\label{pixel_8c_ae756974e96560e68b72efa41aafd3d4a}
+
+
+Copy the values of a pixel in another one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pixel} & Pixel to set equal to {\ttfamily pxl} \\
+\hline
+{\em pxl} & Pixel to copy \\
+\hline
+\end{DoxyParams}
+\index{pixel.\+c@{pixel.\+c}!imel\+\_\+pixel\+\_\+set\+\_\+from\+\_\+string@{imel\+\_\+pixel\+\_\+set\+\_\+from\+\_\+string}}
+\index{imel\+\_\+pixel\+\_\+set\+\_\+from\+\_\+string@{imel\+\_\+pixel\+\_\+set\+\_\+from\+\_\+string}!pixel.\+c@{pixel.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+pixel\+\_\+set\+\_\+from\+\_\+string(\+Imel\+Pixel $\ast$pixel, const char $\ast$string, Imel\+Level level)}{imel_pixel_set_from_string(ImelPixel *pixel, const char *string, ImelLevel level)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+pixel\+\_\+set\+\_\+from\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Pixel} $\ast$}]{pixel, }
+\item[{const char $\ast$}]{string, }
+\item[{{\bf Imel\+Level}}]{level}
+\end{DoxyParamCaption}
+)}\hypertarget{pixel_8c_af690161266179d255e4f8394b74ef08f}{}\label{pixel_8c_af690161266179d255e4f8394b74ef08f}
+
+
+Set a new value for a pixel from a string. 
+
+This function sets new values for {\ttfamily pixel} from a string in H\+T\+ML format \textquotesingle{}\#rrggbb\textquotesingle{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pixel} & Pixel to modify \\
+\hline
+{\em string} & Color in H\+T\+ML format \\
+\hline
+{\em level} & Level for values between 0 and 2147483647. Alpha for values between 0 and -\/255. \\
+\hline
+\end{DoxyParams}
+\index{pixel.\+c@{pixel.\+c}!imel\+\_\+pixel\+\_\+union@{imel\+\_\+pixel\+\_\+union}}
+\index{imel\+\_\+pixel\+\_\+union@{imel\+\_\+pixel\+\_\+union}!pixel.\+c@{pixel.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+pixel\+\_\+union(\+Imel\+Pixel a, Imel\+Pixel b, unsigned char \+\_\+opacity)}{imel_pixel_union(ImelPixel a, ImelPixel b, unsigned char _opacity)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Imel\+Pixel} imel\+\_\+pixel\+\_\+union (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Pixel}}]{a, }
+\item[{{\bf Imel\+Pixel}}]{b, }
+\item[{unsigned char}]{\+\_\+opacity}
+\end{DoxyParamCaption}
+)}\hypertarget{pixel_8c_acafccb8e6ccf0cb329498d8343ba1775}{}\label{pixel_8c_acafccb8e6ccf0cb329498d8343ba1775}
+
+
+Join two pixel with a chosen opacity. 
+
+This function join pixel {\ttfamily a} with pixel {\ttfamily b} given to it a chosen {\ttfamily \+\_\+opacity}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Base pixel \\
+\hline
+{\em b} & Pixel to join with {\ttfamily a} \\
+\hline
+{\em \+\_\+opacity} & Opacity of pixel {\ttfamily b}. Values between 0, transparent, and 255. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{header_8h_add7dd9f8c093208bc4fd135a22a670ba}{Imel\+Pixel} type. 
+\end{DoxyReturn}

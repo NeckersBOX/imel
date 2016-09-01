@@ -1,0 +1,1359 @@
+.TH "image.c" 3 "Thu Sep 1 2016" "Version 3.0" "Imel" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+image.c \- This file contains functions to elaborate images\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <errno\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <ctype\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include 'header\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new\fP (\fBImelSize\fP width, \fBImelSize\fP height)"
+.br
+.RI "\fIMake a new image\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_new_with_background_color\fP (\fBImelSize\fP width, \fBImelSize\fP height, \fBImelPixel\fP pixel)"
+.br
+.RI "\fIMake a new image with background color and level specified\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_copy\fP (\fBImelImage\fP *image)"
+.br
+.RI "\fIDuplicate an image\&. \fP"
+.ti -1c
+.RI "\fBImelSize\fP \fBimel_image_get_width\fP (\fBImelImage\fP *image)"
+.br
+.RI "\fIGet image width\&. \fP"
+.ti -1c
+.RI "\fBImelSize\fP \fBimel_image_get_height\fP (\fBImelImage\fP *image)"
+.br
+.RI "\fIGet image height\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_free\fP (\fBImelImage\fP *image)"
+.br
+.RI "\fIFree an image\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_apply_effect\fP (\fBImelImage\fP *image, \fBImelEffect\fP effect,\&.\&.\&.)"
+.br
+.RI "\fIApply an effect to an image\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_apply_filter\fP (\fBImelImage\fP *image, \fBImelMask\fP mask)"
+.br
+.RI "\fIApply a filter to an image\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_apply_color\fP (\fBImelImage\fP *image, \fBImelColor\fP red, \fBImelColor\fP green, \fBImelColor\fP blue, \fBbool\fP mono)"
+.br
+.RI "\fIApply a color to an image\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_remove_base_color\fP (\fBImelImage\fP *image, \fBImelMask\fP mask)"
+.br
+.RI "\fIRemove a color\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_apply_color_from_string\fP (\fBImelImage\fP *image, const char *string, \fBbool\fP mono)"
+.br
+.RI "\fIApply a color from a string to an image\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_replace_color\fP (\fBImelImage\fP *image, \fBImelPixel\fP src, \fBImelPixel\fP dest, \fBImelSize\fP tollerance)"
+.br
+.RI "\fIReplace a color with an other one\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_replace_area_color\fP (\fBImelImage\fP *image, \fBImelPixel\fP src, \fBImelPixel\fP dest, \fBImelSize\fP tollerance, \fBImelSize\fP _x1, \fBImelSize\fP _y1, \fBImelSize\fP _x2, \fBImelSize\fP _y2)"
+.br
+.RI "\fIReplace a color with an other one in a specified area\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_resize\fP (\fBImelImage\fP *image, \fBImelSize\fP width, \fBImelSize\fP height)"
+.br
+.RI "\fIResize an image\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_rotate_to_left\fP (\fBImelImage\fP *image)"
+.br
+.RI "\fIRotate an image to left\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_rotate_to_right\fP (\fBImelImage\fP *image)"
+.br
+.RI "\fIRotate an image to right\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_rotate_complete\fP (\fBImelImage\fP *image)"
+.br
+.RI "\fIRotate an image to 180 degrees\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_mirror_horizontal\fP (\fBImelImage\fP *image)"
+.br
+.RI "\fIMirror an image to horizontal\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_mirror_vertical\fP (\fBImelImage\fP *image)"
+.br
+.RI "\fIMirror an image to vertical\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_rotate\fP (\fBImelImage\fP *image, double rotate_rad)"
+.br
+.RI "\fIRotate an image to a chosen angle\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_perspective\fP (\fBImelImage\fP *image, double rad_angle, \fBImelOrientation\fP orientation)"
+.br
+.RI "\fIMakes an horizontal or vertical perspective\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_cut\fP (\fBImelImage\fP *image, \fBImelSize\fP sx, \fBImelSize\fP sy, \fBImelSize\fP ex, \fBImelSize\fP ey)"
+.br
+.RI "\fICut an image\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP ** \fBimel_image_cut_grid\fP (\fBImelImage\fP *image, \fBImelInfoCut\fP *cut_info)"
+.br
+.RI "\fICut an image in more images\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_auto_cut\fP (\fBImelImage\fP *image, \fBImelSize\fP tollerance, \fBImelRef\fP reference,\&.\&.\&.)"
+.br
+.RI "\fICut automatically an image\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_insert_image\fP (\fBImelImage\fP *dest, \fBImelImage\fP *src, \fBImelSize\fP sx, \fBImelSize\fP sy)"
+.br
+.RI "\fIInsert an image in another one\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_apply_logic_operation\fP (\fBImelImage\fP *img1, \fBImelImage\fP *img2, \fBImelLogicOperation\fP logic_operation)"
+.br
+.RI "\fIApply a logic operation between two images\&. \fP"
+.ti -1c
+.RI "int * \fBimel_image_get_histogram\fP (\fBImelImage\fP *image, \fBImelHistogram\fP histogram_type)"
+.br
+.RI "\fIGet histogram values from an image\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_get_histogram_image\fP (\fBImelImage\fP *image, int *__histogram, \fBImelHistogram\fP histogram_type)"
+.br
+.RI "\fIMake an histogram image for an image chosen\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_get_histograms_image\fP (\fBImelImage\fP *image, \fBImelHistogramLayout\fP layout)"
+.br
+.RI "\fIMake all types of histogram of an image\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_change_level\fP (\fBImelImage\fP *image, \fBImelLevelOperation\fP level_operation, \fBImelLevel\fP level)"
+.br
+.RI "\fIChange level of an image\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_change_color_level\fP (\fBImelImage\fP *image, \fBImelLevelOperation\fP level_operation, \fBImelLevel\fP level, \fBImelPixel\fP color_pxl, \fBImelColor\fP tollerance)"
+.br
+.RI "\fIChange level to a specified color\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_apply_convolution\fP (\fBImelImage\fP *image, double **filter, int width, int height, double factor, double bias)"
+.br
+.RI "\fIApply a convolution matrix to an image\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_apply_pattern\fP (\fBImelImage\fP *image, \fBImelImage\fP *pattern, \fBImelPatternOperation\fP operation)"
+.br
+.RI "\fIApply a pattern to an imaage\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_union\fP (\fBImelImage\fP *img1, \fBImelImage\fP *img2, unsigned char opacity, \fBImelAlignment\fP alignment)"
+.br
+.RI "\fIInsert an image in another with a chosen opacity\&. \fP"
+.ti -1c
+.RI "\fBImelImage\fP * \fBimel_image_slant\fP (\fBImelImage\fP *image, \fBImelSize\fP x0, \fBImelSize\fP y0, \fBImelSize\fP x1, \fBImelSize\fP y1, \fBImelOrientation\fP orientation, \fBbool\fP lengthens)"
+.br
+.RI "\fISlant an image or a small area inside it\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_shift\fP (\fBImelImage\fP *image, \fBImelOrientation\fP orientation, long int move_pxl, \fBbool\fP lengthens)"
+.br
+.RI "\fIShift an image\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_shift_lines\fP (\fBImelImage\fP *image, \fBImelOrientation\fP move_type, \fBImelSize\fP line, \fBImelSize\fP width, long int move_pixel, \fBbool\fP lengthens)"
+.br
+.RI "\fIShift only some image lines\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_shift_bpc\fP (\fBImelImage\fP *image, int bpc_shift_red, int bpc_shift_green, int bpc_shift_blue)"
+.br
+.RI "\fIShift the RGB values of an image\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_remove_noise\fP (\fBImelImage\fP *image, \fBImelSize\fP size_q, \fBImelMask\fP mask, \fBImelColor\fP tollerance)"
+.br
+.RI "\fIRemove noise from an image\&. \fP"
+.ti -1c
+.RI "void \fBimel_image_apply_noise\fP (\fBImelImage\fP *image, \fBImelColor\fP noise_range, \fBImelSize\fP noise_quantity, \fBImelMask\fP mask, \fBImelNoiseOperation\fP operation, \fBbool\fP nepc)"
+.br
+.RI "\fIApply a noise to an image\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file contains functions to elaborate images\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Davide Francesco Merico 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "void imel_image_apply_color (\fBImelImage\fP * image, \fBImelColor\fP red, \fBImelColor\fP green, \fBImelColor\fP blue, \fBbool\fP mono)"
+
+.PP
+Apply a color to an image\&. This function apply a chosen color to the \fCimage\fP\&. It can be set as unique color or as reference to existed color in \fCimage\fP\&.
+.PP
+.PP
+.nf
+1 ImelImage *image = imel_image_new_from ("image\&.jpg", 0, NULL);
+2 
+3 imel_image_apply_color (image, 0xfd, 0xb4, 0x55, false);
+4 \&.\&.\&.
+5 imel_image_apply_color (image, 0xfd, 0xb4, ox55, true);
+.fi
+.PP
+ Original ImagePassed FALSE as last argumentPassed TRUE as last argumentOriginal ImagePassed FALSE as last argumentPassed TRUE as last argument
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image on which apply the color 
+.br
+\fIred\fP Red channel of the color to apply 
+.br
+\fIgreen\fP Green channel of the color to apply 
+.br
+\fIblue\fP Blue channel of the color to apply 
+.br
+\fImono\fP TRUE if the color chosen is the only color of the image, else FALSE 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_apply_color_from_string\fP 
+.RE
+.PP
+
+.SS "void imel_image_apply_color_from_string (\fBImelImage\fP * image, const char * string, \fBbool\fP mono)"
+
+.PP
+Apply a color from a string to an image\&. This function apply a chosen color from a string to the \fCimage\fP\&. It can be set as unique color or as reference to existed color in \fCimage\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image on which apply the color 
+.br
+\fIstring\fP Color to apply to the image in HTML format ( '#rrggbb' ) 
+.br
+\fImono\fP TRUE if the color chosen is the only color of the image, else FALSE 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_apply_color\fP 
+.RE
+.PP
+
+.SS "void imel_image_apply_convolution (\fBImelImage\fP * image, double ** filter, int width, int height, double factor, double bias)"
+
+.PP
+Apply a convolution matrix to an image\&. This function apply a convolution matrix of chosen size to \fCimage\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to apply the \fCfilter\fP 
+.br
+\fIfilter\fP Convolution matrix 
+.br
+\fIwidth\fP Width of matrix 
+.br
+\fIheight\fP Height of matrix 
+.br
+\fIfactor\fP Multiply factor 
+.br
+\fIbias\fP Offset to apply to matrix
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+https://en.wikipedia.org/wiki/Kernel_(image_processing) 
+.RE
+.PP
+
+.SS "void imel_image_apply_effect (\fBImelImage\fP * image, \fBImelEffect\fP effect,  \&.\&.\&.)"
+
+.PP
+Apply an effect to an image\&. This function apply the \fCeffect\fP to the \fCimage\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image on which apply the \fCeffect\fP 
+.br
+\fIeffect\fP Effect to apply to the \fCimage\fP 
+.br
+\fI\&.\&.\&.\fP Options for the \fCeffect\fP 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelEffect\fP 
+.RE
+.PP
+
+.SS "void imel_image_apply_filter (\fBImelImage\fP * image, \fBImelMask\fP mask)"
+
+.PP
+Apply a filter to an image\&. This function set to 255 the channel, or the channels, specified as \fCmask\fP\&.
+.PP
+.PP
+.nf
+1 ImelImage *image = imel_image_new_from ("image\&.jpg", 0, NULL);
+2 
+3 imel_image_apply_filter (image, IMEL_MASK_RED | IMEL_MASK_BLUE);
+.fi
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image on which apply the filter 
+.br
+\fImask\fP Channel, or channels, to set to 255\&. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelMask\fP 
+.PP
+\fBimel_image_remove_base_color\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_apply_logic_operation (\fBImelImage\fP * img1, \fBImelImage\fP * img2, \fBImelLogicOperation\fP logic_operation)"
+
+.PP
+Apply a logic operation between two images\&. This function apply the \fClogic_operation\fP to \fCimg1\fP and \fCimg2\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimg1\fP First image 
+.br
+\fIimg2\fP Second image 
+.br
+\fIlogic_operation\fP Type of operation 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+An image result from the operation between \fCimg1\fP and \fCimg2\fP 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelLogicOperation\fP 
+.RE
+.PP
+
+.SS "void imel_image_apply_noise (\fBImelImage\fP * image, \fBImelColor\fP noise_range, \fBImelSize\fP noise_quantity, \fBImelMask\fP mask, \fBImelNoiseOperation\fP operation, \fBbool\fP nepc)"
+
+.PP
+Apply a noise to an image\&. This function apply a noise to \fCimage\fP at one or more RGB channels\&.
+.PP
+.PP
+.nf
+1 ImelImage *image = imel_image_new_from ("apply_noise\&.jpg", 0, NULL);
+2 ImelMask mask = IMEL_MASK_RED | IMEL_MASK_GREEN | IMEL_MASK_BLUE;
+3 
+4 imel_image_apply_noise (image, 90, 30, mask, IMEL_NOISE_OPERATION_SUM, false);
+.fi
+.PP
+ Input ImageResult ImageInput ImageResult Image 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to apply the noise 
+.br
+\fInoise_range\fP Value for \fCoperation\fP\&. This value specifies the max value can be added, subtracted, multiply or divided when noise is applied\&. 
+.br
+\fInoise_quantity\fP Specifies how much noise can be applied randomly to image\&. Values: 1 for apply the noise to each pixel, 4294967295 is the max value\&. 
+.br
+\fImask\fP Channels affected from noise\&. 
+.br
+\fIoperation\fP Operation to do when apply the noise 
+.br
+\fInepc\fP If TRUE apply the noise value calculated to each RGB channel specified, else each noise value will be calculated separately\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelNoiseOperation\fP 
+.PP
+\fBimel_image_remove_noise\fP 
+.RE
+.PP
+
+.SS "void imel_image_apply_pattern (\fBImelImage\fP * image, \fBImelImage\fP * pattern, \fBImelPatternOperation\fP operation)"
+
+.PP
+Apply a pattern to an imaage\&. This function apply an image \fCpattern\fP to \fCimage\fP with a chosen \fCoperation\fP\&.
+.PP
+.PP
+.nf
+1 ImelImage *pattern = imel_image_new_from ("pattern\&.png", 0, NULL);
+2 ImelImage *image = imel_image_new (150, 151);
+3 
+4 imel_image_apply_pattern (image, pattern, IMEL_PATTERN_OPERATION_INSERT);
+5 imel_image_free (pattern);
+.fi
+.PP
+ Pattern imageOutput imagePattern imageOutput image 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to apply \fCpattern\fP 
+.br
+\fIpattern\fP Pattern image 
+.br
+\fIoperation\fP Type of operation
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelPatternOperation\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_auto_cut (\fBImelImage\fP * image, \fBImelSize\fP tollerance, \fBImelRef\fP reference,  \&.\&.\&.)"
+
+.PP
+Cut automatically an image\&. This function cuts automatically an \fCimage\fP removing from the sides all the aereas with a specified color or level\&.
+.PP
+.PP
+.nf
+1 ImelImage *image, *cut_image;
+2 ImelPixel cut_pixel = { 16, 16, 16, -255 };
+3 
+4 image = imel_image_new_from ("image\&.bmp", 0, NULL);
+5 
+6 // Auto cut transparency
+7 cut_image = imel_image_auto_cut (image, 254, IMEL_REF_LEVEL, cut_pixel\&.level);
+8 imel_image_free (image);
+9       
+10 // Auto cut color ( {0, 0, 0} - {32, 32, 32} )
+11 image = imel_image_auto_cut (cut_image, 16, IMEL_REF_COLOR, cut_pixel);
+12 imel_image_free (cut_image);
+13 \&.\&.\&.
+14 imel_image_free (image);
+.fi
+.PP
+ Original ImageImage ResultOriginal ImageImage Result 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to cut 
+.br
+\fItollerance\fP Tollerance for level or color to remove\&. 
+.br
+\fIreference\fP Which type of cut do 
+.br
+\fI\&.\&.\&.\fP Level ( ImelSize ) or color ( ImelPixel ) to remove from the sides\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Cutted image\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_cut\fP 
+.PP
+\fBimel_image_cut_grid\fP 
+.PP
+\fBImelRef\fP 
+.RE
+.PP
+
+.SS "void imel_image_change_color_level (\fBImelImage\fP * image, \fBImelLevelOperation\fP level_operation, \fBImelLevel\fP level, \fBImelPixel\fP color_pxl, \fBImelColor\fP tollerance)"
+
+.PP
+Change level to a specified color\&. This function change the level value for each \fCimage\fP pixel that have a color equal or similar to \fCcolor_pxl\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to elaborate 
+.br
+\fIlevel_operation\fP Type of operation 
+.br
+\fIlevel\fP New level or value for \fClevel_operation\fP 
+.br
+\fIcolor_pxl\fP Color to change the level 
+.br
+\fItollerance\fP Tollerance to find \fCcolor\fP 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelLevelOperation\fP 
+.PP
+imel_pixel_compare 
+.PP
+\fBimel_image_change_level\fP 
+.RE
+.PP
+
+.SS "void imel_image_change_level (\fBImelImage\fP * image, \fBImelLevelOperation\fP level_operation, \fBImelLevel\fP level)"
+
+.PP
+Change level of an image\&. This function change the level of \fCimage\fP\&. It can be added or setted through the \fClevel_operation\fP argument\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to which change the level 
+.br
+\fIlevel_operation\fP Type of operation 
+.br
+\fIlevel\fP New level or value for \fClevel_operation\fP 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelLevelOperation\fP 
+.PP
+\fBimel_image_change_color_level\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_copy (\fBImelImage\fP * image)"
+
+.PP
+Duplicate an image\&. This function copy \fCimage\fP passed in a new one\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to copy 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new ImelImage equal to \fCimage\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_cut (\fBImelImage\fP * image, \fBImelSize\fP sx, \fBImelSize\fP sy, \fBImelSize\fP ex, \fBImelSize\fP ey)"
+
+.PP
+Cut an image\&. This function cuts \fCimage\fP from the coordinate \fCsx\fP, \fCsy\fP to the coordinate \fCex\fP, \fCey\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to cut 
+.br
+\fIsx\fP Start x coordinate 
+.br
+\fIsy\fP Start y coordinate 
+.br
+\fIex\fP End x coordinate 
+.br
+\fIey\fP End y coordinate 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new image with the \fCimage\fP cutted 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_auto_cut\fP 
+.PP
+\fBimel_image_cut_grid\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP** imel_image_cut_grid (\fBImelImage\fP * image, \fBImelInfoCut\fP * cut_info)"
+
+.PP
+Cut an image in more images\&. This function cut \fCimage\fP in more images through a guide lines passed as \fCcut_info\fP\&.
+.PP
+.PP
+.nf
+1 ImelImage *image = imel_image_new_from ("cut_orig\&.jpg", 0, NULL);
+2 ImelImage **tiles;
+3 ImelInfoCut *cut_info;
+4 int j;
+5 
+6 cut_info = imel_info_cut_new (IMEL_ORIENTATION_HORIZONTAL, 35);
+7 cut_info = imel_info_cut_add (cut_info, IMEL_ORIENTATION_HORIZONTAL, image->height - 35);
+8 cut_info = imel_info_cut_add (cut_info, IMEL_ORIENTATION_VERTICAL, 35);
+9 cut_info = imel_info_cut_add (cut_info, IMEL_ORIENTATION_VERTICAL, image->width - 35);
+10 
+11 tiles = imel_image_cut_grid (image, cut_info);
+12 imel_info_cut_free (cut_info);
+13 imel_image_free (image);
+14 \&.\&.\&.
+15 for ( j = 0; tiles[j]; imel_image_free (tiles[j]), j++ );
+16 free (tiles);
+.fi
+.PP
+ Original ImageResult ImagesOriginal ImageResult Images 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to cut 
+.br
+\fIcut_info\fP guide lines 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Cutted images in order inverse ( column, row ) inside a NULL-terminated LIFO array\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_cut\fP 
+.PP
+\fBimel_image_auto_cut\fP 
+.PP
+\fBimel_info_cut_new\fP 
+.PP
+\fBimel_info_cut_add\fP 
+.PP
+\fBimel_info_cut_free\fP 
+.PP
+\fBImelOrientation\fP 
+.RE
+.PP
+
+.SS "void imel_image_free (\fBImelImage\fP * image)"
+
+.PP
+Free an image\&. This function free memory allocated by \fCimage\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to free 
+.RE
+.PP
+
+.SS "\fBImelSize\fP imel_image_get_height (\fBImelImage\fP * image)"
+
+.PP
+Get image height\&. This function get \fCimage\fP height\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image from which get the height 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fCimage\fP height 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+Same as \fCimage->height\fP 
+.RE
+.PP
+
+.SS "int* imel_image_get_histogram (\fBImelImage\fP * image, \fBImelHistogram\fP histogram_type)"
+
+.PP
+Get histogram values from an image\&. This function get the histogram values from \fCimage\fP for \fChistogram_type\fP chosen\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image from which get the values 
+.br
+\fIhistogram_type\fP Types of values to get 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+An array with 256 element
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelHistogram\fP 
+.PP
+\fBimel_image_get_histogram_image\fP 
+.PP
+\fBimel_image_get_histograms_image\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_get_histogram_image (\fBImelImage\fP * image, int * __histogram, \fBImelHistogram\fP histogram_type)"
+
+.PP
+Make an histogram image for an image chosen\&. This function make an histogram for \fCimage\fP from which are already elaborated the values through \fBimel_image_get_histogram\fP () function\&.
+.PP
+Original ImageOutput ImageOriginal ImageOutput Image 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image from which get the histogram 
+.br
+\fI__histogram\fP Values returned from imel_image_get_histogram () function 
+.br
+\fIhistogram_type\fP Histogram type\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Histogram image
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelHistogram\fP 
+.PP
+\fBimel_image_get_histogram\fP 
+.PP
+\fBimel_image_get_histograms_image\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_get_histograms_image (\fBImelImage\fP * image, \fBImelHistogramLayout\fP layout)"
+
+.PP
+Make all types of histogram of an image\&. This function make all types of histogram of \fCimage\fP with a chosen \fClayout\fP\&.
+.PP
+ 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image from which get histograms 
+.br
+\fIlayout\fP Layout of the histograms 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The image with all the histograms
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelHistogramLayout\fP 
+.PP
+\fBimel_image_get_histogram\fP 
+.PP
+\fBimel_image_get_histogram_image\fP 
+.RE
+.PP
+
+.SS "\fBImelSize\fP imel_image_get_width (\fBImelImage\fP * image)"
+
+.PP
+Get image width\&. This function get \fCimage\fP width\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image from which get the width 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fCimage\fP width 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+Same as \fCimage->width\fP 
+.RE
+.PP
+
+.SS "void imel_image_insert_image (\fBImelImage\fP * dest, \fBImelImage\fP * src, \fBImelSize\fP sx, \fBImelSize\fP sy)"
+
+.PP
+Insert an image in another one\&. This function insert the image \fCsrc\fP in the image \fCdest\fP from position $(sx,sy)$\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdest\fP Destination image 
+.br
+\fIsrc\fP Image to insert in \fCdest\fP 
+.br
+\fIsx\fP Start x coordinate 
+.br
+\fIsy\fP Start y coordinate
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+This function uses indirectly \fBimel_pixel_copy\fP () function to insert \fCsrc\fP in \fCdest\fP 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_pixel_copy\fP 
+.PP
+\fBimel_image_union\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_mirror_horizontal (\fBImelImage\fP * image)"
+
+.PP
+Mirror an image to horizontal\&. This function applies the mirror horizontal effect to \fCimage\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to mirror 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A copy of \fCimage\fP mirrored horizontally 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_mirror_vertical\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_mirror_vertical (\fBImelImage\fP * image)"
+
+.PP
+Mirror an image to vertical\&. This function applies the mirror vertical effect to \fCimage\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to mirror 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A copy of \fCimage\fP mirrored vertically 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_mirror_horizontal\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new (\fBImelSize\fP width, \fBImelSize\fP height)"
+
+.PP
+Make a new image\&. This function make a new image with black background and level set to -255\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwidth\fP Image width 
+.br
+\fIheight\fP Image height 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new ImelImage or NULL on error
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_with_background_color\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_new_with_background_color (\fBImelSize\fP width, \fBImelSize\fP height, \fBImelPixel\fP pixel)"
+
+.PP
+Make a new image with background color and level specified\&. This function make a new image which each pixel is set to \fCpixel\fP passed\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwidth\fP Image width 
+.br
+\fIheight\fP Image height 
+.br
+\fIpixel\fP Color and level of the image 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a new ImelImage
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_perspective (\fBImelImage\fP * image, double rad_angle, \fBImelOrientation\fP orientation)"
+
+.PP
+Makes an horizontal or vertical perspective\&. This function makes a perspective horizontal or vertical with a certain angle\&.
+.PP
+.PP
+.nf
+1 ImelImage *src = imel_image_new_from ("butterfly\&.jpg", 0, NULL);
+2 ImelImage **p;
+3 
+4 p = imel_image_perspective (src, 0\&.785398, IMEL_ORIENTATION_HORIZONTAL);
+5 \&.\&.\&.
+6 p = imel_image_perspective (src, -0\&.785398, IMEL_ORIENTATION_HORIZONTAL);
+7 \&.\&.\&.
+8 p = imel_image_perspective (src, 0\&.785398, IMEL_ORIENTATION_VERTICAL);
+9 \&.\&.\&.
+10 p = imel_image_perspective (src, -0\&.785398, IMEL_ORIENTATION_VERTICAL);
+.fi
+.PP
+ ExampleExample
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Original image 
+.br
+\fIrad_angle\fP Perspective angle in radians\&. 
+.br
+\fIorientation\fP Perspective type\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new image with the effect applied\&. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelOrientation\fP 
+.PP
+\fBimel_image_slant\fP 
+.RE
+.PP
+
+.SS "void imel_image_remove_base_color (\fBImelImage\fP * image, \fBImelMask\fP mask)"
+
+.PP
+Remove a color\&. This function set to 0 the channel, or the channels, specified
+.PP
+This function set to 255 the channel, or the channels, specified as \fCmask\fP\&.
+.PP
+.PP
+.nf
+1 ImelImage *image = imel_image_new_from ("image\&.jpg", 0, NULL);
+2 
+3 imel_image_remove_base_color (image, IMEL_MASK_RED | IMEL_MASK_BLUE);
+.fi
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image on which remove the color 
+.br
+\fImask\fP Channel, or channels, to set to 0\&. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelMask\fP 
+.PP
+\fBimel_image_apply_filter\fP 
+.RE
+.PP
+
+.SS "void imel_image_remove_noise (\fBImelImage\fP * image, \fBImelSize\fP size_q, \fBImelMask\fP mask, \fBImelColor\fP tollerance)"
+
+.PP
+Remove noise from an image\&. This function remove noise from \fCimage\fP\&. Compare each pixel with all other around in a square with side \fCsize_q\fP pixel\&. If current pixel are a value greater then the average of others pixel compared, with a specified \fCtollerance\fP, change its value with the average found\&.
+.PP
+.PP
+.nf
+1 ImelImage *image = imel_image_new_from ("apply_noise\&.jpg", 0, NULL);
+2 ImelMask mask = IMEL_MASK_RED | IMEL_MASK_GREEN | IMEL_MASK_BLUE;
+3 
+4 imel_image_remove_noise (image, 6, mask, 24);
+.fi
+.PP
+ Input ImageResult ImageInput ImageResult Image 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image with noise 
+.br
+\fIsize_q\fP Size of the square side where the current pixel are\&. 
+.br
+\fImask\fP Channels affected from noise\&. 
+.br
+\fItollerance\fP Tollerance when compare current pixel with the average of others\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_apply_noise\fP 
+.RE
+.PP
+
+.SS "void imel_image_replace_area_color (\fBImelImage\fP * image, \fBImelPixel\fP src, \fBImelPixel\fP dest, \fBImelSize\fP tollerance, \fBImelSize\fP _x1, \fBImelSize\fP _y1, \fBImelSize\fP _x2, \fBImelSize\fP _y2)"
+
+.PP
+Replace a color with an other one in a specified area\&. This function replace the pixel \fCsrc\fP with \fCdesc\fP though \fBimel_draw_point\fP () in an area from coordinate $(\_x_1,\_y_1)$ to coordinate $(\_x_2,\_y_2)$ inside the \fCimage\fP\&. The research of \fCsrc\fP in \fCimage\fP will be done with a \fCtollerance\fP calculated in this function with #imel_pixel_compare ()\&.
+.PP
+.PP
+.nf
+1 ImelImage *image = imel_image_new_from ("image\&.jpg", 0, NULL);
+2 ImelPixel find = { 0xff, 0x66, 0x00, 0 }, replace = { 0xff, 0x00, 0x00, 0 };
+3 ImelSize start[2], end[2];
+4 
+5 start[0] = image->width  / 2;
+6 start[1] = image->height / 2;
+7   end[0] = image->width  - start[0];
+8   end[1] = image->height - start[1];
+9 
+10 imel_image_replace_area_color (image, find, replace, 16, start[0], start[1], end[0], end[1]);
+.fi
+.PP
+ Original ImageExample OutputOriginal ImageExample Output
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where replace \fCsrc\fP with \fCdest\fP 
+.br
+\fIsrc\fP Pixel to replace with \fCdest\fP 
+.br
+\fIdest\fP New pixel for \fCsrc\fP occourrences\&. 
+.br
+\fItollerance\fP Tollerance for \fCsrc\fP\&. Values between 0 and 255\&. 
+.br
+\fI_x1\fP Start x coordinate 
+.br
+\fI_y1\fP Start y coordinate 
+.br
+\fI_x2\fP End x coordinate 
+.br
+\fI_y2\fP End y coordinate 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_draw_point\fP 
+.PP
+imel_pixel_compare 
+.PP
+\fBimel_image_replace_color\fP 
+.RE
+.PP
+
+.SS "void imel_image_replace_color (\fBImelImage\fP * image, \fBImelPixel\fP src, \fBImelPixel\fP dest, \fBImelSize\fP tollerance)"
+
+.PP
+Replace a color with an other one\&. This function replace the pixel \fCsrc\fP with \fCdesc\fP thorugh \fBimel_draw_point\fP () in \fCimage\fP\&. The research of \fCsrc\fP in \fCimage\fP will be done with a \fCtollerance\fP calculated in this function with #imel_pixel_compare ()\&.
+.PP
+.PP
+.nf
+1 ImelImage *image = imel_image_new_from ("image\&.jpg", 0, NULL);
+2 ImelPixel find = { 0xff, 0x66, 0x00, 0 }, replace = { 0xff, 0x00, 0x00, 0 };
+3 
+4 imel_image_replace_color (image, find, replace, 16);
+.fi
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where replace \fCsrc\fP with \fCdest\fP 
+.br
+\fIsrc\fP Pixel to replace with \fCdest\fP 
+.br
+\fIdest\fP New pixel for \fCsrc\fP occourrences\&. 
+.br
+\fItollerance\fP Tollerance for \fCsrc\fP\&. Values between 0 and 255\&. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_draw_point\fP 
+.PP
+imel_pixel_compare 
+.PP
+imel_immage_replace_area_color 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_resize (\fBImelImage\fP * image, \fBImelSize\fP width, \fBImelSize\fP height)"
+
+.PP
+Resize an image\&. This function resize the \fCimage\fP to \fCwidth\fP and \fCheight\fP specified\&.
+.PP
+.PP
+.nf
+1 ImelImage *image = imel_image_new_from ("image\&.tiff", 0, NULL);
+2 ImelImage *half;
+3 
+4 half = imel_image_resize (image, image->width / 2, image->height / 2);
+5 imel_image_free (image);
+.fi
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to resize 
+.br
+\fIwidth\fP New width 
+.br
+\fIheight\fP New height 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A copy of \fCimage\fP resized\&. 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_rotate (\fBImelImage\fP * image, double rotate_rad)"
+
+.PP
+Rotate an image to a chosen angle\&. This function rotate the \fCimage\fP to \fCrotate_rad\fP radians\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to rotate 
+.br
+\fIrotate_rad\fP Rotation value in radians 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A copy of \fCimage\fP rotated 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_rotate_to_left\fP 
+.PP
+\fBimel_image_rotate_to_right\fP 
+.PP
+\fBimel_image_rotate_complete\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_rotate_complete (\fBImelImage\fP * image)"
+
+.PP
+Rotate an image to 180 degrees\&. This function rotate \fCimage\fP passed to 180 degrees\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to rotate 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A copy of \fCimage\fP rotated to 180 degrees\&. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_rotate\fP 
+.PP
+\fBimel_image_rotate_to_left\fP 
+.PP
+\fBimel_image_rotate_to_right\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_rotate_to_left (\fBImelImage\fP * image)"
+
+.PP
+Rotate an image to left\&. This function rotate \fCimage\fP passed to left\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to rotate 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A copy of \fCimage\fP rotated to left 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_rotate\fP 
+.PP
+\fBimel_image_rotate_to_right\fP 
+.PP
+\fBimel_image_rotate_complete\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_rotate_to_right (\fBImelImage\fP * image)"
+
+.PP
+Rotate an image to right\&. This function rotate \fCimage\fP passed to right\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to rotate 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A copy of \fCimage\fP rotated to right 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_rotate\fP 
+.PP
+\fBimel_image_rotate_to_left\fP 
+.PP
+\fBimel_image_rotate_complete\fP 
+.RE
+.PP
+
+.SS "void imel_image_shift (\fBImelImage\fP * image, \fBImelOrientation\fP orientation, long int move_pxl, \fBbool\fP lengthens)"
+
+.PP
+Shift an image\&. This function shift \fCimage\fP to the Right, to the Left, Up or Down of chosen size\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to shift 
+.br
+\fIorientation\fP Specified if the shift is horizontal or vertical 
+.br
+\fImove_pxl\fP Length of shift ( positive values for Right, Down, negative for Left, Up ) 
+.br
+\fIlengthens\fP If TRUE the pixels that are 'empty' after the operation will be setted with the value of the last pixel in that line, else if FALSE that pixels will be setted with total transparency and base color black\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelOrientation\fP 
+.PP
+\fBimel_image_shift_lines\fP 
+.PP
+\fBimel_image_perspective\fP 
+.PP
+\fBimel_image_slant\fP 
+.RE
+.PP
+
+.SS "void imel_image_shift_bpc (\fBImelImage\fP * image, int bpc_shift_red, int bpc_shift_green, int bpc_shift_blue)"
+
+.PP
+Shift the RGB values of an image\&. This function applies a shift operation for each RGB channel\&. Negative value for left shift, positive for right shift\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to apply the shift 
+.br
+\fIbpc_shift_red\fP Shift for red channel 
+.br
+\fIbpc_shift_green\fP Shift for green channel 
+.br
+\fIbpc_shift_blue\fP Shift for blue channel 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_shift_lines (\fBImelImage\fP * image, \fBImelOrientation\fP move_type, \fBImelSize\fP line, \fBImelSize\fP width, long int move_pixel, \fBbool\fP lengthens)"
+
+.PP
+Shift only some image lines\&. This function shift the \fCline\fP and next \fCwidth\fP lines of \fCimage\fP to the Right, to the Left, Up or Down of chosen size\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image with the lines to shift 
+.br
+\fImove_type\fP Specified if the shift is horizontal or vertical 
+.br
+\fIline\fP Position of the start line to shift 
+.br
+\fIwidth\fP Width of lines to shift ( including start line ) 
+.br
+\fImove_pixel\fP Length of shift ( positive values for Right, Down, negative for Left, Up ) 
+.br
+\fIlengthens\fP If TRUE the pixels that are 'empty' after the operation will be setted with the value of the last pixel in that line, else if FALSE that pixels will be setted with total transparency and base color black\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelOrientation\fP 
+.PP
+\fBimel_image_shift\fP 
+.PP
+\fBimel_image_perspective\fP 
+.PP
+\fBimel_image_slant\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_slant (\fBImelImage\fP * image, \fBImelSize\fP x0, \fBImelSize\fP y0, \fBImelSize\fP x1, \fBImelSize\fP y1, \fBImelOrientation\fP orientation, \fBbool\fP lengthens)"
+
+.PP
+Slant an image or a small area inside it\&. This function slant \fCimage\fP following a line from coordinate $(x_0,y_0)$ to coordinate $(x_1,y_1)$ with a choosen \fCorientation\fP\&.
+.PP
+ 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to slant 
+.br
+\fIx0\fP Start x coordinate of followed line 
+.br
+\fIy0\fP Start y coordinate of followed line 
+.br
+\fIx1\fP End x coordinate of followed line 
+.br
+\fIy1\fP End y coordinate of followed line 
+.br
+\fIorientation\fP Vertical or Horizontal slant 
+.br
+\fIlengthens\fP If TRUE the pixels that are 'empty' after the operation will be setted with the value of the last pixel in that line, else if FALSE that pixels will be setted with total transparency and base color black\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Result image
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelOrientation\fP 
+.PP
+\fBimel_image_shift\fP 
+.PP
+\fBimel_image_shift_lines\fP 
+.PP
+\fBimel_image_perspective\fP 
+.RE
+.PP
+
+.SS "\fBImelImage\fP* imel_image_union (\fBImelImage\fP * img1, \fBImelImage\fP * img2, unsigned char opacity, \fBImelAlignment\fP alignment)"
+
+.PP
+Insert an image in another with a chosen opacity\&. This function insert \fCimg2\fP over \fCimg1\fP with a chosen \fCopacity\fP at position specified by \fCalignment\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimg1\fP Base image 
+.br
+\fIimg2\fP Image to insert over \fCimg1\fP 
+.br
+\fIopacity\fP Opacity of \fCimg2\fP\&. Values between 0 and 255\&. 
+.br
+\fIalignment\fP Alignment of \fCimg2\fP in \fCimg1\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Result image
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_pixel_union\fP 
+.PP
+\fBImelAlignment\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Imel from the source code\&.

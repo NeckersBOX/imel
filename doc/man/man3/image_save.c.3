@@ -1,0 +1,691 @@
+.TH "image_save.c" 3 "Thu Sep 1 2016" "Version 3.0" "Imel" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+image_save.c \- This file contains function to save in different image format\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <FreeImage\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <errno\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include 'header\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_ppm\fP (\fBImelImage\fP *image, const char *filename, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in PPM format\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_ppm_handle\fP (\fBImelImage\fP *image, FILE *of, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in PPM format in an already open file\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_ppmraw\fP (\fBImelImage\fP *image, const char *filename, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in raw PPM format\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_ppmraw_handle\fP (\fBImelImage\fP *image, FILE *of, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in raw PPM format in an already open file\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_jpeg\fP (\fBImelImage\fP *image, const char *filename, int quality, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in JPEG format\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_jpeg_handle\fP (\fBImelImage\fP *image, FILE *of, int quality, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in JPEG format in an already open file\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_png\fP (\fBImelImage\fP *image, const char *filename, \fBImelPngFlags\fP png_flags, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in PNG format\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_png_handle\fP (\fBImelImage\fP *image, FILE *of, \fBImelPngFlags\fP png_flags, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in PNG format in an already open file\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_tiff\fP (\fBImelImage\fP *image, const char *filename, \fBImelTiffFlags\fP tiff_flags, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in TIFF format\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_tiff_handle\fP (\fBImelImage\fP *image, FILE *of, \fBImelTiffFlags\fP tiff_flags, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in TIFF format in an already open file\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_wbmp\fP (\fBImelImage\fP *image, const char *filename, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in WBMP format\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_wbmp_handle\fP (\fBImelImage\fP *image, FILE *of, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in WBMP format in an already open file\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_bmp\fP (\fBImelImage\fP *image, const char *filename, \fBImelBmpBits\fP bits_per_pixel, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in BMP format\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_bmp_handle\fP (\fBImelImage\fP *image, FILE *of, \fBImelBmpBits\fP bits_per_pixel, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in BMP format in an already open file\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_j2k\fP (\fBImelImage\fP *image, const char *filename, \fBImelJ2kBits\fP bits_per_pixel, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in J2K format\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_j2k_handle\fP (\fBImelImage\fP *image, FILE *of, \fBImelJ2kBits\fP bits_per_pixel, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in J2K format in an already open file\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_jp2\fP (\fBImelImage\fP *image, const char *filename, \fBImelJ2kBits\fP bits_per_pixel, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in JP2 format\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_jp2_handle\fP (\fBImelImage\fP *image, FILE *of, \fBImelJ2kBits\fP bits_per_pixel, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in JP2 format in an already open file\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_xpm\fP (\fBImelImage\fP *image, const char *filename, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in XPM format\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_xpm_handle\fP (\fBImelImage\fP *image, FILE *of, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in XPM format in an already open file\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_image_save_imel\fP (\fBImelImage\fP *image, const char *filename, \fBImelError\fP *error)"
+.br
+.RI "\fISave image in IMEL format\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file contains function to save in different image format\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Davide Francesco Merico 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBbool\fP imel_image_save_bmp (\fBImelImage\fP * image, const char * filename, \fBImelBmpBits\fP bits_per_pixel, \fBImelError\fP * error)"
+
+.PP
+Save image in BMP format\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIfilename\fP Output file name 
+.br
+\fIbits_per_pixel\fP Save options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelBmpBits\fP 
+.PP
+\fBimel_image_save_bmp_handle\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_bmp_handle (\fBImelImage\fP * image, FILE * of, \fBImelBmpBits\fP bits_per_pixel, \fBImelError\fP * error)"
+
+.PP
+Save image in BMP format in an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIof\fP Output FILE 
+.br
+\fIbits_per_pixel\fP Save options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelBmpBits\fP 
+.PP
+\fBimel_image_save_bmp\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_imel (\fBImelImage\fP * image, const char * filename, \fBImelError\fP * error)"
+
+.PP
+Save image in IMEL format\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIfilename\fP Output file name 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&. 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_j2k (\fBImelImage\fP * image, const char * filename, \fBImelJ2kBits\fP bits_per_pixel, \fBImelError\fP * error)"
+
+.PP
+Save image in J2K format\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIfilename\fP Output file name 
+.br
+\fIbits_per_pixel\fP Save options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelJ2kBits\fP 
+.PP
+\fBimel_image_save_j2k_handle\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_j2k_handle (\fBImelImage\fP * image, FILE * of, \fBImelJ2kBits\fP bits_per_pixel, \fBImelError\fP * error)"
+
+.PP
+Save image in J2K format in an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIof\fP Output FILE 
+.br
+\fIbits_per_pixel\fP Save options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelJ2kBits\fP 
+.PP
+\fBimel_image_save_j2k\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_jp2 (\fBImelImage\fP * image, const char * filename, \fBImelJ2kBits\fP bits_per_pixel, \fBImelError\fP * error)"
+
+.PP
+Save image in JP2 format\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIfilename\fP Output file name 
+.br
+\fIbits_per_pixel\fP Save options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelJ2kBits\fP 
+.PP
+\fBimel_image_save_jp2_handle\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_jp2_handle (\fBImelImage\fP * image, FILE * of, \fBImelJ2kBits\fP bits_per_pixel, \fBImelError\fP * error)"
+
+.PP
+Save image in JP2 format in an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIof\fP Output FILE 
+.br
+\fIbits_per_pixel\fP Save options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelJ2kBits\fP 
+.PP
+\fBimel_image_save_jp2\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_jpeg (\fBImelImage\fP * image, const char * filename, int quality, \fBImelError\fP * error)"
+
+.PP
+Save image in JPEG format\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIfilename\fP Output file name 
+.br
+\fIquality\fP Save quality\&. Values between 0 and 100\&. 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_save_jpeg_handle\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_jpeg_handle (\fBImelImage\fP * image, FILE * of, int quality, \fBImelError\fP * error)"
+
+.PP
+Save image in JPEG format in an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIof\fP Output FILE 
+.br
+\fIquality\fP Save quality\&. Values between 0 and 100\&. 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_save_jpeg\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_png (\fBImelImage\fP * image, const char * filename, \fBImelPngFlags\fP png_flags, \fBImelError\fP * error)"
+
+.PP
+Save image in PNG format\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIfilename\fP Output file name 
+.br
+\fIpng_flags\fP Save options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelPngFlags\fP 
+.PP
+\fBimel_image_save_png_handle\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_png_handle (\fBImelImage\fP * image, FILE * of, \fBImelPngFlags\fP png_flags, \fBImelError\fP * error)"
+
+.PP
+Save image in PNG format in an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIof\fP Output FILE 
+.br
+\fIpng_flags\fP Save options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelPngFlags\fP 
+.PP
+\fBimel_image_save_png\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_ppm (\fBImelImage\fP * image, const char * filename, \fBImelError\fP * error)"
+
+.PP
+Save image in PPM format\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIfilename\fP Output file name 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_save_ppm_handle\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_ppm_handle (\fBImelImage\fP * image, FILE * of, \fBImelError\fP * error)"
+
+.PP
+Save image in PPM format in an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIof\fP Output FILE 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_save_ppm\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_ppmraw (\fBImelImage\fP * image, const char * filename, \fBImelError\fP * error)"
+
+.PP
+Save image in raw PPM format\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIfilename\fP Output file name 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_save_ppmraw_handle\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_ppmraw_handle (\fBImelImage\fP * image, FILE * of, \fBImelError\fP * error)"
+
+.PP
+Save image in raw PPM format in an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIof\fP Output FILE 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_save_ppmraw\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_tiff (\fBImelImage\fP * image, const char * filename, \fBImelTiffFlags\fP tiff_flags, \fBImelError\fP * error)"
+
+.PP
+Save image in TIFF format\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIfilename\fP Output file name 
+.br
+\fItiff_flags\fP Save options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelTiffFlags\fP 
+.PP
+\fBimel_image_save_tiff_handle\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_tiff_handle (\fBImelImage\fP * image, FILE * of, \fBImelTiffFlags\fP tiff_flags, \fBImelError\fP * error)"
+
+.PP
+Save image in TIFF format in an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIof\fP Output FILE 
+.br
+\fItiff_flags\fP Save options 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelTiffFlags\fP 
+.PP
+\fBimel_image_save_tiff\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_wbmp (\fBImelImage\fP * image, const char * filename, \fBImelError\fP * error)"
+
+.PP
+Save image in WBMP format\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIfilename\fP Output file name 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_save_wbmp_handle\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_wbmp_handle (\fBImelImage\fP * image, FILE * of, \fBImelError\fP * error)"
+
+.PP
+Save image in WBMP format in an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIof\fP Output FILE 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_save_wbmp\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_xpm (\fBImelImage\fP * image, const char * filename, \fBImelError\fP * error)"
+
+.PP
+Save image in XPM format\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIfilename\fP Output file name 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_save_xpm_handle\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_image_save_xpm_handle (\fBImelImage\fP * image, FILE * of, \fBImelError\fP * error)"
+
+.PP
+Save image in XPM format in an already open file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image to save 
+.br
+\fIof\fP Output FILE 
+.br
+\fIerror\fP Error variable if you want handle the errors or NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE on success or FALSE on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_save_xpm\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Imel from the source code\&.

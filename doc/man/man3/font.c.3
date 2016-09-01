@@ -1,0 +1,188 @@
+.TH "font.c" 3 "Thu Sep 1 2016" "Version 3.0" "Imel" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+font.c \- This file contains function to use fonts in an image\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string\&.h>\fP
+.br
+\fC#include <limits\&.h>\fP
+.br
+\fC#include <ft2build\&.h>\fP
+.br
+\fC#include 'header\&.h'\fP
+.br
+\fC#include 'font\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBimel_font_write_string\fP (\fBImelImage\fP *image, \fBImelSize\fP x, \fBImelSize\fP y, const char *string, \fBImelSize\fP px, \fBImelPixel\fP pixel)"
+.br
+.RI "\fIWrite a string with the internal font\&. \fP"
+.ti -1c
+.RI "void \fBimel_font_write_vstring\fP (\fBImelImage\fP *image, \fBImelSize\fP x, \fBImelSize\fP y, const char *string, \fBImelSize\fP px, \fBImelPixel\fP pixel)"
+.br
+.RI "\fIWrite a string in vertical orientation with the internal font\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_font_write_string_with_truetype_font\fP (\fBImelImage\fP **image, char *ttf_file, \fBImelSize\fP _x, \fBImelSize\fP y, char *string, \fBImelSize\fP px, \fBImelPixel\fP pixel,\&.\&.\&.)"
+.br
+.RI "\fIWrite a string with a truetype font\&. \fP"
+.ti -1c
+.RI "\fBbool\fP \fBimel_font_write_vstring_with_truetype_font\fP (\fBImelImage\fP **image, char *ttf_file, \fBImelSize\fP _x, \fBImelSize\fP y, char *string, \fBImelSize\fP px, \fBImelPixel\fP pixel,\&.\&.\&.)"
+.br
+.RI "\fIWrite a string in vertical orientation with a truetype font\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file contains function to use fonts in an image\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Davide Francesco Merico These functions allow you to write a string with the internal Imel font or with a truetype font loaded\&.
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+To use a truetype font is used the FreeType library\&. 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "void imel_font_write_string (\fBImelImage\fP * image, \fBImelSize\fP x, \fBImelSize\fP y, const char * string, \fBImelSize\fP px, \fBImelPixel\fP pixel)"
+
+.PP
+Write a string with the internal font\&. This function write the \fCstring\fP in \fCimage\fP from coordinate $(x,y)$ with a size of \fCpx\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where write the \fCstring\fP 
+.br
+\fIx\fP Start x coordinate 
+.br
+\fIy\fP Start y coordinate 
+.br
+\fIstring\fP String to write in \fCimage\fP 
+.br
+\fIpx\fP Font size, can be specified through ImelFontSize enum\&. 
+.br
+\fIpixel\fP Color and level of the string 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelFontSize\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_font_write_string_with_truetype_font (\fBImelImage\fP ** image, char * ttf_file, \fBImelSize\fP _x, \fBImelSize\fP y, char * string, \fBImelSize\fP px, \fBImelPixel\fP pixel,  \&.\&.\&.)"
+
+.PP
+Write a string with a truetype font\&. This function write the \fCstring\fP in \fCimage\fP from coordinate $(\_x,\_y)$ with a size of \fCpx\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image, where write the \fCstring\fP, passed by address 
+.br
+\fIttf_file\fP TrueType font file name 
+.br
+\fI_x\fP Start x coordinate 
+.br
+\fIy\fP Start y coordinate 
+.br
+\fIstring\fP String to write in \fCimage\fP 
+.br
+\fIpx\fP Font size 
+.br
+\fIpixel\fP Color and level of the string 
+.br
+\fI\&.\&.\&.\fP Additional parameters are characterized by a string and a value\&. 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+The string for last parameter are 'render-type' and 'charmap' for the possibily value check the link below\&. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+http://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Render_Mode 
+.PP
+http://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Encoding 
+.RE
+.PP
+
+.SS "void imel_font_write_vstring (\fBImelImage\fP * image, \fBImelSize\fP x, \fBImelSize\fP y, const char * string, \fBImelSize\fP px, \fBImelPixel\fP pixel)"
+
+.PP
+Write a string in vertical orientation with the internal font\&. This function write the \fCstring\fP in \fCimage\fP from coordinate $(x,y)$ with a size of \fCpx\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image where write the \fCstring\fP 
+.br
+\fIx\fP Start x coordinate 
+.br
+\fIy\fP Start y coordinate 
+.br
+\fIstring\fP String to write in \fCimage\fP 
+.br
+\fIpx\fP Font size, can be specified through ImelFontSize enum\&. 
+.br
+\fIpixel\fP Color and level of the string 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelFontSize\fP 
+.RE
+.PP
+
+.SS "\fBbool\fP imel_font_write_vstring_with_truetype_font (\fBImelImage\fP ** image, char * ttf_file, \fBImelSize\fP _x, \fBImelSize\fP y, char * string, \fBImelSize\fP px, \fBImelPixel\fP pixel,  \&.\&.\&.)"
+
+.PP
+Write a string in vertical orientation with a truetype font\&. This function write the \fCstring\fP in \fCimage\fP from coordinate $(\_x,\_y)$ with a size of \fCpx\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image, where write the \fCstring\fP, passed by address 
+.br
+\fIttf_file\fP TrueType font file name 
+.br
+\fI_x\fP Start x coordinate 
+.br
+\fIy\fP Start y coordinate 
+.br
+\fIstring\fP String to write in \fCimage\fP 
+.br
+\fIpx\fP Font size 
+.br
+\fIpixel\fP Color and level of the string 
+.br
+\fI\&.\&.\&.\fP Additional parameters are characterized by a string and a value\&. 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+The string for last parameter are 'render-type' and 'charmap' for the possibily value check the link below\&. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+http://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Render_Mode 
+.PP
+http://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Encoding 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Imel from the source code\&.

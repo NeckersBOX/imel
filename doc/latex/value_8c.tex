@@ -1,0 +1,104 @@
+\hypertarget{value_8c}{}\section{value.\+c File Reference}
+\label{value_8c}\index{value.\+c@{value.\+c}}
+
+
+This file contains functions to convert values.  
+
+
+{\ttfamily \#include \char`\"{}header.\+h\char`\"{}}\\*
+Include dependency graph for value.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{value_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{value_8c_a8fd8fa1742f7d9d8fdeddfe8b913af98}{imel\+\_\+value\+\_\+percentage\+\_\+to\+\_\+generic} (double value, double opt\+\_\+value)
+\item 
+double \hyperlink{value_8c_a0d421a94b5a7de0a78b2cc0d9917755d}{imel\+\_\+value\+\_\+pixel\+\_\+to\+\_\+percentage} (double value, double opt\+\_\+value)
+\item 
+double \hyperlink{value_8c_a09670d688bb50c3334e933772839fb23}{imel\+\_\+value\+\_\+convert} (\hyperlink{header_8h_a3b961ca2b6e1029ab77a0951c3ae7260}{Imel\+Value} from\+\_\+value, double value, \hyperlink{header_8h_a3b961ca2b6e1029ab77a0951c3ae7260}{Imel\+Value} to\+\_\+value,...)
+\begin{DoxyCompactList}\small\item\em Convert a value in another one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains functions to convert values. 
+
+\begin{DoxyAuthor}{Author}
+Davide Francesco Merico 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\index{value.\+c@{value.\+c}!imel\+\_\+value\+\_\+convert@{imel\+\_\+value\+\_\+convert}}
+\index{imel\+\_\+value\+\_\+convert@{imel\+\_\+value\+\_\+convert}!value.\+c@{value.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+value\+\_\+convert(\+Imel\+Value from\+\_\+value, double value, Imel\+Value to\+\_\+value,...)}{imel_value_convert(ImelValue from_value, double value, ImelValue to_value,...)}}]{\setlength{\rightskip}{0pt plus 5cm}double imel\+\_\+value\+\_\+convert (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Value}}]{from\+\_\+value, }
+\item[{double}]{value, }
+\item[{{\bf Imel\+Value}}]{to\+\_\+value, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{value_8c_a09670d688bb50c3334e933772839fb23}{}\label{value_8c_a09670d688bb50c3334e933772839fb23}
+
+
+Convert a value in another one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from\+\_\+value} & Type of value you to convert in {\ttfamily to\+\_\+value} \\
+\hline
+{\em value} & Value to convert in {\ttfamily to\+\_\+value} \\
+\hline
+{\em to\+\_\+value} & Type of value to convert from {\ttfamily from\+\_\+value} \\
+\hline
+{\em ...} & Value to convert from {\ttfamily from\+\_\+value} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value converted 
+\end{DoxyReturn}
+\index{value.\+c@{value.\+c}!imel\+\_\+value\+\_\+percentage\+\_\+to\+\_\+generic@{imel\+\_\+value\+\_\+percentage\+\_\+to\+\_\+generic}}
+\index{imel\+\_\+value\+\_\+percentage\+\_\+to\+\_\+generic@{imel\+\_\+value\+\_\+percentage\+\_\+to\+\_\+generic}!value.\+c@{value.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+value\+\_\+percentage\+\_\+to\+\_\+generic(double value, double opt\+\_\+value)}{imel_value_percentage_to_generic(double value, double opt_value)}}]{\setlength{\rightskip}{0pt plus 5cm}double imel\+\_\+value\+\_\+percentage\+\_\+to\+\_\+generic (
+\begin{DoxyParamCaption}
+\item[{double}]{value, }
+\item[{double}]{opt\+\_\+value}
+\end{DoxyParamCaption}
+)}\hypertarget{value_8c_a8fd8fa1742f7d9d8fdeddfe8b913af98}{}\label{value_8c_a8fd8fa1742f7d9d8fdeddfe8b913af98}
+Convert a percentage in a generic value
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Percentage value \\
+\hline
+{\em opt\+\_\+value} & Generic value equal to 100\% \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Percentage value converted 
+\end{DoxyReturn}
+\index{value.\+c@{value.\+c}!imel\+\_\+value\+\_\+pixel\+\_\+to\+\_\+percentage@{imel\+\_\+value\+\_\+pixel\+\_\+to\+\_\+percentage}}
+\index{imel\+\_\+value\+\_\+pixel\+\_\+to\+\_\+percentage@{imel\+\_\+value\+\_\+pixel\+\_\+to\+\_\+percentage}!value.\+c@{value.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+value\+\_\+pixel\+\_\+to\+\_\+percentage(double value, double opt\+\_\+value)}{imel_value_pixel_to_percentage(double value, double opt_value)}}]{\setlength{\rightskip}{0pt plus 5cm}double imel\+\_\+value\+\_\+pixel\+\_\+to\+\_\+percentage (
+\begin{DoxyParamCaption}
+\item[{double}]{value, }
+\item[{double}]{opt\+\_\+value}
+\end{DoxyParamCaption}
+)}\hypertarget{value_8c_a0d421a94b5a7de0a78b2cc0d9917755d}{}\label{value_8c_a0d421a94b5a7de0a78b2cc0d9917755d}
+Convert a pixel value to percentage
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to convert \\
+\hline
+{\em opt\+\_\+value} & Generic value equal to 100\% \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value converted 
+\end{DoxyReturn}

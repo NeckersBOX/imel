@@ -1,0 +1,718 @@
+\hypertarget{image__save_8c}{}\section{image\+\_\+save.\+c File Reference}
+\label{image__save_8c}\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+
+
+This file contains function to save in different image format.  
+
+
+{\ttfamily \#include $<$Free\+Image.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}header.\+h\char`\"{}}\\*
+Include dependency graph for image\+\_\+save.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{image__save_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_a3e561246e0ef24e90073c821f30d7c69}{imel\+\_\+image\+\_\+save\+\_\+ppm} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, const char $\ast$filename, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in P\+PM format. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_a9c9b7dd3fca71a5060a44b131d511bae}{imel\+\_\+image\+\_\+save\+\_\+ppm\+\_\+handle} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, F\+I\+LE $\ast$of, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in P\+PM format in an already open file. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_a5b84b5aa1c83a8fbf82d427113373f0e}{imel\+\_\+image\+\_\+save\+\_\+ppmraw} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, const char $\ast$filename, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in raw P\+PM format. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_a4e5f415d7ce79245b8d96ab5c0abb8bf}{imel\+\_\+image\+\_\+save\+\_\+ppmraw\+\_\+handle} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, F\+I\+LE $\ast$of, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in raw P\+PM format in an already open file. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_a7474441ad28c1bc48f104efe482218c9}{imel\+\_\+image\+\_\+save\+\_\+jpeg} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, const char $\ast$filename, int quality, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in J\+P\+EG format. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_aecda64df0d3858bf33369c8ae7b92d87}{imel\+\_\+image\+\_\+save\+\_\+jpeg\+\_\+handle} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, F\+I\+LE $\ast$of, int quality, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in J\+P\+EG format in an already open file. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_aa3e1e270563781e46013c98d05e952e7}{imel\+\_\+image\+\_\+save\+\_\+png} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, const char $\ast$filename, \hyperlink{image__enum_8h_a99c2986d48a651287d92e1f419f16a70}{Imel\+Png\+Flags} png\+\_\+flags, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in P\+NG format. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_a727418390792881b6262e6392c476ba9}{imel\+\_\+image\+\_\+save\+\_\+png\+\_\+handle} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, F\+I\+LE $\ast$of, \hyperlink{image__enum_8h_a99c2986d48a651287d92e1f419f16a70}{Imel\+Png\+Flags} png\+\_\+flags, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in P\+NG format in an already open file. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_afc28c02ce6aa3ae5fe765510603c51be}{imel\+\_\+image\+\_\+save\+\_\+tiff} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, const char $\ast$filename, \hyperlink{image__enum_8h_a519baf325b02bcca1d7eab10604c3a75}{Imel\+Tiff\+Flags} tiff\+\_\+flags, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in T\+I\+FF format. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_a2e41ce825e969c57d1931fb58a05e920}{imel\+\_\+image\+\_\+save\+\_\+tiff\+\_\+handle} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, F\+I\+LE $\ast$of, \hyperlink{image__enum_8h_a519baf325b02bcca1d7eab10604c3a75}{Imel\+Tiff\+Flags} tiff\+\_\+flags, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in T\+I\+FF format in an already open file. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_a1aa3d464b358dcdc9e493382fd54c487}{imel\+\_\+image\+\_\+save\+\_\+wbmp} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, const char $\ast$filename, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in W\+B\+MP format. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_ade0967b6943819bf46d0ef70729e08a9}{imel\+\_\+image\+\_\+save\+\_\+wbmp\+\_\+handle} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, F\+I\+LE $\ast$of, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in W\+B\+MP format in an already open file. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_a49c937b0bf49cbe0d16b1d99895a5a2c}{imel\+\_\+image\+\_\+save\+\_\+bmp} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, const char $\ast$filename, \hyperlink{image__enum_8h_acb527c56bb1574fab526fc3a56bf6467}{Imel\+Bmp\+Bits} bits\+\_\+per\+\_\+pixel, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in B\+MP format. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_a5c16cf3bd82cedc0ef11698a138f48a2}{imel\+\_\+image\+\_\+save\+\_\+bmp\+\_\+handle} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, F\+I\+LE $\ast$of, \hyperlink{image__enum_8h_acb527c56bb1574fab526fc3a56bf6467}{Imel\+Bmp\+Bits} bits\+\_\+per\+\_\+pixel, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in B\+MP format in an already open file. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_a5ae9a290272e18ad24a6ea9b54784048}{imel\+\_\+image\+\_\+save\+\_\+j2k} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, const char $\ast$filename, \hyperlink{image__enum_8h_a75c4f86d6bd9c093d99f5816f84da19d}{Imel\+J2k\+Bits} bits\+\_\+per\+\_\+pixel, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in J2K format. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_afd3d307d7c5df250aa340dc54576ea12}{imel\+\_\+image\+\_\+save\+\_\+j2k\+\_\+handle} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, F\+I\+LE $\ast$of, \hyperlink{image__enum_8h_a75c4f86d6bd9c093d99f5816f84da19d}{Imel\+J2k\+Bits} bits\+\_\+per\+\_\+pixel, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in J2K format in an already open file. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_aa1cdfb54662c2df3573cdca6de25ad63}{imel\+\_\+image\+\_\+save\+\_\+jp2} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, const char $\ast$filename, \hyperlink{image__enum_8h_a75c4f86d6bd9c093d99f5816f84da19d}{Imel\+J2k\+Bits} bits\+\_\+per\+\_\+pixel, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in J\+P2 format. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_a70642f0e5d723ba1c46e8b7739d77d14}{imel\+\_\+image\+\_\+save\+\_\+jp2\+\_\+handle} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, F\+I\+LE $\ast$of, \hyperlink{image__enum_8h_a75c4f86d6bd9c093d99f5816f84da19d}{Imel\+J2k\+Bits} bits\+\_\+per\+\_\+pixel, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in J\+P2 format in an already open file. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_a00621fb98f3614d2b53274c732099adb}{imel\+\_\+image\+\_\+save\+\_\+xpm} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, const char $\ast$filename, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in X\+PM format. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_af8d4383ba5e386a6249f5955b88e0f91}{imel\+\_\+image\+\_\+save\+\_\+xpm\+\_\+handle} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, F\+I\+LE $\ast$of, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in X\+PM format in an already open file. \end{DoxyCompactList}\item 
+\hyperlink{header_8h_a669b28ed18156f1a4f13732e070d6cf2}{bool} \hyperlink{image__save_8c_ac6a0d1b8734bd7692061c27ed46f00ca}{imel\+\_\+image\+\_\+save\+\_\+imel} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, const char $\ast$filename, \hyperlink{header_8h_abe31dcaa4b6683d315101c48b1ca2a56}{Imel\+Error} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Save image in I\+M\+EL format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains function to save in different image format. 
+
+\begin{DoxyAuthor}{Author}
+Davide Francesco Merico 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+bmp@{imel\+\_\+image\+\_\+save\+\_\+bmp}}
+\index{imel\+\_\+image\+\_\+save\+\_\+bmp@{imel\+\_\+image\+\_\+save\+\_\+bmp}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+bmp(\+Imel\+Image $\ast$image, const char $\ast$filename, Imel\+Bmp\+Bits bits\+\_\+per\+\_\+pixel, Imel\+Error $\ast$error)}{imel_image_save_bmp(ImelImage *image, const char *filename, ImelBmpBits bits_per_pixel, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+bmp (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{const char $\ast$}]{filename, }
+\item[{{\bf Imel\+Bmp\+Bits}}]{bits\+\_\+per\+\_\+pixel, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_a49c937b0bf49cbe0d16b1d99895a5a2c}{}\label{image__save_8c_a49c937b0bf49cbe0d16b1d99895a5a2c}
+
+
+Save image in B\+MP format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em filename} & Output file name \\
+\hline
+{\em bits\+\_\+per\+\_\+pixel} & Save options \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__enum_8h_acb527c56bb1574fab526fc3a56bf6467}{Imel\+Bmp\+Bits} 
+
+\hyperlink{image__save_8c_a5c16cf3bd82cedc0ef11698a138f48a2}{imel\+\_\+image\+\_\+save\+\_\+bmp\+\_\+handle} 
+\end{DoxySeeAlso}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+bmp\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+bmp\+\_\+handle}}
+\index{imel\+\_\+image\+\_\+save\+\_\+bmp\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+bmp\+\_\+handle}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+bmp\+\_\+handle(\+Imel\+Image $\ast$image, F\+I\+L\+E $\ast$of, Imel\+Bmp\+Bits bits\+\_\+per\+\_\+pixel, Imel\+Error $\ast$error)}{imel_image_save_bmp_handle(ImelImage *image, FILE *of, ImelBmpBits bits_per_pixel, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+bmp\+\_\+handle (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{F\+I\+LE $\ast$}]{of, }
+\item[{{\bf Imel\+Bmp\+Bits}}]{bits\+\_\+per\+\_\+pixel, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_a5c16cf3bd82cedc0ef11698a138f48a2}{}\label{image__save_8c_a5c16cf3bd82cedc0ef11698a138f48a2}
+
+
+Save image in B\+MP format in an already open file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em of} & Output F\+I\+LE \\
+\hline
+{\em bits\+\_\+per\+\_\+pixel} & Save options \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__enum_8h_acb527c56bb1574fab526fc3a56bf6467}{Imel\+Bmp\+Bits} 
+
+\hyperlink{image__save_8c_a49c937b0bf49cbe0d16b1d99895a5a2c}{imel\+\_\+image\+\_\+save\+\_\+bmp} 
+\end{DoxySeeAlso}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+imel@{imel\+\_\+image\+\_\+save\+\_\+imel}}
+\index{imel\+\_\+image\+\_\+save\+\_\+imel@{imel\+\_\+image\+\_\+save\+\_\+imel}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+imel(\+Imel\+Image $\ast$image, const char $\ast$filename, Imel\+Error $\ast$error)}{imel_image_save_imel(ImelImage *image, const char *filename, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+imel (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{const char $\ast$}]{filename, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_ac6a0d1b8734bd7692061c27ed46f00ca}{}\label{image__save_8c_ac6a0d1b8734bd7692061c27ed46f00ca}
+
+
+Save image in I\+M\+EL format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em filename} & Output file name \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error. 
+\end{DoxyReturn}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+j2k@{imel\+\_\+image\+\_\+save\+\_\+j2k}}
+\index{imel\+\_\+image\+\_\+save\+\_\+j2k@{imel\+\_\+image\+\_\+save\+\_\+j2k}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+j2k(\+Imel\+Image $\ast$image, const char $\ast$filename, Imel\+J2k\+Bits bits\+\_\+per\+\_\+pixel, Imel\+Error $\ast$error)}{imel_image_save_j2k(ImelImage *image, const char *filename, ImelJ2kBits bits_per_pixel, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+j2k (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{const char $\ast$}]{filename, }
+\item[{{\bf Imel\+J2k\+Bits}}]{bits\+\_\+per\+\_\+pixel, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_a5ae9a290272e18ad24a6ea9b54784048}{}\label{image__save_8c_a5ae9a290272e18ad24a6ea9b54784048}
+
+
+Save image in J2K format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em filename} & Output file name \\
+\hline
+{\em bits\+\_\+per\+\_\+pixel} & Save options \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__enum_8h_a75c4f86d6bd9c093d99f5816f84da19d}{Imel\+J2k\+Bits} 
+
+\hyperlink{image__save_8c_afd3d307d7c5df250aa340dc54576ea12}{imel\+\_\+image\+\_\+save\+\_\+j2k\+\_\+handle} 
+\end{DoxySeeAlso}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+j2k\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+j2k\+\_\+handle}}
+\index{imel\+\_\+image\+\_\+save\+\_\+j2k\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+j2k\+\_\+handle}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+j2k\+\_\+handle(\+Imel\+Image $\ast$image, F\+I\+L\+E $\ast$of, Imel\+J2k\+Bits bits\+\_\+per\+\_\+pixel, Imel\+Error $\ast$error)}{imel_image_save_j2k_handle(ImelImage *image, FILE *of, ImelJ2kBits bits_per_pixel, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+j2k\+\_\+handle (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{F\+I\+LE $\ast$}]{of, }
+\item[{{\bf Imel\+J2k\+Bits}}]{bits\+\_\+per\+\_\+pixel, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_afd3d307d7c5df250aa340dc54576ea12}{}\label{image__save_8c_afd3d307d7c5df250aa340dc54576ea12}
+
+
+Save image in J2K format in an already open file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em of} & Output F\+I\+LE \\
+\hline
+{\em bits\+\_\+per\+\_\+pixel} & Save options \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__enum_8h_a75c4f86d6bd9c093d99f5816f84da19d}{Imel\+J2k\+Bits} 
+
+\hyperlink{image__save_8c_a5ae9a290272e18ad24a6ea9b54784048}{imel\+\_\+image\+\_\+save\+\_\+j2k} 
+\end{DoxySeeAlso}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+jp2@{imel\+\_\+image\+\_\+save\+\_\+jp2}}
+\index{imel\+\_\+image\+\_\+save\+\_\+jp2@{imel\+\_\+image\+\_\+save\+\_\+jp2}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+jp2(\+Imel\+Image $\ast$image, const char $\ast$filename, Imel\+J2k\+Bits bits\+\_\+per\+\_\+pixel, Imel\+Error $\ast$error)}{imel_image_save_jp2(ImelImage *image, const char *filename, ImelJ2kBits bits_per_pixel, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+jp2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{const char $\ast$}]{filename, }
+\item[{{\bf Imel\+J2k\+Bits}}]{bits\+\_\+per\+\_\+pixel, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_aa1cdfb54662c2df3573cdca6de25ad63}{}\label{image__save_8c_aa1cdfb54662c2df3573cdca6de25ad63}
+
+
+Save image in J\+P2 format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em filename} & Output file name \\
+\hline
+{\em bits\+\_\+per\+\_\+pixel} & Save options \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__enum_8h_a75c4f86d6bd9c093d99f5816f84da19d}{Imel\+J2k\+Bits} 
+
+\hyperlink{image__save_8c_a70642f0e5d723ba1c46e8b7739d77d14}{imel\+\_\+image\+\_\+save\+\_\+jp2\+\_\+handle} 
+\end{DoxySeeAlso}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+jp2\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+jp2\+\_\+handle}}
+\index{imel\+\_\+image\+\_\+save\+\_\+jp2\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+jp2\+\_\+handle}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+jp2\+\_\+handle(\+Imel\+Image $\ast$image, F\+I\+L\+E $\ast$of, Imel\+J2k\+Bits bits\+\_\+per\+\_\+pixel, Imel\+Error $\ast$error)}{imel_image_save_jp2_handle(ImelImage *image, FILE *of, ImelJ2kBits bits_per_pixel, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+jp2\+\_\+handle (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{F\+I\+LE $\ast$}]{of, }
+\item[{{\bf Imel\+J2k\+Bits}}]{bits\+\_\+per\+\_\+pixel, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_a70642f0e5d723ba1c46e8b7739d77d14}{}\label{image__save_8c_a70642f0e5d723ba1c46e8b7739d77d14}
+
+
+Save image in J\+P2 format in an already open file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em of} & Output F\+I\+LE \\
+\hline
+{\em bits\+\_\+per\+\_\+pixel} & Save options \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__enum_8h_a75c4f86d6bd9c093d99f5816f84da19d}{Imel\+J2k\+Bits} 
+
+\hyperlink{image__save_8c_aa1cdfb54662c2df3573cdca6de25ad63}{imel\+\_\+image\+\_\+save\+\_\+jp2} 
+\end{DoxySeeAlso}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+jpeg@{imel\+\_\+image\+\_\+save\+\_\+jpeg}}
+\index{imel\+\_\+image\+\_\+save\+\_\+jpeg@{imel\+\_\+image\+\_\+save\+\_\+jpeg}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+jpeg(\+Imel\+Image $\ast$image, const char $\ast$filename, int quality, Imel\+Error $\ast$error)}{imel_image_save_jpeg(ImelImage *image, const char *filename, int quality, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+jpeg (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{const char $\ast$}]{filename, }
+\item[{int}]{quality, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_a7474441ad28c1bc48f104efe482218c9}{}\label{image__save_8c_a7474441ad28c1bc48f104efe482218c9}
+
+
+Save image in J\+P\+EG format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em filename} & Output file name \\
+\hline
+{\em quality} & Save quality. Values between 0 and 100. \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__save_8c_aecda64df0d3858bf33369c8ae7b92d87}{imel\+\_\+image\+\_\+save\+\_\+jpeg\+\_\+handle} 
+\end{DoxySeeAlso}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+jpeg\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+jpeg\+\_\+handle}}
+\index{imel\+\_\+image\+\_\+save\+\_\+jpeg\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+jpeg\+\_\+handle}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+jpeg\+\_\+handle(\+Imel\+Image $\ast$image, F\+I\+L\+E $\ast$of, int quality, Imel\+Error $\ast$error)}{imel_image_save_jpeg_handle(ImelImage *image, FILE *of, int quality, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+jpeg\+\_\+handle (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{F\+I\+LE $\ast$}]{of, }
+\item[{int}]{quality, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_aecda64df0d3858bf33369c8ae7b92d87}{}\label{image__save_8c_aecda64df0d3858bf33369c8ae7b92d87}
+
+
+Save image in J\+P\+EG format in an already open file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em of} & Output F\+I\+LE \\
+\hline
+{\em quality} & Save quality. Values between 0 and 100. \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__save_8c_a7474441ad28c1bc48f104efe482218c9}{imel\+\_\+image\+\_\+save\+\_\+jpeg} 
+\end{DoxySeeAlso}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+png@{imel\+\_\+image\+\_\+save\+\_\+png}}
+\index{imel\+\_\+image\+\_\+save\+\_\+png@{imel\+\_\+image\+\_\+save\+\_\+png}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+png(\+Imel\+Image $\ast$image, const char $\ast$filename, Imel\+Png\+Flags png\+\_\+flags, Imel\+Error $\ast$error)}{imel_image_save_png(ImelImage *image, const char *filename, ImelPngFlags png_flags, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+png (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{const char $\ast$}]{filename, }
+\item[{{\bf Imel\+Png\+Flags}}]{png\+\_\+flags, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_aa3e1e270563781e46013c98d05e952e7}{}\label{image__save_8c_aa3e1e270563781e46013c98d05e952e7}
+
+
+Save image in P\+NG format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em filename} & Output file name \\
+\hline
+{\em png\+\_\+flags} & Save options \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__enum_8h_a99c2986d48a651287d92e1f419f16a70}{Imel\+Png\+Flags} 
+
+\hyperlink{image__save_8c_a727418390792881b6262e6392c476ba9}{imel\+\_\+image\+\_\+save\+\_\+png\+\_\+handle} 
+\end{DoxySeeAlso}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+png\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+png\+\_\+handle}}
+\index{imel\+\_\+image\+\_\+save\+\_\+png\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+png\+\_\+handle}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+png\+\_\+handle(\+Imel\+Image $\ast$image, F\+I\+L\+E $\ast$of, Imel\+Png\+Flags png\+\_\+flags, Imel\+Error $\ast$error)}{imel_image_save_png_handle(ImelImage *image, FILE *of, ImelPngFlags png_flags, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+png\+\_\+handle (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{F\+I\+LE $\ast$}]{of, }
+\item[{{\bf Imel\+Png\+Flags}}]{png\+\_\+flags, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_a727418390792881b6262e6392c476ba9}{}\label{image__save_8c_a727418390792881b6262e6392c476ba9}
+
+
+Save image in P\+NG format in an already open file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em of} & Output F\+I\+LE \\
+\hline
+{\em png\+\_\+flags} & Save options \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__enum_8h_a99c2986d48a651287d92e1f419f16a70}{Imel\+Png\+Flags} 
+
+\hyperlink{image__save_8c_aa3e1e270563781e46013c98d05e952e7}{imel\+\_\+image\+\_\+save\+\_\+png} 
+\end{DoxySeeAlso}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+ppm@{imel\+\_\+image\+\_\+save\+\_\+ppm}}
+\index{imel\+\_\+image\+\_\+save\+\_\+ppm@{imel\+\_\+image\+\_\+save\+\_\+ppm}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+ppm(\+Imel\+Image $\ast$image, const char $\ast$filename, Imel\+Error $\ast$error)}{imel_image_save_ppm(ImelImage *image, const char *filename, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+ppm (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{const char $\ast$}]{filename, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_a3e561246e0ef24e90073c821f30d7c69}{}\label{image__save_8c_a3e561246e0ef24e90073c821f30d7c69}
+
+
+Save image in P\+PM format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em filename} & Output file name \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__save_8c_a9c9b7dd3fca71a5060a44b131d511bae}{imel\+\_\+image\+\_\+save\+\_\+ppm\+\_\+handle} 
+\end{DoxySeeAlso}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+ppm\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+ppm\+\_\+handle}}
+\index{imel\+\_\+image\+\_\+save\+\_\+ppm\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+ppm\+\_\+handle}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+ppm\+\_\+handle(\+Imel\+Image $\ast$image, F\+I\+L\+E $\ast$of, Imel\+Error $\ast$error)}{imel_image_save_ppm_handle(ImelImage *image, FILE *of, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+ppm\+\_\+handle (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{F\+I\+LE $\ast$}]{of, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_a9c9b7dd3fca71a5060a44b131d511bae}{}\label{image__save_8c_a9c9b7dd3fca71a5060a44b131d511bae}
+
+
+Save image in P\+PM format in an already open file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em of} & Output F\+I\+LE \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__save_8c_a3e561246e0ef24e90073c821f30d7c69}{imel\+\_\+image\+\_\+save\+\_\+ppm} 
+\end{DoxySeeAlso}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+ppmraw@{imel\+\_\+image\+\_\+save\+\_\+ppmraw}}
+\index{imel\+\_\+image\+\_\+save\+\_\+ppmraw@{imel\+\_\+image\+\_\+save\+\_\+ppmraw}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+ppmraw(\+Imel\+Image $\ast$image, const char $\ast$filename, Imel\+Error $\ast$error)}{imel_image_save_ppmraw(ImelImage *image, const char *filename, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+ppmraw (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{const char $\ast$}]{filename, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_a5b84b5aa1c83a8fbf82d427113373f0e}{}\label{image__save_8c_a5b84b5aa1c83a8fbf82d427113373f0e}
+
+
+Save image in raw P\+PM format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em filename} & Output file name \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__save_8c_a4e5f415d7ce79245b8d96ab5c0abb8bf}{imel\+\_\+image\+\_\+save\+\_\+ppmraw\+\_\+handle} 
+\end{DoxySeeAlso}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+ppmraw\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+ppmraw\+\_\+handle}}
+\index{imel\+\_\+image\+\_\+save\+\_\+ppmraw\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+ppmraw\+\_\+handle}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+ppmraw\+\_\+handle(\+Imel\+Image $\ast$image, F\+I\+L\+E $\ast$of, Imel\+Error $\ast$error)}{imel_image_save_ppmraw_handle(ImelImage *image, FILE *of, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+ppmraw\+\_\+handle (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{F\+I\+LE $\ast$}]{of, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_a4e5f415d7ce79245b8d96ab5c0abb8bf}{}\label{image__save_8c_a4e5f415d7ce79245b8d96ab5c0abb8bf}
+
+
+Save image in raw P\+PM format in an already open file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em of} & Output F\+I\+LE \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__save_8c_a5b84b5aa1c83a8fbf82d427113373f0e}{imel\+\_\+image\+\_\+save\+\_\+ppmraw} 
+\end{DoxySeeAlso}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+tiff@{imel\+\_\+image\+\_\+save\+\_\+tiff}}
+\index{imel\+\_\+image\+\_\+save\+\_\+tiff@{imel\+\_\+image\+\_\+save\+\_\+tiff}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+tiff(\+Imel\+Image $\ast$image, const char $\ast$filename, Imel\+Tiff\+Flags tiff\+\_\+flags, Imel\+Error $\ast$error)}{imel_image_save_tiff(ImelImage *image, const char *filename, ImelTiffFlags tiff_flags, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+tiff (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{const char $\ast$}]{filename, }
+\item[{{\bf Imel\+Tiff\+Flags}}]{tiff\+\_\+flags, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_afc28c02ce6aa3ae5fe765510603c51be}{}\label{image__save_8c_afc28c02ce6aa3ae5fe765510603c51be}
+
+
+Save image in T\+I\+FF format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em filename} & Output file name \\
+\hline
+{\em tiff\+\_\+flags} & Save options \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__enum_8h_a519baf325b02bcca1d7eab10604c3a75}{Imel\+Tiff\+Flags} 
+
+\hyperlink{image__save_8c_a2e41ce825e969c57d1931fb58a05e920}{imel\+\_\+image\+\_\+save\+\_\+tiff\+\_\+handle} 
+\end{DoxySeeAlso}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+tiff\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+tiff\+\_\+handle}}
+\index{imel\+\_\+image\+\_\+save\+\_\+tiff\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+tiff\+\_\+handle}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+tiff\+\_\+handle(\+Imel\+Image $\ast$image, F\+I\+L\+E $\ast$of, Imel\+Tiff\+Flags tiff\+\_\+flags, Imel\+Error $\ast$error)}{imel_image_save_tiff_handle(ImelImage *image, FILE *of, ImelTiffFlags tiff_flags, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+tiff\+\_\+handle (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{F\+I\+LE $\ast$}]{of, }
+\item[{{\bf Imel\+Tiff\+Flags}}]{tiff\+\_\+flags, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_a2e41ce825e969c57d1931fb58a05e920}{}\label{image__save_8c_a2e41ce825e969c57d1931fb58a05e920}
+
+
+Save image in T\+I\+FF format in an already open file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em of} & Output F\+I\+LE \\
+\hline
+{\em tiff\+\_\+flags} & Save options \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__enum_8h_a519baf325b02bcca1d7eab10604c3a75}{Imel\+Tiff\+Flags} 
+
+\hyperlink{image__save_8c_afc28c02ce6aa3ae5fe765510603c51be}{imel\+\_\+image\+\_\+save\+\_\+tiff} 
+\end{DoxySeeAlso}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+wbmp@{imel\+\_\+image\+\_\+save\+\_\+wbmp}}
+\index{imel\+\_\+image\+\_\+save\+\_\+wbmp@{imel\+\_\+image\+\_\+save\+\_\+wbmp}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+wbmp(\+Imel\+Image $\ast$image, const char $\ast$filename, Imel\+Error $\ast$error)}{imel_image_save_wbmp(ImelImage *image, const char *filename, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+wbmp (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{const char $\ast$}]{filename, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_a1aa3d464b358dcdc9e493382fd54c487}{}\label{image__save_8c_a1aa3d464b358dcdc9e493382fd54c487}
+
+
+Save image in W\+B\+MP format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em filename} & Output file name \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__save_8c_ade0967b6943819bf46d0ef70729e08a9}{imel\+\_\+image\+\_\+save\+\_\+wbmp\+\_\+handle} 
+\end{DoxySeeAlso}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+wbmp\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+wbmp\+\_\+handle}}
+\index{imel\+\_\+image\+\_\+save\+\_\+wbmp\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+wbmp\+\_\+handle}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+wbmp\+\_\+handle(\+Imel\+Image $\ast$image, F\+I\+L\+E $\ast$of, Imel\+Error $\ast$error)}{imel_image_save_wbmp_handle(ImelImage *image, FILE *of, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+wbmp\+\_\+handle (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{F\+I\+LE $\ast$}]{of, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_ade0967b6943819bf46d0ef70729e08a9}{}\label{image__save_8c_ade0967b6943819bf46d0ef70729e08a9}
+
+
+Save image in W\+B\+MP format in an already open file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em of} & Output F\+I\+LE \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__save_8c_a1aa3d464b358dcdc9e493382fd54c487}{imel\+\_\+image\+\_\+save\+\_\+wbmp} 
+\end{DoxySeeAlso}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+xpm@{imel\+\_\+image\+\_\+save\+\_\+xpm}}
+\index{imel\+\_\+image\+\_\+save\+\_\+xpm@{imel\+\_\+image\+\_\+save\+\_\+xpm}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+xpm(\+Imel\+Image $\ast$image, const char $\ast$filename, Imel\+Error $\ast$error)}{imel_image_save_xpm(ImelImage *image, const char *filename, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+xpm (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{const char $\ast$}]{filename, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_a00621fb98f3614d2b53274c732099adb}{}\label{image__save_8c_a00621fb98f3614d2b53274c732099adb}
+
+
+Save image in X\+PM format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em filename} & Output file name \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__save_8c_af8d4383ba5e386a6249f5955b88e0f91}{imel\+\_\+image\+\_\+save\+\_\+xpm\+\_\+handle} 
+\end{DoxySeeAlso}
+\index{image\+\_\+save.\+c@{image\+\_\+save.\+c}!imel\+\_\+image\+\_\+save\+\_\+xpm\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+xpm\+\_\+handle}}
+\index{imel\+\_\+image\+\_\+save\+\_\+xpm\+\_\+handle@{imel\+\_\+image\+\_\+save\+\_\+xpm\+\_\+handle}!image\+\_\+save.\+c@{image\+\_\+save.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+save\+\_\+xpm\+\_\+handle(\+Imel\+Image $\ast$image, F\+I\+L\+E $\ast$of, Imel\+Error $\ast$error)}{imel_image_save_xpm_handle(ImelImage *image, FILE *of, ImelError *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} imel\+\_\+image\+\_\+save\+\_\+xpm\+\_\+handle (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{F\+I\+LE $\ast$}]{of, }
+\item[{{\bf Imel\+Error} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{image__save_8c_af8d4383ba5e386a6249f5955b88e0f91}{}\label{image__save_8c_af8d4383ba5e386a6249f5955b88e0f91}
+
+
+Save image in X\+PM format in an already open file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to save \\
+\hline
+{\em of} & Output F\+I\+LE \\
+\hline
+{\em error} & Error variable if you want handle the errors or N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE on success or F\+A\+L\+SE on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{image__save_8c_a00621fb98f3614d2b53274c732099adb}{imel\+\_\+image\+\_\+save\+\_\+xpm} 
+\end{DoxySeeAlso}

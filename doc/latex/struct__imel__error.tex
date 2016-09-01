@@ -1,0 +1,55 @@
+\hypertarget{struct__imel__error}{}\section{\+\_\+imel\+\_\+error Struct Reference}
+\label{struct__imel__error}\index{\+\_\+imel\+\_\+error@{\+\_\+imel\+\_\+error}}
+
+
+Specialized type in reporting errors inside Imel.  
+
+
+
+
+{\ttfamily \#include $<$header.\+h$>$}
+
+\subsection*{Data Fields}
+{\bf }\par
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{struct__imel__error_a473e5bd44dd6abf7b40bff9e1b930bfa}{code}
+\item 
+char $\ast$ \hyperlink{struct__imel__error_aa5a783bee5d7d963d01e40f06dd3f772}{description}
+\end{DoxyCompactItemize}
+
+
+
+\subsection{Detailed Description}
+Specialized type in reporting errors inside Imel. 
+
+This type report an error if occurred when doing operations in Imel. Each error have a code and a description.
+
+\begin{DoxyNote}{Note}
+Usually it can be used in this way\+: 
+\begin{DoxyCode}
+\hyperlink{struct__imel__image}{ImelImage} *image;
+\hyperlink{struct__imel__error}{ImelError} error;
+
+image = \hyperlink{image__new__from_8c_a43a15b507cf100b80bc07ce92a48adc7}{imel\_image\_new\_from} (\textcolor{stringliteral}{"image.png"}, 0, &error);
+\textcolor{keywordflow}{if} ( !image ) \{
+     fprintf (stderr, \textcolor{stringliteral}{"Error %d: %s\(\backslash\)n"}, error.\hyperlink{struct__imel__error_a473e5bd44dd6abf7b40bff9e1b930bfa}{code}, error.\hyperlink{struct__imel__error_aa5a783bee5d7d963d01e40f06dd3f772}{description});
+     \textcolor{keywordflow}{return} 1;
+\}
+\end{DoxyCode}
+ 
+\end{DoxyNote}
+
+
+\subsection{Field Documentation}
+\index{\+\_\+imel\+\_\+error@{\+\_\+imel\+\_\+error}!code@{code}}
+\index{code@{code}!\+\_\+imel\+\_\+error@{\+\_\+imel\+\_\+error}}
+\subsubsection[{\texorpdfstring{code}{code}}]{\setlength{\rightskip}{0pt plus 5cm}int \+\_\+imel\+\_\+error\+::code}\hypertarget{struct__imel__error_a473e5bd44dd6abf7b40bff9e1b930bfa}{}\label{struct__imel__error_a473e5bd44dd6abf7b40bff9e1b930bfa}
+Error code \index{\+\_\+imel\+\_\+error@{\+\_\+imel\+\_\+error}!description@{description}}
+\index{description@{description}!\+\_\+imel\+\_\+error@{\+\_\+imel\+\_\+error}}
+\subsubsection[{\texorpdfstring{description}{description}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ \+\_\+imel\+\_\+error\+::description}\hypertarget{struct__imel__error_aa5a783bee5d7d963d01e40f06dd3f772}{}\label{struct__imel__error_aa5a783bee5d7d963d01e40f06dd3f772}
+Error description 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{header_8h}{header.\+h}\end{DoxyCompactItemize}

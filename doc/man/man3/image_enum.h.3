@@ -1,0 +1,455 @@
+.TH "image_enum.h" 3 "Thu Sep 1 2016" "Version 3.0" "Imel" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+image_enum.h \- This file contains enums with options when open and save image file\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef enum \fB_imel_jpeg_load_flags\fP \fBImelJpegLoadFlags\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_png_load_flags\fP \fBImelPngLoadFlags\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_tiff_load_flags\fP \fBImelTiffLoadFlags\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_ico_load_flags\fP \fBImelIcoLoadFlags\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_pcd_load_flags\fP \fBImelPcdLoadFlags\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_gif_load_flags\fP \fBImelGifLoadFlags\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_tiff_flags\fP \fBImelTiffFlags\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_png_flags\fP \fBImelPngFlags\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_bmp_bits\fP \fBImelBmpBits\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_imel_j2k_bits\fP \fBImelJ2kBits\fP"
+.br
+.in -1c
+.SS "Enumerations"
+.SH "Detailed Description"
+.PP 
+This file contains enums with options when open and save image file\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Davide Francesco Merico 
+.RE
+.PP
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef enum \fB_imel_bmp_bits\fP  \fBImelBmpBits\fP"
+Options when saves BMP images\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_save_bmp\fP 
+.PP
+\fBimel_image_save_bmp_handle\fP 
+.RE
+.PP
+
+.SS "typedef enum \fB_imel_gif_load_flags\fP  \fBImelGifLoadFlags\fP"
+Options when opens GIF images
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_gif\fP 
+.PP
+\fBimel_image_new_from_gif_handle\fP 
+.PP
+\fBimel_image_new_from_gif_memory\fP 
+.RE
+.PP
+
+.SS "typedef enum \fB_imel_ico_load_flags\fP  \fBImelIcoLoadFlags\fP"
+Options when opens ICO images\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_ico\fP 
+.PP
+\fBimel_image_new_from_ico_handle\fP 
+.PP
+\fBimel_image_new_from_ico_memory\fP 
+.RE
+.PP
+
+.SS "typedef enum \fB_imel_j2k_bits\fP  \fBImelJ2kBits\fP"
+Options when saves J2K/JP2 images
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_save_j2k\fP 
+.PP
+\fBimel_image_save_j2k_handle\fP 
+.PP
+\fBimel_image_save_jp2\fP 
+.PP
+\fBimel_image_save_jp2_handle\fP 
+.RE
+.PP
+
+.SS "typedef enum \fB_imel_jpeg_load_flags\fP  \fBImelJpegLoadFlags\fP"
+Options when opens JPEG images\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_jpeg\fP 
+.PP
+\fBimel_image_new_from_jpeg_handle\fP 
+.PP
+\fBimel_image_new_from_jpeg_memory\fP 
+.RE
+.PP
+
+.SS "typedef enum \fB_imel_pcd_load_flags\fP  \fBImelPcdLoadFlags\fP"
+Options when opens PCD images
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_pcd\fP 
+.PP
+\fBimel_image_new_from_pcd_handle\fP 
+.PP
+\fBimel_image_new_from_pcd_memory\fP 
+.RE
+.PP
+
+.SS "typedef enum \fB_imel_png_flags\fP  \fBImelPngFlags\fP"
+Options when saves PNG images\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_save_png\fP 
+.PP
+\fBimel_image_save_png_handle\fP 
+.RE
+.PP
+
+.SS "typedef enum \fB_imel_png_load_flags\fP  \fBImelPngLoadFlags\fP"
+Options when opens PNG images\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_png\fP 
+.PP
+\fBimel_image_new_from_png_handle\fP 
+.PP
+\fBimel_image_new_from_png_memory\fP 
+.RE
+.PP
+
+.SS "typedef enum \fB_imel_tiff_flags\fP  \fBImelTiffFlags\fP"
+Options when saves TIFF images
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_save_tiff\fP 
+.PP
+\fBimel_image_save_tiff_handle\fP 
+.RE
+.PP
+
+.SS "typedef enum \fB_imel_tiff_load_flags\fP  \fBImelTiffLoadFlags\fP"
+Options when opens TIFF images\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_tiff\fP 
+.PP
+\fBimel_image_new_from_tiff_handle\fP 
+.PP
+\fBimel_image_new_from_tiff_memory\fP 
+.RE
+.PP
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fB_imel_bmp_bits\fP"
+Options when saves BMP images\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_save_bmp\fP 
+.PP
+\fBimel_image_save_bmp_handle\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_BMP_BITS_24 \fP\fP
+Saves the BMP image with no alpha 
+.TP
+\fB\fIIMEL_BMP_BITS_32 \fP\fP
+Saves the BMP image with alpha 
+.SS "enum \fB_imel_gif_load_flags\fP"
+Options when opens GIF images
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_gif\fP 
+.PP
+\fBimel_image_new_from_gif_handle\fP 
+.PP
+\fBimel_image_new_from_gif_memory\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_GIF_DEFAULT \fP\fP
+Loads the GIF image normally 
+.TP
+\fB\fIIMEL_GIF_LOAD256 \fP\fP
+Loads the GIF image with only 256 colors 
+.SS "enum \fB_imel_ico_load_flags\fP"
+Options when opens ICO images\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_ico\fP 
+.PP
+\fBimel_image_new_from_ico_handle\fP 
+.PP
+\fBimel_image_new_from_ico_memory\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_ICO_DEFAULT \fP\fP
+Loads the ICO image normally 
+.TP
+\fB\fIIMEL_ICO_MAKEALPHA \fP\fP
+Loads the ICO image converting it to 32 bit and make an alpha channel from an AND mask while loading\&. 
+.SS "enum \fB_imel_j2k_bits\fP"
+Options when saves J2K/JP2 images
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_save_j2k\fP 
+.PP
+\fBimel_image_save_j2k_handle\fP 
+.PP
+\fBimel_image_save_jp2\fP 
+.PP
+\fBimel_image_save_jp2_handle\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_J2K_BITS_24 \fP\fP
+Saves the J2K/JP2 image with no alpha 
+.TP
+\fB\fIIMEL_J2K_BITS_32 \fP\fP
+Saves the J2K/JP2 image with alpha 
+.SS "enum \fB_imel_jpeg_load_flags\fP"
+Options when opens JPEG images\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_jpeg\fP 
+.PP
+\fBimel_image_new_from_jpeg_handle\fP 
+.PP
+\fBimel_image_new_from_jpeg_memory\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_JPEG_DEFAULT \fP\fP
+Equal to IMEL_JPEG_FAST 
+.TP
+\fB\fIIMEL_JPEG_FAST \fP\fP
+Loads the JPEG image fast but with less quality 
+.TP
+\fB\fIIMEL_JPEG_ACCURATE \fP\fP
+Loads the JPEG image with quality but with less velocity 
+.TP
+\fB\fIIMEL_JPEG_CMYK \fP\fP
+Loads the JPEG image with separed CMYK channels\&. 
+.PP
+\fBWarning:\fP
+.RS 4
+Imel convert CMYK channels to RGB channels automatically 
+.RE
+.PP
+
+.SS "enum \fB_imel_pcd_load_flags\fP"
+Options when opens PCD images
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_pcd\fP 
+.PP
+\fBimel_image_new_from_pcd_handle\fP 
+.PP
+\fBimel_image_new_from_pcd_memory\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_PCD_DEFAULT \fP\fP
+Equal to IMEL_PCD_BASE 
+.TP
+\fB\fIIMEL_PCD_BASE \fP\fP
+Loads the PCD image at resolution of 768x512 pixel 
+.TP
+\fB\fIIMEL_PCD_BASEDIV4 \fP\fP
+Loads the PCD image at resolution of 384x256 pixel 
+.TP
+\fB\fIIMEL_PCD_BASEDIV16 \fP\fP
+Loads the PCD image at resolution of 192x128 pixel 
+.SS "enum \fB_imel_png_flags\fP"
+Options when saves PNG images\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_save_png\fP 
+.PP
+\fBimel_image_save_png_handle\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_PNG_Z_BEST_SPEED \fP\fP
+Saves the PNG image using Zlib library with compression value of 1 
+.TP
+\fB\fIIMEL_PNG_Z_DEFAULT_COMPRESSION \fP\fP
+Saves the PNG image using Zlib library with compression value of 6 
+.TP
+\fB\fIIMEL_PNG_Z_BEST_COMPRESSION \fP\fP
+Saves the PNG image using Zlib library with compression value of 9 
+.TP
+\fB\fIIMEL_PNG_Z_NO_COMPRESSION \fP\fP
+Saves the PNG image using Zlib library with no compression 
+.TP
+\fB\fIIMEL_PNG_INTERLACED \fP\fP
+Saves the PNG image with Adam7 interlacing 
+.SS "enum \fB_imel_png_load_flags\fP"
+Options when opens PNG images\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_png\fP 
+.PP
+\fBimel_image_new_from_png_handle\fP 
+.PP
+\fBimel_image_new_from_png_memory\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_PNG_DEFAULT \fP\fP
+Loads the PNG image normally 
+.TP
+\fB\fIIMEL_PNG_IGNOREGAMMA \fP\fP
+Loads the PNG image withour gamma correction 
+.SS "enum \fB_imel_tiff_flags\fP"
+Options when saves TIFF images
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_save_tiff\fP 
+.PP
+\fBimel_image_save_tiff_handle\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_TIFF_PACKBITS \fP\fP
+Saves the TIFF image using PACKBITS compression 
+.TP
+\fB\fIIMEL_TIFF_DEFLATE \fP\fP
+Saves the TIFF image using DEFLATE compression ( Zlib ) 
+.TP
+\fB\fIIMEL_TIFF_ADOBE_DEFLATE \fP\fP
+Saves the TIFF image using ADOBE DEFLATE compression 
+.TP
+\fB\fIIMEL_TIFF_NONE \fP\fP
+Saves the TIFF image using no compression 
+.TP
+\fB\fIIMEL_TIFF_CCITTFAX3 \fP\fP
+Saves the TIFF image using CCITT Group 3 fax codify 
+.TP
+\fB\fIIMEL_TIFF_CCITTFAX4 \fP\fP
+Saves the TIFF image using CCITT Group 3 fax codify 
+.TP
+\fB\fIIMEL_TIFF_LZW \fP\fP
+Saves the TIFF image using LZW compression 
+.SS "enum \fB_imel_tiff_load_flags\fP"
+Options when opens TIFF images\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new_from_tiff\fP 
+.PP
+\fBimel_image_new_from_tiff_handle\fP 
+.PP
+\fBimel_image_new_from_tiff_memory\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIMEL_TIFF_DEFAULT \fP\fP
+Loads the TIFF image normally 
+.TP
+\fB\fIIMEL_TIFF_CMYK \fP\fP
+Loads the TIFF image with separed CMYK channels\&. 
+.PP
+\fBWarning:\fP
+.RS 4
+Imel convert CMYK channels to RGB channels automatically 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Imel from the source code\&.

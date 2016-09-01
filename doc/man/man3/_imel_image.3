@@ -1,0 +1,56 @@
+.TH "_imel_image" 3 "Thu Sep 1 2016" "Version 3.0" "Imel" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_imel_image \- Rappresentation of an image in Imel library\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <header\&.h>\fP
+.SS "Data Fields"
+
+.PP
+.RI "\fB\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "\fBImelSize\fP \fBwidth\fP"
+.br
+.ti -1c
+.RI "\fBImelSize\fP \fBheight\fP"
+.br
+.ti -1c
+.RI "\fBImelPixel\fP ** \fBpixel\fP"
+.br
+.in -1c
+.in -1c
+.SH "Detailed Description"
+.PP 
+Rappresentation of an image in Imel library\&. 
+
+The most important type of Imel with \fBImelPixel\fP is this\&. This type, in Imel, is an image which contains its resolution and its colors\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_image_new\fP 
+.PP
+\fBimel_image_new_from\fP 
+.RE
+.PP
+
+.SH "Field Documentation"
+.PP 
+.SS "\fBImelSize\fP _imel_image::height"
+Image height 
+.SS "\fBImelPixel\fP** _imel_image::pixel"
+2-dimensional array in [y][x] format\&. 
+.SS "\fBImelSize\fP _imel_image::width"
+Image width 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Imel from the source code\&.

@@ -1,0 +1,146 @@
+\hypertarget{image__fill_8c}{}\section{image\+\_\+fill.\+c File Reference}
+\label{image__fill_8c}\index{image\+\_\+fill.\+c@{image\+\_\+fill.\+c}}
+
+
+This file contains functions to fill areas of an image.  
+
+
+{\ttfamily \#include \char`\"{}header.\+h\char`\"{}}\\*
+Include dependency graph for image\+\_\+fill.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{image__fill_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{image__fill_8c_a9a114b1f59a4bbe49a1a6c2fd35a60e8}{imel\+\_\+image\+\_\+fill\+\_\+color\+\_\+with\+\_\+color} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} $\ast$point, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} tollerance)
+\begin{DoxyCompactList}\small\item\em Fill a specified color area with another color. \end{DoxyCompactList}\item 
+void \hyperlink{image__fill_8c_a5ce5cafd0a0376534a5896a834d3e273}{imel\+\_\+image\+\_\+fill\+\_\+level\+\_\+with\+\_\+color} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} $\ast$point, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} tollerance)
+\begin{DoxyCompactList}\small\item\em Fill a specified level area with another color. \end{DoxyCompactList}\item 
+void \hyperlink{image__fill_8c_a80afdde2693aef5e71fd7a42d4ef74f3}{imel\+\_\+image\+\_\+fill\+\_\+color\+\_\+with\+\_\+level} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} $\ast$point, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} tollerance)
+\begin{DoxyCompactList}\small\item\em Fill a specified color area with another level. \end{DoxyCompactList}\item 
+void \hyperlink{image__fill_8c_aed5923cf52cf969bf9fc39f6103a0c00}{imel\+\_\+image\+\_\+fill\+\_\+level\+\_\+with\+\_\+level} (\hyperlink{header_8h_ad8298d38a89742ed84029b278c6acee5}{Imel\+Image} $\ast$image, \hyperlink{header_8h_a8b81d020f830e116585b833ea21410c1}{Imel\+Point} $\ast$point, \hyperlink{header_8h_af8a2b40c34eeed326846d0098ea84ec2}{Imel\+Size} tollerance)
+\begin{DoxyCompactList}\small\item\em Fill a specified level area with another level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains functions to fill areas of an image. 
+
+\begin{DoxyAuthor}{Author}
+Davide Francesco Merico 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\index{image\+\_\+fill.\+c@{image\+\_\+fill.\+c}!imel\+\_\+image\+\_\+fill\+\_\+color\+\_\+with\+\_\+color@{imel\+\_\+image\+\_\+fill\+\_\+color\+\_\+with\+\_\+color}}
+\index{imel\+\_\+image\+\_\+fill\+\_\+color\+\_\+with\+\_\+color@{imel\+\_\+image\+\_\+fill\+\_\+color\+\_\+with\+\_\+color}!image\+\_\+fill.\+c@{image\+\_\+fill.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+fill\+\_\+color\+\_\+with\+\_\+color(\+Imel\+Image $\ast$image, Imel\+Point $\ast$point, Imel\+Size tollerance)}{imel_image_fill_color_with_color(ImelImage *image, ImelPoint *point, ImelSize tollerance)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+fill\+\_\+color\+\_\+with\+\_\+color (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Point} $\ast$}]{point, }
+\item[{{\bf Imel\+Size}}]{tollerance}
+\end{DoxyParamCaption}
+)}\hypertarget{image__fill_8c_a9a114b1f59a4bbe49a1a6c2fd35a60e8}{}\label{image__fill_8c_a9a114b1f59a4bbe49a1a6c2fd35a60e8}
+
+
+Fill a specified color area with another color. 
+
+This function fill a color area with another color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where area to fill exist. \\
+\hline
+{\em point} & Coordinate of the position to start to fill and the new color value. \\
+\hline
+{\em tollerance} & Tollerance to find the next pixel to fill\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{point_8c_a20c030176364130df49237e29b69308c}{imel\+\_\+point\+\_\+new} 
+\end{DoxySeeAlso}
+\index{image\+\_\+fill.\+c@{image\+\_\+fill.\+c}!imel\+\_\+image\+\_\+fill\+\_\+color\+\_\+with\+\_\+level@{imel\+\_\+image\+\_\+fill\+\_\+color\+\_\+with\+\_\+level}}
+\index{imel\+\_\+image\+\_\+fill\+\_\+color\+\_\+with\+\_\+level@{imel\+\_\+image\+\_\+fill\+\_\+color\+\_\+with\+\_\+level}!image\+\_\+fill.\+c@{image\+\_\+fill.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+fill\+\_\+color\+\_\+with\+\_\+level(\+Imel\+Image $\ast$image, Imel\+Point $\ast$point, Imel\+Size tollerance)}{imel_image_fill_color_with_level(ImelImage *image, ImelPoint *point, ImelSize tollerance)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+fill\+\_\+color\+\_\+with\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Point} $\ast$}]{point, }
+\item[{{\bf Imel\+Size}}]{tollerance}
+\end{DoxyParamCaption}
+)}\hypertarget{image__fill_8c_a80afdde2693aef5e71fd7a42d4ef74f3}{}\label{image__fill_8c_a80afdde2693aef5e71fd7a42d4ef74f3}
+
+
+Fill a specified color area with another level. 
+
+This function fill a specified color area with another level.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where area to fill exist. \\
+\hline
+{\em point} & Coordinate of the position to start to fill and new level value. \\
+\hline
+{\em tollerance} & Tollerance to find the next pixel to fill\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{point_8c_a20c030176364130df49237e29b69308c}{imel\+\_\+point\+\_\+new} 
+\end{DoxySeeAlso}
+\index{image\+\_\+fill.\+c@{image\+\_\+fill.\+c}!imel\+\_\+image\+\_\+fill\+\_\+level\+\_\+with\+\_\+color@{imel\+\_\+image\+\_\+fill\+\_\+level\+\_\+with\+\_\+color}}
+\index{imel\+\_\+image\+\_\+fill\+\_\+level\+\_\+with\+\_\+color@{imel\+\_\+image\+\_\+fill\+\_\+level\+\_\+with\+\_\+color}!image\+\_\+fill.\+c@{image\+\_\+fill.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+fill\+\_\+level\+\_\+with\+\_\+color(\+Imel\+Image $\ast$image, Imel\+Point $\ast$point, Imel\+Size tollerance)}{imel_image_fill_level_with_color(ImelImage *image, ImelPoint *point, ImelSize tollerance)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+fill\+\_\+level\+\_\+with\+\_\+color (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Point} $\ast$}]{point, }
+\item[{{\bf Imel\+Size}}]{tollerance}
+\end{DoxyParamCaption}
+)}\hypertarget{image__fill_8c_a5ce5cafd0a0376534a5896a834d3e273}{}\label{image__fill_8c_a5ce5cafd0a0376534a5896a834d3e273}
+
+
+Fill a specified level area with another color. 
+
+This function fill a specified level area with another color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where area to fill exist. \\
+\hline
+{\em point} & Coordinate of the position to start to fill and the new color value. \\
+\hline
+{\em tollerance} & Tollerance to find the next pixel to fill\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{point_8c_a20c030176364130df49237e29b69308c}{imel\+\_\+point\+\_\+new} 
+\end{DoxySeeAlso}
+\index{image\+\_\+fill.\+c@{image\+\_\+fill.\+c}!imel\+\_\+image\+\_\+fill\+\_\+level\+\_\+with\+\_\+level@{imel\+\_\+image\+\_\+fill\+\_\+level\+\_\+with\+\_\+level}}
+\index{imel\+\_\+image\+\_\+fill\+\_\+level\+\_\+with\+\_\+level@{imel\+\_\+image\+\_\+fill\+\_\+level\+\_\+with\+\_\+level}!image\+\_\+fill.\+c@{image\+\_\+fill.\+c}}
+\subsubsection[{\texorpdfstring{imel\+\_\+image\+\_\+fill\+\_\+level\+\_\+with\+\_\+level(\+Imel\+Image $\ast$image, Imel\+Point $\ast$point, Imel\+Size tollerance)}{imel_image_fill_level_with_level(ImelImage *image, ImelPoint *point, ImelSize tollerance)}}]{\setlength{\rightskip}{0pt plus 5cm}void imel\+\_\+image\+\_\+fill\+\_\+level\+\_\+with\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{{\bf Imel\+Image} $\ast$}]{image, }
+\item[{{\bf Imel\+Point} $\ast$}]{point, }
+\item[{{\bf Imel\+Size}}]{tollerance}
+\end{DoxyParamCaption}
+)}\hypertarget{image__fill_8c_aed5923cf52cf969bf9fc39f6103a0c00}{}\label{image__fill_8c_aed5923cf52cf969bf9fc39f6103a0c00}
+
+
+Fill a specified level area with another level. 
+
+This function fill a specified level area with another level.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image where area to fill exist. \\
+\hline
+{\em point} & Coordinate of the position to start to fill and new level value. \\
+\hline
+{\em tollerance} & Tollerance to find the next pixel to fill\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{point_8c_a20c030176364130df49237e29b69308c}{imel\+\_\+point\+\_\+new} 
+\end{DoxySeeAlso}

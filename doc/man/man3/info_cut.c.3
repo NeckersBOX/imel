@@ -1,0 +1,401 @@
+.TH "info_cut.c" 3 "Thu Sep 1 2016" "Version 3.0" "Imel" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+info_cut.c \- This file contains functions to operate with guide lines\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include 'header\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImelInfoCut\fP * \fBimel_info_cut_new\fP (\fBImelOrientation\fP orientation, \fBImelSize\fP position)"
+.br
+.RI "\fIMake a new guide\&. \fP"
+.ti -1c
+.RI "\fBImelInfoCut\fP * \fBimel_info_cut_add\fP (\fBImelInfoCut\fP *cut_info, \fBImelOrientation\fP orientation, \fBImelSize\fP position)"
+.br
+.RI "\fIAdd a guide line to existed list\&. \fP"
+.ti -1c
+.RI "\fBImelInfoCut\fP * \fBimel_info_cut_get_index\fP (\fBImelInfoCut\fP *info_cut, \fBImelSize\fP index)"
+.br
+.RI "\fIGet the element to a chosen index\&. \fP"
+.ti -1c
+.RI "\fBImelInfoCut\fP * \fBimel_info_cut_copy_index\fP (\fBImelInfoCut\fP *info_cut, \fBImelSize\fP index)"
+.br
+.RI "\fICopy the element to a chosen index\&. \fP"
+.ti -1c
+.RI "\fBImelInfoCut\fP * \fBimel_info_cut_copy\fP (\fBImelInfoCut\fP *info_cut)"
+.br
+.RI "\fIDuplicate a guide lines list\&. \fP"
+.ti -1c
+.RI "\fBImelInfoCut\fP * \fBimel_info_cut_remove_element\fP (\fBImelInfoCut\fP *cut_info, \fBImelSize\fP index)"
+.br
+.RI "\fIRemove a guide line from a list\&. \fP"
+.ti -1c
+.RI "void \fBimel_info_cut_free\fP (\fBImelInfoCut\fP *cut_info)"
+.br
+.RI "\fIFree the memory of a guide lines list\&. \fP"
+.ti -1c
+.RI "void \fBimel_info_cut_swap_index\fP (\fBImelInfoCut\fP *cut_info, \fBImelSize\fP index_a, \fBImelSize\fP index_b)"
+.br
+.RI "\fISwap two element of a guide lines list\&. \fP"
+.ti -1c
+.RI "\fBImelSize\fP \fBimel_info_cut_count\fP (\fBImelInfoCut\fP *cut_info)"
+.br
+.RI "\fICount the element in a guide lines list\&. \fP"
+.ti -1c
+.RI "\fBImelInfoCut\fP * \fBimel_info_cut_get_next\fP (\fBImelImage\fP *image, \fBImelInfoCut\fP *cut_info, \fBImelSize\fP index)"
+.br
+.RI "\fIGet the next guide line on the same axis\&. \fP"
+.ti -1c
+.RI "\fBImelInfoCut\fP * \fBimel_info_cut_get_prev\fP (\fBImelImage\fP *image, \fBImelInfoCut\fP *cut_info, \fBImelSize\fP index)"
+.br
+.RI "\fIGet the previous guide line on the same axis\&. \fP"
+.ti -1c
+.RI "\fBImelInfoCut\fP * \fBimel_info_cut_get_min\fP (\fBImelInfoCut\fP *cut_info, \fBImelOrientation\fP orientation)"
+.br
+.RI "\fIGet the first guide line on the chosen axis\&. \fP"
+.ti -1c
+.RI "\fBImelInfoCut\fP * \fBimel_info_cut_get_max\fP (\fBImelInfoCut\fP *cut_info, \fBImelOrientation\fP orientation)"
+.br
+.RI "\fIGet the last guide line on the chosen axis\&. \fP"
+.ti -1c
+.RI "\fBImelSize\fP \fBimel_info_cut_get_split\fP (\fBImelImage\fP *image, \fBImelInfoCut\fP *cut_info, \fBImelOrientation\fP orientation)"
+.br
+.RI "\fIGet the split number of an image\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file contains functions to operate with guide lines\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Davide Francesco Merico 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBImelInfoCut\fP* imel_info_cut_add (\fBImelInfoCut\fP * cut_info, \fBImelOrientation\fP orientation, \fBImelSize\fP position)"
+
+.PP
+Add a guide line to existed list\&. This function add a new guide line to an existed list\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcut_info\fP Guide lines list 
+.br
+\fIorientation\fP Guide line orientation 
+.br
+\fIposition\fP Guide line position on chosen axis 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Pointer to new start of \fCcut_info\fP list or NULL on error
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelOrientation\fP 
+.PP
+\fBimel_info_cut_new\fP 
+.PP
+\fBimel_info_cut_remove_element\fP 
+.RE
+.PP
+
+.SS "\fBImelInfoCut\fP* imel_info_cut_copy (\fBImelInfoCut\fP * info_cut)"
+
+.PP
+Duplicate a guide lines list\&. This function duplicate the \fCinfo_cut\fP list passed\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinfo_cut\fP Guide lines list 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A copy of \fCinfo_cut\fP 
+.RE
+.PP
+
+.SS "\fBImelInfoCut\fP* imel_info_cut_copy_index (\fBImelInfoCut\fP * info_cut, \fBImelSize\fP index)"
+
+.PP
+Copy the element to a chosen index\&. This function copy the element in \fCinfo_cut\fP which its index is equal to \fCindex\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinfo_cut\fP Guide lines list 
+.br
+\fIindex\fP Chosen element index 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new ImelInfoCut element or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_info_cut_get_index\fP 
+.PP
+\fBimel_info_cut_free\fP 
+.RE
+.PP
+
+.SS "\fBImelSize\fP imel_info_cut_count (\fBImelInfoCut\fP * cut_info)"
+
+.PP
+Count the element in a guide lines list\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcut_info\fP Guide lines list 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Elements number or 0 on error\&.
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+Same as \fCcut_info->index + 1\fP 
+.RE
+.PP
+
+.SS "void imel_info_cut_free (\fBImelInfoCut\fP * cut_info)"
+
+.PP
+Free the memory of a guide lines list\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcut_info\fP Guide lines list to free
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_info_cut_new\fP 
+.RE
+.PP
+
+.SS "\fBImelInfoCut\fP* imel_info_cut_get_index (\fBImelInfoCut\fP * info_cut, \fBImelSize\fP index)"
+
+.PP
+Get the element to a chosen index\&. This function get the element in \fCinfo_cut\fP which its index is equal to \fCindex\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinfo_cut\fP Guide lines list 
+.br
+\fIindex\fP Chosen element index 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A pointer to the element if found it or NULL on error 
+.RE
+.PP
+
+.SS "\fBImelInfoCut\fP* imel_info_cut_get_max (\fBImelInfoCut\fP * cut_info, \fBImelOrientation\fP orientation)"
+
+.PP
+Get the last guide line on the chosen axis\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcut_info\fP Guide lines list 
+.br
+\fIorientation\fP Reference axis 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A pointer to the last guide line, based on it position or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_info_cut_get_min\fP 
+.PP
+\fBimel_info_cut_get_prev\fP 
+.RE
+.PP
+
+.SS "\fBImelInfoCut\fP* imel_info_cut_get_min (\fBImelInfoCut\fP * cut_info, \fBImelOrientation\fP orientation)"
+
+.PP
+Get the first guide line on the chosen axis\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcut_info\fP Guide lines list 
+.br
+\fIorientation\fP Reference axis 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A pointer to the first guide line, based on it position or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_info_cut_get_max\fP 
+.PP
+\fBimel_info_cut_get_next\fP 
+.RE
+.PP
+
+.SS "\fBImelInfoCut\fP* imel_info_cut_get_next (\fBImelImage\fP * image, \fBImelInfoCut\fP * cut_info, \fBImelSize\fP index)"
+
+.PP
+Get the next guide line on the same axis\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image reference for the guide lines 
+.br
+\fIcut_info\fP Guide lines list 
+.br
+\fIindex\fP Index of the current guide line 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A pointer to the next guide line, based on their position, or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_info_cut_get_prev\fP 
+.RE
+.PP
+
+.SS "\fBImelInfoCut\fP* imel_info_cut_get_prev (\fBImelImage\fP * image, \fBImelInfoCut\fP * cut_info, \fBImelSize\fP index)"
+
+.PP
+Get the previous guide line on the same axis\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image reference for the guide lines 
+.br
+\fIcut_info\fP Guide lines list 
+.br
+\fIindex\fP Index of the current guide line 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A pointer to the previous guide line, based on their position, or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_info_cut_get_next\fP 
+.RE
+.PP
+
+.SS "\fBImelSize\fP imel_info_cut_get_split (\fBImelImage\fP * image, \fBImelInfoCut\fP * cut_info, \fBImelOrientation\fP orientation)"
+
+.PP
+Get the split number of an image\&. This function get the number of the areas which the \fCimage\fP will be splitted if cutted with the guide lines in \fCcut_info\fP list\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP Image reference 
+.br
+\fIcut_info\fP Guide lines list 
+.br
+\fIorientation\fP Reference axis 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of areas resulted by hypotetical cuts 
+.RE
+.PP
+
+.SS "\fBImelInfoCut\fP* imel_info_cut_new (\fBImelOrientation\fP orientation, \fBImelSize\fP position)"
+
+.PP
+Make a new guide\&. This function make a new guide line with a chosen \fCorientation\fP and \fCposition\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIorientation\fP Guide line orientation 
+.br
+\fIposition\fP Guide line position on chosen axis 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new guide line or NULL on error\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBImelOrientation\fP 
+.PP
+\fBimel_info_cut_add\fP 
+.PP
+\fBimel_info_cut_free\fP 
+.RE
+.PP
+
+.SS "\fBImelInfoCut\fP* imel_info_cut_remove_element (\fBImelInfoCut\fP * cut_info, \fBImelSize\fP index)"
+
+.PP
+Remove a guide line from a list\&. This function remove the element which index is equal to \fCindex\fP in the \fCcut_info\fP list\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcut_info\fP Guide lines list 
+.br
+\fIindex\fP Index of the element to remove 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A pointer to the start of the \fCcut_info\fP passed
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBimel_info_cut_add\fP 
+.RE
+.PP
+
+.SS "void imel_info_cut_swap_index (\fBImelInfoCut\fP * cut_info, \fBImelSize\fP index_a, \fBImelSize\fP index_b)"
+
+.PP
+Swap two element of a guide lines list\&. This function swap the element at index \fCindex_a\fP with the element at index \fCindex_b\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcut_info\fP Guide lines list 
+.br
+\fIindex_a\fP Index of the first element 
+.br
+\fIindex_b\fP Index of the second element 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Imel from the source code\&.
