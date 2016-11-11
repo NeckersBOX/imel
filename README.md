@@ -1,6 +1,6 @@
 # What's Imel
 
-Imel is a library for image elaboration. Include tools to create, draw, 
+Imel is a library for images elaboration. Include tools to create, draw, 
 save and modify different images types with more then 240 functions. 
 It's thinked to be easy to use with a good compromise between speed and 
 memory usage.
@@ -15,7 +15,7 @@ in C and C++ projects.
 # Installation
 
 Imel uses two libraries to read TrueType fonts and open and save in different
-image formats. Before you compile it you must install these libraries:
+image formats. Before you compile it you have to install these libraries:
 
 * *libfreetype6*  Required. To read TrueType fonts
 * *libfreeimage3* Required. To open and save in different image format
@@ -30,7 +30,7 @@ After this preliminary actions you can compile the source with _make_.
 ```
 make
 ```
-**Note:** For 64 bit systems you can add _flags='-fPIC'_
+**Note:** For 64 bit systems you have to add _flags='-fPIC'_
  
 Then you can install Imel with:
 ```
@@ -51,7 +51,7 @@ make uninstall
 
 # Documentation
 
-From the 3.0 version the documentation was rewritten with **Doxysgen**.
+From the 3.0 version the documentation was rewritten with **Doxygen**.
 The Doxygen default configuration can be found in _imel_src_ folder and
 it configured to generate HTML, LATEX and MAN output. 
 **Note:** HTML output was patched with a bootstrap theme
