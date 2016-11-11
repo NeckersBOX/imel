@@ -72,7 +72,7 @@ Online documentation can be found following these links:
 
 # Quick Start
 
-To use Imel in your project you must only include its header with:
+To use Imel in your project you have only to include its header with:
 ```
 #include <imel.h>
 ```
