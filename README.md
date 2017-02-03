@@ -67,8 +67,8 @@ make imel-doc-clean
 ```
 
 Online documentation can be found following these links:
-[HTML Documentation](http://www.neckersbox.eu/share/data/imel-html-doc)
-[PDF Documentation](http://www.neckersbox.eu/share/data/Imel-3.0-Documentation.pdf)
+[HTML Documentation](http://www.neckersbox.eu/docs/imel-html-doc/index.html)
+[PDF Documentation](http://www.neckersbox.eu/docs/Imel-3.0-Documentation.pdf)
 
 # Quick Start
 
