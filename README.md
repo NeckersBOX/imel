@@ -1,16 +1,10 @@
 # What's Imel
 
-Imel is a library for images elaboration. Include tools to create, draw, 
-save and modify different images types with more then 240 functions. 
-It's thinked to be easy to use with a good compromise between speed and 
-memory usage.
+**Imel** is a library for images elaboration. It include tools to create, draw, save and modify different images types with **more than 240 functions**. It was designed to be easy to use with a good compromise between speed and memory usage.
 
-An image will be elaborated in a ImelImage type ( see documentation for
-more details ). It works with RGB channels plus a level to identify an
-image layer or the alpha if its value is between 0 and -255.
+An image will be elaborated in a ImelImage type ( see documentation for more details ). It works with RGB channels plus a level to identify an image layer or the alpha if its value is between 0 and -255.
 
-Imel is written in C and released under GNU GPL 3 license. It can be included
-in C and C++ projects.
+Imel is written in **C** and released under **GNU GPL 3** license. It can be included in C and C++ projects. 
 
 # Installation
 
