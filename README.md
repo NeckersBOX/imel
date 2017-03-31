@@ -47,7 +47,7 @@ make uninstall
 
 From the 3.0 version the documentation was rewritten with **Doxygen**.
 The Doxygen default configuration can be found in _imel_src_ folder and
-it configured to generate HTML, LATEX and MAN output. 
+it's configured to generate HTML, LATEX and MAN output. 
 **Note:** HTML output was patched with a bootstrap theme
 
 You can generate the documentation with the command:
